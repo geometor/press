@@ -1,0 +1,48 @@
+[project]
+name = "geometor-press"
+dynamic = ["version"]
+authors = [
+  { name = "geometor", email = "github@geometor.com" },
+]
+description = "GEOMETOR Press — Master Shelf Manifest, Brand & Cover Design System, Collector Object Studios, and Multi-Format Publishing Hub."
+readme = "README.rst"
+requires-python = ">=3.13"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+dependencies = [
+    "pyyaml",
+]
+
+[project.scripts]
+press = "geometor.press.__main__:main"
+
+[build-system]
+requires = ["setuptools", "setuptools-scm"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+include = ["geometor"]
+namespaces = true
+
+[tool.setuptools.dynamic]
+version = { attr = "geometor.press.__version__" }
+
+[project.urls]
+"Website" = "https://geometor.github.io/press"
+"Repository" = "https://github.com/geometor/press"
+"Issues" = "https://github.com/geometor/press/issues"
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+testpaths = ["tests"]
+
+[tool.ruff]
+lint.select = ["ANN", "D"]
+lint.ignore = []
+
+[tool.ruff.lint.pydocstyle]
+convention = "google"

@@ -1,0 +1,843 @@
+# =============================================================================
+# GEOMETOR PRESS — Master Shelf & Multi-Format Product Manifest
+# Canonical machine-readable catalog across Books, Ebooks, Collector Card Decks,
+# Fine-Art Posters / Broadsides, Greeting / Note Cards, and Living Instrument Apps.
+# =============================================================================
+
+imprint:
+  name: "GEOMETOR Press"
+  tagline: "Exploring the Architecture of All That Is — Exact Symbolic & Classical Editions"
+  engine: "photon-platform/publish"
+  portal: "https://geometor.com"
+  colophon_motif: "vesica_to_phi"
+
+series:
+  fontes:
+    title: "Fontes Geometrici"
+    subtitle: "Classical, Medieval & Renaissance Geometric Treatises"
+    accent: "#b8860b"  # Warm ochre / gold leaf
+  noetica:
+    title: "Bibliotheca Noetica"
+    subtitle: "Philosophical, Epistemological & Axiomatic Foundations"
+    accent: "#8b3a3a"  # Venetian rubric red
+  synthesis:
+    title: "Synthesis & Constructio"
+    subtitle: "Modern Synthetic, Projective & Computable Geometry"
+    accent: "#2b5b84"  # Prussian / blueprint blue
+  natura:
+    title: "Morphogenesis & Natura"
+    subtitle: "Living Geometry, Proportion & Wave-Field Cosmogony"
+    accent: "#2e6f40"  # Botanical viridian
+  architectura:
+    title: "Instrumenta & Machina"
+    subtitle: "Symbolic Engines, Formal Grammars & Reasoning Systems"
+    accent: "#5a4fcf"  # Spectral violet
+
+# Readiness Stages:
+# - stage_4_codex_live: Compiled Book Codex (:layout: book) + built HTML docs; ready for EPUB/Print/Merch packaging
+# - stage_3_codex_draft:Substantial RST codex / folios / SVGs present; needs final polish & publish build
+# - stage_2_constructing: Active symbolic Python models & initial SVGs/apparatus; codex assembly underway
+# - stage_1_seed: Repository & primary sources initialized; transcription/modeling queued
+# - engine: Software / infrastructure / portal repository (feeds technical monographs or apps)
+
+catalog:
+  # ---------------------------------------------------------------------------
+  # STAGE 4 — COMPILED CODICES READY FOR PRESS PACKAGING (12 REPOS / 14 BOOKS)
+  # ---------------------------------------------------------------------------
+  - repo: "hoenen"
+    series: "noetica"
+    stage: "stage_4_codex_live"
+    version: "0.1.0"
+    metrics: { docsrc_rst: 59, folios: 287, svgs: 0, py_modules: 6 }
+    works:
+      - slug: "de_noetica_geometriae"
+        title: "De Noetica Geometriae: Origine Theoriae Cognitionis"
+        author: "Petrus H. J. Hoenen, S.J."
+        year: "1954"
+        languages: ["la", "en"]
+        notes: "World-premiere complete English translation alongside 1954 Gregorian Latin, summaries, notes & 412-citation apparatus."
+    formats: ["web_codex", "epub3", "print_trade_en", "print_bilingual_la_en"]
+    derived_products: []
+
+  - repo: "euclid"
+    series: "fontes"
+    stage: "stage_4_codex_live"
+    version: "0.3.7"
+    metrics: { docsrc_rst: 1000, folios: 1438, svgs: 1671, py_modules: 39 }
+    works:
+      - slug: "heath"
+        title: "The Thirteen Books of Euclid's Elements"
+        subtitle: "Translated from the Text of Heiberg with Introduction and Commentary"
+        author: "Euclid · Sir Thomas L. Heath"
+        year: "c. 300 BCE / 1926"
+        languages: ["en"]
+        notes: "3-Volume, 13-Book critical codex across 465 propositions and 831+ calibrated diplomatic SVGs."
+    formats: ["web_codex", "epub3_3vol", "print_3vol_hardcover"]
+    derived_products:
+      - kind: "poster"
+        title: "The 465 Propositions of Euclid (13-Book Architectural Broadside)"
+      - kind: "cards_collector"
+        title: "Book I: From Equilateral Triangle to Pythagoras (48-Proposition Study Deck)"
+
+  - repo: "elements"
+    series: "synthesis"
+    stage: "stage_4_codex_live"
+    version: "0.4.0"
+    metrics: { docsrc_rst: 1752, folios: 0, svgs: 508, py_modules: 5 }
+    works:
+      - slug: "elements2"
+        title: "Elements 2.0: The Topological G-Index (G.1–G.601)"
+        author: "GEOMETOR"
+        year: "2026"
+        languages: ["en", "pseudocode", "python"]
+        notes: "601-node dependency DAG uniting Definitions, Postulates, Common Notions, and Propositions in Pseudocode, SymPy, and Heath."
+    formats: ["web_codex", "epub3", "print_quarto", "app_pwa"]
+    derived_products:
+      - kind: "poster"
+        title: "The Deductive Spine of Geometry: Full G.1–G.601 Dependency DAG Wall Chart"
+      - kind: "app"
+        title: "GEOMETOR Elements Interactive Step-Scrubber (iPad / Web PWA)"
+
+  - repo: "pacioli"
+    series: "fontes"
+    stage: "stage_4_codex_live"
+    version: "0.3.2"
+    metrics: { docsrc_rst: 404, folios: 318, svgs: 0, py_modules: 10 }
+    works:
+      - slug: "de_divina_proportione"
+        title: "De Divina Proportione"
+        author: "Fra Luca Pacioli · Plates by Leonardo da Vinci"
+        year: "1509 / 1889"
+        languages: ["it", "de", "en"]
+        notes: "5-track Renaissance codex across 318 folios and 482 woodcuts including Leonardo's 60 polyhedra."
+    formats: ["web_codex", "epub3", "print_fine_quarto", "app_3d"]
+    derived_products:
+      - kind: "cards_collector"
+        title: "Leonardo's 60 Polyhedra: Solidus & Vacuus Collector Deck (60 Cards + Golden Key)"
+      - kind: "cards_greeting"
+        title: "Renaissance Capital Alphabet & Polyhedra Folio Note Cards"
+      - kind: "poster"
+        title: "The Sixty Solids of Leonardo da Vinci & Luca Pacioli (Fine-Art Print)"
+
+  - repo: "divine"
+    series: "synthesis"
+    stage: "stage_4_codex_live"
+    version: "0.4.0"
+    metrics: { docsrc_rst: 129, folios: 0, svgs: 45, py_modules: 22 }
+    works:
+      - slug: "constructions"
+        title: "The Divine Proportion Compendium: 45 Exact Constructions of Phi"
+        author: "GEOMETOR (after Bogomolny, Odom, Hofstetter & Classical Sources)"
+        year: "2026"
+        languages: ["en"]
+        notes: "45 certified symbolic golden-ratio constructions across 7 geometric families with Lemoine simplicities."
+    formats: ["web_codex", "epub3", "print_gift_square", "app_pwa"]
+    derived_products:
+      - kind: "cards_collector"
+        title: "The Golden Deck: 45 Exact Constructions + 7 Geometric Families (52-Card Collector & Study Deck)"
+      - kind: "cards_greeting"
+        title: "Vesica to Phi & Fivefold Star — Foil-Stamped Geometric Greeting Cards"
+      - kind: "poster"
+        title: "Forty-Five Ways to Divide the Line in Extreme and Mean Ratio (Gallery Poster)"
+
+  - repo: "etc"
+    series: "synthesis"
+    stage: "stage_4_codex_live"
+    version: "0.2.0"
+    metrics: { docsrc_rst: 8111, folios: 0, svgs: 69541, py_modules: 15 }
+    works:
+      - slug: "centers"
+        title: "The Field Guide to Triangle Centers (Selected Compendium from Kimberling's ETC)"
+        author: "GEOMETOR (after Clark Kimberling)"
+        year: "2026"
+        languages: ["en"]
+        notes: "53,144 centers indexed; 4,000+ compiled across 62 collections & 4 canonical reference triangles (Acute, 3-4-5, Kepler Golden, Kimberling)."
+    formats: ["web_codex", "print_selected_atlas", "app_pwa"]
+    derived_products:
+      - kind: "cards_collector"
+        title: "Centers of the Triangle: Series I (The Classic 54 — X(1) Incenter to Feuerbach, Lemoine, Fermat, Napoleon & Golden Centers)"
+      - kind: "poster"
+        title: "The Euler Line, Nine-Point Circle & 62 Families of Triangle Centers (4-Triangle Comparative Wall Chart)"
+      - kind: "cards_greeting"
+        title: "Four Triangles, One Center — Geometric Postcard Box Set"
+      - kind: "app"
+        title: "ETC Live Explorer (Interactive Triangle & Barycentric/Trilinear Workbench)"
+
+  - repo: "altshiller-court"
+    series: "synthesis"
+    stage: "stage_4_codex_live"
+    version: "0.1.0"
+    metrics: { docsrc_rst: 198, folios: 334, svgs: 44, py_modules: 7 }
+    works:
+      - slug: "college_geometry"
+        title: "College Geometry: An Introduction to the Modern Geometry of the Triangle and the Circle"
+        author: "Nathan Altshiller-Court"
+        year: "1952"
+        languages: ["en"]
+        notes: "334 folios and 699 articles cross-referenced to Euclid, Pappus, and ETC."
+    formats: ["web_codex", "epub3", "print_trade"]
+    derived_products: []
+
+  - repo: "plato"
+    series: "noetica"
+    stage: "stage_4_codex_live"
+    version: "0.1.0"
+    metrics: { docsrc_rst: 38, folios: 0, svgs: 6, py_modules: 12 }
+    works:
+      - slug: "loci_mathematici"
+        title: "Loci Mathematici et Geometrici: Plato's Mathematical & Geometric Dialogues"
+        author: "Plato (Burnet OCT Greek & Jowett English)"
+        year: "c. 385–347 BCE / 2026"
+        languages: ["grc", "en"]
+        notes: "4-track codex across Meno, Theaetetus, Republic VI–VII, Timaeus, Parmenides, Philebus & Laws VII."
+    formats: ["web_codex", "epub3", "print_bilingual_grc_en", "app_pwa"]
+    derived_products:
+      - kind: "poster"
+        title: "Spiral of Theodorus & The 34-Pitch Timaeus World-Soul Scale (Harmonic Broadside)"
+      - kind: "app"
+        title: "Playable Timaeus World-Soul Synth & Divided Line Instrument"
+
+  - repo: "casey"
+    series: "synthesis"
+    stage: "stage_4_codex_live"
+    version: "0.1.0"
+    metrics: { docsrc_rst: 30, folios: 0, svgs: 14, py_modules: 9 }
+    works:
+      - slug: "sequel_to_euclid"
+        title: "A Sequel to the First Six Books of the Elements of Euclid"
+        author: "John Casey"
+        year: "1888 / 1892"
+        languages: ["en"]
+        notes: "3-track codex introducing inversion, coaxal circles, harmonic section, and Lemoine/Brocard geometry."
+    formats: ["web_codex", "epub3", "print_trade"]
+    derived_products: []
+
+  - repo: "lemoine"
+    series: "synthesis"
+    stage: "stage_4_codex_live"
+    version: "0.1.0"
+    metrics: { docsrc_rst: 30, folios: 0, svgs: 9, py_modules: 5 }
+    works:
+      - slug: "geometrographie"
+        title: "Géométrographie: The Art & Complexity of Geometric Constructions"
+        author: "Émile Lemoine (with Mascheroni 1797 & Steiner 1833 Concordance)"
+        year: "1902"
+        languages: ["fr", "en"]
+        notes: "Operational simplicity/exactitude calculus paired with Compass-Only (Mascheroni) and Straightedge-Only (Steiner) constructibility."
+    formats: ["web_codex", "epub3", "print_bilingual_fr_en"]
+    derived_products: []
+
+  - repo: "knott"
+    series: "synthesis"
+    stage: "stage_4_codex_live"
+    version: "0.1.0"
+    metrics: { docsrc_rst: 40, folios: 0, svgs: 22, py_modules: 12 }
+    works:
+      - slug: "catalog"
+        title: "Golden Ratio Geometry, Phigits, Golden Strings & Fibonacci Identities"
+        author: "GEOMETOR (after Dr. Ron Knott)"
+        year: "2026"
+        languages: ["en"]
+        notes: "Base-phi arithmetic (phigits), rabbit morphisms, Wythoff arrays, and Fibonacci/Lucas geometric proofs."
+    formats: ["web_codex", "epub3", "print_trade"]
+    derived_products:
+      - kind: "poster"
+        title: "Phigits & The Golden Rabbit Fractal Tree"
+
+  - repo: "walter-russell"
+    series: "natura"
+    stage: "stage_4_codex_live"
+    version: "0.2.0"
+    metrics: { docsrc_rst: 76, folios: 0, svgs: 8, py_modules: 5 }
+    works:
+      - slug: "cosmogony"
+        title: "The Wave-Field Cosmogony of Walter Russell"
+        author: "Walter & Lao Russell · Reconstructed by GEOMETOR"
+        year: "2026"
+        languages: ["en"]
+        notes: "Parametric 2D chalkboard plates and interactive 3D cube-sphere wave-field geometry."
+      - slug: "home_study_course"
+        title: "Home Study Course in Universal Law, Natural Science and Philosophy (Lessons 1–48)"
+        author: "Walter & Lao Russell"
+        year: "1950–1952"
+        languages: ["en"]
+        notes: "Complete 48-lesson digital reconstruction."
+    formats: ["web_codex", "epub3", "print_quarto", "app_3d"]
+    derived_products:
+      - kind: "poster"
+        title: "The Nine-Octave Spiral Periodic Chart of the Elements (Chalkboard Edition)"
+
+  # ---------------------------------------------------------------------------
+  # STAGE 3 — SUBSTANTIAL CODICES IN DOCSRC (READY FOR BUILD & VETTING: 11 REPOS / 12 BOOKS)
+  # ---------------------------------------------------------------------------
+  - repo: "fundamentals"
+    series: "synthesis"
+    stage: "stage_3_codex_draft"
+    version: "0.1.0"
+    metrics: { docsrc_rst: 181, folios: 353, svgs: 55, py_modules: 14 }
+    works:
+      - slug: "topics"
+        title: "Fundamentals of Constructive Geometry: The Fred W. Seelig Archive (F.1–F.55)"
+        author: "Fred W. Seelig · GEOMETOR"
+        year: "2026"
+        languages: ["en"]
+    formats: ["web_codex", "epub3", "print_quarto"]
+    derived_products:
+      - kind: "cards_collector"
+        title: "55 Foundational Constructions Study Deck (F.1–F.55)"
+
+  - repo: "bertrand-russell"
+    series: "noetica"
+    stage: "stage_3_codex_draft"
+    version: "0.1.0"
+    metrics: { docsrc_rst: 69, folios: 0, svgs: 9, py_modules: 5 }
+    works:
+      - slug: "foundations_of_geometry"
+        title: "An Essay on the Foundations of Geometry"
+        author: "Bertrand Russell"
+        year: "1897"
+        languages: ["en"]
+      - slug: "principles_of_mathematics"
+        title: "The Principles of Mathematics — Part VI: Space"
+        author: "Bertrand Russell"
+        year: "1903"
+        languages: ["en"]
+    formats: ["web_codex", "epub3", "print_trade"]
+    derived_products: []
+
+  - repo: "wildberger"
+    series: "synthesis"
+    stage: "stage_3_codex_draft"
+    version: "0.1.0"
+    metrics: { docsrc_rst: 68, folios: 0, svgs: 28, py_modules: 14 }
+    works:
+      - slug: "topics"
+        title: "Rational Trigonometry & Chromogeometry: Constructive Companion"
+        author: "GEOMETOR (after Norman J. Wildberger)"
+        year: "2026"
+        languages: ["en"]
+    formats: ["web_codex", "epub3", "print_trade"]
+    derived_products:
+      - kind: "cards_collector"
+        title: "The Five Laws of Rational Trigonometry & Spread Polynomial Reference Cards"
+
+  - repo: "aristotle"
+    series: "noetica"
+    stage: "stage_3_codex_draft"
+    version: "0.1.0"
+    metrics: { docsrc_rst: 49, folios: 0, svgs: 0, py_modules: 8 }
+    works:
+      - slug: "loci_geometrici"
+        title: "Loci Geometrici et Noetici: Demonstrative Science, Abstraction & the Continuum"
+        author: "Aristotle (Bekker Greek & Oxford English)"
+        year: "c. 335 BCE / 1831"
+        languages: ["grc", "en"]
+    formats: ["web_codex", "epub3", "print_bilingual_grc_en"]
+    derived_products: []
+
+  - repo: "hilbert"
+    series: "noetica"
+    stage: "stage_3_codex_draft"
+    version: "0.1.0"
+    metrics: { docsrc_rst: 46, folios: 0, svgs: 11, py_modules: 6 }
+    works:
+      - slug: "grundlagen"
+        title: "Grundlagen der Geometrie / The Foundations of Geometry"
+        author: "David Hilbert (trans. E. J. Townsend)"
+        year: "1899 / 1902"
+        languages: ["de", "en"]
+    formats: ["web_codex", "epub3", "print_bilingual_de_en"]
+    derived_products: []
+
+  - repo: "proclus"
+    series: "noetica"
+    stage: "stage_3_codex_draft"
+    version: "0.1.0"
+    metrics: { docsrc_rst: 43, folios: 0, svgs: 0, py_modules: 5 }
+    works:
+      - slug: "in_euclidem"
+        title: "Commentary on the First Book of Euclid's Elements"
+        author: "Proclus Diadochus (Friedlein Greek & English)"
+        year: "c. 470 CE / 1873"
+        languages: ["grc", "en"]
+    formats: ["web_codex", "epub3", "print_bilingual_grc_en"]
+    derived_products: []
+
+  - repo: "aquinas"
+    series: "noetica"
+    stage: "stage_3_codex_draft"
+    version: "0.1.0"
+    metrics: { docsrc_rst: 40, folios: 0, svgs: 0, py_modules: 3 }
+    works:
+      - slug: "scientia_mathematica"
+        title: "De Scientia Mathematica et Materia Intelligibili"
+        author: "St. Thomas Aquinas, O.P."
+        year: "1256–1273"
+        languages: ["la", "en"]
+    formats: ["web_codex", "epub3", "print_bilingual_la_en"]
+    derived_products: []
+
+  - repo: "codes"
+    series: "architectura"
+    stage: "stage_3_codex_draft"
+    version: "0.1.0"
+    metrics: { docsrc_rst: 33, folios: 0, svgs: 9, py_modules: 6 }
+    works:
+      - slug: "codes"
+        title: "GEOMETOR Codes: Eleven Formal, Visual & Symbolic Languages of Geometry"
+        author: "GEOMETOR"
+        year: "2026"
+        languages: ["en"]
+        notes: "Rosetta Stone monograph comparing LeanEuclid, GeoCoq, Mathlib4, AlphaGeometry, JGEX, PGA/CGA, CindyJS, Byrne & GEOMETOR."
+    formats: ["web_codex", "epub3", "print_trade"]
+    derived_products:
+      - kind: "poster"
+        title: "The Rosetta Stone of Geometric Formalisms (11-Language Comparative Chart)"
+
+  - repo: "menelaus"
+    series: "fontes"
+    stage: "stage_3_codex_draft"
+    version: "0.1.0"
+    metrics: { docsrc_rst: 29, folios: 0, svgs: 10, py_modules: 8 }
+    works:
+      - slug: "sphaerica"
+        title: "Menelai Sphaericorum Libri III (Sphaerica)"
+        author: "Menelaus of Alexandria (Halley 1758 Latin & English)"
+        year: "c. 100 CE / 1758"
+        languages: ["la", "grc", "en"]
+    formats: ["web_codex", "epub3", "print_bilingual_la_en"]
+    derived_products: []
+
+  - repo: "pappus"
+    series: "fontes"
+    stage: "stage_3_codex_draft"
+    version: "0.1.0"
+    metrics: { docsrc_rst: 17, folios: 0, svgs: 18, py_modules: 6 }
+    works:
+      - slug: "synagoge"
+        title: "Projective Investigations: Pappus's Synagoge, Steiner & Pascal's Hexagrammum Mysticum"
+        author: "Pappus of Alexandria · Blaise Pascal · GEOMETOR"
+        year: "c. 340 CE / 1640 / 2026"
+        languages: ["en"]
+    formats: ["web_codex", "epub3", "print_quarto", "app_pwa"]
+    derived_products:
+      - kind: "poster"
+        title: "Hexagrammum Mysticum: All 60 Pascal Lines, 20 Steiner Points & 60 Kirkman Points"
+      - kind: "cards_greeting"
+        title: "Harmonic Conjugate & Six Pappus Configurations — Foil Print Note Cards"
+
+  - repo: "phyllotaxis"
+    series: "natura"
+    stage: "stage_3_codex_draft"
+    version: "0.2.2"
+    metrics: { docsrc_rst: 14, folios: 0, svgs: 0, py_modules: 7 }
+    works:
+      - slug: "phyllotaxis"
+        title: "Phyllotaxis: Golden Divergence, Parastichy Lattices & Living Meristems"
+        author: "GEOMETOR"
+        year: "2026"
+        languages: ["en"]
+    formats: ["web_codex", "print_art_book", "app_3d"]
+    derived_products:
+      - kind: "poster"
+        title: "137.50776° — Golden Divergence & Opposing Fibonacci Parastichies"
+      - kind: "cards_greeting"
+        title: "Botanical Meristem & Sunflower Parastichy Greeting Card Collection"
+      - kind: "app"
+        title: "2D/3D Apical Meristem Interactive Studio"
+
+  # ---------------------------------------------------------------------------
+  # STAGE 2 — ACTIVE CONSTRUCTION & EARLY CODEX ASSEMBLY (11 REPOS)
+  # ---------------------------------------------------------------------------
+  - repo: "byrne"
+    series: "fontes"
+    stage: "stage_2_constructing"
+    version: "0.1.0"
+    metrics: { docsrc_rst: 7, folios: 0, svgs: 17, py_modules: 7 }
+    works:
+      - slug: "coloured_euclid"
+        title: "The First Six Books of the Elements of Euclid (Coloured Diagrams & Symbols)"
+        author: "Oliver Byrne"
+        year: "1847"
+        languages: ["en", "chromatic"]
+        notes: "Pointer-free polychrome visual proofs backed by exact symbolic color-token verification."
+    formats: ["web_codex", "epub3_fixed_layout", "print_fine_color_quarto", "app_pwa"]
+    derived_products:
+      - kind: "poster"
+        title: "Polychrome Euclid: Complete Book I–VI Chromatic Wall Grid"
+      - kind: "cards_collector"
+        title: "Byrne's Chromatic Proofs: Primary-Color Flashcard & Art Deck"
+      - kind: "cards_greeting"
+        title: "Pythagoras in Red, Yellow & Blue (Book I, Prop. 47) — Blank Art Cards"
+
+  - repo: "heron"
+    series: "fontes"
+    stage: "stage_2_constructing"
+    version: "0.1.0"
+    metrics: { docsrc_rst: 8, folios: 0, svgs: 14, py_modules: 8 }
+    works:
+      - slug: "metrica"
+        title: "Metrica, Definitiones, Catoptrica & Dioptra"
+        author: "Hero of Alexandria"
+        year: "c. 60 CE"
+        languages: ["grc", "en"]
+    formats: ["web_codex", "epub3", "print_bilingual_grc_en"]
+    derived_products: []
+
+  - repo: "thompson"
+    series: "natura"
+    stage: "stage_2_constructing"
+    version: "0.1.0"
+    metrics: { docsrc_rst: 2, folios: 0, svgs: 11, py_modules: 4 }
+    works:
+      - slug: "on_growth_and_form"
+        title: "On Growth and Form (with Jay Hambidge Dynamic Symmetry Concordance)"
+        author: "D'Arcy Wentworth Thompson"
+        year: "1917 / 1920"
+        languages: ["en"]
+    formats: ["web_codex", "epub3", "print_quarto"]
+    derived_products:
+      - kind: "poster"
+        title: "Theory of Transformations (Cartesian Deformation Grids of Skulls, Shells & Leaves)"
+      - kind: "cards_greeting"
+        title: "Nautilus Gnomons & Cartesian Fishes — Natural History Note Cards"
+
+  - repo: "durer"
+    series: "fontes"
+    stage: "stage_2_constructing"
+    version: "0.1.0"
+    metrics: { docsrc_rst: 0, folios: 0, svgs: 11, py_modules: 10 }
+    works:
+      - slug: "underweysung"
+        title: "Underweysung der Messung (Instruction in Measurement with Compass and Straightedge)"
+        author: "Albrecht Dürer"
+        year: "1525 / 1538"
+        languages: ["de", "en"]
+    formats: ["web_codex", "epub3", "print_fine_quarto"]
+    derived_products:
+      - kind: "poster"
+        title: "Dürer's Polyhedral Nets, Conchoid Spirals & Constructed Roman Capitals"
+      - kind: "cards_greeting"
+        title: "Dürer Geometric Majuscules — Monogram & Typography Stationery"
+
+  - repo: "apollonius"
+    series: "fontes"
+    stage: "stage_2_constructing"
+    version: "0.1.0"
+    metrics: { docsrc_rst: 0, folios: 0, svgs: 12, py_modules: 1 }
+    works:
+      - slug: "conics"
+        title: "Treatise on Conic Sections (Books I–VII)"
+        author: "Apollonius of Perga (ed. T. L. Heath)"
+        year: "c. 200 BCE / 1896"
+        languages: ["en"]
+    formats: ["web_codex", "epub3", "print_trade"]
+    derived_products:
+      - kind: "poster"
+        title: "Cone, Symptom & Polarity: Parabola, Ellipse & Hyperbola from One Cone"
+
+  - repo: "archimedes"
+    series: "fontes"
+    stage: "stage_2_constructing"
+    version: "0.1.0"
+    metrics: { docsrc_rst: 0, folios: 0, svgs: 11, py_modules: 2 }
+    works:
+      - slug: "works"
+        title: "The Works of Archimedes & The Method"
+        author: "Archimedes of Syracuse (ed. Heiberg / Heath)"
+        year: "c. 250 BCE / 1897 / 1912"
+        languages: ["grc", "en"]
+    formats: ["web_codex", "epub3", "print_trade"]
+    derived_products:
+      - kind: "cards_collector"
+        title: "The Stomachion (Ostomachion): 14-Piece Combinatorial Geometric Puzzle & Card Set"
+      - kind: "poster"
+        title: "Sphere & Cylinder (2:3) and the 13 Archimedean Solids"
+
+  - repo: "poincare"
+    series: "noetica"
+    stage: "stage_2_constructing"
+    version: "0.1.0"
+    metrics: { docsrc_rst: 0, folios: 0, svgs: 8, py_modules: 7 }
+    works:
+      - slug: "science_et_hypothese"
+        title: "La Science et l'Hypothèse / Science and Hypothesis"
+        author: "Henri Poincaré"
+        year: "1902 / 1905"
+        languages: ["fr", "en"]
+    formats: ["web_codex", "epub3", "print_bilingual_fr_en"]
+    derived_products:
+      - kind: "poster"
+        title: "The Poincaré Conformal Hyperbolic Disk Tessellations"
+
+  - repo: "staudt"
+    series: "noetica"
+    stage: "stage_2_constructing"
+    version: "0.1.0"
+    metrics: { docsrc_rst: 0, folios: 0, svgs: 8, py_modules: 8 }
+    works:
+      - slug: "geometrie_der_lage"
+        title: "Geometrie der Lage & Order Axiomatics"
+        author: "Karl Georg Christian von Staudt & Moritz Pasch"
+        year: "1847 / 1882"
+        languages: ["de", "en"]
+    formats: ["web_codex", "epub3", "print_bilingual_de_en"]
+    derived_products: []
+
+  - repo: "fibonacci"
+    series: "fontes"
+    stage: "stage_2_constructing"
+    version: "0.1.0"
+    metrics: { docsrc_rst: 0, folios: 0, svgs: 0, py_modules: 7 }
+    works:
+      - slug: "practica_geometriae"
+        title: "Practica Geometriae, Liber Abaci & Flos"
+        author: "Leonardo Pisano (Fibonacci)"
+        year: "1202–1228"
+        languages: ["la", "en"]
+    formats: ["web_codex", "epub3", "print_bilingual_la_en"]
+    derived_products: []
+
+  - repo: "nicomachus"
+    series: "fontes"
+    stage: "stage_2_constructing"
+    version: "0.1.0"
+    metrics: { docsrc_rst: 0, folios: 0, svgs: 0, py_modules: 5 }
+    works:
+      - slug: "introductio_arithmetica"
+        title: "Introductio Arithmetica (Introduction to Arithmetic, Books I–II)"
+        author: "Nicomachus of Gerasa (Hoche Greek & D'Ooge English)"
+        year: "c. 100 CE / 1926"
+        languages: ["grc", "en"]
+    formats: ["web_codex", "epub3", "print_bilingual_grc_en"]
+    derived_products:
+      - kind: "poster"
+        title: "Figurate Numbers, Superparticular Ratios & Pythagorean Harmonics"
+
+  - repo: "feuerbach"
+    series: "synthesis"
+    stage: "stage_2_constructing"
+    version: "0.1.0"
+    metrics: { docsrc_rst: 0, folios: 0, svgs: 0, py_modules: 4 }
+    works:
+      - slug: "nine_point_trilogy"
+        title: "The Founding Trilogy of Triangle Geometry: Ceva (1678), Euler (1765) & Feuerbach (1822)"
+        author: "Giovanni Ceva · Leonhard Euler · Karl Wilhelm Feuerbach"
+        year: "1678 / 1765 / 1822"
+        languages: ["la", "de", "en"]
+    formats: ["web_codex", "epub3", "print_trade"]
+    derived_products:
+      - kind: "poster"
+        title: "Feuerbach's Tangency: The Nine-Point Circle Kissing Incircle & Three Excircles"
+      - kind: "cards_greeting"
+        title: "Feuerbach's Kiss — Gold-Foil Geometric Greeting Card"
+
+  - repo: "petersen"
+    series: "synthesis"
+    stage: "stage_2_constructing"
+    version: "0.1.0"
+    metrics: { docsrc_rst: 0, folios: 0, svgs: 0, py_modules: 4 }
+    works:
+      - slug: "methods_and_theories"
+        title: "Methods and Theories for the Solution of Problems of Geometrical Constructions (410 Problems)"
+        author: "Julius Petersen"
+        year: "1866 / 1879"
+        languages: ["en"]
+    formats: ["web_codex", "epub3", "print_trade"]
+    derived_products:
+      - kind: "cards_collector"
+        title: "Petersen's Problem Deck: 100 Classic Locus, Rotation & Similitude Challenges"
+
+  # ---------------------------------------------------------------------------
+  # STAGE 1 — SEEDED ARCHIVAL TREATISES (5 REPOS)
+  # ---------------------------------------------------------------------------
+  - repo: "kepler"
+    series: "fontes"
+    stage: "stage_1_seed"
+    version: ""
+    metrics: { docsrc_rst: 0, folios: 0, svgs: 0, py_modules: 0 }
+    works:
+      - slug: "strena"
+        title: "Strena seu de Nive Sexangula (The Six-Cornered Snowflake: A New Year's Gift)"
+        author: "Johannes Kepler"
+        year: "1611"
+        languages: ["la", "en"]
+        notes: "Originally composed as a New Year's gift treatise on hexagonal sphere packing and crystal symmetry."
+      - slug: "mysterium_harmonices"
+        title: "Mysterium Cosmographicum (1596) & Harmonices Mundi (1619)"
+        author: "Johannes Kepler"
+        year: "1596 / 1619"
+        languages: ["la", "en"]
+    formats: ["web_codex", "epub3", "print_gift_hardcover", "print_quarto"]
+    derived_products:
+      - kind: "cards_greeting"
+        title: "De Nive Sexangula — Winter Solstice & New Year Snowflake Geometry Gift Cards + Chapbook"
+      - kind: "poster"
+        title: "Kepler's Nested Platonic Spheres & Semi-Regular Star Tilings"
+
+  - repo: "ptolemy"
+    series: "fontes"
+    stage: "stage_1_seed"
+    version: ""
+    metrics: { docsrc_rst: 0, folios: 2, svgs: 0, py_modules: 0 }
+    works:
+      - slug: "almagest_planisphaerium"
+        title: "Almagest (Book I Chord Table) & Planisphaerium (Geometry of the Astrolabe)"
+        author: "Claudius Ptolemy"
+        year: "c. 150 CE"
+        languages: ["grc", "en"]
+    formats: ["web_codex", "epub3", "print_quarto"]
+    derived_products:
+      - kind: "poster"
+        title: "Planisphaerium: Stereographic Astrolabe Rete & Tympan Construction Blueprint"
+
+  - repo: "klein"
+    series: "noetica"
+    stage: "stage_1_seed"
+    version: ""
+    metrics: { docsrc_rst: 0, folios: 0, svgs: 0, py_modules: 0 }
+    works:
+      - slug: "erlangen_elementary"
+        title: "The Erlangen Program (1872) & Famous Problems of Elementary Geometry (1895)"
+        author: "Felix Klein"
+        year: "1872 / 1895"
+        languages: ["de", "en"]
+    formats: ["web_codex", "epub3", "print_bilingual_de_en"]
+    derived_products: []
+
+  - repo: "ceva"
+    series: "fontes"
+    stage: "stage_1_seed"
+    version: ""
+    metrics: { docsrc_rst: 0, folios: 0, svgs: 0, py_modules: 1 }
+    works:
+      - slug: "de_lineis_rectis"
+        title: "De lineis rectis se invicem secantibus statica constructio"
+        author: "Giovanni Ceva"
+        year: "1678"
+        languages: ["la", "en"]
+    formats: ["web_codex", "epub3", "print_bilingual_la_en"]
+    derived_products: []
+
+  - repo: "trees"
+    series: "synthesis"
+    stage: "stage_1_seed"
+    version: ""
+    metrics: { docsrc_rst: 0, folios: 0, svgs: 0, py_modules: 0 }
+    works:
+      - slug: "stern_brocot_trees"
+        title: "Stern–Brocot Trees, Farey Sequences & Monotone Planar Graph Drawing"
+        author: "GEOMETOR"
+        year: "2026"
+        languages: ["en"]
+    formats: ["web_codex", "print_chapbook"]
+    derived_products:
+      - kind: "poster"
+        title: "Ford Circles & The Stern–Brocot Tree of All Positive Rationals"
+
+  # ---------------------------------------------------------------------------
+  # CORE SYMBOLIC ENGINE, PORTAL & MACHINE REASONING REPOS (7 REPOS)
+  # ---------------------------------------------------------------------------
+  - repo: "model"
+    series: "architectura"
+    stage: "engine"
+    version: "0.6.0"
+    metrics: { docsrc_rst: 39, folios: 0, svgs: 0, py_modules: 25 }
+    works:
+      - slug: "symbolic_manual"
+        title: "Exact Constructive Geometry in Python & SymPy: The GEOMETOR Model Handbook"
+        author: "GEOMETOR"
+        year: "2026"
+        languages: ["en"]
+    formats: ["web_codex", "epub3", "print_handbook"]
+    derived_products: []
+
+  - repo: "explorer"
+    series: "architectura"
+    stage: "engine"
+    version: "0.5.6"
+    metrics: { docsrc_rst: 25, folios: 0, svgs: 0, py_modules: 5 }
+    works: []
+    formats: ["app_pwa"]
+    derived_products:
+      - kind: "app"
+        title: "GEOMETOR Explorer — Symbolic Compass & Straightedge Workbench"
+
+  - repo: "geometor.com"
+    series: "architectura"
+    stage: "engine"
+    version: "0.2.0"
+    metrics: { docsrc_rst: 35, folios: 0, svgs: 5, py_modules: 1 }
+    works: []
+    formats: ["web_portal"]
+    derived_products:
+      - kind: "poster"
+        title: "From Two Points in an Empty Field (Vesica-to-Phi Colophon Broadside)"
+
+  - repo: "press"
+    series: "architectura"
+    stage: "engine"
+    version: "0.1.0"
+    metrics: { docsrc_rst: 9, folios: 0, svgs: 0, py_modules: 4 }
+    works:
+      - slug: "press_lookbook"
+        title: "GEOMETOR Press: Imprint Identity, Shelf Manifest & Parametric Object Studios"
+        author: "GEOMETOR"
+        year: "2026"
+        languages: ["en"]
+        notes: "Master catalog, 5-series spine & cover design system, 12 concept studies, and parametric SVG studios."
+    formats: ["web_codex", "app_pwa"]
+    derived_products: []
+
+  - repo: "seer"
+    series: "architectura"
+    stage: "engine"
+    version: "0.0.3"
+    metrics: { docsrc_rst: 17, folios: 0, svgs: 0, py_modules: 29 }
+    works: []
+    formats: ["web_docs"]
+    derived_products: []
+
+  - repo: "seer_navigator"
+    series: "architectura"
+    stage: "engine"
+    version: "0.0.1"
+    metrics: { docsrc_rst: 14, folios: 0, svgs: 0, py_modules: 23 }
+    works: []
+    formats: ["tui_app"]
+    derived_products: []
+
+  - repo: "seer_sessions"
+    series: "architectura"
+    stage: "engine"
+    version: "0.1.0"
+    metrics: { docsrc_rst: 18, folios: 0, svgs: 0, py_modules: 8 }
+    works:
+      - slug: "seer_observatory"
+        title: "Dreamer & Coder: Empirical Program Synthesis Across 8,514 Spatial Reasoning Runs"
+        author: "GEOMETOR"
+        year: "2026"
+        languages: ["en"]
+    formats: ["web_codex", "print_monograph"]
+    derived_products: []
+
+  # ---------------------------------------------------------------------------
+  # SIBLING IMPRINT CANDIDATE (PHI ARCHITECT)
+  # ---------------------------------------------------------------------------
+  - repo: "phiarchitect/GOR-9"
+    series: "sibling_imprint"
+    stage: "stage_4_codex_live"
+    version: "1.0.0"
+    metrics: { docsrc_rst: 0, folios: 0, svgs: 0, py_modules: 6 }
+    works:
+      - slug: "gor9_operator_manual"
+        title: "GOR-9 Operator's Ledger & Oort Sector 9 Astrometry Manual (14,285.7 kHz USB)"
+        author: "phi ARCHITECT"
+        year: "Epoch 254.310 PST"
+        languages: ["en"]
+    formats: ["web_consoles", "print_technical_manual", "app_pwa"]
+    derived_products:
+      - kind: "cards_collector"
+        title: "GOR-9 Deep-Space DX Physical QSL Collector Card Set (12 Trunk Outposts + Pirate Tugs)"
+      - kind: "poster"
+        title: "Oort Cloud Sector 9 Barycentric Flux-Duct Ring & Pulsar Time (PST) Wall Chart"
