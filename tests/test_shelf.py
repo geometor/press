@@ -17,7 +17,7 @@ from geometor.press.shelf import DEFAULT_RESOURCES_DIR
 
 def test_version() -> None:
     """Package exposes expected semantic version."""
-    assert __version__ == "0.1.0"
+    assert __version__ == "0.1.1"
 
 
 def test_load_shelf_yaml_and_json_parity() -> None:

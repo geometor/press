@@ -64,7 +64,6 @@ html_title = "GEOMETOR Press"
 blog_title = "GEOMETOR Press"
 project = "GEOMETOR Press"
 html_static_path: list[str] = ["_static"]
-html_logo = None
 autoapi_add_toctree_entry = False
 if "intro.rst" not in exclude_patterns:  # noqa: F405
     exclude_patterns.append("intro.rst")  # noqa: F405
