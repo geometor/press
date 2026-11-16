@@ -1,0 +1,801 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>GEOMETOR Press — Cards, Greeting Folios &amp; Broadside Posters Studio</title>
+  <style>
+    :root,
+    [data-theme="dark"] {
+      --bg: #111216;
+      --card: #181a20;
+      --panel: #20232b;
+      --fg: #ece6dc;
+      --muted: #a69f93;
+      --border: #2e323d;
+      --primary: #d4a64a;
+      --primary-fg: #14120e;
+      --secondary: #282c36;
+    }
+
+    [data-theme="light"] {
+      --bg: #f4efe6;
+      --card: #fbf8f2;
+      --panel: #eee8dc;
+      --fg: #1b1917;
+      --muted: #5f584e;
+      --border: #d6cdbe;
+      --primary: #8b3a3a;
+      --primary-fg: #fbf8f2;
+      --secondary: #e5decb;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      padding: 18px;
+      background: var(--bg);
+      color: var(--fg);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .serif-book {
+      font-family: "EB Garamond", Garamond, "Palatino Linotype", Palatino, Georgia, serif;
+    }
+
+    .container {
+      max-width: 1120px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+    }
+
+    .surface {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 18px 20px;
+      box-shadow: 0 10px 28px rgba(0, 0, 0, 0.2);
+    }
+
+    .row-between {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+    }
+
+    .btn-row {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 8px;
+    }
+
+    button {
+      appearance: none;
+      background: var(--panel);
+      color: var(--fg);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 7px 12px;
+      font-size: 12px;
+      font-weight: 500;
+      cursor: pointer;
+      transition: all 0.15s ease;
+    }
+
+    button:hover {
+      border-color: var(--primary);
+    }
+
+    button.active,
+    button.cta {
+      background: var(--primary);
+      color: var(--primary-fg);
+      border-color: var(--primary);
+      font-weight: 600;
+    }
+
+    button.selected {
+      background: var(--secondary);
+      border-color: var(--primary);
+      font-weight: 600;
+    }
+
+    code {
+      padding: 1px 5px;
+      border-radius: 4px;
+      background: var(--panel);
+      font-size: 11.5px;
+    }
+
+    .deck-layout {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 18px;
+      align-items: center;
+    }
+
+    @media (min-width: 920px) {
+      .deck-layout {
+        grid-template-columns: 7fr 5fr;
+      }
+    }
+
+    .cards-stage {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+      gap: 28px;
+      padding: 8px 0;
+    }
+
+    .card-col {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .caption {
+      font-size: 12px;
+      color: var(--muted);
+      font-weight: 500;
+    }
+
+    .perspective-1000 {
+      perspective: 1200px;
+      cursor: pointer;
+    }
+
+    .flip-inner {
+      position: relative;
+      width: 264px;
+      height: 456px;
+      transition: transform 0.65s cubic-bezier(0.22, 1, 0.36, 1);
+      transform-style: preserve-3d;
+    }
+
+    .flip-inner.is-flipped {
+      transform: rotateY(180deg);
+    }
+
+    .flip-face {
+      position: absolute;
+      inset: 0;
+      backface-visibility: hidden;
+      -webkit-backface-visibility: hidden;
+    }
+
+    .flip-back {
+      transform: rotateY(180deg);
+    }
+
+    .card-elev {
+      border-radius: 16px;
+      box-shadow:
+        0 22px 44px -12px rgba(0, 0, 0, 0.42),
+        0 4px 12px -2px rgba(0, 0, 0, 0.2);
+    }
+
+    .greetings-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 18px;
+    }
+
+    .poster-layout {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 18px;
+      align-items: start;
+    }
+
+    @media (min-width: 920px) {
+      .poster-layout {
+        grid-template-columns: 8fr 4fr;
+      }
+    }
+
+    .badge {
+      display: inline-block;
+      padding: 4px 9px;
+      border-radius: 5px;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+
+    .muted-p {
+      margin: 6px 0 0;
+      font-size: 12.5px;
+      color: var(--muted);
+      line-height: 1.55;
+    }
+
+    .spec-list {
+      border-top: 1px solid var(--border);
+      margin-top: 12px;
+      padding-top: 12px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      font-size: 12px;
+      color: var(--muted);
+      line-height: 1.5;
+    }
+
+    .spec-list strong {
+      color: var(--fg);
+    }
+
+    .hidden {
+      display: none !important;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <!-- Top Header & Mode Switcher -->
+    <div class="surface">
+      <div class="row-between">
+        <div>
+          <h1 style="margin:0; font-size:19px" class="serif-book">
+            GEOMETOR Press — Cards, Stationery &amp; Broadside Studio
+          </h1>
+          <p class="muted-p">
+            Symbolic models in <code>divine</code>, <code>etc</code>, <code>elements</code>, <code>pacioli</code>, <code>kepler</code> &amp; <code>feuerbach</code> compile directly into tactile collector objects.
+          </p>
+        </div>
+
+        <div class="btn-row">
+          <button id="tab-cards" onclick="setTab('cards')">Collector Card Decks (3D Flip)</button>
+          <button id="tab-greetings" onclick="setTab('greetings')">Greeting &amp; Note Cards</button>
+          <button id="tab-posters" onclick="setTab('posters')">Museum Broadside Posters</button>
+          <button onclick="toggleTheme()" title="Toggle Studio Light/Dark">◐ Theme</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- TAB 1: COLLECTOR & STUDY CARD DECKS -->
+    <div id="panel-cards" style="display:flex; flex-direction:column; gap:16px;">
+      <div class="surface row-between">
+        <div class="btn-row" id="deck-pills"></div>
+        <div class="btn-row">
+          <button class="cta" onclick="flipActiveCard()">↻ Flip Study Card (Face ↔ Proof Back)</button>
+          <button onclick="exportCardSVG()">↓ Export Card SVG</button>
+        </div>
+      </div>
+
+      <div class="deck-layout">
+        <div class="surface cards-stage">
+          <div class="card-col">
+            <span class="caption">Common Foil Sleeve Back</span>
+            <div id="deck-back-mount"></div>
+          </div>
+
+          <div class="card-col">
+            <span class="caption">Click Card to Flip Face ↔ Reverse</span>
+            <div class="perspective-1000" onclick="flipActiveCard()">
+              <div id="flip-card-inner" class="flip-inner">
+                <div id="card-front-mount" class="flip-face"></div>
+                <div id="card-back-mount" class="flip-face flip-back"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="surface">
+          <div id="deck-spec-badge" class="badge"></div>
+          <h2 id="deck-spec-title" class="serif-book" style="margin:10px 0 4px; font-size:18px;"></h2>
+          <p id="deck-spec-desc" class="muted-p"></p>
+          <div class="spec-list">
+            <div><strong>Trim &amp; Stock:</strong> Tarot/Monograph <code>2.75" × 4.75" (70 × 120 mm)</code>, 330gsm black-core linen stock + cold gold foil.</div>
+            <div><strong>Front Face Architecture:</strong> Uncluttered museum diagram with catalog index, family suit glyph, and 3-tier stroke hierarchy.</div>
+            <div><strong>Reverse Side Architecture:</strong> Self-contained reference card—exact algebraic field, step-by-step construction or trilinear/barycentric coordinates, Lemoine simplicity, and shortlink to the live Web Codex.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- TAB 2: FOLDED GREETING & SEASONAL NOTE CARDS -->
+    <div id="panel-greetings" class="hidden">
+      <div class="greetings-grid" id="greetings-mount"></div>
+    </div>
+
+    <!-- TAB 3: MUSEUM BROADSIDE POSTERS -->
+    <div id="panel-posters" class="hidden" style="display:flex; flex-direction:column; gap:16px;">
+      <div class="surface row-between">
+        <div class="btn-row" id="poster-pills"></div>
+        <div class="btn-row">
+          <span class="caption">24″ × 36″ Archival Cotton Rag · Vector Master</span>
+          <button onclick="exportPosterSVG()">↓ Export Poster SVG</button>
+        </div>
+      </div>
+      <div class="poster-layout">
+        <div class="surface" style="display:flex; justify-content:center;" id="poster-mount"></div>
+        <div class="surface" id="poster-spec"></div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const DECKS = [
+      {
+        id: "golden",
+        pill: "The Golden Deck (divine · 52 Cards)",
+        badge: "52-CARD DECK · 45 CONSTRUCTIONS + 7 FAMILIES",
+        accent: "#C89632",
+        backBg: "#161619",
+        title: "The Golden Deck — 45 Exact Pathways to φ",
+        desc: "Every card in geometor/divine's 7 geometric families becomes a collectible study card: 45 certified exact constructions + 7 family key cards = a standard 52-card sheet (+ 2 colophon/index cards).",
+        cardCode: "GC · 02.01",
+        suitName: "FAMILY II · EQUILATERAL",
+        cardTitle: "GEORGE ODOM",
+        cardSub: "Equilateral Midline Section (1983)",
+        frontSVG: () => `
+          <g transform="translate(132, 224)">
+            <circle cx="0" cy="-10" r="88" fill="none" stroke="#1E1C1A" stroke-width="1.5"/>
+            <polygon points="0,78 -76.2,-54 76.2,-54" fill="rgba(200,150,50,0.12)" stroke="#1E1C1A" stroke-width="1.3"/>
+            <line x1="-88" y1="12" x2="88" y2="12" stroke="rgba(30,28,26,0.35)" stroke-width="1" stroke-dasharray="3 3"/>
+            <line x1="-38.1" y1="12" x2="38.1" y2="12" stroke="#1E1C1A" stroke-width="2.4"/>
+            <line x1="38.1" y1="12" x2="85.2" y2="12" stroke="#C89632" stroke-width="2.8"/>
+            <circle cx="-38.1" cy="12" r="3.2" fill="#1E1C1A"/>
+            <circle cx="38.1" cy="12" r="3.2" fill="#1E1C1A"/>
+            <circle cx="85.2" cy="12" r="3.8" fill="#C89632"/>
+            <circle cx="0" cy="78" r="2.6" fill="#1E1C1A"/>
+            <circle cx="-76.2" cy="-54" r="2.6" fill="#1E1C1A"/>
+            <circle cx="76.2" cy="-54" r="2.6" fill="#1E1C1A"/>
+          </g>`,
+        backData: {
+          field: "ℚ(√5) · Quadrance Ratio Q_AB : Q_BG = φ + 1",
+          metric: "Lemoine Simplicity S = 13 · Exactitude E = 8",
+          steps: [
+            "1. Construct equilateral frame △DPQ of side 2.",
+            "2. Sweep circumcircle (O, D) about centroid O.",
+            "3. Join midpoints A, B of sides DP and DQ.",
+            "4. Extend ray [AB] to meet (O, D) at G.",
+            "∴ |AG| / |AB| = |AB| / |BG| = φ = (1 + √5)/2."
+          ],
+          footer: "geometor.com/divine/GC-02.01"
+        }
+      },
+      {
+        id: "etc",
+        pill: "Triangle Centers Deck (etc · 54 Cards)",
+        badge: "54-CARD DECK · SERIES I CLASSIC CENTERS",
+        accent: "#2B6598",
+        backBg: "#132334",
+        title: "Centers of the Triangle — Series I (The Classic 54)",
+        desc: "Curated from 4,000+ compiled symbolic centers in geometor/etc: X(1) Incenter through Feuerbach X(11), Fermat X(13), Napoleon, Gergonne, Nagel, Lemoine, Brocard & Golden Centers.",
+        cardCode: "ETC · X(11)",
+        suitName: "TANGENCY & NINE-POINT",
+        cardTitle: "FEUERBACH POINT",
+        cardSub: "Karl Wilhelm Feuerbach (1822)",
+        frontSVG: () => `
+          <g transform="translate(132, 228)">
+            <circle cx="0" cy="-4" r="84" fill="none" stroke="rgba(30,28,26,0.32)" stroke-width="1.1" stroke-dasharray="3 3"/>
+            <polygon points="-74,40 80,40 -16,-84" fill="none" stroke="#1E1C1A" stroke-width="1.65"/>
+            <circle cx="-3" cy="9.5" r="38" fill="rgba(43,101,152,0.10)" stroke="#1E1C1A" stroke-width="1.35"/>
+            <circle cx="-6" cy="-15.5" r="42" fill="none" stroke="#2B6598" stroke-width="2.2"/>
+            <circle cx="-3" cy="9.5" r="2.6" fill="#1E1C1A"/>
+            <circle cx="-6" cy="-15.5" r="2.8" fill="#2B6598"/>
+            <circle cx="-1.5" cy="-28.5" r="4.4" fill="#C84B31"/>
+          </g>`,
+        backData: {
+          field: "Trilinears: 1 − cos(B − C) : 1 − cos(C − A) : 1 − cos(A − B)",
+          metric: "Barycentrics: (s − a)(b − c)² : (s − b)(c − a)² : (s − c)(a − b)²",
+          steps: [
+            "• Point of internal tangency between the Incircle (X₁) and the Nine-Point Circle (X₅).",
+            "• Lies on the circumcircle of the intouch triangle and pedal circle of X₁, X₅.",
+            "• Collinear with Incenter X(1) and Nine-Point Center X(5): X₁₁ = X₁X₅ ∩ Incircle."
+          ],
+          footer: "geometor.com/etc/X11"
+        }
+      },
+      {
+        id: "pacioli",
+        pill: "Leonardo's 60 Polyhedra (pacioli · 60 Cards)",
+        badge: "60-CARD RENAISSANCE DECK · SOLIDUS & VACUUS",
+        accent: "#B54838",
+        backBg: "#241715",
+        title: "Leonardo's Sixty Solids — De Divina Proportione (1509)",
+        desc: "30 matched pairs (Solidus & Vacuus) from Luca Pacioli & Leonardo da Vinci's 1509 Venice woodcuts, backed by exact Q(φ) vertex algebra, duals, and Schläfli symbols.",
+        cardCode: "TABULA · XXVI",
+        suitName: "CORPORA REGULARIA",
+        cardTitle: "ICOSAHEDRON VACUUM",
+        cardSub: "Twenty Equilateral Faces · 12 Golden Vertices",
+        frontSVG: () => {
+          const out = Array.from({ length: 6 }, (_, i) => {
+            const a = -Math.PI / 2 + (i * Math.PI) / 3;
+            return [82 * Math.cos(a), 82 * Math.sin(a)];
+          });
+          const inn = Array.from({ length: 6 }, (_, i) => {
+            const a = -Math.PI / 2 + (i * Math.PI) / 3;
+            return [46 * Math.cos(a + Math.PI / 6), 46 * Math.sin(a + Math.PI / 6)];
+          });
+          let lines = "";
+          for (let i = 0; i < 6; i++) {
+            const n = (i + 1) % 6;
+            lines += `<line x1="${out[i][0].toFixed(1)}" y1="${out[i][1].toFixed(1)}" x2="${out[n][0].toFixed(1)}" y2="${out[n][1].toFixed(1)}" stroke="#1E1C1A" stroke-width="1.8"/>`;
+            lines += `<line x1="${out[i][0].toFixed(1)}" y1="${out[i][1].toFixed(1)}" x2="${inn[i][0].toFixed(1)}" y2="${inn[i][1].toFixed(1)}" stroke="#B54838" stroke-width="1.5"/>`;
+            lines += `<line x1="${out[n][0].toFixed(1)}" y1="${out[n][1].toFixed(1)}" x2="${inn[i][0].toFixed(1)}" y2="${inn[i][1].toFixed(1)}" stroke="#1E1C1A" stroke-width="1.2"/>`;
+            lines += `<line x1="${inn[i][0].toFixed(1)}" y1="${inn[i][1].toFixed(1)}" x2="${inn[n][0].toFixed(1)}" y2="${inn[n][1].toFixed(1)}" stroke="#B54838" stroke-width="1.7"/>`;
+          }
+          return `<g transform="translate(132, 224)"><circle cx="0" cy="0" r="82" fill="rgba(181,72,56,0.08)" stroke="rgba(30,28,26,0.28)" stroke-dasharray="3 3"/>${lines}</g>`;
+        },
+        backData: {
+          field: "Schläfli {3, 5} · V = 12, E = 30, F = 20 · Symmetry I_h",
+          metric: "Vertices: Cyclic permutations of (0, ±1, ±φ)",
+          steps: [
+            "• Three mutually orthogonal Golden Rectangles of sides 2 × 2φ span all 12 vertices.",
+            "• Plato's cosmic element of Water (Timaeus 55b).",
+            "• Dual to the Regular Dodecahedron {5, 3} (Tabula XXIX)."
+          ],
+          footer: "geometor.com/pacioli/tabula-26"
+        }
+      }
+    ];
+
+    const GREETINGS = [
+      {
+        title: "De Nive Sexangula (1611)",
+        occasion: "Winter Solstice & New Year Gift Card",
+        source: "geometor/kepler",
+        note: "Kepler literally wrote The Six-Cornered Snowflake as a New Year's gift ('Strena') pondering why snow crystals always branch at 60°.",
+        bg: "#131F36",
+        ink: "#E8DFC8",
+        accent: "#D9B359",
+        sub: "KEPLER · STRENA MDCXI",
+        svg: () => {
+          let g = `<circle cx="0" cy="0" r="18" fill="none" stroke="#D9B359" stroke-width="1.4"/>`;
+          for (let i = 0; i < 6; i++) {
+            const a = (i * Math.PI) / 3;
+            const cx = 36 * Math.cos(a), cy = 36 * Math.sin(a);
+            g += `<circle cx="${cx.toFixed(1)}" cy="${cy.toFixed(1)}" r="18" fill="none" stroke="rgba(232,223,200,0.65)" stroke-width="1.15"/>`;
+            const x2 = 64 * Math.cos(a), y2 = 64 * Math.sin(a);
+            g += `<line x1="0" y1="0" x2="${x2.toFixed(1)}" y2="${y2.toFixed(1)}" stroke="#D9B359" stroke-width="1.5"/>`;
+            const b1 = a - Math.PI / 6, b2 = a + Math.PI / 6;
+            const bx = 42 * Math.cos(a), by = 42 * Math.sin(a);
+            g += `<line x1="${bx.toFixed(1)}" y1="${by.toFixed(1)}" x2="${(bx + 15 * Math.cos(b1)).toFixed(1)}" y2="${(by + 15 * Math.sin(b1)).toFixed(1)}" stroke="#D9B359" stroke-width="1.2"/>`;
+            g += `<line x1="${bx.toFixed(1)}" y1="${by.toFixed(1)}" x2="${(bx + 15 * Math.cos(b2)).toFixed(1)}" y2="${(by + 15 * Math.sin(b2)).toFixed(1)}" stroke="#D9B359" stroke-width="1.2"/>`;
+          }
+          return `<g transform="translate(120, 145)">${g}</g>`;
+        }
+      },
+      {
+        title: "Feuerbach's Kiss (1822)",
+        occasion: "Anniversary, Wedding & Gratitude Note Card",
+        source: "geometor/feuerbach & etc",
+        note: "The Nine-Point Circle internally kisses the incircle and externally kisses all three excircles—pure geometric harmony.",
+        bg: "#F6F1E7",
+        ink: "#221E1B",
+        accent: "#B84735",
+        sub: "FEUERBACH'S TANGENCY · 1822",
+        svg: () => `
+          <g transform="translate(120, 148)">
+            <polygon points="-58,34 62,34 -12,-66" fill="none" stroke="#221E1B" stroke-width="1.5"/>
+            <circle cx="-2" cy="8" r="29.5" fill="rgba(184,71,53,0.08)" stroke="#221E1B" stroke-width="1.25"/>
+            <circle cx="-4.5" cy="-12" r="33" fill="none" stroke="#B84735" stroke-width="2"/>
+            <circle cx="-1" cy="-22" r="3.8" fill="#B84735"/>
+          </g>`
+      },
+      {
+        title: "Golden Meristem (137.5°)",
+        occasion: "All-Occasion Botanical Blank Art Card",
+        source: "geometor/phyllotaxis",
+        note: "Primordia diverging at the exact Golden Angle 2π(1 − 1/φ) unfold 13- and 21-spiral Fibonacci parastichies.",
+        bg: "#192922",
+        ink: "#EAE3D2",
+        accent: "#7CD49E",
+        sub: "PHYLLOTAXIS · 137.50776°",
+        svg: () => {
+          const ga = 2.39996323;
+          let dots = "";
+          for (let n = 1; n <= 68; n++) {
+            const r = 7.4 * Math.sqrt(n);
+            const a = n * ga;
+            const rad = 1.4 + (n / 68) * 1.9;
+            const hi = n % 8 === 0 || n % 13 === 0;
+            dots += `<circle cx="${(r * Math.cos(a)).toFixed(1)}" cy="${(r * Math.sin(a)).toFixed(1)}" r="${rad.toFixed(1)}" fill="${hi ? "#7CD49E" : "#EAE3D2"}" opacity="${hi ? 1 : 0.72}"/>`;
+          }
+          return `<g transform="translate(120, 145)">${dots}</g>`;
+        }
+      }
+    ];
+
+    const POSTERS = [
+      {
+        id: "dag",
+        pill: "The Deductive Spine (elements · G.1–G.601)",
+        title: "The Deductive Spine of Euclid — G.1 to G.601",
+        source: "geometor/elements & geometor.com",
+        desc: "Museum-grade 24″ × 36″ nocturnal broadside pairing the Vesica-to-Phi unfolding with the complete stratified dependency graph from Book I Definitions & Postulates up to the five Platonic Solids of Book XIII.",
+        bg: "#151518",
+        fg: "#EBE3D5",
+        accent: "#D9AE52",
+        draw: () => {
+          let layers = "";
+          const rows = [7, 12, 18, 22, 16, 11, 5];
+          const y0 = 265;
+          let prevPts = [];
+          rows.forEach((cnt, rIdx) => {
+            const y = y0 + rIdx * 34;
+            const curPts = [];
+            for (let i = 0; i < cnt; i++) {
+              const x = 65 + (270 / (cnt + 1)) * (i + 1);
+              curPts.push([x, y]);
+              if (prevPts.length) {
+                const p1 = prevPts[i % prevPts.length];
+                const p2 = prevPts[(i * 2 + 1) % prevPts.length];
+                layers += `<line x1="${p1[0].toFixed(1)}" y1="${p1[1]}" x2="${x.toFixed(1)}" y2="${y}" stroke="rgba(217,174,82,0.22)" stroke-width="0.7"/>`;
+                layers += `<line x1="${p2[0].toFixed(1)}" y1="${p2[1]}" x2="${x.toFixed(1)}" y2="${y}" stroke="rgba(235,227,213,0.14)" stroke-width="0.6"/>`;
+              }
+            }
+            curPts.forEach(([x, py], idx) => {
+              const gold = rIdx === 6 || (rIdx + idx) % 4 === 0;
+              layers += `<circle cx="${x.toFixed(1)}" cy="${py}" r="${rIdx === 6 ? 3.2 : 2}" fill="${gold ? "#D9AE52" : "#EBE3D5"}"/>`;
+            });
+            prevPts = curPts;
+          });
+          return `
+            <circle cx="200" cy="145" r="68" fill="none" stroke="#D9AE52" stroke-width="1.2"/>
+            <circle cx="172" cy="162" r="56" fill="none" stroke="rgba(235,227,213,0.5)" stroke-width="1"/>
+            <circle cx="228" cy="162" r="56" fill="none" stroke="rgba(235,227,213,0.5)" stroke-width="1"/>
+            <polygon points="172,162 228,162 200,113.5" fill="rgba(217,174,82,0.14)" stroke="#D9AE52" stroke-width="1.6"/>
+            <line x1="120" y1="162" x2="280" y2="162" stroke="#D9AE52" stroke-width="1.2"/>
+            ${layers}`;
+        }
+      },
+      {
+        id: "byrne",
+        pill: "Polychrome Elements Grid (byrne · 1847)",
+        title: "Polychrome Euclid — Books I–VI Visual Proof Matrix",
+        source: "geometor/byrne",
+        desc: "Inspired by Oliver Byrne's 1847 Pickering edition and c82's wall charts—rendered directly from GEOMETOR's exact symbolic color-token SVGs on heavy archival ivory rag.",
+        bg: "#F6F1E6",
+        fg: "#1D1B18",
+        accent: "#D13B2E",
+        draw: () => {
+          const reds = "#D13B2E", blues = "#1E5B94", yellows = "#E3A72F", blk = "#1D1B18";
+          let cells = "";
+          for (let r = 0; r < 5; r++) {
+            for (let c = 0; c < 4; c++) {
+              const cx = 80 + c * 80;
+              const cy = 105 + r * 76;
+              const idx = r * 4 + c;
+              cells += `<g transform="translate(${cx}, ${cy})">`;
+              if (idx % 4 === 0) {
+                cells += `<polygon points="-20,16 20,16 0,-18" fill="${reds}"/><circle cx="0" cy="4" r="22" fill="none" stroke="${blk}" stroke-width="1.3"/>`;
+              } else if (idx % 4 === 1) {
+                cells += `<rect x="-18" y="-4" width="22" height="22" fill="${blues}"/><polygon points="-18,-4 4,-4 -7,-20" fill="${blk}"/><rect x="4" y="-16" width="16" height="16" fill="${yellows}"/>`;
+              } else if (idx % 4 === 2) {
+                cells += `<circle cx="0" cy="0" r="21" fill="none" stroke="${blk}" stroke-width="1.3"/><polygon points="-18,10 18,10 6,-19" fill="${yellows}"/><polygon points="-18,10 6,-19 -16,-12" fill="${reds}"/>`;
+              } else {
+                cells += `<rect x="-20" y="-18" width="40" height="36" fill="none" stroke="${blk}" stroke-width="1.3"/><polygon points="-20,18 20,18 -20,-18" fill="${blues}"/><polygon points="20,18 20,-18 -4,-18" fill="${reds}"/>`;
+              }
+              cells += `</g>`;
+            }
+          }
+          return cells;
+        }
+      },
+      {
+        id: "etc_chart",
+        pill: "Four-Triangle Centers Blueprint (etc)",
+        title: "Four Reference Triangles — Comparative Center Atlas",
+        source: "geometor/etc",
+        desc: "Shows invariance and movement of Incenter, Centroid, Circumcenter, Orthocenter, Euler Line, and Nine-Point Circle across GEOMETOR's 4 canonical triangles: Acute (5,6,7), Egyptian Right (3,4,5), Kepler Golden (1,√φ,φ), and Kimberling (6,9,13).",
+        bg: "#16324F",
+        fg: "#F0EAE0",
+        accent: "#E5B95C",
+        draw: () => {
+          const specs = [
+            { x: 122, y: 165, label: "ACUTE (5, 6, 7)", pts: "-48,32 52,32 4,-48", ic: [2, 8, 24], np: [3, -6, 27] },
+            { x: 278, y: 165, label: "EGYPTIAN (3, 4, 5)", pts: "-46,34 48,34 -46,-42", ic: [-18, 8, 22], np: [-10, -4, 29] },
+            { x: 122, y: 345, label: "KEPLER (1, √φ, φ)", pts: "-44,36 44,36 -44,-46", ic: [-17, 9, 22], np: [-9, -5, 31] },
+            { x: 278, y: 345, label: "KIMBERLING (6, 9, 13)", pts: "-52,32 56,32 -28,-38", ic: [-12, 12, 18], np: [-4, -4, 28] }
+          ];
+          return specs.map((s) => `
+            <g transform="translate(${s.x}, ${s.y})">
+              <circle cx="0" cy="-2" r="58" fill="none" stroke="rgba(240,234,224,0.35)" stroke-width="1"/>
+              <polygon points="${s.pts}" fill="none" stroke="#F0EAE0" stroke-width="1.6"/>
+              <circle cx="${s.ic[0]}" cy="${s.ic[1]}" r="${s.ic[2]}" fill="rgba(229,185,92,0.12)" stroke="#F0EAE0" stroke-width="1.1"/>
+              <circle cx="${s.np[0]}" cy="${s.np[1]}" r="${s.np[2]}" fill="none" stroke="#E5B95C" stroke-width="1.8"/>
+              <line x1="-35" y1="-28" x2="32" y2="24" stroke="#E5B95C" stroke-width="1" stroke-dasharray="3 2"/>
+              <text x="0" y="74" text-anchor="middle" fill="#F0EAE0" font-family="EB Garamond, Georgia, serif" font-size="8.5" letter-spacing="1.4">${s.label}</text>
+            </g>`).join("");
+        }
+      }
+    ];
+
+    let state = { tab: "cards", deckId: "golden", flipped: false, posterId: "dag", theme: "dark" };
+
+    function renderDeckBack(deck) {
+      let petals = "";
+      for (let i = 0; i < 6; i++) {
+        petals += `<ellipse cx="0" cy="0" rx="26" ry="74" fill="none" stroke="#D6AB54" stroke-width="0.95" transform="rotate(${i * 30})"/>`;
+      }
+      return `
+        <svg xmlns="http://www.w3.org/2000/svg" width="264" height="456" viewBox="0 0 264 456" class="card-elev">
+          <rect x="0" y="0" width="264" height="456" rx="16" fill="${deck.backBg}"/>
+          <rect x="14" y="14" width="236" height="428" rx="10" fill="none" stroke="#D6AB54" stroke-width="1.2"/>
+          <rect x="19" y="19" width="226" height="418" rx="7" fill="none" stroke="rgba(214,171,84,0.45)" stroke-width="0.75"/>
+          <g transform="translate(132, 228)">
+            <circle cx="0" cy="0" r="76" fill="none" stroke="#D6AB54" stroke-width="1.3"/>
+            <circle cx="0" cy="0" r="38" fill="none" stroke="#D6AB54" stroke-width="1"/>
+            ${petals}
+            <line x1="0" y1="-112" x2="0" y2="112" stroke="#D6AB54" stroke-width="1.1"/>
+          </g>
+          <text x="132" y="46" text-anchor="middle" fill="#D6AB54" font-family="EB Garamond, Georgia, serif" font-size="9" letter-spacing="2.4">GEOMETOR PRESS</text>
+          <text x="132" y="418" text-anchor="middle" fill="#D6AB54" font-family="EB Garamond, Georgia, serif" font-size="9" letter-spacing="2.4">EXACT SYMBOLIC EDITION</text>
+        </svg>`;
+    }
+
+    function renderCardFront(deck) {
+      return `<svg xmlns="http://www.w3.org/2000/svg" width="264" height="456" viewBox="0 0 264 456" class="card-elev">
+        <rect x="0" y="0" width="264" height="456" rx="16" fill="#F6F1E7"/>
+        <rect x="12" y="12" width="240" height="432" rx="10" fill="none" stroke="#221F1C" stroke-width="1.2"/>
+        <path d="M 13 22 Q 13 13 22 13 L 242 13 Q 251 13 251 22 L 251 48 L 13 48 Z" fill="#1E1C1A"/>
+        <text x="26" y="35" fill="#F6F1E7" font-family="monospace" font-size="10.5" font-weight="600">${deck.cardCode}</text>
+        <text x="238" y="34" text-anchor="end" fill="${deck.accent}" font-family="EB Garamond, Georgia, serif" font-size="9" letter-spacing="1.4">${deck.suitName}</text>
+        ${deck.frontSVG()}
+        <line x1="28" y1="366" x2="236" y2="366" stroke="rgba(34,31,28,0.28)" stroke-width="0.9"/>
+        <text x="132" y="392" text-anchor="middle" fill="#181614" font-family="EB Garamond, Georgia, serif" font-size="17" letter-spacing="1.8" font-weight="600">${deck.cardTitle}</text>
+        <text x="132" y="412" text-anchor="middle" fill="#544E46" font-family="EB Garamond, Georgia, serif" font-style="italic" font-size="12">${deck.cardSub}</text>
+        <text x="132" y="432" text-anchor="middle" fill="${deck.accent}" font-family="EB Garamond, Georgia, serif" font-size="8.5" letter-spacing="2">GEOMETOR PRESS</text>
+      </svg>`;
+    }
+
+    function renderCardBackInfo(deck) {
+      const stepsHTML = deck.backData.steps.map((s) => `<li style="line-height:1.38; margin-bottom:5px;">${s}</li>`).join("");
+      return `
+        <div class="card-elev" style="width:100%; height:100%; padding:18px; display:flex; flex-direction:column; justify-content:space-between; background:#F6F1E7; color:#1E1C1A; border:1px solid #2A2622;">
+          <div>
+            <div style="display:flex; justify-content:space-between; align-items:center; border-bottom:1px solid rgba(30,28,26,0.2); padding-bottom:7px;">
+              <span style="font-family:monospace; font-size:12px; font-weight:700;">${deck.cardCode}</span>
+              <span class="serif-book" style="font-size:11px; letter-spacing:0.08em; font-weight:600; color:${deck.accent}">PROOF &amp; INVARIANTS</span>
+            </div>
+            <div style="margin-top:9px;">
+              <div class="serif-book" style="font-weight:700; font-size:15.5px;">${deck.cardTitle}</div>
+              <div style="font-size:11.5px; font-style:italic; color:#5A534A;">${deck.cardSub}</div>
+            </div>
+            <div style="margin-top:9px; padding:9px; border-radius:6px; background:rgba(30,28,26,0.06); font-size:11.5px;">
+              <div style="font-weight:600; color:${deck.accent}">${deck.backData.field}</div>
+              <div style="color:#433E37; margin-top:3px;">${deck.backData.metric}</div>
+            </div>
+            <ul style="list-style:none; padding:0; margin:10px 0 0; font-size:11.5px; color:#262320;">
+              ${stepsHTML}
+            </ul>
+          </div>
+          <div style="padding-top:8px; border-top:1px solid rgba(30,28,26,0.2); display:flex; justify-content:space-between; font-size:11px; font-family:monospace; color:#5A534A;">
+            <span>${deck.backData.footer}</span>
+            <span>◐ ◑</span>
+          </div>
+        </div>`;
+    }
+
+    function buildPosterSVG(p) {
+      return `<svg xmlns="http://www.w3.org/2000/svg" width="400" height="580" viewBox="0 0 400 580">
+        <rect x="0" y="0" width="400" height="580" fill="${p.bg}"/>
+        <rect x="20" y="20" width="360" height="540" fill="none" stroke="${p.fg}" stroke-opacity="0.35" stroke-width="1"/>
+        <text x="200" y="52" text-anchor="middle" fill="${p.fg}" font-family="EB Garamond, Georgia, serif" font-size="16" letter-spacing="3.2">${p.title.split("—")[0].trim().toUpperCase()}</text>
+        ${p.draw()}
+        <line x1="60" y1="518" x2="340" y2="518" stroke="${p.fg}" stroke-opacity="0.3" stroke-width="0.8"/>
+        <text x="200" y="542" text-anchor="middle" fill="${p.accent}" font-family="EB Garamond, Georgia, serif" font-size="10.5" letter-spacing="3">GEOMETOR PRESS · ARCHIVAL BROADSIDE</text>
+      </svg>`;
+    }
+
+    function renderAll() {
+      ["cards", "greetings", "posters"].forEach((t) => {
+        document.getElementById("tab-" + t).classList.toggle("active", state.tab === t);
+        document.getElementById("panel-" + t).classList.toggle("hidden", state.tab !== t);
+      });
+
+      if (state.tab === "cards") {
+        const deck = DECKS.find((d) => d.id === state.deckId) || DECKS[0];
+        document.getElementById("deck-pills").innerHTML = DECKS.map((d) => `
+          <button onclick="selectDeck('${d.id}')" class="${d.id === state.deckId ? "selected" : ""}">${d.pill}</button>
+        `).join("");
+
+        document.getElementById("deck-back-mount").innerHTML = renderDeckBack(deck);
+        document.getElementById("card-front-mount").innerHTML = renderCardFront(deck);
+        document.getElementById("card-back-mount").innerHTML = renderCardBackInfo(deck);
+        document.getElementById("flip-card-inner").classList.toggle("is-flipped", state.flipped);
+
+        const badge = document.getElementById("deck-spec-badge");
+        badge.textContent = deck.badge;
+        badge.style.backgroundColor = deck.accent + "24";
+        badge.style.color = deck.accent;
+        badge.style.border = `1px solid ${deck.accent}66`;
+
+        document.getElementById("deck-spec-title").textContent = deck.title;
+        document.getElementById("deck-spec-desc").textContent = deck.desc;
+      }
+
+      if (state.tab === "greetings") {
+        document.getElementById("greetings-mount").innerHTML = GREETINGS.map((g) => `
+          <div class="surface" style="display:flex; flex-direction:column; align-items:center; gap:14px;">
+            <svg xmlns="http://www.w3.org/2000/svg" width="240" height="336" viewBox="0 0 240 336" style="border-radius:4px;" class="card-elev">
+              <rect x="0" y="0" width="240" height="336" fill="${g.bg}"/>
+              <rect x="14" y="14" width="212" height="308" fill="none" stroke="${g.accent}" stroke-width="0.9" opacity="0.7"/>
+              ${g.svg()}
+              <text x="120" y="276" text-anchor="middle" fill="${g.ink}" font-family="EB Garamond, Georgia, serif" font-size="11" letter-spacing="2.2">${g.sub}</text>
+              <text x="120" y="304" text-anchor="middle" fill="${g.accent}" font-family="EB Garamond, Georgia, serif" font-size="8" letter-spacing="2">GEOMETOR PRESS</text>
+            </svg>
+            <div style="width:100%">
+              <div style="font-size:11px; font-weight:600; text-transform:uppercase; letter-spacing:0.06em; color:var(--muted);">${g.occasion}</div>
+              <h3 class="serif-book" style="margin:4px 0; font-size:17px;">${g.title}</h3>
+              <p class="muted-p">${g.note}</p>
+            </div>
+          </div>
+        `).join("");
+      }
+
+      if (state.tab === "posters") {
+        const p = POSTERS.find((x) => x.id === state.posterId) || POSTERS[0];
+        document.getElementById("poster-pills").innerHTML = POSTERS.map((x) => `
+          <button onclick="selectPoster('${x.id}')" class="${x.id === state.posterId ? "selected" : ""}">${x.pill}</button>
+        `).join("");
+
+        document.getElementById("poster-mount").innerHTML = `
+          <div style="padding:12px; background:#0d0d10; border-radius:6px; box-shadow:0 22px 44px rgba(0,0,0,0.45);">
+            ${buildPosterSVG(p)}
+          </div>`;
+
+        document.getElementById("poster-spec").innerHTML = `
+          <h3 class="serif-book" style="margin:0; font-size:19px;">${p.title}</h3>
+          <div style="margin-top:4px; font-size:11.5px; font-family:monospace; color:var(--muted);">Source: ${p.source}</div>
+          <p class="muted-p">${p.desc}</p>
+          <div class="spec-list">
+            <div><strong>Sizes:</strong> <code>18″ × 24″</code> Study Print &amp; <code>24″ × 36″</code> Gallery Broadside.</div>
+            <div><strong>Fulfillment:</strong> Direct 300+ DPI vector PDF master → archival museum matte cotton giclée.</div>
+          </div>`;
+      }
+    }
+
+    function downloadSVGString(svgStr, filename) {
+      const blob = new Blob([svgStr], { type: "image/svg+xml;charset=utf-8" });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement("a");
+      a.href = url;
+      a.download = filename;
+      document.body.appendChild(a);
+      a.click();
+      a.remove();
+      URL.revokeObjectURL(url);
+    }
+
+    function exportCardSVG() {
+      const deck = DECKS.find((d) => d.id === state.deckId) || DECKS[0];
+      downloadSVGString(renderCardFront(deck), `geometor-press-card-${deck.id}.svg`);
+    }
+
+    function exportPosterSVG() {
+      const p = POSTERS.find((x) => x.id === state.posterId) || POSTERS[0];
+      downloadSVGString(buildPosterSVG(p), `geometor-press-poster-${p.id}.svg`);
+    }
+
+    function toggleTheme() {
+      state.theme = state.theme === "dark" ? "light" : "dark";
+      document.documentElement.setAttribute("data-theme", state.theme);
+    }
+
+    function setTab(t) { state.tab = t; renderAll(); }
+    function selectDeck(id) { state.deckId = id; state.flipped = false; renderAll(); }
+    function flipActiveCard() { state.flipped = !state.flipped; renderAll(); }
+    function selectPoster(id) { state.posterId = id; renderAll(); }
+
+    renderAll();
+  </script>
+</body>
+</html>

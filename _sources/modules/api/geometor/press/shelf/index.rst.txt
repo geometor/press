@@ -1,0 +1,275 @@
+geometor.press.shelf
+====================
+
+.. py:module:: geometor.press.shelf
+
+.. autoapi-nested-parse::
+
+   Typed loader and query engine for the GEOMETOR Press shelf manifest.
+
+
+
+Attributes
+----------
+
+.. autoapisummary::
+
+   geometor.press.shelf.DEFAULT_RESOURCES_DIR
+
+
+Classes
+-------
+
+.. autoapisummary::
+
+   geometor.press.shelf.ImprintProfile
+   geometor.press.shelf.SeriesSpec
+   geometor.press.shelf.RepoMetrics
+   geometor.press.shelf.WorkSpec
+   geometor.press.shelf.DerivedProduct
+   geometor.press.shelf.CatalogEntry
+   geometor.press.shelf.ShelfCatalog
+
+
+Functions
+---------
+
+.. autoapisummary::
+
+   geometor.press.shelf.load_shelf
+
+
+Module Contents
+---------------
+
+.. py:data:: DEFAULT_RESOURCES_DIR
+
+.. py:class:: ImprintProfile
+
+   Core brand metadata for the GEOMETOR Press imprint.
+
+
+   .. py:attribute:: name
+      :type:  str
+
+
+   .. py:attribute:: tagline
+      :type:  str
+
+
+   .. py:attribute:: engine
+      :type:  str
+
+
+   .. py:attribute:: portal
+      :type:  str
+
+
+   .. py:attribute:: colophon_motif
+      :type:  str
+
+
+.. py:class:: SeriesSpec
+
+   Color-coded spine series definition.
+
+
+   .. py:attribute:: key
+      :type:  str
+
+
+   .. py:attribute:: title
+      :type:  str
+
+
+   .. py:attribute:: subtitle
+      :type:  str
+
+
+   .. py:attribute:: accent
+      :type:  str
+
+
+.. py:class:: RepoMetrics
+
+   Repository content and asset metrics recorded in the shelf manifest.
+
+
+   .. py:attribute:: docsrc_rst
+      :type:  int
+      :value: 0
+
+
+
+   .. py:attribute:: folios
+      :type:  int
+      :value: 0
+
+
+
+   .. py:attribute:: svgs
+      :type:  int
+      :value: 0
+
+
+
+   .. py:attribute:: py_modules
+      :type:  int
+      :value: 0
+
+
+
+.. py:class:: WorkSpec
+
+   Individual book, treatise, or monograph work entry.
+
+
+   .. py:attribute:: slug
+      :type:  str
+
+
+   .. py:attribute:: title
+      :type:  str
+
+
+   .. py:attribute:: author
+      :type:  str
+
+
+   .. py:attribute:: year
+      :type:  str
+
+
+   .. py:attribute:: languages
+      :type:  tuple[str, ...]
+
+
+   .. py:attribute:: subtitle
+      :type:  str
+      :value: ''
+
+
+
+   .. py:attribute:: notes
+      :type:  str
+      :value: ''
+
+
+
+.. py:class:: DerivedProduct
+
+   Non-book tactile or interactive product derived from a repository.
+
+
+   .. py:attribute:: kind
+      :type:  str
+
+
+   .. py:attribute:: title
+      :type:  str
+
+
+.. py:class:: CatalogEntry
+
+   Shelf catalog record for a single repository and its published works.
+
+
+   .. py:attribute:: repo
+      :type:  str
+
+
+   .. py:attribute:: series
+      :type:  str
+
+
+   .. py:attribute:: stage
+      :type:  str
+
+
+   .. py:attribute:: version
+      :type:  str
+
+
+   .. py:attribute:: metrics
+      :type:  RepoMetrics
+
+
+   .. py:attribute:: works
+      :type:  tuple[WorkSpec, ...]
+
+
+   .. py:attribute:: formats
+      :type:  tuple[str, ...]
+
+
+   .. py:attribute:: derived_products
+      :type:  tuple[DerivedProduct, ...]
+
+
+.. py:class:: ShelfCatalog
+
+   Immutable master catalog across all GEOMETOR Press series and stages.
+
+
+   .. py:attribute:: imprint
+      :type:  ImprintProfile
+
+
+   .. py:attribute:: series
+      :type:  dict[str, SeriesSpec]
+
+
+   .. py:attribute:: entries
+      :type:  tuple[CatalogEntry, ...]
+
+
+   .. py:method:: by_stage(stage: str) -> list[CatalogEntry]
+
+      Return catalog entries matching a specific readiness stage.
+
+
+
+   .. py:method:: by_series(series_key: str) -> list[CatalogEntry]
+
+      Return catalog entries assigned to a specific spine series.
+
+
+
+   .. py:method:: by_repo(repo_name: str) -> CatalogEntry | None
+
+      Look up a catalog entry by repository slug.
+
+
+
+   .. py:method:: all_works() -> list[tuple[CatalogEntry, WorkSpec]]
+
+      Return every ``(entry, work)`` pair across the shelf.
+
+
+
+   .. py:method:: all_derived_products(kind: str | None = None) -> list[tuple[CatalogEntry, DerivedProduct]]
+
+      Return derived non-book products, optionally filtered by kind.
+
+      :param kind: Optional product kind filter (e.g., ``"cards_collector"``,
+                   ``"cards_greeting"``, ``"poster"``, or ``"app"``).
+
+      :returns: Matching ``(entry, product)`` pairs in catalog order.
+
+
+
+   .. py:method:: summary_counts() -> dict[str, Any]
+
+      Compute aggregate counts across stages, series, works, and assets.
+
+
+
+.. py:function:: load_shelf(path: pathlib.Path | None = None) -> ShelfCatalog
+
+   Load and validate the GEOMETOR Press master shelf catalog.
+
+   :param path: Optional explicit path to ``shelf.yaml`` or ``shelf.json``.
+
+   :returns: Typed :class:`ShelfCatalog` instance.
+
+

@@ -1,0 +1,11 @@
+geometor.press.__main__
+=======================
+
+.. py:module:: geometor.press.__main__
+
+.. autoapi-nested-parse::
+
+   Module execution entry point for ``python -m geometor.press``.
+
+
+

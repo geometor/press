@@ -1,0 +1,17 @@
+:date: 2026-11-13
+:type: log
+:tags: geometor-press, shelf, brand, covers, cards, posters, publish
+
+==========================================================================
+Inaugurating GEOMETOR Press: Master Shelf, Brand Architecture & Studios
+==========================================================================
+
+Established ``geometor/press`` (``v0.1.0``) as the dedicated headquarters for **GEOMETOR Press**, consolidating our workspace-wide publishing census, brand identity, cover/spine design studies, and interactive object workbenches.
+
+Highlights
+----------
+
+- **48-Repository Shelf Manifest** (``resources/shelf.yaml`` & ``resources/shelf.json``): Cataloged **44+ distinct book works**, **71,900+ vector SVGs**, and **2,377 archival folios** across four readiness stages, organized into five mineral-pigment Spine Series (*Fontes Geometrici*, *Bibliotheca Noetica*, *Synthesis & Constructio*, *Morphogenesis & Natura*, and *Instrumenta & Machina*).
+- **12 Visual Concept Plates** (``docsrc/_static/lookbook/``): Archived comparative studies across Round 1 classical framed bindings (*Hoenen*, *Euclid*, *Polychrome Byrne*, *Divine Constructions*), Round 2 alternate design philosophies (*Full-Bleed Projective Loci*, :math:`1:\phi` *Split-Band*, *Ratdolt 1482 Letterpress*, *Raw Linen Blind-Deboss*), matched 5-series spines, collector card decks, greeting cards, and ``24″ × 36″`` museum broadsides.
+- **Standalone Parametric SVG Studios** (``demos/cover_studio.html`` & ``demos/cards_posters_studio.html``): Built zero-CDN interactive studios supporting live binding switches, :math:`\phi` canon overlays, 3D-flipping study cards, and instant vector ``.svg`` export.
+- **Typed Python 3.13 Package & CLI** (:mod:`geometor.press`): Implemented ``load_shelf``, ``scan_workspace``, and the ``press`` CLI (``summary``, ``shelf``, ``products``, ``census``).

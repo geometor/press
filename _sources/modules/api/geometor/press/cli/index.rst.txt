@@ -1,0 +1,43 @@
+geometor.press.cli
+==================
+
+.. py:module:: geometor.press.cli
+
+.. autoapi-nested-parse::
+
+   Command-line interface for inspecting the GEOMETOR Press shelf and census.
+
+
+
+Functions
+---------
+
+.. autoapisummary::
+
+   geometor.press.cli.build_parser
+   geometor.press.cli.run_cli
+   geometor.press.cli.main
+
+
+Module Contents
+---------------
+
+.. py:function:: build_parser() -> argparse.ArgumentParser
+
+   Construct the argument parser for ``geometor-press``.
+
+
+.. py:function:: run_cli(argv: Sequence[str] | None = None) -> int
+
+   Execute the ``press`` CLI and return a POSIX exit status.
+
+   :param argv: Optional command-line argument sequence; defaults to ``sys.argv[1:]``.
+
+   :returns: Zero on clean completion.
+
+
+.. py:function:: main() -> None
+
+   Console script entry point.
+
+

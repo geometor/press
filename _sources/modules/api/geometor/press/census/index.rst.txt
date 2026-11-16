@@ -1,0 +1,151 @@
+geometor.press.census
+=====================
+
+.. py:module:: geometor.press.census
+
+.. autoapi-nested-parse::
+
+   Read-only workspace census scanner for GEOMETOR repositories.
+
+
+
+Attributes
+----------
+
+.. autoapisummary::
+
+   geometor.press.census.DEFAULT_CENSUS_JSON
+   geometor.press.census.SKIP_DIRS
+
+
+Classes
+-------
+
+.. autoapisummary::
+
+   geometor.press.census.RepoCensus
+
+
+Functions
+---------
+
+.. autoapisummary::
+
+   geometor.press.census.scan_repo
+   geometor.press.census.scan_workspace
+   geometor.press.census.load_census_snapshot
+   geometor.press.census.write_census_json
+
+
+Module Contents
+---------------
+
+.. py:data:: DEFAULT_CENSUS_JSON
+
+.. py:data:: SKIP_DIRS
+
+.. py:class:: RepoCensus
+
+   Empirical file and codex snapshot for a single GEOMETOR repository.
+
+
+   .. py:attribute:: name
+      :type:  str
+
+
+   .. py:attribute:: has_git
+      :type:  bool
+
+
+   .. py:attribute:: version
+      :type:  str
+
+
+   .. py:attribute:: pkg_desc
+      :type:  str
+
+
+   .. py:attribute:: readme_title
+      :type:  str
+
+
+   .. py:attribute:: readme_blurb
+      :type:  str
+
+
+   .. py:attribute:: pdfs
+      :type:  int
+
+
+   .. py:attribute:: folio_pngs
+      :type:  int
+
+
+   .. py:attribute:: folio_rsts
+      :type:  int
+
+
+   .. py:attribute:: res_svgs
+      :type:  int
+
+
+   .. py:attribute:: has_apparatus
+      :type:  bool
+
+
+   .. py:attribute:: has_docsrc
+      :type:  bool
+
+
+   .. py:attribute:: docsrc_rsts
+      :type:  int
+
+
+   .. py:attribute:: docsrc_svgs
+      :type:  int
+
+
+   .. py:attribute:: book_subtrees
+      :type:  tuple[dict[str, str], ...]
+
+
+   .. py:attribute:: has_docs
+      :type:  bool
+
+
+   .. py:attribute:: py_files
+      :type:  int
+
+
+   .. py:attribute:: has_videos
+      :type:  bool
+
+
+   .. py:attribute:: has_demos
+      :type:  bool
+
+
+.. py:function:: scan_repo(repo_dir: pathlib.Path) -> RepoCensus
+
+   Inspect a single repository directory without modifying any files.
+
+   :param repo_dir: Path to the repository directory.
+
+   :returns: Populated :class:`RepoCensus` snapshot.
+
+
+.. py:function:: scan_workspace(workspace_root: pathlib.Path) -> list[RepoCensus]
+
+   Scan all repositories under ``workspace_root`` in sorted order.
+
+
+.. py:function:: load_census_snapshot(path: pathlib.Path | None = None) -> list[RepoCensus]
+
+   Load cached census records from ``resources/census.json``.
+
+
+.. py:function:: write_census_json(records: list[RepoCensus], output_path: pathlib.Path) -> None
+
+   Serialize census records to formatted JSON.
+
+
