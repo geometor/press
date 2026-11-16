@@ -1,0 +1,190 @@
+{
+  "specification": {
+    "name": "GEOMETOR Compass-and-Straightedge Medallion",
+    "viewBox": "-102 -106 204 196",
+    "medallion_center": [0.0, -8.0],
+    "medallion_radius": 92.0,
+    "outer_rim_radius": 95.2,
+    "canonical_eye_line_y": -27.0,
+    "canonical_head_radius": 26.0,
+    "primitives_allowed": ["line", "circle", "arc (M ... A ...)"],
+    "primitives_forbidden": ["C", "Q", "S", "T", "ellipse", "polygon", "polyline"],
+    "layers": {
+      "scaffold": {
+        "dark_stroke": "#4a5d76",
+        "light_stroke": "#9aa6b8",
+        "stroke_width": 0.44,
+        "opacity": 0.45,
+        "role": "Medallion ring, symmetry axes, cranial circle R, golden circle R*phi, Vesica eye circles"
+      },
+      "golden": {
+        "dark_stroke": "#d4af37",
+        "light_stroke": "#b07f10",
+        "stroke_width": 0.85,
+        "opacity": 0.92,
+        "role": "Subject signature geometric motif, dividers, polyhedron, or monogram"
+      },
+      "detail": {
+        "dark_stroke": "#8e9db2",
+        "light_stroke": "#556173",
+        "stroke_width": 0.62,
+        "opacity": 0.84,
+        "role": "Upper lid fold, delicate lower lid, iris ring, Euclid III.12 interior curl/drapery folds"
+      },
+      "primary": {
+        "dark_stroke": "#eef2f7",
+        "light_stroke": "#181c24",
+        "stroke_width": 1.15,
+        "opacity": 1.0,
+        "role": "Connected cranial/cheek/jaw contours, brows, upper lash, filled pupil, nose, lips, collar"
+      }
+    }
+  },
+  "portraits": [
+    {
+      "id": "durer",
+      "name": "Albrecht Durer",
+      "dates": "1471 - 1528",
+      "era": "Renaissance",
+      "repo": "durer",
+      "status": "complete",
+      "queue_order": 0,
+      "pose": "Frontal bilateral symmetry",
+      "reference": {
+        "title": "Self-Portrait at Twenty-Eight (1500)",
+        "holding": "Alte Pinakothek, Munich",
+        "rights": "Public Domain (PD-old-100)",
+        "wikimedia_file": "File:Albrecht_Dürer_-_1500_self-portrait_(High_resolution_and_detail).jpg",
+        "url": "https://commons.wikimedia.org/wiki/File:Albrecht_D%C3%BCrer_-_1500_self-portrait_(High_resolution_and_detail).jpg",
+        "local_ref": "resources/portraits_ref/durer_1500_ref.jpg"
+      },
+      "signature_motif": "60-degree equilateral hair-cascade triangle & 1500 AD monogram",
+      "outputs": {
+        "dark_svg": "docsrc/_static/portraits/durer_dark.svg",
+        "light_svg": "docsrc/_static/portraits/durer_light.svg",
+        "studio_html": "demos/durer_portrait_studio.html"
+      },
+      "notes": "Cranial circle (0, -27), R=26 hits hairline (-R), temples (+-R), nose base (+R), and pupils (+-R/2). All curl locks use Euclid III.12 tangent circular arcs."
+    },
+    {
+      "id": "euclid",
+      "name": "Euclid of Alexandria",
+      "dates": "fl. c. 300 BCE",
+      "era": "Antiquity",
+      "repo": "euclid",
+      "status": "queued",
+      "queue_order": 1,
+      "pose": "Three-quarter left, dramatic chiaroscuro",
+      "reference": {
+        "title": "Euclid holding open folio of the Elements (Urbino / Baroque studio)",
+        "holding": "J. Paul Getty Museum / Google Art Project",
+        "rights": "Public Domain",
+        "wikimedia_file": "File:Italian_-_Euclid_-_Google_Art_Project.jpg",
+        "url": "https://commons.wikimedia.org/wiki/File:Italian_-_Euclid_-_Google_Art_Project.jpg",
+        "local_ref": "resources/portraits_ref/euclid_ref.jpg",
+        "alternate_file": "File:Jusepe_de_Ribera_-_Euclid_-_2001.26_-_J._Paul_Getty_Museum.jpg"
+      },
+      "signature_motif": "Elements Book I Prop. 1 Vesica Piscis & Equilateral Triangle <A B C>",
+      "notes": "Zoom crop onto head, full philosopher beard, and open V-tunic; reconstruct shadowed right half cleanly via three-quarter geometric symmetry."
+    },
+    {
+      "id": "plato",
+      "name": "Plato of Athens",
+      "dates": "c. 428 - c. 348 BCE",
+      "era": "Antiquity",
+      "repo": "plato",
+      "status": "queued",
+      "queue_order": 2,
+      "pose": "Three-quarter right profile, pointing upward",
+      "reference": {
+        "title": "The School of Athens — Plato (detail, modeled after Leonardo da Vinci)",
+        "artist": "Raphael (Raffaello Sanzio, 1509-1511)",
+        "holding": "Apostolic Palace, Stanza della Segnatura, Vatican",
+        "rights": "Public Domain",
+        "wikimedia_file": "File:Sanzio_01_Plato_Aristotle.jpg",
+        "url": "https://commons.wikimedia.org/wiki/File:Sanzio_01_Plato_Aristotle.jpg"
+      },
+      "signature_motif": "Divided Line (Republic VI) & dodecahedral projection",
+      "notes": "Left figure of the central School of Athens pair."
+    },
+    {
+      "id": "aristotle",
+      "name": "Aristotle of Stagira",
+      "dates": "384 - 322 BCE",
+      "era": "Antiquity",
+      "repo": "aristotle",
+      "status": "queued",
+      "queue_order": 3,
+      "pose": "Three-quarter left profile, palm extended horizontally",
+      "reference": {
+        "title": "The School of Athens — Aristotle (detail)",
+        "artist": "Raphael (Raffaello Sanzio, 1509-1511)",
+        "holding": "Apostolic Palace, Stanza della Segnatura, Vatican",
+        "rights": "Public Domain",
+        "wikimedia_file": "File:Sanzio_01_Plato_Aristotle.jpg",
+        "url": "https://commons.wikimedia.org/wiki/File:Sanzio_01_Plato_Aristotle.jpg"
+      },
+      "signature_motif": "Continuum axis & geometric syllogism triangle",
+      "notes": "Right figure of the central School of Athens pair; pairs visually across the gallery with Plato."
+    },
+    {
+      "id": "pacioli",
+      "name": "Fra Luca Pacioli",
+      "dates": "c. 1447 - 1517",
+      "era": "Renaissance",
+      "repo": "pacioli",
+      "status": "queued",
+      "queue_order": 4,
+      "pose": "Three-quarter left in Franciscan habit & cowl",
+      "reference": {
+        "title": "Portrait of Fra Luca Pacioli and an Unknown Young Man (1495)",
+        "artist": "Attributed to Jacopo de' Barbari",
+        "holding": "Museo di Capodimonte, Naples",
+        "rights": "Public Domain",
+        "wikimedia_file": "File:Pacioli.jpg",
+        "url": "https://commons.wikimedia.org/wiki/File:Pacioli.jpg"
+      },
+      "signature_motif": "Suspended glass rhombicuboctahedron & Golden Ratio dividers",
+      "notes": "Iconic cowl hood forms natural concentric circular arcs around face."
+    },
+    {
+      "id": "kepler",
+      "name": "Johannes Kepler",
+      "dates": "1571 - 1630",
+      "era": "Early Modern",
+      "repo": "kepler",
+      "status": "queued",
+      "queue_order": 5,
+      "pose": "Three-quarter right with lace ruff collar",
+      "reference": {
+        "title": "Authentic Portrait of Johannes Kepler (Linz / Strasbourg oil, c. 1620)",
+        "holding": "Linz / Kepler Museum (Wikipedia infobox portrait)",
+        "rights": "Public Domain",
+        "wikimedia_file": "File:JKepler.jpg",
+        "url": "https://commons.wikimedia.org/wiki/File:JKepler.jpg"
+      },
+      "signature_motif": "Kepler Right Triangle (1 : sqrt(phi) : phi) & nested Platonic orbits",
+      "notes": "IMPORTANT: Use JKepler.jpg (authentic portrait). Do NOT use Portrait_Confused_With_Johannes_Kepler_1610.jpg, which Wikimedia flags as a 19th-century spurious copy of an unknown sitter."
+    },
+    {
+      "id": "euler",
+      "name": "Leonhard Euler",
+      "dates": "1707 - 1783",
+      "era": "Enlightenment",
+      "repo": "euler",
+      "status": "queued",
+      "queue_order": 6,
+      "pose": "Three-quarter left in silk cap / turban",
+      "reference": {
+        "title": "Portrait of Leonhard Euler (1753 pastel)",
+        "artist": "Jakob Emanuel Handmann",
+        "holding": "Kunstmuseum Basel",
+        "rights": "Public Domain",
+        "wikimedia_file": "File:Leonhard_Euler.jpg",
+        "url": "https://commons.wikimedia.org/wiki/File:Leonhard_Euler.jpg"
+      },
+      "signature_motif": "Euler Line (O - G - H) & Nine-Point Circle",
+      "notes": "Soft silk wrap around forehead lends itself directly to Euclid III.12 concentric arcs."
+    }
+  ]
+}

@@ -17,6 +17,7 @@ GEOMETOR Press
    brand/index
    manifest/index
    lookbook/index
+   portraits/index
    studios/index
    changelog
    log/index

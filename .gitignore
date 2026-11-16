@@ -1,5 +1,7 @@
-# Reference source material (never commit copyrighted PDFs)
+# Reference source material (never commit copyrighted PDFs or downloaded ref images)
 *.pdf
+resources/portraits_ref/*.jpg
+resources/portraits_ref/*.png
 
 # Build and documentation outputs
 docs/
