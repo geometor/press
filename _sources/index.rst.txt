@@ -1,4 +1,12 @@
-:site_title: Digital Scriptorium Press
+:site_title: GEOMETOR Press
+
+.. container:: author-overline
+
+   semantic digital archive • publishing engine
+
+==============
+GEOMETOR Press
+==============
 
 .. include:: intro.rst
 
