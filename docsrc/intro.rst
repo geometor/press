@@ -1,14 +1,10 @@
-=========================
-Digital Scriptorium Press
-=========================
-
 *Exploring the Architecture of All That Is — Exact Symbolic & Classical Editions.*
 
 .. image:: /_static/lookbook/shelf-5-series-lineup.jpg
    :alt: GEOMETOR Press 5-Series Clothbound Spine & Cover Shelf Study
    :width: 100%
 
-**GEOMETOR Press** is the publishing house and tactile-object studio uniting **48 repositories**, **44+ distinct book works**, **71,900+ parametric vector SVGs**, and **2,377 archival folios** across the GEOMETOR ecosystem. Powered under the hood by ``photon-platform/publish``, every treatise, symbolic construction, and triangle-center atlas compiles from a single exact source tree into:
+**GEOMETOR Press** is the editorial and tactile publishing house of the interconnected `GEOMETOR <https://geometor.com/books/>`_ semantic digital archive. It unites 74 book codices, 11 mathematical catalogs, tens of thousands of calibrated vector diagrams, and thousands of archival folios into a cohesive family of fine clothbound quartos, bilingual scholarly editions, collector card decks, and museum broadsides speaking one shared geometric language.
 
 1. **Print Books & Fine Collector Quartos** — Trade paperbacks, facing-page bilingual scholarly editions (Greek, Latin, German, French, Italian, and English), and clothbound foil-stamped hardcovers.
 2. **EPUB 3.3 Electronic Editions** — Reflowable scholarly e-books and fixed-layout polychrome visual editions.

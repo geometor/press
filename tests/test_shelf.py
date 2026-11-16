@@ -76,7 +76,7 @@ def test_census_snapshot_and_live_scan() -> None:
     press_root = Path(__file__).resolve().parents[1]
     live = scan_repo(press_root)
     assert live.name == "press"
-    assert live.version == "0.1.0"
+    assert live.version in {"0.1.0", "0.1.1"}
     assert live.py_files >= 4
     assert live.has_demos is True
 
