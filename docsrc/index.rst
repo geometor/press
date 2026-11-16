@@ -1,4 +1,18 @@
+:site_title: Digital Scriptorium Press
+
 .. include:: intro.rst
+
+.. toctree::
+   :hidden:
+   :maxdepth: 2
+
+   brand/index
+   manifest/index
+   lookbook/index
+   studios/index
+   changelog
+   log/index
+   modules/index
 
 ----
 

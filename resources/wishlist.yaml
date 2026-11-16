@@ -1,0 +1,404 @@
+# GEOMETOR Digital Scriptorium — Master Public-Domain Library Acquisition Wishlist
+# Each author maps to a standalone repository initialized via:
+#   clerk init <repo_slug> --type codex --org geometor --edition <edition_slug> --title "<Book Title>" --book-author "<Full Author Name>"
+# Followed by archival PDF placement in resources/<edition_slug>/pdfs/ and:
+#   publish folio-ingest --repo /home/phi/PROJECTS/geometor/<repo_slug> --edition <edition_slug>
+
+wishlist:
+  # I. Historiography & Master Spine
+  - repo: heath
+    author: Sir Thomas Little Heath
+    dates: "1861–1940"
+    era: Historiography & Master Spine
+    priority: 1
+    books:
+      - edition: greek_mathematics_vol1
+        title: "A History of Greek Mathematics, Vol. I: From Thales to Euclid"
+        year: 1921
+        publisher: "Oxford: Clarendon Press"
+      - edition: greek_mathematics_vol2
+        title: "A History of Greek Mathematics, Vol. II: From Aristarchus to Diophantus"
+        year: 1921
+        publisher: "Oxford: Clarendon Press"
+
+  # II. Classical & Late Antiquity
+  - repo: iamblichus
+    author: Iamblichus of Chalcis
+    dates: "c. 245–325 CE"
+    era: Classical & Late Antiquity
+    priority: 1
+    books:
+      - edition: in_nicomachi_arithmeticam
+        title: "In Nicomachi Arithmeticam Introductionem"
+        year: 1894
+        editor: "Hermenegildus Pistelli (Teubner) / Thomas Taylor (1818)"
+      - edition: de_communi_mathematica
+        title: "De Communi Mathematica Scientia"
+        year: 1891
+        editor: "Nicola Festa (Teubner)"
+      - edition: de_vita_pythagorica
+        title: "On the Pythagorean Life & Theologoumena Arithmeticae"
+        year: 1818
+        editor: "Thomas Taylor / Vittorio De Falco"
+
+  - repo: theodosius
+    author: Theodosius of Bithynia
+    dates: "c. 160–100 BCE"
+    era: Classical & Late Antiquity
+    priority: 2
+    books:
+      - edition: sphaerica
+        title: "Sphaerica (Books I–III)"
+        year: 1927
+        editor: "J. L. Heiberg / Paul Ver Eecke"
+
+  - repo: aristarchus
+    author: Aristarchus of Samos
+    dates: "c. 310–230 BCE"
+    era: Classical & Late Antiquity
+    priority: 1
+    books:
+      - edition: sizes_and_distances
+        title: "On the Sizes and Distances of the Sun and Moon"
+        year: 1913
+        editor: "Sir Thomas Little Heath (Oxford: Clarendon Press)"
+
+  - repo: serenus
+    author: Serenus of Antinoupolis
+    dates: "c. 300–360 CE"
+    era: Classical & Late Antiquity
+    priority: 2
+    books:
+      - edition: section_of_cylinder_and_cone
+        title: "On the Section of a Cylinder and On the Section of a Cone"
+        year: 1896
+        editor: "J. L. Heiberg (Teubner) / Edmond Halley (1710)"
+
+  - repo: diophantus
+    author: Diophantus of Alexandria
+    dates: "fl. c. 250 CE"
+    era: Classical & Late Antiquity
+    priority: 1
+    books:
+      - edition: arithmetica
+        title: "Arithmetica & On Polygonal Numbers"
+        year: 1910
+        editor: "Sir Thomas Little Heath (Cambridge University Press, 2nd ed.) / Paul Tannery (1893)"
+
+  - repo: boethius
+    author: Anicius Manlius Severinus Boethius
+    dates: "c. 480–524 CE"
+    era: Classical & Late Antiquity
+    priority: 1
+    books:
+      - edition: de_institutione_arithmetica
+        title: "De Institutione Arithmetica"
+        year: 1867
+        editor: "Gottfried Friedlein (Teubner)"
+      - edition: de_institutione_musica
+        title: "De Institutione Musica"
+        year: 1867
+        editor: "Gottfried Friedlein (Teubner)"
+
+  # III. Islamic Golden Age
+  - repo: alhazen
+    author: Ibn al-Haytham (Alhazen)
+    dates: "c. 965–1040 CE"
+    era: Islamic Golden Age
+    priority: 1
+    books:
+      - edition: opticae_thesaurus
+        title: "Opticae Thesaurus (Kitab al-Manazir)"
+        year: 1572
+        editor: "Friedrich Risner (Basel)"
+      - edition: on_known_things
+        title: "Fi al-Ma'lumat (On Known Things)"
+        year: 1900
+
+  - repo: khayyam
+    author: Omar Khayyam
+    dates: "1048–1131 CE"
+    era: Islamic Golden Age
+    priority: 1
+    books:
+      - edition: algebra_cubic_conics
+        title: "Treatise on Demonstration of Problems of Algebra (Cubic-Conic Intersections)"
+        year: 1931
+        editor: "Daoud S. Kasir ( Columbia University ) / Franz Woepcke (1851)"
+      - edition: parallel_postulate
+        title: "Commentaries on the Difficulties in the Postulates of Euclid's Elements"
+        year: 1851
+
+  - repo: al-kashi
+    author: Jamshid al-Kashi
+    dates: "c. 1380–1429 CE"
+    era: Islamic Golden Age
+    priority: 2
+    books:
+      - edition: miftah_al_hisab
+        title: "Miftah al-Hisab (Key to Arithmetic — Book IV: Measurements, Polygons & Muqarnas)"
+        year: 1427
+
+  # IV. Renaissance & Art-Geometry Manuals
+  - repo: durer
+    author: Albrecht Dürer
+    dates: "1471–1528"
+    existing_repo: true
+    era: Renaissance & Art-Geometry Manuals
+    priority: 1
+    books:
+      - edition: underweysung_1525
+        title: "Underweysung der Messung mit dem Zirckel und Richtscheyt"
+        year: 1525
+      - edition: painting_manual
+        title: "Lehrbuch der Malerei (Dürer's Painting Manual — Nuremberg & British Library Drafts)"
+        year: 1528
+        editor: "K. Lange & F. Fuhse (1893, Dürers Schriftlicher Nachlass) / W. M. Conway (1889)"
+      - edition: menschlicher_proportion
+        title: "Vier Bücher von menschlicher Proportion"
+        year: 1528
+
+  - repo: alberti
+    author: Leon Battista Alberti
+    dates: "1404–1472"
+    era: Renaissance & Art-Geometry Manuals
+    priority: 1
+    books:
+      - edition: de_pictura
+        title: "De Pictura (On Painting)"
+        year: 1435
+      - edition: ludi_mathematici
+        title: "Ex Ludis Rerum Mathematicarum"
+        year: 1452
+
+  - repo: jamnitzer
+    author: Wenzel Jamnitzer
+    dates: "1508–1585"
+    era: Renaissance & Art-Geometry Manuals
+    priority: 1
+    books:
+      - edition: perspectiva_corporum_regularium
+        title: "Perspectiva Corporum Regularium (120 Polyhedral Copperplates)"
+        year: 1568
+        publisher: "Nuremberg"
+
+  - repo: commandino
+    author: Federico Commandino
+    dates: "1509–1575"
+    era: Renaissance & Art-Geometry Manuals
+    priority: 2
+    books:
+      - edition: de_superficierum_divisionibus
+        title: "De Superficierum Divisionibus Liber (Euclid's On Divisions of Figures)"
+        year: 1570
+        editor: "Federico Commandino & John Dee / R. C. Archibald (1915)"
+
+  - repo: viete
+    author: François Viète
+    dates: "1540–1603"
+    era: Renaissance & Early Modern
+    priority: 2
+    books:
+      - edition: apollonius_gallus
+        title: "Apollonius Gallus & Supplementum Geometriae"
+        year: 1600
+
+  - repo: desargues
+    author: Girard Desargues
+    dates: "1591–1661"
+    era: Renaissance & Early Modern
+    priority: 1
+    books:
+      - edition: brouillon_project
+        title: "Brouillon project d'une atteinte aux événemens des rencontres du Cône avec un Plan"
+        year: 1639
+        editor: "Noël-Germinal Poudra (Œuvres de Desargues, 1864)"
+
+  - repo: descartes
+    author: René Descartes
+    dates: "1596–1650"
+    era: Renaissance & Early Modern
+    priority: 1
+    books:
+      - edition: la_geometrie
+        title: "La Géométrie (Bilingual French-English Facsimile)"
+        year: 1637
+        editor: "David Eugene Smith & Marcia L. Latham (Open Court, 1925)"
+
+  - repo: fermat
+    author: Pierre de Fermat
+    dates: "1607–1665"
+    era: Renaissance & Early Modern
+    priority: 2
+    books:
+      - edition: ad_locos_planos_et_solidos
+        title: "Ad Locos Planos et Solidos Isagoge"
+        year: 1636
+        editor: "Paul Tannery & Charles Henry (Œuvres de Fermat, 1891)"
+
+  # V. Projective, Barycentric & Non-Euclidean Geometry
+  - repo: monge
+    author: Gaspard Monge
+    dates: "1746–1818"
+    era: Projective & Non-Euclidean
+    priority: 2
+    books:
+      - edition: geometrie_descriptive
+        title: "Géométrie descriptive"
+        year: 1799
+
+  - repo: carnot
+    author: Lazare Carnot
+    dates: "1753–1823"
+    era: Projective & Non-Euclidean
+    priority: 2
+    books:
+      - edition: geometrie_de_position
+        title: "Géométrie de position"
+        year: 1803
+
+  - repo: brianchon
+    author: Charles Julien Brianchon
+    dates: "1783–1864"
+    era: Projective & Non-Euclidean
+    priority: 2
+    books:
+      - edition: lignes_du_second_ordre
+        title: "Mémoire sur les lignes du second ordre"
+        year: 1817
+
+  - repo: poncelet
+    author: Jean-Victor Poncelet
+    dates: "1788–1867"
+    era: Projective & Non-Euclidean
+    priority: 1
+    books:
+      - edition: proprietes_projectives
+        title: "Traité des propriétés projectives des figures"
+        year: 1822
+
+  - repo: mobius
+    author: August Ferdinand Möbius
+    dates: "1790–1868"
+    era: Projective & Non-Euclidean
+    priority: 1
+    books:
+      - edition: barycentrische_calcul
+        title: "Der barycentrische Calcul"
+        year: 1827
+
+  - repo: plucker
+    author: Julius Plücker
+    dates: "1801–1868"
+    era: Projective & Non-Euclidean
+    priority: 2
+    books:
+      - edition: analytisch_geometrische_entwicklungen
+        title: "Analytisch-geometrische Entwicklungen"
+        year: 1828
+
+  - repo: grassmann
+    author: Hermann Günther Grassmann
+    dates: "1809–1877"
+    era: Projective & Non-Euclidean
+    priority: 1
+    books:
+      - edition: ausdehnungslehre
+        title: "Die lineale Ausdehnungslehre"
+        year: 1844
+
+  - repo: lobachevsky
+    author: Nikolai Ivanovich Lobachevsky
+    dates: "1792–1856"
+    era: Projective & Non-Euclidean
+    priority: 1
+    books:
+      - edition: parallelen_theorie
+        title: "Geometrische Untersuchungen zur Theorie der Parallellinien"
+        year: 1840
+        editor: "G. B. Halsted English translation (1891)"
+
+  - repo: bolyai
+    author: János Bolyai
+    dates: "1802–1860"
+    era: Projective & Non-Euclidean
+    priority: 1
+    books:
+      - edition: scientiam_spatii
+        title: "Appendix Scientiam Spatii Absolute Veram Exhibens"
+        year: 1832
+        editor: "G. B. Halsted English translation (1891)"
+
+  - repo: riemann
+    author: Bernhard Riemann
+    dates: "1826–1866"
+    era: Projective & Non-Euclidean
+    priority: 1
+    books:
+      - edition: hypothesen_geometrie
+        title: "Über die Hypothesen, welche der Geometrie zu Grunde liegen"
+        year: 1854
+        editor: "William Kingdon Clifford English translation (Nature, 1873)"
+
+  - repo: clifford
+    author: William Kingdon Clifford
+    dates: "1845–1879"
+    era: Projective & Non-Euclidean
+    priority: 2
+    books:
+      - edition: common_sense_exact_sciences
+        title: "The Common Sense of the Exact Sciences & Applications of Grassmann's Extensive Algebra"
+        year: 1885
+        editor: "Karl Pearson"
+
+  - repo: cremona
+    author: Luigi Cremona
+    dates: "1830–1903"
+    era: Projective & Non-Euclidean
+    priority: 2
+    books:
+      - edition: projective_geometry
+        title: "Elements of Projective Geometry"
+        year: 1885
+        editor: "Charles Leudesdorf (Oxford: Clarendon Press)"
+
+  - repo: lachlan
+    author: Robert Lachlan
+    dates: "1861–1946"
+    era: Projective & Non-Euclidean
+    priority: 2
+    books:
+      - edition: modern_pure_geometry
+        title: "An Elementary Treatise on Modern Pure Geometry"
+        year: 1893
+
+  - repo: johnson
+    author: Roger Arthur Johnson
+    dates: "1889–1954"
+    era: Projective & Non-Euclidean
+    priority: 1
+    books:
+      - edition: modern_geometry
+        title: "Modern Geometry: An Elementary Treatise on the Geometry of the Triangle and the Circle"
+        year: 1929
+
+  # VI. Living Form & Spirals
+  - repo: cook
+    author: Theodore Andrea Cook
+    dates: "1867–1928"
+    era: Living Form & Spirals
+    priority: 1
+    books:
+      - edition: curves_of_life
+        title: "The Curves of Life"
+        year: 1914
+
+  - repo: church
+    author: Arthur Harry Church
+    dates: "1865–1937"
+    era: Living Form & Spirals
+    priority: 2
+    books:
+      - edition: phyllotaxis_mechanical_laws
+        title: "On the Relation of Phyllotaxis to Mechanical Laws"
+        year: 1904

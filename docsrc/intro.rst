@@ -1,6 +1,6 @@
-==============
-GEOMETOR Press
-==============
+=========================
+Digital Scriptorium Press
+=========================
 
 *Exploring the Architecture of All That Is — Exact Symbolic & Classical Editions.*
 
