@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>GEOMETOR Portrait Studio — Study 01: Albrecht Dürer (1500)</title>
+  <script src="https://www.gstatic.com/antigravity/web/dev/tailwindcss.min.js"></script>
+</head>
+<body class="bg-[var(--background)] text-[var(--foreground)] antialiased p-6">
+  <div class="max-w-6xl mx-auto space-y-6">
+    <!-- Header -->
+    <div class="bg-[var(--card)] border border-[var(--border)] rounded-xl p-5 shadow-sm flex flex-wrap items-center justify-between gap-4">
+      <div>
+        <div class="text-xs uppercase tracking-widest text-[var(--muted-foreground)] font-medium">GEOMETOR Press · Portrait Medallion Study 01</div>
+        <h1 class="text-2xl font-semibold mt-1">Albrecht Dürer (1471 – 1528)</h1>
+        <p class="text-sm text-[var(--muted-foreground)] mt-1">
+          Constructed strictly from <code class="px-1.5 py-0.5 rounded bg-[var(--content)]">&lt;line&gt;</code> and <code class="px-1.5 py-0.5 rounded bg-[var(--content)]">&lt;circle&gt;</code> / circular arc primitives over the 1500 Munich <em>Self-Portrait</em> — <strong class="text-[var(--foreground)]">0 Bézier curves</strong>.
+        </p>
+      </div>
+      <div class="flex items-center gap-2">
+        <button id="btn-dark" class="px-3.5 py-2 rounded-lg text-xs font-medium border border-[var(--border)] bg-[var(--primary)] text-[var(--primary-foreground)] transition">
+          Obsidian Ink
+        </button>
+        <button id="btn-light" class="px-3.5 py-2 rounded-lg text-xs font-medium border border-[var(--border)] bg-[var(--content)] text-[var(--foreground)] transition">
+          Warm Paper
+        </button>
+        <button id="btn-download" class="px-3.5 py-2 rounded-lg text-xs font-medium border border-[var(--border)] bg-[var(--content)] text-[var(--foreground)] hover:opacity-80 transition">
+          Download .svg
+        </button>
+      </div>
+    </div>
+
+    <!-- Main Studio Grid -->
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-6">
+      <!-- Left: Primary Medallion Canvas -->
+      <div class="lg:col-span-7 bg-[var(--card)] border border-[var(--border)] rounded-xl p-5 shadow-sm flex flex-col items-center">
+        <div id="canvas-wrap" class="w-full max-w-[520px] rounded-lg overflow-hidden border border-[var(--border)] shadow-inner"></div>
+        <div id="stats-bar" class="w-full mt-4 pt-3 border-t border-[var(--border)] flex flex-wrap items-center justify-between gap-2 text-xs text-[var(--muted-foreground)]"></div>
+      </div>
+
+      <!-- Right: Interactive Controls & Collection Card Preview -->
+      <div class="lg:col-span-5 space-y-5">
+        <!-- Calibration & Construction Controls -->
+        <div class="bg-[var(--card)] border border-[var(--border)] rounded-xl p-5 shadow-sm space-y-4">
+          <h2 class="text-sm font-semibold uppercase tracking-wider text-[var(--muted-foreground)]">Construction &amp; Calibration</h2>
+
+          <!-- Reference Painting Overlay Slider -->
+          <div class="space-y-1.5">
+            <div class="flex justify-between text-xs">
+              <span class="font-medium">1500 Munich Painting Overlay (Public Domain)</span>
+              <span id="lbl-ref" class="text-[var(--muted-foreground)]">0%</span>
+            </div>
+            <input id="rng-ref" type="range" min="0" max="85" value="0" class="w-full accent-[var(--primary)]" />
+          </div>
+
+          <!-- Construction Step Scrubber -->
+          <div class="space-y-1.5">
+            <div class="flex justify-between text-xs">
+              <span class="font-medium">Construction Unfolding Stage</span>
+              <span id="lbl-stage" class="text-[var(--muted-foreground)]">5 / 5 · Complete Medallion</span>
+            </div>
+            <input id="rng-stage" type="range" min="1" max="5" value="5" step="1" class="w-full accent-[var(--primary)]" />
+          </div>
+
+          <!-- Euclid III.12 Wave Angle Slider -->
+          <div class="space-y-1.5">
+            <div class="flex justify-between text-xs">
+              <span class="font-medium">Euclid III.12 Tangent-Arc Curl Angle</span>
+              <span id="lbl-wave" class="text-[var(--muted-foreground)]">34°</span>
+            </div>
+            <input id="rng-wave" type="range" min="16" max="50" value="34" step="1" class="w-full accent-[var(--primary)]" />
+          </div>
+
+          <!-- Layer Toggles -->
+          <div class="pt-2 border-t border-[var(--border)] grid grid-cols-2 gap-2.5 text-xs">
+            <label class="flex items-center gap-2 cursor-pointer">
+              <input id="chk-scaffold" type="checkbox" checked class="accent-[var(--primary)]" />
+              <span>Construction Circles (R, R·φ)</span>
+            </label>
+            <label class="flex items-center gap-2 cursor-pointer">
+              <input id="chk-golden" type="checkbox" checked class="accent-[var(--primary)]" />
+              <span>60° Triangle &amp; 1500 AD</span>
+            </label>
+            <label class="flex items-center gap-2 cursor-pointer">
+              <input id="chk-detail" type="checkbox" checked class="accent-[var(--primary)]" />
+              <span>Interior Curl Strands</span>
+            </label>
+            <label class="flex items-center gap-2 cursor-pointer">
+              <input id="chk-primary" type="checkbox" checked class="accent-[var(--primary)]" />
+              <span>Selected Contours</span>
+            </label>
+          </div>
+        </div>
+
+        <!-- Key Proportions Found in the 1500 Panel -->
+        <div class="bg-[var(--card)] border border-[var(--border)] rounded-xl p-5 shadow-sm space-y-2">
+          <h2 class="text-sm font-semibold uppercase tracking-wider text-[var(--muted-foreground)]">Measured Geometric Armature</h2>
+          <ul class="text-xs text-[var(--muted-foreground)] space-y-1.5 leading-relaxed">
+            <li><strong class="text-[var(--foreground)]">Cranial &amp; Eye Circle (R = 26)</strong>: Centered between the eyes at <code class="px-1 rounded bg-[var(--content)]">(0, -27)</code>; top hits the exact center hairline, sides hit both temples, bottom hits the base of the nose, and <code class="px-1 rounded bg-[var(--content)]">±R/2</code> hits both pupils.</li>
+            <li><strong class="text-[var(--foreground)]">60° Equilateral Cascade</strong>: Cascading locks fall along exact <code class="px-1 rounded bg-[var(--content)]">±60°</code> (<code class="px-1 rounded bg-[var(--content)]">√3</code>) rays from apex <code class="px-1 rounded bg-[var(--content)]">(0, -84)</code> onto the medallion rim.</li>
+            <li><strong class="text-[var(--foreground)]">Euclid III.12 Tangent Locks</strong>: Every wavy curl is a <code class="px-1 rounded bg-[var(--content)]">G¹</code>-smooth chain of externally tangent circular arcs with collinear centers.</li>
+          </ul>
+        </div>
+
+        <!-- Live geometor.com .. collection:: Card Scale Preview -->
+        <div class="bg-[var(--card)] border border-[var(--border)] rounded-xl p-5 shadow-sm space-y-3">
+          <div class="flex items-center justify-between">
+            <h2 class="text-sm font-semibold uppercase tracking-wider text-[var(--muted-foreground)]">Live <code>geometor.com/people/</code> Card Preview</h2>
+            <span class="text-xs text-[var(--muted-foreground)]">140px &amp; 52px scale</span>
+          </div>
+          <div class="bg-[var(--content)] border border-[var(--border)] rounded-lg p-3.5 flex items-center gap-4">
+            <div id="card-thumb" class="w-[116px] h-[112px] shrink-0 rounded-md overflow-hidden border border-[var(--border)]"></div>
+            <div class="min-w-0 flex-1 space-y-1">
+              <div class="flex items-center gap-2">
+                <div id="avatar-thumb" class="w-9 h-9 shrink-0 rounded-full overflow-hidden border border-[var(--border)]"></div>
+                <div>
+                  <div class="text-sm font-semibold leading-tight">Albrecht Dürer</div>
+                  <div class="text-xs text-[var(--muted-foreground)]">1471 – 1528 · Renaissance</div>
+                </div>
+              </div>
+              <p class="text-xs text-[var(--muted-foreground)] leading-snug pt-1">
+                Nuremberg artist-geometer of compass-and-straightedge spirals, conic projections, unfolded polyhedral nets, and proportional letterforms.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const REF_B64 = "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";
+
+    const MED_CX = 0.0, MED_CY = -8.0, MED_R = 92.0;
+    const PHI = (1 + Math.sqrt(5)) / 2;
+    const SQRT3 = Math.sqrt(3);
+
+    let state = {
+      theme: "dark",
+      refOpacity: 0,
+      stage: 5,
+      waveAngle: 34,
+      showScaffold: true,
+      showGolden: true,
+      showDetail: true,
+      showPrimary: true
+    };
+
+    function polar(cx, cy, r, deg) {
+      const rad = (deg * Math.PI) / 180;
+      return [cx + r * Math.cos(rad), cy + r * Math.sin(rad)];
+    }
+
+    function normalizeShortSpan(a1, a2) {
+      const diff = ((a2 - a1 + 180) % 360 + 360) % 360 - 180;
+      return [a1, a1 + diff];
+    }
+
+    function insideMedallion(x, y, margin = 0.2) {
+      return Math.hypot(x - MED_CX, y - MED_CY) <= (MED_R + margin);
+    }
+
+    function clipLine(x1, y1, x2, y2) {
+      const dx = x2 - x1, dy = y2 - y1;
+      const fx = x1 - MED_CX, fy = y1 - MED_CY;
+      const a = dx * dx + dy * dy;
+      if (a < 1e-12) return null;
+      const b = 2 * (fx * dx + fy * dy);
+      const c = fx * fx + fy * fy - MED_R * MED_R;
+      const disc = b * b - 4 * a * c;
+      if (disc < 0) return null;
+      const s = Math.sqrt(disc);
+      const tLo = Math.max(0, (-b - s) / (2 * a));
+      const tHi = Math.min(1, (-b + s) / (2 * a));
+      if (tLo >= tHi) return null;
+      return [x1 + tLo * dx, y1 + tLo * dy, x1 + tHi * dx, y1 + tHi * dy];
+    }
+
+    function arcPath(cx, cy, r, deg1, deg2) {
+      const [x1, y1] = polar(cx, cy, r, deg1);
+      const [x2, y2] = polar(cx, cy, r, deg2);
+      const delta = deg2 - deg1;
+      const sweep = delta >= 0 ? 1 : 0;
+      const large = Math.abs(delta) > 180 ? 1 : 0;
+      return `M ${x1.toFixed(2)} ${y1.toFixed(2)} A ${r.toFixed(2)} ${r.toFixed(2)} 0 ${large} ${sweep} ${x2.toFixed(2)} ${y2.toFixed(2)}`;
+    }
+
+    function tangentWaveArcs(xStart, yStart, xEnd, yEnd, halfWaves, halfAngleDeg, initialSign = 1) {
+      const dx = xEnd - xStart, dy = yEnd - yStart;
+      const totalLen = Math.hypot(dx, dy);
+      const chord = totalLen / halfWaves;
+      const ux = dx / totalLen, uy = dy / totalLen;
+      const nx = -uy, ny = ux;
+      const alpha = (halfAngleDeg * Math.PI) / 180;
+      const radius = chord / (2 * Math.sin(alpha));
+      const offset = radius * Math.cos(alpha);
+      const arcs = [];
+      for (let k = 0; k < halfWaves; k++) {
+        const p1x = xStart + k * chord * ux, p1y = yStart + k * chord * uy;
+        const p2x = xStart + (k + 1) * chord * ux, p2y = yStart + (k + 1) * chord * uy;
+        const mx = 0.5 * (p1x + p2x), my = 0.5 * (p1y + p2y);
+        const sign = k % 2 === 0 ? initialSign : -initialSign;
+        const cx = mx + sign * offset * nx, cy = my + sign * offset * ny;
+        const rawA1 = (Math.atan2(p1y - cy, p1x - cx) * 180) / Math.PI;
+        const rawA2 = (Math.atan2(p2y - cy, p2x - cx) * 180) / Math.PI;
+        const [a1, a2] = normalizeShortSpan(rawA1, rawA2);
+        const [midX, midY] = polar(cx, cy, radius, 0.5 * (a1 + a2));
+        if (insideMedallion(p1x, p1y, 1.0) && insideMedallion(p2x, p2y, 1.0) && insideMedallion(midX, midY, 1.0)) {
+          arcs.push([cx, cy, radius, a1, a2]);
+        }
+      }
+      return arcs;
+    }
+
+    function buildPortrait(waveDeg) {
+      const R = 26.0;
+      const scaffold = [], golden = [], primary = [], detail = [];
+
+      const addCircle = (arr, cx, cy, r, step = 1, filled = false) => arr.push({ kind: "circle", cx, cy, r, step, filled });
+      const addLine = (arr, x1, y1, x2, y2, step = 1, clip = true) => {
+        if (clip) {
+          const c = clipLine(x1, y1, x2, y2);
+          if (!c) return;
+          [x1, y1, x2, y2] = c;
+        }
+        arr.push({ kind: "line", x1, y1, x2, y2, step });
+      };
+      const addArc = (arr, cx, cy, r, a1, a2, step = 1) => {
+        const [n1, n2] = normalizeShortSpan(a1, a2);
+        arr.push({ kind: "arc", d: arcPath(cx, cy, r, n1, n2), step });
+      };
+      const mirrorLine = (arr, x1, y1, x2, y2, step = 1) => {
+        addLine(arr, x1, y1, x2, y2, step);
+        addLine(arr, -x1, y1, -x2, y2, step);
+      };
+      const mirrorArc = (arr, cx, cy, r, a1, a2, step = 1) => {
+        addArc(arr, cx, cy, r, a1, a2, step);
+        addArc(arr, -cx, cy, r, 180 - a1, 180 - a2, step);
+      };
+      const mirrorCircle = (arr, cx, cy, r, step = 1, filled = false) => {
+        addCircle(arr, cx, cy, r, step, filled);
+        if (Math.abs(cx) > 1e-6) addCircle(arr, -cx, cy, r, step, filled);
+      };
+
+      // Stage 1: Medallion & Axes
+      addCircle(scaffold, MED_CX, MED_CY, MED_R, 1);
+      addLine(scaffold, 0, -110, 0, 95, 1);
+      addLine(scaffold, -100, -27, 100, -27, 1);
+      addLine(scaffold, -100, 0, 100, 0, 1);
+
+      // Stage 2: Cranial, Golden & Vesica Eye Circles
+      addCircle(scaffold, 0, -27, R, 2);
+      addCircle(scaffold, 0, -27, R * PHI, 2);
+      addCircle(scaffold, 0, -27, R * 2, 2);
+      mirrorCircle(scaffold, -13, -27, R / 2, 2);
+      addCircle(scaffold, 0, 0, 28.5, 2);
+
+      // Stage 3: 60-degree Equilateral Hair Cascade Frame
+      const triApexY = -84.0;
+      const triBaseY = -27.0 + Math.sqrt(27.0 * 27.0 + 4536.0);
+      const triHalfW = (triBaseY - triApexY) / SQRT3;
+      addLine(golden, 0, triApexY, -triHalfW, triBaseY, 3, false);
+      addLine(golden, 0, triApexY, triHalfW, triBaseY, 3, false);
+      addLine(golden, -triHalfW, triBaseY, triHalfW, triBaseY, 3, false);
+
+      // Stage 4: Facial Selection (Forehead, Eyes, Nose, Mustache, Lips, Beard, Robe)
+      mirrorArc(primary, -10.5, -34.0, 21.8, -60.0, -152.0, 4);
+      addArc(detail, 2.8, -51.2, 3.6, 145.0, 240.0, 4);
+      addArc(detail, -2.5, -52.0, 3.2, -55.0, 35.0, 4);
+
+      mirrorArc(primary, -3.5, -27.5, 22.0, -138.0, -195.0, 4);
+      mirrorLine(primary, -24.4, -21.8, -21.2, 6.0, 4);
+      mirrorArc(primary, -5.0, 5.5, 16.2, 178.0, 118.0, 4);
+      mirrorArc(primary, -6.2, 16.5, 12.6, 120.0, 60.0, 4);
+
+      mirrorArc(primary, -14.5, -19.5, 13.8, -126.0, -50.0, 4);
+      mirrorArc(detail, -14.5, -18.3, 13.2, -120.0, -58.0, 4);
+
+      mirrorArc(detail, -13.2, -21.2, 8.6, -134.0, -46.0, 4);
+      mirrorArc(primary, -13.2, -20.2, 8.0, -138.0, -42.0, 4);
+      mirrorArc(detail, -13.2, -31.4, 7.4, 54.0, 126.0, 4);
+      mirrorCircle(detail, -13.0, -26.2, 2.75, 4, false);
+      mirrorCircle(primary, -13.0, -26.3, 1.15, 4, true);
+
+      addLine(primary, -4.3, -28.5, -3.4, -6.5, 4);
+      addLine(detail, 3.9, -27.5, 3.1, -6.5, 4);
+      addArc(primary, 0.0, -4.8, 3.6, 28.0, 152.0, 4);
+      mirrorArc(primary, -4.5, -3.1, 2.35, 35.0, 205.0, 4);
+
+      mirrorArc(primary, -6.5, 16.2, 14.8, -74.0, -165.0, 4);
+      mirrorArc(detail, -7.0, 16.5, 12.4, -76.0, -158.0, 4);
+      mirrorArc(primary, -2.8, 7.6, 3.4, -128.0, -35.0, 4);
+      mirrorLine(primary, -5.2, 5.6, -9.5, 6.8, 4);
+      mirrorLine(detail, -0.5, 6.4, -9.5, 6.8, 4);
+      addArc(primary, 0.0, 2.6, 8.2, 46.0, 134.0, 4);
+
+      addArc(detail, 0.0, 17.2, 5.0, -135.0, -45.0, 4);
+      addLine(detail, 0.0, 15.2, 0.0, 27.2, 4);
+      mirrorLine(detail, -4.2, 16.8, -5.2, 28.0, 4);
+      mirrorLine(detail, -8.5, 16.2, -10.2, 26.8, 4);
+
+      mirrorLine(detail, -12.5, 28.0, -14.0, 49.5, 4);
+      addLine(primary, -7.2, 56.5, 1.8, 56.5, 4);
+      addLine(detail, -6.4, 58.8, 1.0, 58.8, 4);
+      addLine(primary, -18.5, 35.0, -2.5, 67.5, 4);
+      addLine(primary, 18.5, 33.5, -9.8, 83.5, 4);
+      addLine(primary, -35.5, 52.0, -20.0, 82.0, 4);
+      addLine(primary, 36.5, 49.5, 19.5, 82.0, 4);
+      addArc(primary, -42.0, 104.0, 56.0, -118.5, -91.0, 4);
+      addArc(primary, 42.0, 104.0, 56.0, -89.0, -61.5, 4);
+
+      // Stage 5: Euclid III.12 Tangent Locks, Fur Tuft Waves & 1500 AD Monogram
+      mirrorArc(primary, -10.5, -42.5, 26.2, -66.0, -171.0, 5);
+      addArc(detail, 2.0, -67.2, 4.2, 160.0, 255.0, 5);
+
+      for (const [cx, cy, r, a1, a2] of tangentWaveArcs(-29.2, -46.5, -73.0, 46.0, 7, waveDeg, 1)) {
+        mirrorArc(primary, cx, cy, r, a1, a2, 5);
+      }
+      for (const [cx, cy, r, a1, a2] of tangentWaveArcs(-24.8, -35.0, -35.0, 44.0, 7, waveDeg + 1, -1)) {
+        mirrorArc(primary, cx, cy, r, a1, a2, 5);
+      }
+      for (const [cx, cy, r, a1, a2] of tangentWaveArcs(-27.0, -41.5, -53.0, 47.5, 7, waveDeg + 3, 1)) {
+        mirrorArc(detail, cx, cy, r, a1, a2, 5);
+      }
+      for (const [cx, cy, r, a1, a2] of tangentWaveArcs(-28.0, -39.0, -63.0, 47.0, 6, waveDeg + 1, -1)) {
+        mirrorArc(detail, cx, cy, r, a1, a2, 5);
+      }
+      for (const [cx, cy, r, a1, a2] of [[-39.0, 46.5, 5.5, 12.0, 172.0], [-51.0, 48.5, 6.2, 8.0, 172.0], [-64.0, 47.5, 6.8, 5.0, 168.0]]) {
+        mirrorArc(detail, cx, cy, r, a1, a2, 5);
+      }
+      for (const [cx, cy, r, a1, a2] of tangentWaveArcs(35.0, 51.0, 19.8, 81.0, 5, 32.0, 1)) {
+        addArc(detail, cx, cy, r, a1, a2, 5);
+      }
+      for (const [cx, cy, r, a1, a2] of tangentWaveArcs(-34.2, 53.0, -19.8, 81.0, 5, 32.0, -1)) {
+        addArc(detail, cx, cy, r, a1, a2, 5);
+      }
+
+      const mx = -71.5, my = -22.5;
+      addLine(golden, mx - 5.0, my - 5.2, mx + 5.0, my - 5.2, 5);
+      addLine(golden, mx - 3.4, my - 5.2, mx - 5.5, my + 5.3, 5);
+      addLine(golden, mx + 3.4, my - 5.2, mx + 5.5, my + 5.3, 5);
+      addLine(golden, mx - 4.1, my - 1.1, mx + 4.1, my - 1.1, 5);
+      addLine(golden, mx - 1.7, my + 0.3, mx - 1.7, my + 5.1, 5);
+      addLine(golden, mx - 1.7, my + 0.3, mx + 0.3, my + 0.3, 5);
+      addLine(golden, mx - 1.7, my + 5.1, mx + 0.3, my + 5.1, 5);
+      addArc(golden, mx + 0.3, my + 2.7, 2.4, -89.0, 89.0, 5);
+      addLine(golden, mx - 4.5, my - 8.8, mx - 4.5, my - 6.9, 5);
+      addLine(golden, mx - 2.2, my - 8.8, mx - 1.0, my - 8.8, 5);
+      addArc(golden, mx - 1.7, my - 7.6, 0.75, -90.0, 85.0, 5);
+      addCircle(golden, mx + 1.3, my - 7.85, 0.9, 5);
+      addCircle(golden, mx + 4.2, my - 7.85, 0.9, 5);
+
+      return { scaffold, golden, primary, detail };
+    }
+
+    function renderSvgString(includeRefOverlay = true, forExport = false) {
+      const dark = state.theme === "dark";
+      const bg = dark ? "#0d1017" : "#f8f5ee";
+      const fg = dark ? "#eef2f7" : "#181c24";
+      const det = dark ? "#8e9db2" : "#556173";
+      const scaf = dark ? "#4a5d76" : "#9aa6b8";
+      const gold = dark ? "#d4af37" : "#b07f10";
+
+      const layers = buildPortrait(state.waveAngle);
+      let lineCount = 0, circleCount = 0, arcCount = 0;
+
+      function emitGroup(items, stroke, width, opacity) {
+        const filtered = items.filter(el => el.step <= state.stage);
+        if (!filtered.length) return "";
+        const rows = filtered.map(el => {
+          if (el.kind === "circle") {
+            circleCount++;
+            return `    <circle cx="${el.cx.toFixed(2)}" cy="${el.cy.toFixed(2)}" r="${el.r.toFixed(2)}" fill="${el.filled ? stroke : "none"}"/>`;
+          } else if (el.kind === "line") {
+            lineCount++;
+            return `    <line x1="${el.x1.toFixed(2)}" y1="${el.y1.toFixed(2)}" x2="${el.x2.toFixed(2)}" y2="${el.y2.toFixed(2)}"/>`;
+          } else {
+            arcCount++;
+            return `    <path d="${el.d}"/>`;
+          }
+        });
+        return `  <g stroke="${stroke}" stroke-width="${width}" stroke-linecap="round" fill="none" opacity="${opacity}">\n${rows.join("\n")}\n  </g>`;
+      }
+
+      const parts = [
+        `<svg xmlns="http://www.w3.org/2000/svg" viewBox="-102 -106 204 196" width="100%" height="100%" class="euclid-graphic block">`,
+        `  <rect x="-102" y="-106" width="204" height="196" fill="${bg}"/>`
+      ];
+
+      if (includeRefOverlay && !forExport && state.refOpacity > 0) {
+        parts.push(`  <image href="data:image/jpeg;base64,${REF_B64}" x="-102" y="-106" width="204" height="196" opacity="${(state.refOpacity / 100).toFixed(2)}" preserveAspectRatio="none"/>`);
+      }
+
+      if (state.showScaffold) parts.push(emitGroup(layers.scaffold, scaf, 0.44, 0.45));
+      if (state.showGolden) parts.push(emitGroup(layers.golden, gold, 0.85, 0.92));
+      if (state.showDetail) parts.push(emitGroup(layers.detail, det, 0.62, 0.84));
+      if (state.showPrimary) parts.push(emitGroup(layers.primary, fg, 1.15, 1.0));
+
+      parts.push(`  <circle cx="${MED_CX}" cy="${MED_CY}" r="${MED_R + 3.2}" stroke="${gold}" stroke-width="0.65" fill="none" opacity="0.68"/>`);
+      parts.push(`</svg>`);
+
+      return { svg: parts.join("\n"), lineCount, circleCount, arcCount };
+    }
+
+    const stageLabels = {
+      1: "1 / 5 · Given Medallion & Axes",
+      2: "2 / 5 · Cranial (R=26) & Vesica Eye Circles",
+      3: "3 / 5 · 60° Equilateral Cascade Triangle",
+      4: "4 / 5 · Selected Facial & Robe Contours",
+      5: "5 / 5 · Euclid III.12 Curl Waves & 1500 AD"
+    };
+
+    function updateStudio() {
+      const mainRes = renderSvgString(true, false);
+      const cleanRes = renderSvgString(false, false);
+      document.getElementById("canvas-wrap").innerHTML = mainRes.svg;
+      document.getElementById("card-thumb").innerHTML = cleanRes.svg;
+      document.getElementById("avatar-thumb").innerHTML = cleanRes.svg;
+
+      const total = mainRes.lineCount + mainRes.circleCount + mainRes.arcCount;
+      document.getElementById("stats-bar").innerHTML = `
+        <span>Primitives: <strong class="text-[var(--foreground)]">${mainRes.lineCount}</strong> lines · <strong class="text-[var(--foreground)]">${mainRes.circleCount}</strong> circles · <strong class="text-[var(--foreground)]">${mainRes.arcCount}</strong> circular arcs (<strong class="text-[var(--foreground)]">${total}</strong> total)</span>
+        <span>Bézier splines: <strong class="text-[var(--foreground)]">0</strong></span>
+      `;
+      document.getElementById("lbl-ref").textContent = `${state.refOpacity}%`;
+      document.getElementById("lbl-stage").textContent = stageLabels[state.stage];
+      document.getElementById("lbl-wave").textContent = `${state.waveAngle}°`;
+
+      const bDark = document.getElementById("btn-dark");
+      const bLight = document.getElementById("btn-light");
+      if (state.theme === "dark") {
+        bDark.className = "px-3.5 py-2 rounded-lg text-xs font-medium border border-[var(--border)] bg-[var(--primary)] text-[var(--primary-foreground)] transition";
+        bLight.className = "px-3.5 py-2 rounded-lg text-xs font-medium border border-[var(--border)] bg-[var(--content)] text-[var(--foreground)] transition";
+      } else {
+        bLight.className = "px-3.5 py-2 rounded-lg text-xs font-medium border border-[var(--border)] bg-[var(--primary)] text-[var(--primary-foreground)] transition";
+        bDark.className = "px-3.5 py-2 rounded-lg text-xs font-medium border border-[var(--border)] bg-[var(--content)] text-[var(--foreground)] transition";
+      }
+    }
+
+    document.getElementById("btn-dark").addEventListener("click", () => { state.theme = "dark"; updateStudio(); });
+    document.getElementById("btn-light").addEventListener("click", () => { state.theme = "light"; updateStudio(); });
+    document.getElementById("rng-ref").addEventListener("input", e => { state.refOpacity = Number(e.target.value); updateStudio(); });
+    document.getElementById("rng-stage").addEventListener("input", e => { state.stage = Number(e.target.value); updateStudio(); });
+    document.getElementById("rng-wave").addEventListener("input", e => { state.waveAngle = Number(e.target.value); updateStudio(); });
+    document.getElementById("chk-scaffold").addEventListener("change", e => { state.showScaffold = e.target.checked; updateStudio(); });
+    document.getElementById("chk-golden").addEventListener("change", e => { state.showGolden = e.target.checked; updateStudio(); });
+    document.getElementById("chk-detail").addEventListener("change", e => { state.showDetail = e.target.checked; updateStudio(); });
+    document.getElementById("chk-primary").addEventListener("change", e => { state.showPrimary = e.target.checked; updateStudio(); });
+
+    document.getElementById("btn-download").addEventListener("click", () => {
+      const { svg } = renderSvgString(false, true);
+      const blob = new Blob([svg], { type: "image/svg+xml;charset=utf-8" });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement("a");
+      a.href = url;
+      a.download = `durer_1500_medallion_${state.theme}.svg`;
+      a.click();
+      URL.revokeObjectURL(url);
+    });
+
+    updateStudio();
+  </script>
+</body>
+</html>

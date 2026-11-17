@@ -1,0 +1,170 @@
+geometor.press.portraits
+========================
+
+.. py:module:: geometor.press.portraits
+
+.. autoapi-nested-parse::
+
+   Compass-and-straightedge vector portrait medallion engine for :mod:`geometor.press`.
+
+
+
+Attributes
+----------
+
+.. autoapisummary::
+
+   geometor.press.portraits.DEFAULT_PORTRAITS_JSON
+   geometor.press.portraits.MED_CX
+   geometor.press.portraits.MED_CY
+   geometor.press.portraits.MED_R
+   geometor.press.portraits.RIM_R
+   geometor.press.portraits.MEDALLION_SPEC
+
+
+Classes
+-------
+
+.. autoapisummary::
+
+   geometor.press.portraits.PortraitRecord
+
+
+Functions
+---------
+
+.. autoapisummary::
+
+   geometor.press.portraits.load_portraits
+   geometor.press.portraits.polar
+   geometor.press.portraits.inside_medallion
+   geometor.press.portraits.clip_line_to_medallion
+   geometor.press.portraits.normalize_short_span
+   geometor.press.portraits.arc_path
+   geometor.press.portraits.tangent_wave_arcs
+   geometor.press.portraits.render_medallion_svg
+
+
+Module Contents
+---------------
+
+.. py:data:: DEFAULT_PORTRAITS_JSON
+
+.. py:data:: MED_CX
+   :type:  float
+   :value: 0.0
+
+
+.. py:data:: MED_CY
+   :type:  float
+   :value: -8.0
+
+
+.. py:data:: MED_R
+   :type:  float
+   :value: 92.0
+
+
+.. py:data:: RIM_R
+   :type:  float
+   :value: 95.2
+
+
+.. py:data:: MEDALLION_SPEC
+   :type:  dict[str, Any]
+
+.. py:class:: PortraitRecord
+
+   Metadata and public-domain reference specification for one person portrait.
+
+
+   .. py:attribute:: id
+      :type:  str
+
+
+   .. py:attribute:: name
+      :type:  str
+
+
+   .. py:attribute:: dates
+      :type:  str
+
+
+   .. py:attribute:: era
+      :type:  str
+
+
+   .. py:attribute:: repo
+      :type:  str
+
+
+   .. py:attribute:: status
+      :type:  str
+
+
+   .. py:attribute:: queue_order
+      :type:  int
+
+
+   .. py:attribute:: pose
+      :type:  str
+
+
+   .. py:attribute:: signature_motif
+      :type:  str
+
+
+   .. py:attribute:: reference
+      :type:  dict[str, Any]
+
+
+   .. py:attribute:: outputs
+      :type:  dict[str, str]
+
+
+   .. py:attribute:: notes
+      :type:  str
+      :value: ''
+
+
+
+.. py:function:: load_portraits(json_path: pathlib.Path | None = None) -> list[PortraitRecord]
+
+   Load the portrait catalog and Next-5 queue from ``resources/portraits.json``.
+
+
+.. py:function:: polar(cx: float, cy: float, r: float, deg: float) -> tuple[float, float]
+
+   Return ``(x, y)`` on circle ``(cx, cy, r)`` at angle ``deg`` (0=right, 90=down).
+
+
+.. py:function:: inside_medallion(x: float, y: float, margin: float = 0.2) -> bool
+
+   Return ``True`` if ``(x, y)`` lies within the canonical medallion circle.
+
+
+.. py:function:: clip_line_to_medallion(x1: float, y1: float, x2: float, y2: float) -> tuple[float, float, float, float] | None
+
+   Clip straight segment ``(x1, y1)-(x2, y2)`` to exact intersection with medallion.
+
+
+.. py:function:: normalize_short_span(a1: float, a2: float) -> tuple[float, float]
+
+   Normalize ``(a1, a2)`` so ``abs(a2 - a1) <= 180`` (preserving short circular arc).
+
+
+.. py:function:: arc_path(cx: float, cy: float, r: float, deg1: float, deg2: float) -> str
+
+   Return exact SVG circular arc path (``M ... A ...`` only — zero Beziers).
+
+
+.. py:function:: tangent_wave_arcs(x_start: float, y_start: float, x_end: float, y_end: float, half_waves: int, half_angle_deg: float, initial_sign: int = 1) -> list[tuple[float, float, float, float, float]]
+
+   Construct a G1-smooth chain of externally tangent circular arcs (Euclid III.12).
+
+
+.. py:function:: render_medallion_svg(layers: dict[str, list[dict[str, Any]]], theme: str = 'dark') -> str
+
+   Render a 4-layer portrait medallion SVG and assert zero Bezier commands.
+
+

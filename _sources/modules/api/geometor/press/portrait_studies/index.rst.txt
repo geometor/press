@@ -1,0 +1,40 @@
+geometor.press.portrait_studies
+===============================
+
+.. py:module:: geometor.press.portrait_studies
+
+.. autoapi-nested-parse::
+
+   Individual geometric portrait medallion studies for :mod:`geometor.press`.
+
+
+
+Submodules
+----------
+
+.. toctree::
+   :maxdepth: 1
+
+   /modules/api/geometor/press/portrait_studies/durer/index
+
+
+Functions
+---------
+
+.. autoapisummary::
+
+   geometor.press.portrait_studies.build_durer_elements
+
+
+Package Contents
+----------------
+
+.. py:function:: build_durer_elements(wave_angle_deg: float = 34.0) -> dict[str, list[dict[str, Any]]]
+
+   Construct Albrecht Durer (1500) medallion strictly from lines, circles, and circular arcs.
+
+   :param wave_angle_deg: Half-angle (degrees) for Euclid III.12 tangent-arc hair curls.
+
+   :returns: Dictionary of ``scaffold``, ``golden``, ``primary``, and ``detail`` primitive lists.
+
+
