@@ -18,11 +18,11 @@ Mission
 Capabilities & Interactive Docs
 -------------------------------
 
-- **`GEOMETOR Press <https://geometor.github.io/press/>`_** — Central publishing house, master shelf manifest, and imprint identity.
-- **`Brand & Spine Series System <https://geometor.github.io/press/brand/>`_** — The Five Mineral Spine Series, *Vesica-to-* :math:`\phi` colophon, and Aldine page canons.
-- **`Shelf Readiness Manifest <https://geometor.github.io/press/manifest/>`_** — Comprehensive multi-format product matrix across books, e-books, card decks, and broadsides.
-- **`Visual Lookbook Plates <https://geometor.github.io/press/lookbook/>`_** — High-resolution concept plates for clothbound covers, foiled spine shelves, and tactile objects.
-- **`Interactive Parametric Studios <https://geometor.github.io/press/studios/>`_** — Live browser workbenches for parametric SVG cover generation and 3D collector cards with SVG export.
+- `GEOMETOR Press <https://geometor.github.io/press/>`_ — Central publishing house, master shelf manifest, and imprint identity.
+- `Brand & Spine Series System <https://geometor.github.io/press/brand/>`_ — The Five Mineral Spine Series, *Vesica-to-* :math:`\phi` colophon, and Aldine page canons.
+- `Shelf Readiness Manifest <https://geometor.github.io/press/manifest/>`_ — Comprehensive multi-format product matrix across books, e-books, card decks, and broadsides.
+- `Visual Lookbook Plates <https://geometor.github.io/press/lookbook/>`_ — High-resolution concept plates for clothbound covers, foiled spine shelves, and tactile objects.
+- `Interactive Parametric Studios <https://geometor.github.io/press/studios/>`_ — Live browser workbenches for parametric SVG cover generation and 3D collector cards with SVG export.
 
 Repository Contents
 -------------------
