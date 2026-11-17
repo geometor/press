@@ -3,6 +3,11 @@ GEOMETOR • press
 
 **Visit the Online Archive:** https://geometor.github.io/press/
 
+.. image:: docsrc/_static/lookbook/shelf-5-series-lineup.jpg
+   :alt: GEOMETOR • press featured geometric construction
+   :target: https://geometor.github.io/press/
+   :align: center
+
 **GEOMETOR Press • Master shelf manifest, typographic system & collector editions**
 
 Mission
