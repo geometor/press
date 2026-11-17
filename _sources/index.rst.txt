@@ -15,6 +15,7 @@ GEOMETOR Press
    :maxdepth: 2
 
    brand/index
+   standards/index
    manifest/index
    lookbook/index
    portraits/index
