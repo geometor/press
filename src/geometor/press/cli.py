@@ -130,6 +130,12 @@ def build_parser() -> argparse.ArgumentParser:
         default=None,
         help="Optional limit on number of constructions to include (for quick previews).",
     )
+    ct_p.add_argument(
+        "--layout",
+        choices=["spread", "phi-horz", "phi-vert"],
+        default="spread",
+        help="Page layout: 10x10 facing spread or 1:phi single-page horz/vert.",
+    )
 
     cover_p = sub.add_parser(
         "coffee-table-cover",
@@ -279,9 +285,15 @@ def run_cli(argv: Sequence[str] | None = None) -> int:
         return 0
 
     if command == "coffee-table":
-        from .coffee_table import build_divine_coffee_table_pdf
+        from .coffee_table import build_divine_coffee_table_pdf, build_divine_phi_page_pdf
 
-        out = build_divine_coffee_table_pdf(args.repo, args.output, limit=args.limit)
+        if args.layout == "spread":
+            out = build_divine_coffee_table_pdf(args.repo, args.output, limit=args.limit)
+        else:
+            orient = "horz" if args.layout == "phi-horz" else "vert"
+            out = build_divine_phi_page_pdf(
+                args.repo, args.output, orientation=orient, limit=args.limit
+            )
         print(f"Coffee Table Book PDF created -> {out}")
         return 0
 

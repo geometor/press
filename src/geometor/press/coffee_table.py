@@ -1110,3 +1110,225 @@ def build_divine_cover_pdf(
     weasyprint.HTML(string=html_str, base_url=str(divine_repo)).write_pdf(str(output_pdf))
     return output_pdf
 
+
+def build_divine_phi_page_html(
+    divine_repo: Path,
+    orientation: str = "horz",
+    limit: int | None = None,
+) -> str:
+    """Render 1-construction-per-page Golden Rectangle (1 : phi) HTML.
+
+    Each page divides a 1:phi rectangle into a 1x1 square for the vector plate
+    and the remaining 1/phi x 1 golden gnomon for steps, proof, and certificate.
+    """
+    _, families = load_divine_book_data(divine_repo, limit=limit)
+    is_horz = orientation.lower().startswith("h")
+    page_w, page_h = ("11.6in", "7.17in") if is_horz else ("7.17in", "11.6in")
+    flex_dir = "row" if is_horz else "column"
+    sq_size = "6.27in"
+
+    phi_css = f"""
+@page {{
+  size: {page_w} {page_h};
+  margin: 0.45in;
+  background: #faf7f2;
+}}
+* {{ box-sizing: border-box; }}
+body {{
+  margin: 0;
+  padding: 0;
+  font-family: "Noto Serif", "Liberation Serif", serif;
+  color: #1c1917;
+  background: #faf7f2;
+}}
+.phi-page {{
+  width: 100%;
+  height: {"6.20in" if is_horz else "10.65in"};
+  display: flex;
+  flex-direction: {flex_dir};
+  gap: 0.25in;
+  break-after: page;
+}}
+.phi-square {{
+  width: {sq_size};
+  height: {sq_size};
+  flex: none;
+  border: 1pt solid #d4af37;
+  background: #fdfbf7;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 0.22in;
+}}
+.phi-square-svg {{
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}}
+.phi-square-svg svg {{
+  width: 5.75in;
+  height: 5.2in;
+}}
+.phi-square-foot {{
+  display: flex;
+  justify-content: space-between;
+  font-family: "Fira Sans", sans-serif;
+  font-size: 7.5pt;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #9a6e1c;
+  border-top: 0.6pt solid #e5dccb;
+  padding-top: 0.06in;
+}}
+.phi-gnomon {{
+  flex: 1;
+  display: block;
+}}
+.phi-kicker {{
+  font-family: "Fira Sans", sans-serif;
+  font-size: {"6.8pt" if is_horz else "7.2pt"};
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #9a6e1c;
+  margin-bottom: 0.02in;
+}}
+.phi-title {{
+  font-family: "Noto Serif Display", "Noto Serif", serif;
+  font-size: {"12.5pt" if is_horz else "13pt"};
+  line-height: 1.14;
+  margin: 0 0 0.04in 0;
+  color: #151311;
+}}
+.phi-enun {{
+  background: #f3ede2;
+  border-left: 2pt solid #d4af37;
+  padding: 0.05in 0.08in;
+  font-style: italic;
+  font-size: {"7.5pt" if is_horz else "7.8pt"};
+  line-height: 1.3;
+  margin: 0 0 0.06in 0;
+}}
+.phi-subhead {{
+  font-family: "Fira Sans", sans-serif;
+  font-size: {"6.6pt" if is_horz else "7pt"};
+  font-weight: 700;
+  letter-spacing: 0.11em;
+  text-transform: uppercase;
+  color: #78350f;
+  margin: 0.04in 0 0.02in 0;
+}}
+.phi-steps {{
+  margin: 0 0 0.04in 0;
+  padding: 0;
+  list-style: none;
+  font-size: {"7.1pt" if is_horz else "7.4pt"};
+  line-height: 1.28;
+}}
+.phi-steps li {{
+  display: flex;
+  gap: 0.05in;
+  margin-bottom: 0.02in;
+}}
+.phi-step-num {{
+  font-family: "Fira Mono", monospace;
+  font-weight: 700;
+  color: #9a6e1c;
+  min-width: 0.17in;
+}}
+.phi-proof {{
+  font-size: {"7.0pt" if is_horz else "7.2pt"};
+  line-height: 1.28;
+  color: #292524;
+  margin: 0 0 0.04in 0;
+}}
+.phi-cert {{
+  width: 100%;
+  border-collapse: collapse;
+  font-size: {"6.6pt" if is_horz else "6.9pt"};
+}}
+.phi-cert th, .phi-cert td {{
+  border-top: 0.4pt solid #d6cbb8;
+  padding: 0.025in 0.04in;
+  text-align: left;
+  vertical-align: top;
+}}
+.phi-cert th {{
+  width: 30%;
+  font-family: "Fira Sans", sans-serif;
+  color: #575046;
+}}
+.g-token {{
+  font-family: "Fira Mono", monospace;
+  font-weight: 600;
+  color: #78350f;
+}}
+.frac sup, .frac sub {{ font-size: 0.72em; }}
+"""
+
+    pages: list[str] = []
+    plate_num = 0
+    for fam_idx, fam in enumerate(families, start=1):
+        fam_label = fam.code or f"GC-{fam_idx:02d}"
+        for entry in fam.entries:
+            plate_num += 1
+            s_badge = (
+                f"Lemoine S = {entry.lemoine_simplicity}"
+                if entry.lemoine_simplicity is not None
+                else ""
+            )
+            steps_html = "".join(
+                f'<li><span class="phi-step-num">{idx:02d}</span><span>{rst_inline_to_html(st)}</span></li>'
+                for idx, st in enumerate(entry.steps, start=1)
+            )
+            cert_html = "".join(
+                f"<tr><th>{rst_inline_to_html(k)}</th><td>{rst_inline_to_html(v)}</td></tr>"
+                for k, v in entry.certificate[:4]
+            )
+            pages.append(
+                f'<article class="phi-page">'
+                f'<section class="phi-square">'
+                f'<div class="phi-square-svg">{entry.svg_markup}</div>'
+                f'<div class="phi-square-foot"><span>Plate {plate_num:02d} · {escape(entry.catalog_code)}</span><span>1 : φ · {escape(entry.number_field_text)}</span></div>'
+                f'</section>'
+                f'<section class="phi-gnomon">'
+                f'<div>'
+                f'<div class="phi-kicker">{escape(fam_label)} · {escape(fam.title)} · {escape(s_badge)}</div>'
+                f'<h2 class="phi-title">{escape(entry.title)}</h2>'
+                f'<div class="phi-enun">{rst_inline_to_html(entry.enunciation)}</div>'
+                f'<div class="phi-subhead">Given &amp; Steps</div>'
+                f'<ol class="phi-steps">{steps_html}</ol>'
+                f'</div>'
+                f'<div>'
+                f'<div class="phi-subhead">Proof &amp; Symbolic Certificate</div>'
+                f'<p class="phi-proof">{rst_inline_to_html(entry.proof)}</p>'
+                f'<table class="phi-cert">{cert_html}</table>'
+                f'</div>'
+                f'</section>'
+                f'</article>'
+            )
+
+    return (
+        "<!DOCTYPE html><html lang='en'><head><meta charset='utf-8'/>"
+        f"<title>Golden Constructions — Phi {escape(orientation)}</title>"
+        f"<style>{phi_css}</style></head><body>"
+        + "\n".join(pages)
+        + "</body></html>"
+    )
+
+
+def build_divine_phi_page_pdf(
+    divine_repo: Path,
+    output_pdf: Path,
+    orientation: str = "horz",
+    limit: int | None = None,
+) -> Path:
+    """Compile the 1:phi Golden Rectangle Coffee Table test PDF."""
+    import weasyprint
+
+    html_str = build_divine_phi_page_html(divine_repo, orientation=orientation, limit=limit)
+    output_pdf.parent.mkdir(parents=True, exist_ok=True)
+    weasyprint.HTML(string=html_str, base_url=str(divine_repo)).write_pdf(str(output_pdf))
+    return output_pdf
+
+
