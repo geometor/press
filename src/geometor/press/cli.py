@@ -108,6 +108,108 @@ def build_parser() -> argparse.ArgumentParser:
         help="Output JSON path for census snapshot.",
     )
 
+    ct_p = sub.add_parser(
+        "coffee-table",
+        help="Build a facing-page spread Coffee Table Book PDF (e.g., for divine).",
+    )
+    ct_p.add_argument(
+        "--repo",
+        type=Path,
+        default=Path("/home/phi/PROJECTS/geometor/divine"),
+        help="Path to the source repository (default: geometor/divine).",
+    )
+    ct_p.add_argument(
+        "--output",
+        type=Path,
+        default=Path("/home/phi/PROJECTS/geometor/press/editions/divine/golden_constructions_coffee_table.pdf"),
+        help="Output PDF file path.",
+    )
+    ct_p.add_argument(
+        "--limit",
+        type=int,
+        default=None,
+        help="Optional limit on number of constructions to include (for quick previews).",
+    )
+
+    cover_p = sub.add_parser(
+        "coffee-table-cover",
+        help="Build full-bleed hardcover wrap cover PDF for Golden Constructions.",
+    )
+    cover_p.add_argument(
+        "--repo",
+        type=Path,
+        default=Path("/home/phi/PROJECTS/geometor/divine"),
+        help="Path to the divine repository.",
+    )
+    cover_p.add_argument(
+        "--output",
+        type=Path,
+        default=Path("/home/phi/PROJECTS/geometor/press/editions/divine/golden_constructions_wrap_cover.pdf"),
+        help="Output PDF file path.",
+    )
+    cover_p.add_argument(
+        "--spine-width",
+        type=float,
+        default=0.42,
+        help="Spine width in inches (default: 0.42).",
+    )
+
+    cards_p = sub.add_parser(
+        "collector-cards",
+        help="Build a 52-card Tarot-format duplex Collector Deck PDF (The Golden Deck).",
+    )
+    cards_p.add_argument(
+        "--repo",
+        type=Path,
+        default=Path("/home/phi/PROJECTS/geometor/divine"),
+        help="Path to the source repository (default: geometor/divine).",
+    )
+    cards_p.add_argument(
+        "--output",
+        type=Path,
+        default=Path("/home/phi/PROJECTS/geometor/press/editions/divine/the_golden_deck_52_cards.pdf"),
+        help="Output PDF file path.",
+    )
+    cards_p.add_argument(
+        "--limit",
+        type=int,
+        default=None,
+        help="Optional limit on number of constructions to include.",
+    )
+
+    euclid_p = sub.add_parser(
+        "euclid-pdf",
+        help="Build a 6in x 9in Scholarly Trade Codex PDF for Euclid's Elements.",
+    )
+    euclid_p.add_argument(
+        "--repo",
+        type=Path,
+        default=Path("/home/phi/PROJECTS/geometor/euclid"),
+        help="Path to the euclid repository.",
+    )
+    euclid_p.add_argument(
+        "--volume",
+        default="volume_I",
+        help="Volume directory (default: volume_I).",
+    )
+    euclid_p.add_argument(
+        "--book",
+        default="book_i",
+        help="Book directory (default: book_i).",
+    )
+    euclid_p.add_argument(
+        "--output",
+        type=Path,
+        default=Path("/home/phi/PROJECTS/geometor/press/editions/euclid/euclid_book_i_trade.pdf"),
+        help="Output PDF file path.",
+    )
+    euclid_p.add_argument(
+        "--limit",
+        type=int,
+        default=None,
+        help="Optional limit on number of propositions.",
+    )
+
     return parser
 
 
@@ -128,6 +230,40 @@ def run_cli(argv: Sequence[str] | None = None) -> int:
         records = scan_workspace(args.workspace)
         write_census_json(records, args.output)
         print(f"Scanned {len(records)} repositories -> {args.output}")
+        return 0
+
+    if command == "coffee-table":
+        from .coffee_table import build_divine_coffee_table_pdf
+
+        out = build_divine_coffee_table_pdf(args.repo, args.output, limit=args.limit)
+        print(f"Coffee Table Book PDF created -> {out}")
+        return 0
+
+    if command == "coffee-table-cover":
+        from .coffee_table import build_divine_cover_pdf
+
+        out = build_divine_cover_pdf(args.repo, args.output, spine_width_in=args.spine_width)
+        print(f"Wrap Cover PDF created -> {out}")
+        return 0
+
+    if command == "collector-cards":
+        from .collector_cards import build_golden_deck_pdf
+
+        out = build_golden_deck_pdf(args.repo, args.output, limit=args.limit)
+        print(f"Collector Deck PDF created -> {out}")
+        return 0
+
+    if command == "euclid-pdf":
+        from .euclid_print import build_euclid_trade_pdf
+
+        out = build_euclid_trade_pdf(
+            args.repo,
+            args.output,
+            volume=args.volume,
+            book=args.book,
+            limit=args.limit,
+        )
+        print(f"Euclid Trade PDF created -> {out}")
         return 0
 
     catalog = load_shelf()
