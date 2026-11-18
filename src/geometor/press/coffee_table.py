@@ -239,6 +239,61 @@ def _extract_directive_block(lines: list[str], start_idx: int) -> tuple[str, int
     return text, i
 
 
+def tight_crop_svg(svg_markup: str, pad_ratio: float = 0.06) -> str:
+    """Recompute SVG viewBox tightly around geometric circles, polygons, segments, and labels."""
+    import xml.etree.ElementTree as ET
+
+    try:
+        root = ET.fromstring(svg_markup)
+    except ET.ParseError:
+        return svg_markup
+
+    xs: list[float] = []
+    ys: list[float] = []
+
+    for elem in root.iter():
+        tag = elem.tag.split("}")[-1]
+        cls = elem.attrib.get("class", "")
+        if tag == "circle":
+            try:
+                cx = float(elem.attrib["cx"])
+                cy = float(elem.attrib["cy"])
+                r = float(elem.attrib["r"])
+                xs.extend([cx - r, cx + r])
+                ys.extend([cy - r, cy + r])
+            except (KeyError, ValueError):
+                pass
+        elif tag in ("polygon", "polyline"):
+            pts = re.findall(r"[-+]?\d*\.?\d+", elem.attrib.get("points", ""))
+            for i in range(0, len(pts) - 1, 2):
+                xs.append(float(pts[i]))
+                ys.append(float(pts[i + 1]))
+        elif tag == "path" and "geom-line" not in cls:
+            nums = re.findall(r"[-+]?\d*\.?\d+", elem.attrib.get("d", ""))
+            for i in range(0, len(nums) - 1, 2):
+                xs.append(float(nums[i]))
+                ys.append(float(nums[i + 1]))
+        elif tag == "text":
+            try:
+                tx = float(elem.attrib["x"])
+                ty = float(elem.attrib["y"])
+                xs.extend([tx - 10.0, tx + 14.0])
+                ys.extend([ty - 14.0, ty + 8.0])
+            except (KeyError, ValueError):
+                pass
+
+    if not xs or not ys:
+        return svg_markup
+
+    min_x, max_x = min(xs), max(xs)
+    min_y, max_y = min(ys), max(ys)
+    w = max(max_x - min_x, 20.0)
+    h = max(max_y - min_y, 20.0)
+    pad = max(w, h) * pad_ratio
+    vb = f"{min_x - pad:.2f} {min_y - pad:.2f} {w + 2 * pad:.2f} {h + 2 * pad:.2f}"
+    return re.sub(r'viewBox="[^"]*"', f'viewBox="{vb}"', svg_markup, count=1)
+
+
 def _parse_construction_rst(
     rst_path: Path,
     manifest_item: dict[str, Any],
@@ -312,6 +367,7 @@ def _parse_construction_rst(
             r"\1stroke: none;",
             svg_markup,
         )
+        svg_markup = tight_crop_svg(svg_markup, pad_ratio=0.05)
 
     return ConstructionEntry(
         catalog_code=str(manifest_item.get("catalog_code") or ""),

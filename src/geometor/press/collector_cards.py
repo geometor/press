@@ -90,15 +90,15 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: 0.08in 0;
+  margin: 0.07in 0;
   background: #fdfbf7;
   border: 0.5pt solid #e5dccb;
-  padding: 0.06in;
+  padding: 0.04in;
 }
 
 .card-svg-box svg {
-  width: 2.05in;
-  height: 1.9in;
+  width: 2.15in;
+  height: 2.15in;
 }
 
 .card-title-front {
