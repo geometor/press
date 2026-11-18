@@ -1,0 +1,37 @@
+geometor.press.collector_cards
+==============================
+
+.. py:module:: geometor.press.collector_cards
+
+.. autoapi-nested-parse::
+
+   Collector Card Deck PDF generator for GEOMETOR Press.
+
+   Produces print-ready duplex Tarot-format (2.75in x 4.75in) 52-card decks,
+   starting with 'The Golden Deck' (45 exact golden-ratio constructions + 7
+   geometric family key cards from geometor/divine).
+
+
+
+Functions
+---------
+
+.. autoapisummary::
+
+   geometor.press.collector_cards.build_golden_deck_html
+   geometor.press.collector_cards.build_golden_deck_pdf
+
+
+Module Contents
+---------------
+
+.. py:function:: build_golden_deck_html(divine_repo: pathlib.Path, limit: int | None = None) -> str
+
+   Render HTML for the 52-card Golden Deck (7 family keys + 45 constructions).
+
+
+.. py:function:: build_golden_deck_pdf(divine_repo: pathlib.Path, output_pdf: pathlib.Path, limit: int | None = None) -> pathlib.Path
+
+   Compile The Golden Deck 52-card duplex PDF using WeasyPrint.
+
+

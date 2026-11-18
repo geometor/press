@@ -1,0 +1,74 @@
+geometor.press.euclid_print
+===========================
+
+.. py:module:: geometor.press.euclid_print
+
+.. autoapi-nested-parse::
+
+   Scholarly Trade Codex (6in x 9in) PDF generator for Euclid's Elements.
+
+
+
+Classes
+-------
+
+.. autoapisummary::
+
+   geometor.press.euclid_print.EuclidProposition
+
+
+Functions
+---------
+
+.. autoapisummary::
+
+   geometor.press.euclid_print.build_euclid_trade_html
+   geometor.press.euclid_print.build_euclid_trade_pdf
+
+
+Module Contents
+---------------
+
+.. py:class:: EuclidProposition
+
+   Parsed Euclid proposition for 6x9 trade print.
+
+
+   .. py:attribute:: canonical_id
+      :type:  str
+
+
+   .. py:attribute:: title
+      :type:  str
+
+
+   .. py:attribute:: pages
+      :type:  str
+
+
+   .. py:attribute:: enunciation
+      :type:  str
+
+
+   .. py:attribute:: svg_markups
+      :type:  list[str]
+      :value: []
+
+
+
+   .. py:attribute:: paragraphs
+      :type:  list[tuple[str, str]]
+      :value: []
+
+
+
+.. py:function:: build_euclid_trade_html(euclid_repo: pathlib.Path, volume: str = 'volume_I', book: str = 'book_i', limit: int | None = None) -> str
+
+   Render 6x9 Scholarly Trade Codex HTML for a Book of Euclid's Elements.
+
+
+.. py:function:: build_euclid_trade_pdf(euclid_repo: pathlib.Path, output_pdf: pathlib.Path, volume: str = 'volume_I', book: str = 'book_i', limit: int | None = None) -> pathlib.Path
+
+   Compile a 6x9 Scholarly Trade Codex PDF for Euclid's Elements.
+
+

@@ -1,0 +1,197 @@
+geometor.press.coffee_table
+===========================
+
+.. py:module:: geometor.press.coffee_table
+
+.. autoapi-nested-parse::
+
+   Coffee Table Book & Print PDF generator for GEOMETOR Press.
+
+   Produces facing-page spread PDFs (verso: enunciation, steps, proof, and
+   machine-verified symbolic certificate; recto: full-bleed vector SVG plate)
+   using WeasyPrint CSS Paged Media.
+
+
+
+Classes
+-------
+
+.. autoapisummary::
+
+   geometor.press.coffee_table.ConstructionEntry
+   geometor.press.coffee_table.FamilyGroup
+
+
+Functions
+---------
+
+.. autoapisummary::
+
+   geometor.press.coffee_table.latex_to_html
+   geometor.press.coffee_table.rst_inline_to_html
+   geometor.press.coffee_table.tight_crop_svg
+   geometor.press.coffee_table.load_divine_book_data
+   geometor.press.coffee_table.build_divine_coffee_table_html
+   geometor.press.coffee_table.build_divine_coffee_table_pdf
+   geometor.press.coffee_table.build_divine_cover_html
+   geometor.press.coffee_table.build_divine_cover_pdf
+   geometor.press.coffee_table.build_divine_phi_page_html
+   geometor.press.coffee_table.build_divine_phi_page_pdf
+
+
+Module Contents
+---------------
+
+.. py:function:: latex_to_html(expr: str) -> str
+
+   Convert inline LaTeX math expressions into clean typographic HTML.
+
+
+.. py:function:: rst_inline_to_html(text: str) -> str
+
+   Convert RST inline roles (:g:, :math:, :person:, :term:, etc.) to HTML.
+
+
+.. py:class:: ConstructionEntry
+
+   Parsed construction record for the Coffee Table Book.
+
+
+   .. py:attribute:: catalog_code
+      :type:  str
+
+
+   .. py:attribute:: slug
+      :type:  str
+
+
+   .. py:attribute:: family_slug
+      :type:  str
+
+
+   .. py:attribute:: title
+      :type:  str
+
+
+   .. py:attribute:: short_title
+      :type:  str
+
+
+   .. py:attribute:: discoverer_line
+      :type:  str
+
+
+   .. py:attribute:: enunciation
+      :type:  str
+
+
+   .. py:attribute:: given
+      :type:  str
+
+
+   .. py:attribute:: steps
+      :type:  list[str]
+
+
+   .. py:attribute:: proof
+      :type:  str
+
+
+   .. py:attribute:: certificate
+      :type:  list[tuple[str, str]]
+
+
+   .. py:attribute:: svg_markup
+      :type:  str
+
+
+   .. py:attribute:: number_field_text
+      :type:  str
+
+
+   .. py:attribute:: elementary_loci
+      :type:  int | None
+
+
+   .. py:attribute:: lemoine_simplicity
+      :type:  int | None
+
+
+   .. py:attribute:: year
+      :type:  str
+
+
+.. py:class:: FamilyGroup
+
+   Family chapter grouping constructions.
+
+
+   .. py:attribute:: code
+      :type:  str
+
+
+   .. py:attribute:: slug
+      :type:  str
+
+
+   .. py:attribute:: title
+      :type:  str
+
+
+   .. py:attribute:: subtitle
+      :type:  str
+
+
+   .. py:attribute:: description
+      :type:  str
+
+
+   .. py:attribute:: entries
+      :type:  list[ConstructionEntry]
+      :value: []
+
+
+
+.. py:function:: tight_crop_svg(svg_markup: str, pad_ratio: float = 0.06) -> str
+
+   Recompute SVG viewBox tightly around geometric circles, polygons, segments, and labels.
+
+
+.. py:function:: load_divine_book_data(divine_repo: pathlib.Path, limit: int | None = None) -> tuple[dict[str, Any], list[FamilyGroup]]
+
+   Load families and parsed constructions from `geometor/divine`.
+
+
+.. py:function:: build_divine_coffee_table_html(divine_repo: pathlib.Path, limit: int | None = None) -> str
+
+   Render complete HTML document for the Divine Coffee Table Book.
+
+
+.. py:function:: build_divine_coffee_table_pdf(divine_repo: pathlib.Path, output_pdf: pathlib.Path, limit: int | None = None) -> pathlib.Path
+
+   Compile the Divine Coffee Table Book PDF using WeasyPrint.
+
+
+.. py:function:: build_divine_cover_html(divine_repo: pathlib.Path, spine_width_in: float = 0.42, wrap_margin_in: float = 0.625) -> str
+
+   Render full-bleed hardcover wrap cover HTML for Golden Constructions.
+
+
+.. py:function:: build_divine_cover_pdf(divine_repo: pathlib.Path, output_pdf: pathlib.Path, spine_width_in: float = 0.42) -> pathlib.Path
+
+   Compile the hardcover wrap cover PDF for Golden Constructions.
+
+
+.. py:function:: build_divine_phi_page_html(divine_repo: pathlib.Path, orientation: str = 'horz', limit: int | None = None) -> str
+
+   Render 1-construction-per-page Golden Rectangle (1 : phi) HTML.
+
+   Each page divides a 1:phi rectangle into a 1x1 square for the vector plate
+   and the remaining 1/phi x 1 golden gnomon for steps, proof, and certificate.
+
+
+.. py:function:: build_divine_phi_page_pdf(divine_repo: pathlib.Path, output_pdf: pathlib.Path, orientation: str = 'horz', limit: int | None = None) -> pathlib.Path
+
+   Compile the 1:phi Golden Rectangle Coffee Table test PDF.
+
+

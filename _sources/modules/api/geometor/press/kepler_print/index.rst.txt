@@ -1,0 +1,33 @@
+geometor.press.kepler_print
+===========================
+
+.. py:module:: geometor.press.kepler_print
+
+.. autoapi-nested-parse::
+
+   Scholarly Trade Monograph (6in x 9in) PDF generator for Johannes Kepler's Geometric Works.
+
+
+
+Functions
+---------
+
+.. autoapisummary::
+
+   geometor.press.kepler_print.build_kepler_trilogy_html
+   geometor.press.kepler_print.build_kepler_trilogy_pdf
+
+
+Module Contents
+---------------
+
+.. py:function:: build_kepler_trilogy_html(kepler_repo: pathlib.Path, limit: int | None = None) -> str
+
+   Render 6x9 Trade Monograph HTML for Kepler's three geometric works.
+
+
+.. py:function:: build_kepler_trilogy_pdf(kepler_repo: pathlib.Path, output_pdf: pathlib.Path, limit: int | None = None) -> pathlib.Path
+
+   Compile Kepler's Geometric Trilogy 6x9 Trade PDF using WeasyPrint.
+
+

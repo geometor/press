@@ -1,0 +1,64 @@
+geometor.press.byrne_print
+==========================
+
+.. py:module:: geometor.press.byrne_print
+
+.. autoapi-nested-parse::
+
+   Polychrome Fine-Color Quarto (8.5in x 11in) PDF generator for Oliver Byrne's Euclid.
+
+
+
+Classes
+-------
+
+.. autoapisummary::
+
+   geometor.press.byrne_print.ByrneProp
+
+
+Functions
+---------
+
+.. autoapisummary::
+
+   geometor.press.byrne_print.build_byrne_quarto_html
+   geometor.press.byrne_print.build_byrne_quarto_pdf
+
+
+Module Contents
+---------------
+
+.. py:class:: ByrneProp
+
+   Parsed Byrne proposition.
+
+
+   .. py:attribute:: title
+      :type:  str
+
+
+   .. py:attribute:: rubric
+      :type:  str
+
+
+   .. py:attribute:: svg_markup
+      :type:  str
+
+
+   .. py:attribute:: blocks
+      :type:  list[str]
+      :value: []
+
+
+
+.. py:function:: build_byrne_quarto_html(byrne_repo: pathlib.Path, limit: int | None = None) -> str
+
+   Render 8.5x11 Polychrome Fine-Color Quarto HTML for Byrne's Coloured Euclid.
+
+
+.. py:function:: build_byrne_quarto_pdf(byrne_repo: pathlib.Path, output_pdf: pathlib.Path, limit: int | None = None) -> pathlib.Path
+
+   Compile Byrne's Polychrome Fine-Color Quarto PDF using WeasyPrint.
+
+
