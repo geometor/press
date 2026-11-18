@@ -1,5 +1,6 @@
 # Reference source material (never commit copyrighted PDFs or downloaded ref images)
 *.pdf
+!editions/**/*.pdf
 resources/portraits_ref/*.jpg
 resources/portraits_ref/*.png
 
