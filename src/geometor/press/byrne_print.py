@@ -113,7 +113,21 @@ def _parse_byrne_rst(rst_path: Path, docsrc_dir: Path) -> ByrneProp:
                     r"\1stroke: none;",
                     svg_txt,
                 )
-                svg_markup = svg_txt
+                for var_name, hex_val in (
+                    ("var(--byrne-paper)", "#faf7f0"),
+                    ("var(--byrne-red)", "#d92b2b"),
+                    ("var(--byrne-blue)", "#1c6ea4"),
+                    ("var(--byrne-yellow)", "#e6b800"),
+                    ("var(--byrne-black)", "#1a1a1a"),
+                    ("var(--byrne-fill-red)", "#d92b2b"),
+                    ("var(--byrne-fill-blue)", "#1c6ea4"),
+                    ("var(--byrne-fill-yellow)", "#e6b800"),
+                    ("var(--byrne-fill-black)", "#1a1a1a"),
+                ):
+                    svg_txt = svg_txt.replace(var_name, hex_val)
+                from .coffee_table import tight_crop_svg
+
+                svg_markup = tight_crop_svg(svg_txt, pad_ratio=0.06)
             continue
         if s.startswith((".. container::", ":alt:", ":caption:", ":page:")):
             continue
