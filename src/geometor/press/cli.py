@@ -210,6 +210,52 @@ def build_parser() -> argparse.ArgumentParser:
         help="Optional limit on number of propositions.",
     )
 
+    byrne_p = sub.add_parser(
+        "byrne-pdf",
+        help="Build an 8.5in x 11in Polychrome Fine-Color Quarto PDF for Byrne's Euclid.",
+    )
+    byrne_p.add_argument(
+        "--repo",
+        type=Path,
+        default=Path("/home/phi/PROJECTS/geometor/byrne"),
+        help="Path to the byrne repository.",
+    )
+    byrne_p.add_argument(
+        "--output",
+        type=Path,
+        default=Path("/home/phi/PROJECTS/geometor/press/editions/byrne/byrne_polychrome_quarto.pdf"),
+        help="Output PDF file path.",
+    )
+    byrne_p.add_argument(
+        "--limit",
+        type=int,
+        default=None,
+        help="Optional limit on number of propositions.",
+    )
+
+    kepler_p = sub.add_parser(
+        "kepler-pdf",
+        help="Build a 6in x 9in Trade Monograph PDF for Kepler's Geometric Trilogy.",
+    )
+    kepler_p.add_argument(
+        "--repo",
+        type=Path,
+        default=Path("/home/phi/PROJECTS/geometor/kepler"),
+        help="Path to the kepler repository.",
+    )
+    kepler_p.add_argument(
+        "--output",
+        type=Path,
+        default=Path("/home/phi/PROJECTS/geometor/press/editions/kepler/kepler_trilogy_trade.pdf"),
+        help="Output PDF file path.",
+    )
+    kepler_p.add_argument(
+        "--limit",
+        type=int,
+        default=None,
+        help="Optional limit on number of sections.",
+    )
+
     return parser
 
 
@@ -264,6 +310,20 @@ def run_cli(argv: Sequence[str] | None = None) -> int:
             limit=args.limit,
         )
         print(f"Euclid Trade PDF created -> {out}")
+        return 0
+
+    if command == "byrne-pdf":
+        from .byrne_print import build_byrne_quarto_pdf
+
+        out = build_byrne_quarto_pdf(args.repo, args.output, limit=args.limit)
+        print(f"Byrne Quarto PDF created -> {out}")
+        return 0
+
+    if command == "kepler-pdf":
+        from .kepler_print import build_kepler_trilogy_pdf
+
+        out = build_kepler_trilogy_pdf(args.repo, args.output, limit=args.limit)
+        print(f"Kepler Trade PDF created -> {out}")
         return 0
 
     catalog = load_shelf()
