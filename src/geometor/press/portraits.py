@@ -219,3 +219,266 @@ def render_medallion_svg(layers: dict[str, list[dict[str, Any]]], theme: str = "
     )
     out.append("</svg>")
     return "\n".join(out)
+
+
+def arc_through(
+    p1: tuple[float, float],
+    p2: tuple[float, float],
+    sagitta: float,
+) -> tuple[float, float, float, float, float]:
+    """Compute circular arc ``(cx, cy, r, a1, a2)`` from ``p1`` to ``p2`` with signed sagitta.
+
+    Positive ``sagitta`` bows to the left of directed segment ``p1 -> p2`` in SVG
+    coordinates (x right, y down); negative ``sagitta`` bows to the right.
+    """
+    x1, y1 = p1
+    x2, y2 = p2
+    dx, dy = x2 - x1, y2 - y1
+    chord = math.hypot(dx, dy)
+    if chord < 1e-6 or abs(sagitta) < 1e-4:
+        msg = f"Degenerate arc_through({p1}, {p2}, sagitta={sagitta})"
+        raise ValueError(msg)
+    s = abs(sagitta)
+    r = (chord * chord) / (8.0 * s) + 0.5 * s
+    mx, my = 0.5 * (x1 + x2), 0.5 * (y1 + y2)
+    # Left unit normal in SVG coords (x right, y down): (dy/chord, -dx/chord)
+    nx, ny = dy / chord, -dx / chord
+    sign = 1.0 if sagitta > 0.0 else -1.0
+    # Center lies opposite the bulge by (r - s)
+    cx = mx - sign * (r - s) * nx
+    cy = my - sign * (r - s) * ny
+    a1 = math.degrees(math.atan2(y1 - cy, x1 - cx))
+    a2 = math.degrees(math.atan2(y2 - cy, x2 - cx))
+    a1_n, a2_n = normalize_short_span(a1, a2)
+    return (cx, cy, r, a1_n, a2_n)
+
+
+def clip_arc_to_medallion(
+    cx: float,
+    cy: float,
+    r: float,
+    a1: float,
+    a2: float,
+    margin: float = 0.0,
+) -> list[tuple[float, float]]:
+    """Clip a circular arc ``(cx, cy, r, a1..a2)`` to stay strictly inside the medallion.
+
+    Returns a list of ``(start_deg, end_deg)`` sub-arc intervals whose points all lie
+    within radius ``MED_R + margin`` of ``(MED_CX, MED_CY)``.
+    """
+    a1_n, a2_n = normalize_short_span(a1, a2)
+    rad_limit = MED_R + margin
+    d_centers = math.hypot(cx - MED_CX, cy - MED_CY)
+    # Entire circle inside medallion
+    if d_centers + r <= rad_limit:
+        return [(a1_n, a2_n)]
+    # Entire circle outside medallion
+    if d_centers >= r + rad_limit or r >= d_centers + rad_limit:
+        return []
+
+    # Exact circle-circle intersection angles on circle (cx, cy, r)
+    cos_val = (r * r + d_centers * d_centers - rad_limit * rad_limit) / (2.0 * r * d_centers)
+    cos_val = max(-1.0, min(1.0, cos_val))
+    base_angle = math.degrees(math.atan2(MED_CY - cy, MED_CX - cx))
+    delta_deg = math.degrees(math.acos(cos_val))
+
+    # Candidate split angles aligned to [min_a, max_a]
+    lo, hi = (a1_n, a2_n) if a1_n <= a2_n else (a2_n, a1_n)
+    cuts: list[float] = [lo, hi]
+    for raw_ang in (base_angle - delta_deg, base_angle + delta_deg):
+        for k in (-2, -1, 0, 1, 2):
+            cand = raw_ang + 360.0 * k
+            if lo + 1e-4 < cand < hi - 1e-4:
+                cuts.append(cand)
+    cuts.sort()
+
+    intervals: list[tuple[float, float]] = []
+    for s_ang, e_ang in zip(cuts[:-1], cuts[1:], strict=False):
+        mid = 0.5 * (s_ang + e_ang)
+        mx, my = polar(cx, cy, r, mid)
+        if math.hypot(mx - MED_CX, my - MED_CY) <= rad_limit + 1e-3:
+            if a1_n <= a2_n:
+                intervals.append((s_ang, e_ang))
+            else:
+                intervals.append((e_ang, s_ang))
+    if a1_n > a2_n:
+        intervals.reverse()
+    return intervals
+
+
+class MedallionBuilder:
+    """Shared compass-and-straightedge portrait builder with automatic medallion clipping."""
+
+    def __init__(self) -> None:
+        """Initialize the four canonical visual layers."""
+        self.layers: dict[str, list[dict[str, Any]]] = {
+            "scaffold": [],
+            "golden": [],
+            "detail": [],
+            "primary": [],
+        }
+
+    def add_circle(
+        self,
+        layer: str,
+        cx: float,
+        cy: float,
+        r: float,
+        *,
+        filled: bool = False,
+        clip: bool = True,
+    ) -> None:
+        """Add a circle (skipping if it would protrude outside ``MED_R`` when ``clip=True``)."""
+        if clip and math.hypot(cx - MED_CX, cy - MED_CY) + r > MED_R + 0.5:
+            return
+        entry: dict[str, Any] = {"kind": "circle", "cx": cx, "cy": cy, "r": r}
+        if filled:
+            entry["filled"] = True
+        self.layers[layer].append(entry)
+
+    def add_line(
+        self,
+        layer: str,
+        x1: float,
+        y1: float,
+        x2: float,
+        y2: float,
+        *,
+        clip: bool = True,
+    ) -> None:
+        """Add a straight segment, auto-clipped to ``MED_R`` by default."""
+        if clip:
+            clipped = clip_line_to_medallion(x1, y1, x2, y2)
+            if clipped is None:
+                return
+            x1, y1, x2, y2 = clipped
+        self.layers[layer].append({"kind": "line", "x1": x1, "y1": y1, "x2": x2, "y2": y2})
+
+    def add_arc(
+        self,
+        layer: str,
+        cx: float,
+        cy: float,
+        r: float,
+        a1: float,
+        a2: float,
+        *,
+        clip: bool = True,
+    ) -> None:
+        """Add a circular arc (``M ... A ...``), auto-clipped to ``MED_R`` by default."""
+        spans = (
+            clip_arc_to_medallion(cx, cy, r, a1, a2)
+            if clip
+            else [normalize_short_span(a1, a2)]
+        )
+        for sa, ea in spans:
+            if abs(ea - sa) < 0.2:
+                continue
+            self.layers[layer].append(
+                {
+                    "kind": "arc",
+                    "d": arc_path(cx, cy, r, sa, ea),
+                    "cx": cx,
+                    "cy": cy,
+                    "r": r,
+                    "a1": sa,
+                    "a2": ea,
+                }
+            )
+
+    def add_arc_pts(
+        self,
+        layer: str,
+        p1: tuple[float, float],
+        p2: tuple[float, float],
+        sagitta: float,
+        *,
+        clip: bool = True,
+    ) -> None:
+        """Add a circular arc from ``p1`` to ``p2`` with signed ``sagitta``."""
+        if abs(sagitta) < 0.08:
+            self.add_line(layer, p1[0], p1[1], p2[0], p2[1], clip=clip)
+            return
+        cx, cy, r, a1, a2 = arc_through(p1, p2, sagitta)
+        self.add_arc(layer, cx, cy, r, a1, a2, clip=clip)
+
+    def add_wave(
+        self,
+        layer: str,
+        p1: tuple[float, float],
+        p2: tuple[float, float],
+        half_waves: int,
+        half_angle_deg: float = 32.0,
+        initial_sign: int = 1,
+    ) -> None:
+        """Add a G1-smooth chain of externally tangent circular arcs (Euclid III.12)."""
+        for cx, cy, r, a1, a2 in tangent_wave_arcs(
+            p1[0], p1[1], p2[0], p2[1], half_waves, half_angle_deg, initial_sign
+        ):
+            self.add_arc(layer, cx, cy, r, a1, a2, clip=True)
+
+    def add_scaffold_base(
+        self,
+        *,
+        eye_lx: float = -13.0,
+        eye_rx: float = 13.0,
+        head_cx: float = 0.0,
+        head_cy: float = -27.0,
+        head_r: float = 26.0,
+    ) -> None:
+        """Add the canonical medallion scaffold (ring, axes, R, R*phi, Vesica eye circles)."""
+        phi = (1.0 + math.sqrt(5.0)) / 2.0
+        self.add_circle("scaffold", MED_CX, MED_CY, MED_R, clip=False)
+        self.add_line("scaffold", head_cx, MED_CY - MED_R, head_cx, MED_CY + MED_R)
+        self.add_line("scaffold", -MED_R, head_cy, MED_R, head_cy)
+        self.add_line("scaffold", -MED_R, head_cy + head_r, MED_R, head_cy + head_r)
+        self.add_circle("scaffold", head_cx, head_cy, head_r)
+        self.add_circle("scaffold", head_cx, head_cy, head_r * phi)
+        self.add_circle("scaffold", head_cx, head_cy, head_r * phi * 1.25)
+        eye_r = max(10.0, 0.5 * abs(eye_rx - eye_lx))
+        self.add_circle("scaffold", eye_lx, head_cy, eye_r)
+        self.add_circle("scaffold", eye_rx, head_cy, eye_r)
+
+    def add_canonical_eye(
+        self,
+        cx: float,
+        cy: float,
+        *,
+        width: float = 10.0,
+        upper_sag: float = 2.6,
+        lower_sag: float = -1.3,
+        iris_r: float = 2.2,
+        pupil_r: float = 1.05,
+        gaze_dx: float = 0.0,
+    ) -> None:
+        """Draw an eye in the canonical GEOMETOR House Style (lines & circular arcs only)."""
+        hw = 0.5 * width
+        p_in = (cx - hw, cy)
+        p_out = (cx + hw, cy)
+        self.add_arc_pts("primary", p_in, p_out, upper_sag)
+        self.add_arc_pts("detail", (cx - hw * 0.92, cy - 1.4), (cx + hw * 0.92, cy - 1.4), upper_sag * 0.85)
+        self.add_arc_pts("detail", p_in, p_out, lower_sag)
+        self.add_circle("detail", cx + gaze_dx, cy - 0.1, iris_r)
+        self.add_circle("primary", cx + gaze_dx, cy - 0.1, pupil_r, filled=True)
+
+    def build(self) -> dict[str, list[dict[str, Any]]]:
+        """Return the completed 4-layer dictionary for :func:`render_medallion_svg`."""
+        return self.layers
+
+
+def build_empty_medallion_elements() -> dict[str, list[dict[str, Any]]]:
+    """Build the canonical empty medallion scaffold (Researched / Ready-for-Artist state)."""
+    mb = MedallionBuilder()
+    mb.add_scaffold_base()
+    # Subtle golden tick marks at canonical eye-line & apex
+    mb.add_line("golden", -91.5, -27.0, -85.0, -27.0)
+    mb.add_line("golden", 85.0, -27.0, 91.5, -27.0)
+    mb.add_line("golden", 0.0, -99.5, 0.0, -93.0)
+    mb.add_circle("golden", 0.0, -27.0, 1.4)
+    return mb.build()
+
+
+def build_empty_medallion_svg(theme: str = "dark") -> str:
+    """Render the empty canonical medallion SVG for researched-but-undrawn Pantheon slots."""
+    return render_medallion_svg(build_empty_medallion_elements(), theme=theme)
+

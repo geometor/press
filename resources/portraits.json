@@ -2,13 +2,28 @@
   "specification": {
     "name": "GEOMETOR Compass-and-Straightedge Medallion",
     "viewBox": "-102 -106 204 196",
-    "medallion_center": [0.0, -8.0],
+    "medallion_center": [
+      0.0,
+      -8.0
+    ],
     "medallion_radius": 92.0,
     "outer_rim_radius": 95.2,
     "canonical_eye_line_y": -27.0,
     "canonical_head_radius": 26.0,
-    "primitives_allowed": ["line", "circle", "arc (M ... A ...)"],
-    "primitives_forbidden": ["C", "Q", "S", "T", "ellipse", "polygon", "polyline"],
+    "primitives_allowed": [
+      "line",
+      "circle",
+      "arc (M ... A ...)"
+    ],
+    "primitives_forbidden": [
+      "C",
+      "Q",
+      "S",
+      "T",
+      "ellipse",
+      "polygon",
+      "polyline"
+    ],
     "layers": {
       "scaffold": {
         "dark_stroke": "#4a5d76",
@@ -64,7 +79,8 @@
         "light_svg": "docsrc/_static/portraits/durer_light.svg",
         "studio_html": "demos/durer_portrait_studio.html"
       },
-      "notes": "Cranial circle (0, -27), R=26 hits hairline (-R), temples (+-R), nose base (+R), and pupils (+-R/2). All curl locks use Euclid III.12 tangent circular arcs."
+      "notes": "Cranial circle (0, -27), R=26 hits hairline (-R), temples (+-R), nose base (+R), and pupils (+-R/2). All curl locks use Euclid III.12 tangent circular arcs.",
+      "birth_year": 1471
     },
     {
       "id": "euclid",
@@ -89,7 +105,8 @@
         "dark_svg": "docsrc/_static/portraits/euclid_dark.svg",
         "light_svg": "docsrc/_static/portraits/euclid_light.svg"
       },
-      "notes": "Zoom crop onto head, full philosopher beard, and open V-tunic; reconstruct shadowed right half cleanly via three-quarter geometric symmetry."
+      "notes": "Zoom crop onto head, full philosopher beard, and open V-tunic; reconstruct shadowed right half cleanly via three-quarter geometric symmetry.",
+      "birth_year": -325
     },
     {
       "id": "plato",
@@ -114,7 +131,8 @@
         "dark_svg": "docsrc/_static/portraits/plato_dark.svg",
         "light_svg": "docsrc/_static/portraits/plato_light.svg"
       },
-      "notes": "Left figure of the central School of Athens pair."
+      "notes": "Left figure of the central School of Athens pair.",
+      "birth_year": -428
     },
     {
       "id": "aristotle",
@@ -139,7 +157,8 @@
         "dark_svg": "docsrc/_static/portraits/aristotle_dark.svg",
         "light_svg": "docsrc/_static/portraits/aristotle_light.svg"
       },
-      "notes": "Right figure of the central School of Athens pair; pairs visually across the gallery with Plato."
+      "notes": "Right figure of the central School of Athens pair; pairs visually across the gallery with Plato.",
+      "birth_year": -384
     },
     {
       "id": "pacioli",
@@ -164,7 +183,8 @@
         "dark_svg": "docsrc/_static/portraits/pacioli_dark.svg",
         "light_svg": "docsrc/_static/portraits/pacioli_light.svg"
       },
-      "notes": "Iconic cowl hood forms natural concentric circular arcs around face."
+      "notes": "Iconic cowl hood forms natural concentric circular arcs around face.",
+      "birth_year": 1447
     },
     {
       "id": "kepler",
@@ -188,7 +208,8 @@
         "dark_svg": "docsrc/_static/portraits/kepler_dark.svg",
         "light_svg": "docsrc/_static/portraits/kepler_light.svg"
       },
-      "notes": "IMPORTANT: Use JKepler.jpg (authentic portrait). Do NOT use Portrait_Confused_With_Johannes_Kepler_1610.jpg, which Wikimedia flags as a 19th-century spurious copy of an unknown sitter."
+      "notes": "IMPORTANT: Use JKepler.jpg (authentic portrait). Do NOT use Portrait_Confused_With_Johannes_Kepler_1610.jpg, which Wikimedia flags as a 19th-century spurious copy of an unknown sitter.",
+      "birth_year": 1571
     },
     {
       "id": "euler",
@@ -213,7 +234,920 @@
         "dark_svg": "docsrc/_static/portraits/euler_dark.svg",
         "light_svg": "docsrc/_static/portraits/euler_light.svg"
       },
-      "notes": "Soft silk wrap around forehead lends itself directly to Euclid III.12 concentric arcs."
+      "notes": "Soft silk wrap around forehead lends itself directly to Euclid III.12 concentric arcs.",
+      "birth_year": 1707
+    },
+    {
+      "id": "archimedes",
+      "name": "Archimedes of Syracuse",
+      "dates": "c. 287 - c. 212 BCE",
+      "birth_year": -287,
+      "era": "Antiquity",
+      "repo": "archimedes",
+      "status": "complete",
+      "queue_order": 7,
+      "pose": "Three-quarter right scholar leaning over instruments",
+      "reference": {
+        "title": "Portrait of a Scholar (Archimedes)",
+        "artist": "Domenico Fetti (c. 1620)",
+        "holding": "Gemäldegalerie Alte Meister, Dresden",
+        "rights": "Public Domain",
+        "wikimedia_file": "File:Domenico-Fetti Archimedes 1620.jpg",
+        "url": "https://commons.wikimedia.org/wiki/File:Domenico-Fetti_Archimedes_1620.jpg",
+        "local_ref": "resources/portraits_ref/archimedes_ref.jpg"
+      },
+      "signature_motif": "Circumscribed Cylinder & Inscribed Sphere (2:3) + Hexagon pi Bounds",
+      "outputs": {
+        "dark_svg": "docsrc/_static/portraits/archimedes_dark.svg",
+        "light_svg": "docsrc/_static/portraits/archimedes_light.svg"
+      },
+      "notes": "Focus on domed forehead, furrowed brow, and curled scholar beard."
+    },
+    {
+      "id": "aquinas",
+      "name": "St. Thomas Aquinas",
+      "dates": "1225 - 1274",
+      "birth_year": 1225,
+      "era": "Medieval",
+      "repo": "aquinas",
+      "status": "complete",
+      "queue_order": 8,
+      "pose": "Three-quarter left in Dominican tonsure and habit",
+      "reference": {
+        "title": "Saint Thomas Aquinas (1476, Demidoff Altarpiece)",
+        "artist": "Carlo Crivelli",
+        "holding": "National Gallery, London",
+        "rights": "Public Domain",
+        "wikimedia_file": "File:St-thomas-aquinas.jpg",
+        "url": "https://commons.wikimedia.org/wiki/File:St-thomas-aquinas.jpg",
+        "local_ref": "resources/portraits_ref/aquinas_ref.jpg"
+      },
+      "signature_motif": "Radiant Sun of Materia Intelligibilis & Three Degrees of Abstraction",
+      "outputs": {
+        "dark_svg": "docsrc/_static/portraits/aquinas_dark.svg",
+        "light_svg": "docsrc/_static/portraits/aquinas_light.svg"
+      },
+      "notes": "Clean Dominican tonsure ring and hooded collar lend themselves directly to concentric arcs."
+    },
+    {
+      "id": "pascal",
+      "name": "Blaise Pascal",
+      "dates": "1623 - 1662",
+      "birth_year": 1623,
+      "era": "Early Modern",
+      "repo": "pascal",
+      "status": "complete",
+      "queue_order": 9,
+      "pose": "Three-quarter right with flowing waves and white cravat collar",
+      "reference": {
+        "title": "Portrait of Blaise Pascal (after François II Quesnel, 1691)",
+        "holding": "Palace of Versailles",
+        "rights": "Public Domain",
+        "wikimedia_file": "File:Blaise_Pascal_Versailles.JPG",
+        "url": "https://commons.wikimedia.org/wiki/File:Blaise_Pascal_Versailles.JPG",
+        "local_ref": "resources/portraits_ref/pascal_ref.jpg"
+      },
+      "signature_motif": "Hexagrammum Mysticum (Circle, Inscribed Hexagon & Pascal Line)",
+      "outputs": {
+        "dark_svg": "docsrc/_static/portraits/pascal_dark.svg",
+        "light_svg": "docsrc/_static/portraits/pascal_light.svg"
+      },
+      "notes": "Iconic flowing Baroque hair waves via Euclid III.12 tangent arcs."
+    },
+    {
+      "id": "steiner",
+      "name": "Jakob Steiner",
+      "dates": "1796 - 1863",
+      "birth_year": 1796,
+      "era": "19th Century",
+      "repo": "steiner",
+      "status": "complete",
+      "queue_order": 10,
+      "pose": "Three-quarter left engraving in 19th-century high collar",
+      "reference": {
+        "title": "Jakob Steiner portrait (1881 Gesammelte Werke frontispiece)",
+        "artist": "August Weger",
+        "holding": "ETH Zürich / Gesammelte Werke",
+        "rights": "Public Domain",
+        "wikimedia_file": "File:Jakob Steiner portrait 1881.jpg",
+        "url": "https://commons.wikimedia.org/wiki/File:Jakob_Steiner_portrait_1881.jpg",
+        "local_ref": "resources/portraits_ref/steiner_ref.jpg"
+      },
+      "signature_motif": "Steiner Porism (Ring of Tangent Circles) & Poncelet-Steiner Circle",
+      "outputs": {
+        "dark_svg": "docsrc/_static/portraits/steiner_dark.svg",
+        "light_svg": "docsrc/_static/portraits/steiner_light.svg"
+      },
+      "notes": "Crisp steel-engraving planes ideal for synthetic line-and-arc portraiture."
+    },
+    {
+      "id": "byrne",
+      "name": "Oliver Byrne",
+      "dates": "1810 - 1880",
+      "birth_year": 1810,
+      "era": "19th Century",
+      "repo": "byrne",
+      "status": "complete",
+      "queue_order": 11,
+      "pose": "Three-quarter Victorian bust portrait",
+      "reference": {
+        "title": "Oliver Byrne Portrait (c. 1850)",
+        "holding": "Public Domain archival portrait",
+        "rights": "Public Domain",
+        "wikimedia_file": "File:Oliver Byrne Portrait (ca 1850).jpg",
+        "url": "https://commons.wikimedia.org/wiki/File:Oliver_Byrne_Portrait_(ca_1850).jpg",
+        "local_ref": "resources/portraits_ref/byrne_ref.jpg"
+      },
+      "signature_motif": "Elements I.47 Pythagorean Square-Dissection Diagram",
+      "outputs": {
+        "dark_svg": "docsrc/_static/portraits/byrne_dark.svg",
+        "light_svg": "docsrc/_static/portraits/byrne_light.svg"
+      },
+      "notes": "Author of the 1847 polychrome Elements of Euclid."
+    },
+    {
+      "id": "hilbert",
+      "name": "David Hilbert",
+      "dates": "1862 - 1943",
+      "birth_year": 1862,
+      "era": "Modern",
+      "repo": "hilbert",
+      "status": "complete",
+      "queue_order": 12,
+      "pose": "Frontal / slight three-quarter with felt hat, pince-nez, and goatee",
+      "reference": {
+        "title": "David Hilbert (1912 Göttingen portrait)",
+        "holding": "University of Göttingen / Wikimedia Commons",
+        "rights": "Public Domain",
+        "wikimedia_file": "File:Hilbert.jpg",
+        "url": "https://commons.wikimedia.org/wiki/File:Hilbert.jpg",
+        "local_ref": "resources/portraits_ref/hilbert_ref.jpg"
+      },
+      "signature_motif": "Pappus-Hilbert Incidence Configuration & Parallel-Axiom Grid",
+      "outputs": {
+        "dark_svg": "docsrc/_static/portraits/hilbert_dark.svg",
+        "light_svg": "docsrc/_static/portraits/hilbert_light.svg"
+      },
+      "notes": "Circular pince-nez spectacles and sweeping hat brim are native compass geometry."
+    },
+    {
+      "id": "bertrand-russell",
+      "name": "Bertrand Russell",
+      "dates": "1872 - 1970",
+      "birth_year": 1872,
+      "era": "Modern",
+      "repo": "bertrand-russell",
+      "status": "complete",
+      "queue_order": 13,
+      "pose": "Three-quarter right Edwardian portrait with mustache",
+      "reference": {
+        "title": "Bertrand Russell (1907)",
+        "holding": "Wikimedia Commons (PD-1923)",
+        "rights": "Public Domain",
+        "wikimedia_file": "File:Bertrand Russell, 1907.jpg",
+        "url": "https://commons.wikimedia.org/wiki/File:Bertrand_Russell,_1907.jpg",
+        "local_ref": "resources/portraits_ref/bertrand_russell_ref.jpg"
+      },
+      "signature_motif": "Projective Cross-Ratio Pencil & Intersecting Logic Circles",
+      "outputs": {
+        "dark_svg": "docsrc/_static/portraits/bertrand_russell_dark.svg",
+        "light_svg": "docsrc/_static/portraits/bertrand_russell_light.svg"
+      },
+      "notes": "Author of An Essay on the Foundations of Geometry (1897)."
+    },
+    {
+      "id": "heath",
+      "name": "Sir Thomas Little Heath",
+      "dates": "1861 - 1940",
+      "birth_year": 1861,
+      "era": "Modern",
+      "repo": "euclid",
+      "status": "complete",
+      "queue_order": 14,
+      "pose": "Three-quarter left studio portrait with mustache and wing collar",
+      "reference": {
+        "title": "Sir Thomas Little Heath (c. 1910)",
+        "holding": "MacTutor / Royal Society Obituary",
+        "rights": "Public Domain",
+        "wikimedia_file": "File:Thomas Little Heath.jpg",
+        "url": "https://commons.wikimedia.org/wiki/File:Thomas_Little_Heath.jpg",
+        "local_ref": "resources/portraits_ref/heath_ref.jpg"
+      },
+      "signature_motif": "Greek Elements Scroll & Book XIII Golden Section / Regular Solids",
+      "outputs": {
+        "dark_svg": "docsrc/_static/portraits/heath_dark.svg",
+        "light_svg": "docsrc/_static/portraits/heath_light.svg"
+      },
+      "notes": "Translator and commentator of Euclid, Archimedes, and Apollonius."
+    },
+    {
+      "id": "apollonius",
+      "name": "Apollonius of Perga",
+      "dates": "c. 240 - c. 190 BCE",
+      "birth_year": -240,
+      "era": "Antiquity",
+      "repo": "apollonius",
+      "status": "researched",
+      "queue_order": 15,
+      "pose": "Renaissance woodcut portrait with mathematical attributes",
+      "reference": {
+        "title": "Woodcut portrait of Apollonius of Perga (Apollonii Pergei Opera, Venice, 1537)",
+        "artist": "Unknown Venetian woodcut artist",
+        "holding": "First printed Latin edition of Conics Books I-IV, Venice, 1537",
+        "rights": "Public Domain (PD-old-100 / PD-Art)",
+        "wikimedia_file": "File:Apollonii Pergei Opera 1537 detail.jpg",
+        "url": "https://commons.wikimedia.org/wiki/File:Apollonii_Pergei_Opera_1537_detail.jpg"
+      },
+      "signature_motif": "Apollonian Gasket (3 Mutual Tangent Circles) & Circle of Apollonius",
+      "outputs": {},
+      "notes": "Earliest printed historical depiction (1537 Venice Conics title page).",
+      "portrait_type": "historical_depiction"
+    },
+    {
+      "id": "heron",
+      "name": "Heron of Alexandria",
+      "dates": "c. 10 - c. 70 CE",
+      "birth_year": 10,
+      "era": "Antiquity",
+      "repo": "heron",
+      "status": "researched",
+      "queue_order": 16,
+      "pose": "Bearded classical scholar in turban and draped robe, three-quarter right",
+      "reference": {
+        "title": "Engraved portrait of Hero of Alexandria (Pneumatics, Frankfurt, 1688)",
+        "artist": "Unknown 17th-century German engraver",
+        "holding": "Buch von Lufft- und Wasser-Künsten, Frankfurt, 1688",
+        "rights": "Public Domain (PD-Mark 1.0 / PD-old-100)",
+        "wikimedia_file": "File:Hero of Alexandria.png",
+        "url": "https://commons.wikimedia.org/wiki/File:Hero_of_Alexandria.png"
+      },
+      "signature_motif": "Heron Incircle & Semiperimeter Radii + Equal-Angle Reflection",
+      "outputs": {},
+      "notes": "Canonical 1688 Pneumatics engraving (avoids Byzantine Gregory of Nazianzus misattribution).",
+      "portrait_type": "historical_depiction"
+    },
+    {
+      "id": "nicomachus",
+      "name": "Nicomachus of Gerasa",
+      "dates": "c. 60 - c. 120 CE",
+      "birth_year": 60,
+      "era": "Antiquity",
+      "repo": "nicomachus",
+      "status": "researched",
+      "queue_order": 17,
+      "pose": "Seated Romanesque bearded sage within arched illumination",
+      "reference": {
+        "title": "Nicomachus of Gerasa (Boethius, De institutione musica, MS Ii.3.12, fol. 61v, c. 1130)",
+        "artist": "Christ Church, Canterbury illuminator",
+        "holding": "Cambridge University Library, MS Ii.3.12, fol. 61v",
+        "rights": "Public Domain (PD-old-100 / PD-Art)",
+        "wikimedia_file": "File:Nikomachos von Gerasa.jpg",
+        "url": "https://commons.wikimedia.org/wiki/File:Nikomachos_von_Gerasa.jpg"
+      },
+      "signature_motif": "Pythagorean Figurate Gnomon Lattice & Polygonal Number Arrays",
+      "outputs": {},
+      "notes": "Earliest authoritative illumination explicitly naming Nicomachus.",
+      "portrait_type": "historical_depiction"
+    },
+    {
+      "id": "menelaus",
+      "name": "Menelaus of Alexandria",
+      "dates": "c. 70 - c. 140 CE",
+      "birth_year": 70,
+      "era": "Antiquity",
+      "repo": "menelaus",
+      "status": "researched",
+      "queue_order": 18,
+      "pose": "Pure geometric emblem medallion (no historical portrait extant)",
+      "reference": {
+        "title": "No authentic portrait extant (emblem medallion only)",
+        "rights": "N/A (original geometric emblem)"
+      },
+      "signature_motif": "Menelaus Transversal Triangle & Spherical Great-Circle Triangle",
+      "outputs": {},
+      "notes": "No historical likeness survives (avoids mythological King Menelaus of Sparta).",
+      "portrait_type": "emblem_only"
+    },
+    {
+      "id": "ptolemy",
+      "name": "Claudius Ptolemy",
+      "dates": "c. 100 - c. 170 CE",
+      "birth_year": 100,
+      "era": "Antiquity",
+      "repo": "ptolemy",
+      "status": "researched",
+      "queue_order": 19,
+      "pose": "Three-quarter left in royal scholar robes cradling armillary sphere",
+      "reference": {
+        "title": "Ptolemy (Studiolo of Federico da Montefeltro, Urbino, c. 1473-1476)",
+        "artist": "Justus of Ghent & Pedro Berruguete",
+        "holding": "Musée du Louvre, Paris (Inv. MI 657)",
+        "rights": "Public Domain (PD-old-100 / PD-Art)",
+        "wikimedia_file": "File:Ptolemy 1476 with armillary sphere model.jpg",
+        "url": "https://commons.wikimedia.org/wiki/File:Ptolemy_1476_with_armillary_sphere_model.jpg"
+      },
+      "signature_motif": "Ptolemy Cyclic Quadrilateral & Epicycle-on-Deferent Orbits",
+      "outputs": {},
+      "notes": "Preeminent Renaissance Urbino Studiolo panel.",
+      "portrait_type": "historical_depiction"
+    },
+    {
+      "id": "pappus",
+      "name": "Pappus of Alexandria",
+      "dates": "c. 290 - c. 350 CE",
+      "birth_year": 290,
+      "era": "Antiquity",
+      "repo": "pappus",
+      "status": "researched",
+      "queue_order": 20,
+      "pose": "Pure geometric emblem medallion (no historical portrait extant)",
+      "reference": {
+        "title": "No authentic portrait extant (emblem medallion only)",
+        "rights": "N/A (original geometric emblem)"
+      },
+      "signature_motif": "Pappus Hexagon Theorem & Arbelos Tangent Circle Chain",
+      "outputs": {},
+      "notes": "No authentic portrait survives (1660 frontispiece depicts Archduke Leopold Wilhelm).",
+      "portrait_type": "emblem_only"
+    },
+    {
+      "id": "proclus",
+      "name": "Proclus Lycius",
+      "dates": "412 - 485 CE",
+      "birth_year": 412,
+      "era": "Antiquity",
+      "repo": "proclus",
+      "status": "researched",
+      "queue_order": 21,
+      "pose": "Pure geometric emblem medallion (no historical portrait extant)",
+      "reference": {
+        "title": "No authentic portrait extant (emblem medallion only)",
+        "rights": "N/A (original geometric emblem)"
+      },
+      "signature_motif": "Elements I.1 Vesica Piscis & Concentric Neoplatonic Triad Circles",
+      "outputs": {},
+      "notes": "No authentic portrait survives (Byzantine icons depict Saint Proclus of Constantinople).",
+      "portrait_type": "emblem_only"
+    },
+    {
+      "id": "fibonacci",
+      "name": "Leonardo Pisano (Fibonacci)",
+      "dates": "c. 1170 - c. 1250",
+      "birth_year": 1170,
+      "era": "Medieval",
+      "repo": "fibonacci",
+      "status": "researched",
+      "queue_order": 22,
+      "pose": "Three-quarter right bust in medieval hooded chaperon cap",
+      "reference": {
+        "title": "Engraved portrait of Leonardo Pisano (I benefattori dell'umanità, c. 1850)",
+        "artist": "Unknown 19th-century Italian engraver",
+        "holding": "I benefattori dell'umanità, vol. VI (c. 1850)",
+        "rights": "Public Domain (PD-old-100)",
+        "wikimedia_file": "File:Fibonacci.jpg",
+        "url": "https://commons.wikimedia.org/wiki/File:Fibonacci.jpg"
+      },
+      "signature_motif": "Fibonacci Whirling Squares & Quarter-Circle Golden Spiral",
+      "outputs": {},
+      "notes": "Canonical Public Domain c. 1850 monochrome engraving.",
+      "portrait_type": "historical_depiction"
+    },
+    {
+      "id": "cusa",
+      "name": "Nicholas of Cusa",
+      "dates": "1401 - 1464",
+      "birth_year": 1401,
+      "era": "Renaissance",
+      "repo": "cusa",
+      "status": "researched",
+      "queue_order": 23,
+      "pose": "Devotional profile/three-quarter donor portrait in cardinal vestments",
+      "reference": {
+        "title": "Donor portrait of Cardinal Nicholas of Cusa (high altar triptych, c. 1460-1480)",
+        "artist": "Master of the Life of the Virgin",
+        "holding": "St.-Nikolaus-Hospital (Cusanusstift), Bernkastel-Kues",
+        "rights": "Public Domain (PD-old-100 / PD-Art)",
+        "wikimedia_file": "File:Nicholas of Cusa.jpg",
+        "url": "https://commons.wikimedia.org/wiki/File:Nicholas_of_Cusa.jpg"
+      },
+      "signature_motif": "Coincidentia Oppositorum Infinite Polygons & Expanding Tangent Circles",
+      "outputs": {},
+      "notes": "Authentic near-contemporary donor portrait at Cusanusstift.",
+      "portrait_type": "authentic_portrait"
+    },
+    {
+      "id": "piero",
+      "name": "Piero della Francesca",
+      "dates": "c. 1415 - 1492",
+      "birth_year": 1415,
+      "era": "Renaissance",
+      "repo": "piero",
+      "status": "researched",
+      "queue_order": 24,
+      "pose": "Dignified formal bust in Renaissance scholar robe and civic cap",
+      "reference": {
+        "title": "Portrait of Piero della Francesca (c. 1590)",
+        "artist": "Santi di Tito (1536-1603)",
+        "holding": "Museo Civico di Sansepolcro, Italy",
+        "rights": "Public Domain (PD-old-100 / PD-Art)",
+        "wikimedia_file": "File:Santi di Tito - Portrait of Piero della Francesca.jpg",
+        "url": "https://commons.wikimedia.org/wiki/File:Santi_di_Tito_-_Portrait_of_Piero_della_Francesca.jpg"
+      },
+      "signature_motif": "One-Point Perspective Vanishing Grid & Wireframe Truncated Polyhedron",
+      "outputs": {},
+      "notes": "Santi di Tito Sansepolcro portrait informed by Vasari's 1568 Vite.",
+      "portrait_type": "historical_depiction"
+    },
+    {
+      "id": "leonardo",
+      "name": "Leonardo da Vinci",
+      "dates": "1452 - 1519",
+      "birth_year": 1452,
+      "era": "Renaissance",
+      "repo": "pacioli",
+      "status": "researched",
+      "queue_order": 25,
+      "pose": "Three-quarter red-chalk head study with long flowing beard and hair",
+      "reference": {
+        "title": "Portrait of a Man in Red Chalk (presumed self-portrait, c. 1510-1515)",
+        "artist": "Leonardo da Vinci",
+        "holding": "Biblioteca Reale, Turin (Inv. 15571)",
+        "rights": "Public Domain (PD-old-100 / PD-Art)",
+        "wikimedia_file": "File:Leonardo da Vinci - presumed self-portrait - WGA12798.jpg",
+        "url": "https://commons.wikimedia.org/wiki/File:Leonardo_da_Vinci_-_presumed_self-portrait_-_WGA12798.jpg"
+      },
+      "signature_motif": "Vitruvian Circle-and-Square Canon & Geometric Compass Rosette",
+      "outputs": {},
+      "notes": "Iconic Turin sanguine study; Francesco Melzi Windsor profile is alternate.",
+      "portrait_type": "authentic_portrait"
+    },
+    {
+      "id": "ceva",
+      "name": "Giovanni Ceva",
+      "dates": "1647 - 1734",
+      "birth_year": 1647,
+      "era": "Early Modern",
+      "repo": "ceva",
+      "status": "researched",
+      "queue_order": 26,
+      "pose": "Pure geometric emblem medallion (no historical portrait extant)",
+      "reference": {
+        "title": "No authentic portrait extant (emblem medallion only)",
+        "rights": "N/A (original geometric emblem)"
+      },
+      "signature_motif": "Concurrent Cevians Triangle (Ceva's Theorem, 1678)",
+      "outputs": {},
+      "notes": "No authentic portrait survives (avoids misidentified Galileo portrait).",
+      "portrait_type": "emblem_only"
+    },
+    {
+      "id": "mascheroni",
+      "name": "Lorenzo Mascheroni",
+      "dates": "1750 - 1800",
+      "birth_year": 1750,
+      "era": "Enlightenment",
+      "repo": "mascheroni",
+      "status": "researched",
+      "queue_order": 27,
+      "pose": "Classical side-profile bust, clean-shaven Enlightenment scholar",
+      "reference": {
+        "title": "Lorenzo Mascheroni (copper engraving after a life painting, 1837)",
+        "artist": "Francesco Redenti (sculp.)",
+        "holding": "Iconografia italiana degli uomini e delle donne celebri (Milan, 1837)",
+        "rights": "Public Domain (PD-old-100 / CC0 PD Mark)",
+        "wikimedia_file": "File:Lorenzo_Mascheroni._Francesco_Redenti_sculp_(cropped).jpg",
+        "url": "https://commons.wikimedia.org/wiki/File:Lorenzo_Mascheroni._Francesco_Redenti_sculp_(cropped).jpg"
+      },
+      "signature_motif": "Compass-Only Circle Quartering (Napoleon's Problem) & Six-Petal Rose",
+      "outputs": {},
+      "notes": "Inscribed 'Da un dipinto fatto dal vivo'; crisp neoclassical profile.",
+      "portrait_type": "authentic_portrait"
+    },
+    {
+      "id": "staudt",
+      "name": "Karl G. C. von Staudt",
+      "dates": "1798 - 1867",
+      "birth_year": 1798,
+      "era": "19th Century",
+      "repo": "staudt",
+      "status": "researched",
+      "queue_order": 28,
+      "pose": "Formal three-quarter bust, bearded 19th-century professor",
+      "reference": {
+        "title": "Portrait of Karl Georg Christian von Staudt (mid-19th century)",
+        "holding": "Reichsstadt-Gymnasium Rothenburg archive",
+        "rights": "Public Domain (PD-old-100 / CC0 PD Mark)",
+        "wikimedia_file": "File:Von_Staudt.jpg",
+        "url": "https://commons.wikimedia.org/wiki/File:Von_Staudt.jpg"
+      },
+      "signature_motif": "Complete Quadrangle Harmonic Conjugate H(A,B;C,D) & Polarity Circle",
+      "outputs": {},
+      "notes": "Authentic Rothenburg archive portrait honoring Geometrie der Lage (1847).",
+      "portrait_type": "authentic_portrait"
+    },
+    {
+      "id": "feuerbach",
+      "name": "Karl Wilhelm Feuerbach",
+      "dates": "1800 - 1834",
+      "birth_year": 1800,
+      "era": "19th Century",
+      "repo": "feuerbach",
+      "status": "researched",
+      "queue_order": 29,
+      "pose": "Front-facing slightly angled Romantic-era scholar bust",
+      "reference": {
+        "title": "Portrait of Karl Wilhelm Feuerbach (early 19th century)",
+        "holding": "MacTutor / Xavier Hubaut biographical archive",
+        "rights": "Public Domain (PD-old-100 / CC0 PD Mark)",
+        "wikimedia_file": "File:Karl_Wilhelm_Feuerbach.jpg",
+        "url": "https://commons.wikimedia.org/wiki/File:Karl_Wilhelm_Feuerbach.jpg"
+      },
+      "signature_motif": "Feuerbach Nine-Point Circle Tangent to Incircle & Excircle",
+      "outputs": {},
+      "notes": "Accepted historical likeness of geometer Karl Wilhelm Feuerbach (1800-1834).",
+      "portrait_type": "authentic_portrait"
+    },
+    {
+      "id": "casey",
+      "name": "John Casey",
+      "dates": "1820 - 1891",
+      "birth_year": 1820,
+      "era": "19th Century",
+      "repo": "casey",
+      "status": "researched",
+      "queue_order": 30,
+      "pose": "Formal studio bust with full Victorian beard",
+      "reference": {
+        "title": "Portrait of John Casey (pre-1891)",
+        "holding": "MacTutor History of Mathematics Archive, St Andrews",
+        "rights": "Public Domain (PD-old-100 / CC0 PD Mark)",
+        "wikimedia_file": "File:John_Casey_01.jpg",
+        "url": "https://commons.wikimedia.org/wiki/File:John_Casey_01.jpg"
+      },
+      "signature_motif": "Casey's Theorem (Four Circles Tangent to a Fifth Circle)",
+      "outputs": {},
+      "notes": "Verified authentic pre-1891 portrait of Irish geometer John Casey.",
+      "portrait_type": "authentic_portrait"
+    },
+    {
+      "id": "ernst-haeckel",
+      "name": "Ernst Haeckel",
+      "dates": "1834 - 1919",
+      "birth_year": 1834,
+      "era": "19th Century",
+      "repo": "phyllotaxis",
+      "status": "researched",
+      "queue_order": 31,
+      "pose": "Three-quarter studio bust with flowing white naturalist beard",
+      "reference": {
+        "title": "Portrait of Ernst Haeckel (c. 1895, Cassell's Universal Portrait Gallery)",
+        "artist": "Friedrich Haack (1841-1915, Jena)",
+        "holding": "Cassell's Universal Portrait Gallery",
+        "rights": "Public Domain (PD-old-100 / PD-US-expired)",
+        "wikimedia_file": "File:Portrait_of_Ernst_Haeckel.jpg",
+        "url": "https://commons.wikimedia.org/wiki/File:Portrait_of_Ernst_Haeckel.jpg"
+      },
+      "signature_motif": "Radiolarian Icosahedral Symmetry & Concentric Diatom Star",
+      "outputs": {},
+      "notes": "Verified pre-1895 portrait by Friedrich Haack.",
+      "portrait_type": "authentic_portrait"
+    },
+    {
+      "id": "petersen",
+      "name": "Julius Petersen",
+      "dates": "1839 - 1910",
+      "birth_year": 1839,
+      "era": "19th Century",
+      "repo": "petersen",
+      "status": "researched",
+      "queue_order": 32,
+      "pose": "Three-quarter studio bust, bearded Danish professor",
+      "reference": {
+        "title": "Portrait of Julius Petersen (pre-1895)",
+        "artist": "Harald Paetz (1837-1895, Copenhagen)",
+        "holding": "Det Kongelige Bibliotek (Royal Library, Copenhagen)",
+        "rights": "Public Domain (PD-old-100 / CC0 PD Mark)",
+        "wikimedia_file": "File:Julius_Petersen_by_Harald_Paetz.jpg",
+        "url": "https://commons.wikimedia.org/wiki/File:Julius_Petersen_by_Harald_Paetz.jpg"
+      },
+      "signature_motif": "Petersen Graph (Pentagon, Inner Pentagram & 5 Radial Spokes)",
+      "outputs": {},
+      "notes": "High-provenance Royal Library Copenhagen albumen print.",
+      "portrait_type": "authentic_portrait"
+    },
+    {
+      "id": "lemoine",
+      "name": "Émile Lemoine",
+      "dates": "1840 - 1912",
+      "birth_year": 1840,
+      "era": "19th Century",
+      "repo": "lemoine",
+      "status": "researched",
+      "queue_order": 33,
+      "pose": "Head-and-shoulders studio bust with trimmed beard and high collar",
+      "reference": {
+        "title": "Portrait of Émile Lemoine (pre-1912)",
+        "holding": "MacTutor History of Mathematics Archive, St Andrews",
+        "rights": "Public Domain (PD-old-100 / PD-US-expired)",
+        "wikimedia_file": "File:Lemoine.jpg",
+        "url": "https://commons.wikimedia.org/wiki/File:Lemoine.jpg"
+      },
+      "signature_motif": "Symmedians at Lemoine Point K (X6) & First Lemoine Circle",
+      "outputs": {},
+      "notes": "Standard verified archival portrait honoring Geometrographie.",
+      "portrait_type": "authentic_portrait"
+    },
+    {
+      "id": "pasch",
+      "name": "Moritz Pasch",
+      "dates": "1843 - 1930",
+      "birth_year": 1843,
+      "era": "19th Century",
+      "repo": "pasch",
+      "status": "researched",
+      "queue_order": 34,
+      "pose": "Chest-up studio carte-de-visite bust, bearded German mathematician",
+      "reference": {
+        "title": "Portrait of Moritz Pasch (c. 1870-1885, Das Fotoalbum für Weierstraß)",
+        "artist": "Gustav Backofen (Giessen)",
+        "holding": "Kunstbibliothek Berlin (Staatliche Museen zu Berlin)",
+        "rights": "Public Domain (PD-old-100 / CC0 PD Mark)",
+        "wikimedia_file": "File:Portrait_of_Moritz_Pasch,_by_Gustav_Backofen_(Kunstbibliothek_Berlin).jpg",
+        "url": "https://commons.wikimedia.org/wiki/File:Portrait_of_Moritz_Pasch,_by_Gustav_Backofen_(Kunstbibliothek_Berlin).jpg"
+      },
+      "signature_motif": "Pasch's Axiom Transversal & Ordered Collinear Triad",
+      "outputs": {},
+      "notes": "Exceptional Kunstbibliothek Berlin provenance.",
+      "portrait_type": "authentic_portrait"
+    },
+    {
+      "id": "klein",
+      "name": "Felix Klein",
+      "dates": "1849 - 1925",
+      "birth_year": 1849,
+      "era": "19th Century",
+      "repo": "klein",
+      "status": "researched",
+      "queue_order": 35,
+      "pose": "Commanding three-quarter bust with full dark beard and piercing gaze",
+      "reference": {
+        "title": "Portrait of Felix Klein (before 1897, plate 0078 B)",
+        "artist": "Gebrüder Noelle (Göttingen)",
+        "holding": "Accademia delle Scienze di Torino (Inv. IST. 4.1.3.1)",
+        "rights": "Public Domain (PD-old-100 / PD-US-expired)",
+        "wikimedia_file": "File:Felix_Klein,_ante_1897_-_Accademia_delle_Scienze_di_Torino_0078_B.jpg",
+        "url": "https://commons.wikimedia.org/wiki/File:Felix_Klein,_ante_1897_-_Accademia_delle_Scienze_di_Torino_0078_B.jpg"
+      },
+      "signature_motif": "Beltrami-Klein Hyperbolic Disk Model (Chords & Limiting Parallels)",
+      "outputs": {},
+      "notes": "Verified pre-1897 Turin Academy Göttingen photograph.",
+      "portrait_type": "authentic_portrait"
+    },
+    {
+      "id": "poincare",
+      "name": "Henri Poincaré",
+      "dates": "1854 - 1912",
+      "birth_year": 1854,
+      "era": "19th Century",
+      "repo": "poincare",
+      "status": "researched",
+      "queue_order": 36,
+      "pose": "Slightly turned frontal bust with pince-nez spectacles and trimmed beard",
+      "reference": {
+        "title": "Portrait of Henri Poincaré (1887)",
+        "artist": "Eugène Pirou (1841-1909, Paris)",
+        "holding": "Historical photographic archive",
+        "rights": "Public Domain (PD-old-100 / PD-US-expired)",
+        "wikimedia_file": "File:Poincare.jpg",
+        "url": "https://commons.wikimedia.org/wiki/File:Poincare.jpg"
+      },
+      "signature_motif": "Poincaré Hyperbolic Disk (Orthogonal Geodesic Arcs & Ideal Triangle)",
+      "outputs": {},
+      "notes": "Classic 1887 Parisian studio portrait by Eugène Pirou.",
+      "portrait_type": "authentic_portrait"
+    },
+    {
+      "id": "thompson",
+      "name": "D'Arcy Wentworth Thompson",
+      "dates": "1860 - 1948",
+      "birth_year": 1860,
+      "era": "Modern",
+      "repo": "thompson",
+      "status": "researched",
+      "queue_order": 37,
+      "pose": "Three-quarter Victorian studio portrait with full mustache and beard",
+      "reference": {
+        "title": "D'Arcy Wentworth Thompson (1886)",
+        "artist": "Robertson, Dundee, Scotland",
+        "holding": "University of St Andrews Libraries and Museums (ms50128/2)",
+        "rights": "Public Domain (CC0 1.0)",
+        "wikimedia_file": "File:D'Arcy_Wentworth_Thompson,_1886.jpg",
+        "url": "https://commons.wikimedia.org/wiki/File:D%27Arcy_Wentworth_Thompson,_1886.jpg"
+      },
+      "signature_motif": "Logarithmic Gnomon Spiral & Cartesian-to-Polar Transformation Grid",
+      "outputs": {},
+      "notes": "Clean CC0 portrait from University of St Andrews Libraries and Museums.",
+      "portrait_type": "authentic_portrait"
+    },
+    {
+      "id": "hambidge",
+      "name": "Jay Hambidge",
+      "dates": "1867 - 1924",
+      "birth_year": 1867,
+      "era": "Modern",
+      "repo": "hambidge",
+      "status": "researched",
+      "queue_order": 38,
+      "pose": "Geometric emblem medallion",
+      "reference": {
+        "title": "No freely licensed portrait on Wikimedia Commons (emblem medallion only)",
+        "rights": "N/A (original geometric emblem)"
+      },
+      "signature_motif": "Dynamic Symmetry Root-5 Rectangle & Whirling-Square Golden Arc",
+      "outputs": {},
+      "notes": "Pure compass-and-straightedge Dynamic Symmetry emblem.",
+      "portrait_type": "emblem_only"
+    },
+    {
+      "id": "walter-russell",
+      "name": "Walter Russell",
+      "dates": "1871 - 1963",
+      "birth_year": 1871,
+      "era": "Modern",
+      "repo": "walter-russell",
+      "status": "researched",
+      "queue_order": 39,
+      "pose": "Circular studio headshot portrait, frontal / three-quarter",
+      "reference": {
+        "title": "Walter Russell (circular photographic portrait)",
+        "holding": "Wikimedia Commons (Category:Walter Russell)",
+        "rights": "Public Domain",
+        "wikimedia_file": "File:Walter_Russell_circular_portrait.jpg",
+        "url": "https://commons.wikimedia.org/wiki/File:Walter_Russell_circular_portrait.jpg"
+      },
+      "signature_motif": "Concentric Wave-Field Octave Circles & Cubic-Sphere Dual Projection",
+      "outputs": {},
+      "notes": "Circular headshot naturally mirrors medallion geometry.",
+      "portrait_type": "authentic_portrait"
+    },
+    {
+      "id": "hoenen",
+      "name": "Petrus Hoenen, S.J.",
+      "dates": "1880 - 1961",
+      "birth_year": 1880,
+      "era": "Modern",
+      "repo": "hoenen",
+      "status": "researched",
+      "queue_order": 40,
+      "pose": "Head-and-shoulders clerical studio portrait in Jesuit collar",
+      "reference": {
+        "title": "Petrus Hoenen, S.J. (1930s portrait)",
+        "holding": "Wikimedia Commons (PD Mark 1.0)",
+        "rights": "Public Domain (Public Domain Mark 1.0)",
+        "wikimedia_file": "File:PHJHoenen.jpg",
+        "url": "https://commons.wikimedia.org/wiki/File:PHJHoenen.jpg"
+      },
+      "signature_motif": "Noetic Abstraction Triangle & Constructive Compass Arc",
+      "outputs": {},
+      "notes": "Verified 1930s portrait under Public Domain Mark 1.0.",
+      "portrait_type": "authentic_portrait"
+    },
+    {
+      "id": "altshiller-court",
+      "name": "Nathan Altshiller-Court",
+      "dates": "1881 - 1968",
+      "birth_year": 1881,
+      "era": "Modern",
+      "repo": "altshiller-court",
+      "status": "researched",
+      "queue_order": 41,
+      "pose": "Geometric emblem medallion",
+      "reference": {
+        "title": "No freely licensed portrait on Wikimedia Commons (emblem medallion only)",
+        "rights": "N/A (original geometric emblem)"
+      },
+      "signature_motif": "Orthocentric System (Altitudes & H) & Feuerbach Nine-Point Circle",
+      "outputs": {},
+      "notes": "Pure geometric emblem medallion honoring College Geometry (1952).",
+      "portrait_type": "emblem_only"
+    },
+    {
+      "id": "hans-kayser",
+      "name": "Hans Kayser",
+      "dates": "1891 - 1964",
+      "birth_year": 1891,
+      "era": "Modern",
+      "repo": "geometor.com",
+      "status": "researched",
+      "queue_order": 42,
+      "pose": "Geometric emblem medallion",
+      "reference": {
+        "title": "No freely licensed portrait on Wikimedia Commons (emblem medallion only)",
+        "rights": "N/A (original geometric emblem)"
+      },
+      "signature_motif": "Pythagorean-Kayser Lambdoma Ratio Lattice & Harmonic Arcs",
+      "outputs": {},
+      "notes": "Pure geometric emblem medallion (avoids homonym painters/physicist).",
+      "portrait_type": "emblem_only"
+    },
+    {
+      "id": "huntley",
+      "name": "H. E. Huntley",
+      "dates": "1892 - 1977",
+      "birth_year": 1892,
+      "era": "Modern",
+      "repo": "huntley",
+      "status": "researched",
+      "queue_order": 43,
+      "pose": "Geometric emblem medallion",
+      "reference": {
+        "title": "No freely licensed portrait on Wikimedia Commons (emblem medallion only)",
+        "rights": "N/A (original geometric emblem)"
+      },
+      "signature_motif": "3-4-5 Angle-Bisector Golden Section & Nested Golden Gnomon Arcs",
+      "outputs": {},
+      "notes": "Pure geometric emblem honoring The Divine Proportion (1970).",
+      "portrait_type": "emblem_only"
+    },
+    {
+      "id": "odom",
+      "name": "George Odom",
+      "dates": "1941 - 2010",
+      "birth_year": 1941,
+      "era": "Contemporary",
+      "repo": "divine",
+      "status": "researched",
+      "queue_order": 44,
+      "pose": "Geometric emblem medallion",
+      "reference": {
+        "title": "No freely licensed portrait on Wikimedia Commons (emblem medallion only)",
+        "rights": "N/A (original geometric emblem)"
+      },
+      "signature_motif": "Odom Equilateral Triangle Midpoint-Chord Golden Section (AB:BC = phi)",
+      "outputs": {},
+      "notes": "Pure geometric emblem (avoids homonym jockey/NFL player).",
+      "portrait_type": "emblem_only"
+    },
+    {
+      "id": "kimberling",
+      "name": "Clark Kimberling",
+      "dates": "b. 1942",
+      "birth_year": 1942,
+      "era": "Contemporary",
+      "repo": "etc",
+      "status": "researched",
+      "queue_order": 45,
+      "pose": "Geometric emblem medallion",
+      "reference": {
+        "title": "No freely licensed portrait on Wikimedia Commons (emblem medallion only)",
+        "rights": "N/A (original geometric emblem)"
+      },
+      "signature_motif": "Triangle Center Quartet X(1)-X(2)-X(3)-X(4) & Euler Line",
+      "outputs": {},
+      "notes": "Pure geometric emblem honoring the Encyclopedia of Triangle Centers.",
+      "portrait_type": "emblem_only"
+    },
+    {
+      "id": "livio",
+      "name": "Mario Livio",
+      "dates": "b. 1945",
+      "birth_year": 1945,
+      "era": "Contemporary",
+      "repo": "livio",
+      "status": "researched",
+      "queue_order": 46,
+      "pose": "Formal studio headshot with eyeglasses",
+      "reference": {
+        "title": "Dr. Mario Livio — AAAS Fellow Official Portrait (STScI-2009-34)",
+        "artist": "NASA, ESA, STScI, and John Coyle",
+        "holding": "Space Telescope Science Institute (STScI-2009-34)",
+        "rights": "Public Domain (NASA / ESA / STScI)",
+        "wikimedia_file": "File:Dr_Mario_Livio_(2009-34-2660).jpg",
+        "url": "https://commons.wikimedia.org/wiki/File:Dr_Mario_Livio_(2009-34-2660).jpg"
+      },
+      "signature_motif": "Regular Inscribed Pentagram & Golden Ratio Phi Chord Division",
+      "outputs": {},
+      "notes": "Official NASA/ESA/STScI Public Domain portrait.",
+      "portrait_type": "authentic_portrait"
+    },
+    {
+      "id": "wildberger",
+      "name": "Norman J. Wildberger",
+      "dates": "b. 1957",
+      "birth_year": 1957,
+      "era": "Contemporary",
+      "repo": "wildberger",
+      "status": "researched",
+      "queue_order": 47,
+      "pose": "Geometric emblem medallion",
+      "reference": {
+        "title": "No freely licensed portrait on Wikimedia Commons (emblem medallion only)",
+        "rights": "N/A (original geometric emblem)"
+      },
+      "signature_motif": "Rational Trigonometry Quadrance Squares & Spread Cross-Law",
+      "outputs": {},
+      "notes": "Pure geometric emblem honoring Divine Proportions (2005).",
+      "portrait_type": "emblem_only"
     }
   ]
 }

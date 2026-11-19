@@ -10,16 +10,24 @@ Compass-and-Straightedge Portraits
 
 To give every author gallery, person card, and book title page a unified geometric signature, GEOMETOR Press constructs vector portraits **strictly from straight lines and circular arcs**—with **zero Bézier curves**—calibrated over verified public-domain masterworks.
 
-- **Unified Portrait Gallery (Studies 01–07)**: `Open Fullscreen <../_static/studios/portraits_gallery.html>`__ (or ``demos/portraits_gallery.html``)
+- **Unified Portrait Gallery (Studies 01–15)**: `Open Fullscreen <../_static/studios/portraits_gallery.html>`__ (or ``demos/portraits_gallery.html``)
+- **Live 48-Slot Pantheon Poster**: ``editions/posters/geometor_portraits_poster.png`` (`Open Full-Res Poster <../_static/portraits/geometor_portraits_poster.png>`__)
 
 .. raw:: html
 
-   <div style="margin: 1.25rem 0 2rem; border: 1px solid rgba(160,160,160,0.3); border-radius: 12px; overflow: hidden;">
+   <div style="margin: 1.25rem 0 1.5rem; border: 1px solid rgba(160,160,160,0.3); border-radius: 12px; overflow: hidden;">
      <iframe src="../_static/studios/portraits_gallery.html"
              title="GEOMETOR Press — Compass-and-Straightedge Portrait Gallery"
-             style="width: 100%; height: 820px; border: 0; display: block;"
+             style="width: 100%; height: 860px; border: 0; display: block;"
              loading="lazy"></iframe>
    </div>
+
+   <figure style="margin: 0 0 2rem; text-align: center;">
+     <a href="../_static/portraits/geometor_portraits_poster.png" target="_blank" rel="noopener">
+       <img src="../_static/portraits/geometor_portraits_poster.png" alt="GEOMETOR Pantheon of Geometers — 48-Slot Live Dark Poster" style="width: 100%; border-radius: 12px; border: 1px solid rgba(212,175,55,0.35);" />
+     </a>
+     <figcaption style="font-size: 0.85rem; margin-top: 0.5rem;">GEOMETOR Pantheon of Geometers (<code>15</code> Complete · <code>33</code> Researched · <code>48</code> Chronological Slots)</figcaption>
+   </figure>
 
 1. Canonical Medallion Specification
 ------------------------------------
@@ -181,10 +189,170 @@ Constructed over Jakob Emanuel Handmann's 1753 pastel (Kunstmuseum Basel — Pub
      </figure>
    </div>
 
-9. Completed Portrait Medallion Catalog
----------------------------------------
+9. Study 08 — Archimedes of Syracuse (c. 287 – c. 212 BCE)
+-----------------------------------------------------------
 
-All portrait metadata, Wikimedia Commons identifiers, and museum holdings are tracked in ``resources/portraits.yaml`` and ``resources/portraits.json``:
+Constructed over Domenico Fetti's *Archimedes Thoughtful* (1620, Gemäldegalerie Alte Meister, Dresden — Public Domain), pairing Archimedes' contemplative hand-on-beard pose with his tombstone **Circumscribed Cylinder & Inscribed Sphere (`2:3`)** theorem and **Inscribed/Circumscribed Hexagon `π` Bounds**.
+
+- **Vector Exports**: ``_static/portraits/archimedes_dark.svg`` & ``_static/portraits/archimedes_light.svg``
+
+.. raw:: html
+
+   <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1rem; margin: 1.25rem 0;">
+     <figure style="margin: 0; text-align: center;">
+       <img src="../_static/portraits/archimedes_dark.svg" alt="Archimedes of Syracuse Medallion — Obsidian Ink" style="width: 100%; border-radius: 10px; border: 1px solid rgba(160,160,160,0.25);" />
+       <figcaption style="font-size: 0.85rem; margin-top: 0.4rem;">Obsidian Ink (<code>archimedes_dark.svg</code>)</figcaption>
+     </figure>
+     <figure style="margin: 0; text-align: center;">
+       <img src="../_static/portraits/archimedes_light.svg" alt="Archimedes of Syracuse Medallion — Warm Paper" style="width: 100%; border-radius: 10px; border: 1px solid rgba(160,160,160,0.25);" />
+       <figcaption style="font-size: 0.85rem; margin-top: 0.4rem;">Warm Paper (<code>archimedes_light.svg</code>)</figcaption>
+     </figure>
+   </div>
+
+10. Study 09 — St. Thomas Aquinas (1225 – 1274)
+-----------------------------------------------
+
+Constructed over Carlo Crivelli's 1476 altarpiece panel (National Gallery, London — Public Domain), uniting the Dominican tonsure and cowl arcs with the **Radiant Sun of *Materia Intelligibilis*** on his breastplate and the **Three Degrees of Abstraction Triangle** along his upward gaze.
+
+- **Vector Exports**: ``_static/portraits/aquinas_dark.svg`` & ``_static/portraits/aquinas_light.svg``
+
+.. raw:: html
+
+   <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1rem; margin: 1.25rem 0;">
+     <figure style="margin: 0; text-align: center;">
+       <img src="../_static/portraits/aquinas_dark.svg" alt="St. Thomas Aquinas Medallion — Obsidian Ink" style="width: 100%; border-radius: 10px; border: 1px solid rgba(160,160,160,0.25);" />
+       <figcaption style="font-size: 0.85rem; margin-top: 0.4rem;">Obsidian Ink (<code>aquinas_dark.svg</code>)</figcaption>
+     </figure>
+     <figure style="margin: 0; text-align: center;">
+       <img src="../_static/portraits/aquinas_light.svg" alt="St. Thomas Aquinas Medallion — Warm Paper" style="width: 100%; border-radius: 10px; border: 1px solid rgba(160,160,160,0.25);" />
+       <figcaption style="font-size: 0.85rem; margin-top: 0.4rem;">Warm Paper (<code>aquinas_light.svg</code>)</figcaption>
+     </figure>
+   </div>
+
+11. Study 10 — Blaise Pascal (1623 – 1662)
+------------------------------------------
+
+Constructed over the Palace of Versailles portrait after François II Quesnel (1691 — Public Domain), framing Pascal's pointed white *rabat* collar and Baroque hair waves with **Pascal's Triangle Lattice** and the mathematically exact ***Hexagrammum Mysticum* Pascal Line**.
+
+- **Vector Exports**: ``_static/portraits/pascal_dark.svg`` & ``_static/portraits/pascal_light.svg``
+
+.. raw:: html
+
+   <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1rem; margin: 1.25rem 0;">
+     <figure style="margin: 0; text-align: center;">
+       <img src="../_static/portraits/pascal_dark.svg" alt="Blaise Pascal Medallion — Obsidian Ink" style="width: 100%; border-radius: 10px; border: 1px solid rgba(160,160,160,0.25);" />
+       <figcaption style="font-size: 0.85rem; margin-top: 0.4rem;">Obsidian Ink (<code>pascal_dark.svg</code>)</figcaption>
+     </figure>
+     <figure style="margin: 0; text-align: center;">
+       <img src="../_static/portraits/pascal_light.svg" alt="Blaise Pascal Medallion — Warm Paper" style="width: 100%; border-radius: 10px; border: 1px solid rgba(160,160,160,0.25);" />
+       <figcaption style="font-size: 0.85rem; margin-top: 0.4rem;">Warm Paper (<code>pascal_light.svg</code>)</figcaption>
+     </figure>
+   </div>
+
+12. Study 11 — Jakob Steiner (1796 – 1863)
+------------------------------------------
+
+Constructed over August Weger's 1881 *Gesammelte Werke* engraving (Public Domain), pairing Steiner's folded arms and ``Euclid III.12`` beard waves with the **Steiner Porism (6-Circle Tangent Ring)** and the **Poncelet–Steiner Single-Circle Harmonic Construction**.
+
+- **Vector Exports**: ``_static/portraits/steiner_dark.svg`` & ``_static/portraits/steiner_light.svg``
+
+.. raw:: html
+
+   <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1rem; margin: 1.25rem 0;">
+     <figure style="margin: 0; text-align: center;">
+       <img src="../_static/portraits/steiner_dark.svg" alt="Jakob Steiner Medallion — Obsidian Ink" style="width: 100%; border-radius: 10px; border: 1px solid rgba(160,160,160,0.25);" />
+       <figcaption style="font-size: 0.85rem; margin-top: 0.4rem;">Obsidian Ink (<code>steiner_dark.svg</code>)</figcaption>
+     </figure>
+     <figure style="margin: 0; text-align: center;">
+       <img src="../_static/portraits/steiner_light.svg" alt="Jakob Steiner Medallion — Warm Paper" style="width: 100%; border-radius: 10px; border: 1px solid rgba(160,160,160,0.25);" />
+       <figcaption style="font-size: 0.85rem; margin-top: 0.4rem;">Warm Paper (<code>steiner_light.svg</code>)</figcaption>
+     </figure>
+   </div>
+
+13. Study 12 — Oliver Byrne (1810 – 1880)
+-----------------------------------------
+
+Constructed over the historic c. 1850 portrait (Public Domain), capturing Byrne's visionary upward gaze, billowing Victorian side-curls, and knotted cravat flanked by ***Elements* I.47 (Pythagorean Windmill)** and his **Visual-Proof Triad**.
+
+- **Vector Exports**: ``_static/portraits/byrne_dark.svg`` & ``_static/portraits/byrne_light.svg``
+
+.. raw:: html
+
+   <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1rem; margin: 1.25rem 0;">
+     <figure style="margin: 0; text-align: center;">
+       <img src="../_static/portraits/byrne_dark.svg" alt="Oliver Byrne Medallion — Obsidian Ink" style="width: 100%; border-radius: 10px; border: 1px solid rgba(160,160,160,0.25);" />
+       <figcaption style="font-size: 0.85rem; margin-top: 0.4rem;">Obsidian Ink (<code>byrne_dark.svg</code>)</figcaption>
+     </figure>
+     <figure style="margin: 0; text-align: center;">
+       <img src="../_static/portraits/byrne_light.svg" alt="Oliver Byrne Medallion — Warm Paper" style="width: 100%; border-radius: 10px; border: 1px solid rgba(160,160,160,0.25);" />
+       <figcaption style="font-size: 0.85rem; margin-top: 0.4rem;">Warm Paper (<code>byrne_light.svg</code>)</figcaption>
+     </figure>
+   </div>
+
+14. Study 13 — David Hilbert (1862 – 1943)
+------------------------------------------
+
+Constructed over the iconic 1912 Göttingen portrait (Public Domain), rendering Hilbert's Panama hat and circular-arc pince-nez spectacles alongside the **Pappus–Hilbert Incidence Configuration** and **Order-2 Hilbert Space-Filling Curve**.
+
+- **Vector Exports**: ``_static/portraits/hilbert_dark.svg`` & ``_static/portraits/hilbert_light.svg``
+
+.. raw:: html
+
+   <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1rem; margin: 1.25rem 0;">
+     <figure style="margin: 0; text-align: center;">
+       <img src="../_static/portraits/hilbert_dark.svg" alt="David Hilbert Medallion — Obsidian Ink" style="width: 100%; border-radius: 10px; border: 1px solid rgba(160,160,160,0.25);" />
+       <figcaption style="font-size: 0.85rem; margin-top: 0.4rem;">Obsidian Ink (<code>hilbert_dark.svg</code>)</figcaption>
+     </figure>
+     <figure style="margin: 0; text-align: center;">
+       <img src="../_static/portraits/hilbert_light.svg" alt="David Hilbert Medallion — Warm Paper" style="width: 100%; border-radius: 10px; border: 1px solid rgba(160,160,160,0.25);" />
+       <figcaption style="font-size: 0.85rem; margin-top: 0.4rem;">Warm Paper (<code>hilbert_light.svg</code>)</figcaption>
+     </figure>
+   </div>
+
+15. Study 14 — Bertrand Russell (1872 – 1970)
+---------------------------------------------
+
+Constructed over the 1907 Edwardian portrait (Public Domain), framing Russell's club collar and walrus mustache with the **Projective Cross-Ratio Pencil** and **Logic Triad Venn Circles**.
+
+- **Vector Exports**: ``_static/portraits/bertrand_russell_dark.svg`` & ``_static/portraits/bertrand_russell_light.svg``
+
+.. raw:: html
+
+   <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1rem; margin: 1.25rem 0;">
+     <figure style="margin: 0; text-align: center;">
+       <img src="../_static/portraits/bertrand_russell_dark.svg" alt="Bertrand Russell Medallion — Obsidian Ink" style="width: 100%; border-radius: 10px; border: 1px solid rgba(160,160,160,0.25);" />
+       <figcaption style="font-size: 0.85rem; margin-top: 0.4rem;">Obsidian Ink (<code>bertrand_russell_dark.svg</code>)</figcaption>
+     </figure>
+     <figure style="margin: 0; text-align: center;">
+       <img src="../_static/portraits/bertrand_russell_light.svg" alt="Bertrand Russell Medallion — Warm Paper" style="width: 100%; border-radius: 10px; border: 1px solid rgba(160,160,160,0.25);" />
+       <figcaption style="font-size: 0.85rem; margin-top: 0.4rem;">Warm Paper (<code>bertrand_russell_light.svg</code>)</figcaption>
+     </figure>
+   </div>
+
+16. Study 15 — Sir Thomas Little Heath (1861 – 1940)
+----------------------------------------------------
+
+Constructed over the c. 1910 Royal Society / MacTutor studio portrait (Public Domain), uniting Heath's classical scholarship with an ***Elements* Scroll & Golden Section (`1 : φ`)** and **Book XIII Inscribed Pentagon & Decagram Star**.
+
+- **Vector Exports**: ``_static/portraits/heath_dark.svg`` & ``_static/portraits/heath_light.svg``
+
+.. raw:: html
+
+   <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1rem; margin: 1.25rem 0;">
+     <figure style="margin: 0; text-align: center;">
+       <img src="../_static/portraits/heath_dark.svg" alt="Sir Thomas Little Heath Medallion — Obsidian Ink" style="width: 100%; border-radius: 10px; border: 1px solid rgba(160,160,160,0.25);" />
+       <figcaption style="font-size: 0.85rem; margin-top: 0.4rem;">Obsidian Ink (<code>heath_dark.svg</code>)</figcaption>
+     </figure>
+     <figure style="margin: 0; text-align: center;">
+       <img src="../_static/portraits/heath_light.svg" alt="Sir Thomas Little Heath Medallion — Warm Paper" style="width: 100%; border-radius: 10px; border: 1px solid rgba(160,160,160,0.25);" />
+       <figcaption style="font-size: 0.85rem; margin-top: 0.4rem;">Warm Paper (<code>heath_light.svg</code>)</figcaption>
+     </figure>
+   </div>
+
+17. Completed Portrait Medallion Catalog (15 of 48 Pantheon Slots)
+------------------------------------------------------------------
+
+All 48 Pantheon portrait records (15 complete, 33 researched with verified provenance and curated golden symbols) are tracked in ``resources/portraits.yaml`` and ``resources/portraits.json``:
 
 .. list-table::
    :header-rows: 1
@@ -222,3 +390,35 @@ All portrait metadata, Wikimedia Commons identifiers, and museum holdings are tr
      - **Leonhard Euler** (``euler``)
      - Jakob Emanuel Handmann pastel (1753, Kunstmuseum Basel — ``Leonhard_Euler.jpg``)
      - Euler Line (``O–G–H``) & Nine-Point Circle
+   * - **Study 08**
+     - **Archimedes of Syracuse** (``archimedes``)
+     - Domenico Fetti (1620, Dresden — ``Domenico-Fetti Archimedes 1620.jpg``)
+     - Circumscribed Cylinder & Inscribed Sphere (``2:3``) + Hexagon :math:`\pi` bounds
+   * - **Study 09**
+     - **St. Thomas Aquinas** (``aquinas``)
+     - Carlo Crivelli (1476, National Gallery, London — ``St-thomas-aquinas.jpg``)
+     - Radiant Sun of *Materia Intelligibilis* & Three Degrees of Abstraction
+   * - **Study 10**
+     - **Blaise Pascal** (``pascal``)
+     - After François II Quesnel (Palace of Versailles — ``Blaise_Pascal_Versailles.JPG``)
+     - *Hexagrammum Mysticum* Pascal Line & Pascal's Triangle lattice
+   * - **Study 11**
+     - **Jakob Steiner** (``steiner``)
+     - August Weger engraving (1881 — ``Jakob Steiner portrait 1881.jpg``)
+     - Steiner Porism (6-circle ring) & Poncelet–Steiner circle
+   * - **Study 12**
+     - **Oliver Byrne** (``byrne``)
+     - Historic portrait (c. 1850 — ``Oliver Byrne Portrait (ca 1850).jpg``)
+     - *Elements* I.47 Pythagorean Windmill & Visual-Proof Triad
+   * - **Study 13**
+     - **David Hilbert** (``hilbert``)
+     - 1912 Göttingen portrait (``Hilbert.jpg``)
+     - Pappus–Hilbert Incidence Configuration & Order-2 Hilbert Curve
+   * - **Study 14**
+     - **Bertrand Russell** (``bertrand-russell``)
+     - 1907 Edwardian portrait (``Bertrand Russell, 1907.jpg``)
+     - Projective Cross-Ratio Pencil & Logic Triad Venn Circles
+   * - **Study 15**
+     - **Sir Thomas Little Heath** (``heath``)
+     - c. 1910 studio portrait (MacTutor / Royal Society — ``Thomas Little Heath.jpg``)
+     - *Elements* Scroll Golden Section & Book XIII Pentagon / Decagram

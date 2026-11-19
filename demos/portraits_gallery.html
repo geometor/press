@@ -41,7 +41,7 @@
     }
 
     .shell {
-      max-width: 1380px;
+      max-width: 1420px;
       margin: 0 auto;
       padding: 1.5rem 1.5rem 2.5rem;
     }
@@ -53,7 +53,7 @@
       justify-content: space-between;
       gap: 1rem 1.5rem;
       padding-bottom: 1.15rem;
-      margin-bottom: 1.5rem;
+      margin-bottom: 1rem;
       border-bottom: 1px solid var(--border);
     }
 
@@ -70,15 +70,20 @@
       color: var(--muted);
     }
 
-    .controls {
+    .controls, .era-bar {
       display: flex;
       flex-wrap: wrap;
       gap: 0.65rem;
       align-items: center;
     }
 
+    .era-bar {
+      margin-bottom: 1.25rem;
+    }
+
     .segmented {
       display: inline-flex;
+      flex-wrap: wrap;
       background: var(--surface);
       border: 1px solid var(--border-subtle);
       border-radius: 8px;
@@ -115,7 +120,7 @@
 
     .grid {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
       gap: 1.15rem;
     }
 
@@ -218,31 +223,11 @@
       display: block;
     }
 
-    .card-meta {
-      margin-top: 0.8rem;
-    }
-
-    .card-name {
-      font-size: 1rem;
-      font-weight: 600;
-      margin: 0;
-    }
-
-    .card-dates {
-      font-size: 0.78rem;
-      color: var(--muted);
-      margin: 0.15rem 0 0.35rem;
-    }
-
-    .card-motif {
-      font-size: 0.76rem;
-      color: var(--gold);
-      margin: 0;
-    }
-
-    html[data-scale="badge"] .card-motif {
-      display: none;
-    }
+    .card-meta { margin-top: 0.8rem; }
+    .card-name { font-size: 1rem; font-weight: 600; margin: 0; }
+    .card-dates { font-size: 0.78rem; color: var(--muted); margin: 0.15rem 0 0.35rem; }
+    .card-motif { font-size: 0.76rem; color: var(--gold); margin: 0; }
+    html[data-scale="badge"] .card-motif { display: none; }
 
     dialog#inspector {
       background: var(--surface);
@@ -268,16 +253,8 @@
       margin-bottom: 1rem;
     }
 
-    .modal-top h2 {
-      margin: 0;
-      font-size: 1.25rem;
-    }
-
-    .modal-top p {
-      margin: 0.2rem 0 0;
-      font-size: 0.85rem;
-      color: var(--muted);
-    }
+    .modal-top h2 { margin: 0; font-size: 1.25rem; }
+    .modal-top p { margin: 0.2rem 0 0; font-size: 0.85rem; color: var(--muted); }
 
     .close-btn {
       appearance: none;
@@ -315,22 +292,9 @@
       margin: 0 auto 0.5rem;
     }
 
-    .modal-pane a {
-      color: var(--gold);
-      font-size: 0.78rem;
-      text-decoration: none;
-    }
-
-    .modal-details {
-      font-size: 0.85rem;
-      color: var(--muted);
-      border-top: 1px solid var(--border-subtle);
-      padding-top: 0.85rem;
-    }
-
-    .modal-details strong {
-      color: var(--text);
-    }
+    .modal-pane a { color: var(--gold); font-size: 0.78rem; text-decoration: none; }
+    .modal-details { font-size: 0.85rem; color: var(--muted); border-top: 1px solid var(--border-subtle); padding-top: 0.85rem; }
+    .modal-details strong { color: var(--text); }
   </style>
 </head>
 <body>
@@ -338,7 +302,7 @@
     <header class="topbar">
       <div class="title-block">
         <h1>GEOMETOR Compass-and-Straightedge Portraits</h1>
-        <p>Studies 01–07 · Strictly lines, circles, and circular arcs (0 Bézier curves) · Eye-line calibrated at y = −27</p>
+        <p>Studies 01–15 (15 of 48 Pantheon slots complete) · Strictly lines, circles, and circular arcs (0 Bézier curves) · Eye-line y = −27</p>
       </div>
       <div class="controls">
         <div class="segmented" role="group" aria-label="Theme">
@@ -354,6 +318,19 @@
         <button type="button" class="toggle-btn" id="horizon-toggle">Eye-Line (y = −27)</button>
       </div>
     </header>
+
+    <div class="era-bar">
+      <div class="segmented" role="group" aria-label="Era Filter">
+        <button type="button" data-set-era="All" class="active">All (15)</button>
+        <button type="button" data-set-era="Renaissance">Renaissance</button>
+          <button type="button" data-set-era="Antiquity">Antiquity</button>
+          <button type="button" data-set-era="Early Modern">Early Modern</button>
+          <button type="button" data-set-era="Enlightenment">Enlightenment</button>
+          <button type="button" data-set-era="Medieval">Medieval</button>
+          <button type="button" data-set-era="19th Century">19th Century</button>
+          <button type="button" data-set-era="Modern">Modern</button>
+      </div>
+    </div>
 
     <main class="grid" id="gallery-grid"></main>
   </div>
@@ -384,70 +361,158 @@
 
   <script>
     const PORTRAITS = [
-      {
-        id: "durer",
-        study: "Study 01",
-        name: "Albrecht Dürer",
-        dates: "1471 – 1528",
-        era: "Renaissance",
-        motif: "60° hair-cascade triangle & 1500 AD monogram",
-        ref: "Self-Portrait at Twenty-Eight (1500), Alte Pinakothek, Munich"
-      },
-      {
-        id: "euclid",
-        study: "Study 02",
-        name: "Euclid of Alexandria",
-        dates: "fl. c. 300 BCE",
-        era: "Antiquity",
-        motif: "Elements I.1 Vesica Piscis & Equilateral Triangle ⟨A B C⟩",
-        ref: "Urbino Baroque portrait holding Elements, J. Paul Getty Museum / Google Art Project"
-      },
-      {
-        id: "plato",
-        study: "Study 03",
-        name: "Plato of Athens",
-        dates: "c. 428 – c. 348 BCE",
-        era: "Antiquity",
-        motif: "Divided Line (Republic VI) & dodecahedral projection",
-        ref: "Raphael, The School of Athens (1509–1511), Vatican"
-      },
-      {
-        id: "aristotle",
-        study: "Study 04",
-        name: "Aristotle of Stagira",
-        dates: "384 – 322 BCE",
-        era: "Antiquity",
-        motif: "Continuum axis & geometric syllogism triangle",
-        ref: "Raphael, The School of Athens (1509–1511), Vatican"
-      },
-      {
-        id: "pacioli",
-        study: "Study 05",
-        name: "Fra Luca Pacioli",
-        dates: "c. 1447 – 1517",
-        era: "Renaissance",
-        motif: "Suspended glass rhombicuboctahedron & Golden Ratio dividers",
-        ref: "Jacopo de' Barbari (1495), Museo di Capodimonte, Naples"
-      },
-      {
-        id: "kepler",
-        study: "Study 06",
-        name: "Johannes Kepler",
-        dates: "1571 – 1630",
-        era: "Early Modern",
-        motif: "Kepler Right Triangle (1 : √φ : φ) & nested Platonic orbits",
-        ref: "Authentic Linz / Strasbourg oil portrait (c. 1620, JKepler.jpg)"
-      },
-      {
-        id: "euler",
-        study: "Study 07",
-        name: "Leonhard Euler",
-        dates: "1707 – 1783",
-        era: "Enlightenment",
-        motif: "Euler Line (O–G–H) & Nine-Point Circle",
-        ref: "Jakob Emanuel Handmann pastel (1753), Kunstmuseum Basel"
-      }
-    ];
+  {
+    "id": "durer",
+    "slug": "durer",
+    "study": "Study 01",
+    "name": "Albrecht Durer",
+    "dates": "1471 - 1528",
+    "era": "Renaissance",
+    "motif": "60-degree equilateral hair-cascade triangle & 1500 AD monogram",
+    "ref": "Self-Portrait at Twenty-Eight (1500), Alte Pinakothek, Munich"
+  },
+  {
+    "id": "euclid",
+    "slug": "euclid",
+    "study": "Study 02",
+    "name": "Euclid of Alexandria",
+    "dates": "fl. c. 300 BCE",
+    "era": "Antiquity",
+    "motif": "Elements Book I Prop. 1 Vesica Piscis & Equilateral Triangle <A B C>",
+    "ref": "Euclid holding open folio of the Elements (Urbino / Baroque studio), J. Paul Getty Museum / Google Art Project"
+  },
+  {
+    "id": "plato",
+    "slug": "plato",
+    "study": "Study 03",
+    "name": "Plato of Athens",
+    "dates": "c. 428 - c. 348 BCE",
+    "era": "Antiquity",
+    "motif": "Divided Line (Republic VI) & dodecahedral projection",
+    "ref": "Raphael (Raffaello Sanzio, 1509-1511), The School of Athens — Plato (detail, modeled after Leonardo da Vinci), Apostolic Palace, Stanza della Segnatura, Vatican"
+  },
+  {
+    "id": "aristotle",
+    "slug": "aristotle",
+    "study": "Study 04",
+    "name": "Aristotle of Stagira",
+    "dates": "384 - 322 BCE",
+    "era": "Antiquity",
+    "motif": "Continuum axis & geometric syllogism triangle",
+    "ref": "Raphael (Raffaello Sanzio, 1509-1511), The School of Athens — Aristotle (detail), Apostolic Palace, Stanza della Segnatura, Vatican"
+  },
+  {
+    "id": "pacioli",
+    "slug": "pacioli",
+    "study": "Study 05",
+    "name": "Fra Luca Pacioli",
+    "dates": "c. 1447 - 1517",
+    "era": "Renaissance",
+    "motif": "Suspended glass rhombicuboctahedron & Golden Ratio dividers",
+    "ref": "Attributed to Jacopo de' Barbari, Portrait of Fra Luca Pacioli and an Unknown Young Man (1495), Museo di Capodimonte, Naples"
+  },
+  {
+    "id": "kepler",
+    "slug": "kepler",
+    "study": "Study 06",
+    "name": "Johannes Kepler",
+    "dates": "1571 - 1630",
+    "era": "Early Modern",
+    "motif": "Kepler Right Triangle (1 : sqrt(phi) : phi) & nested Platonic orbits",
+    "ref": "Authentic Portrait of Johannes Kepler (Linz / Strasbourg oil, c. 1620), Linz / Kepler Museum (Wikipedia infobox portrait)"
+  },
+  {
+    "id": "euler",
+    "slug": "euler",
+    "study": "Study 07",
+    "name": "Leonhard Euler",
+    "dates": "1707 - 1783",
+    "era": "Enlightenment",
+    "motif": "Euler Line (O - G - H) & Nine-Point Circle",
+    "ref": "Jakob Emanuel Handmann, Portrait of Leonhard Euler (1753 pastel), Kunstmuseum Basel"
+  },
+  {
+    "id": "archimedes",
+    "slug": "archimedes",
+    "study": "Study 08",
+    "name": "Archimedes of Syracuse",
+    "dates": "c. 287 - c. 212 BCE",
+    "era": "Antiquity",
+    "motif": "Circumscribed Cylinder & Inscribed Sphere (2:3) + Hexagon pi Bounds",
+    "ref": "Domenico Fetti (c. 1620), Portrait of a Scholar (Archimedes), Gemäldegalerie Alte Meister, Dresden"
+  },
+  {
+    "id": "aquinas",
+    "slug": "aquinas",
+    "study": "Study 09",
+    "name": "St. Thomas Aquinas",
+    "dates": "1225 - 1274",
+    "era": "Medieval",
+    "motif": "Radiant Sun of Materia Intelligibilis & Three Degrees of Abstraction",
+    "ref": "Carlo Crivelli, Saint Thomas Aquinas (1476, Demidoff Altarpiece), National Gallery, London"
+  },
+  {
+    "id": "pascal",
+    "slug": "pascal",
+    "study": "Study 10",
+    "name": "Blaise Pascal",
+    "dates": "1623 - 1662",
+    "era": "Early Modern",
+    "motif": "Hexagrammum Mysticum (Circle, Inscribed Hexagon & Pascal Line)",
+    "ref": "Portrait of Blaise Pascal (after François II Quesnel, 1691), Palace of Versailles"
+  },
+  {
+    "id": "steiner",
+    "slug": "steiner",
+    "study": "Study 11",
+    "name": "Jakob Steiner",
+    "dates": "1796 - 1863",
+    "era": "19th Century",
+    "motif": "Steiner Porism (Ring of Tangent Circles) & Poncelet-Steiner Circle",
+    "ref": "August Weger, Jakob Steiner portrait (1881 Gesammelte Werke frontispiece), ETH Zürich / Gesammelte Werke"
+  },
+  {
+    "id": "byrne",
+    "slug": "byrne",
+    "study": "Study 12",
+    "name": "Oliver Byrne",
+    "dates": "1810 - 1880",
+    "era": "19th Century",
+    "motif": "Elements I.47 Pythagorean Square-Dissection Diagram",
+    "ref": "Oliver Byrne Portrait (c. 1850), Public Domain archival portrait"
+  },
+  {
+    "id": "hilbert",
+    "slug": "hilbert",
+    "study": "Study 13",
+    "name": "David Hilbert",
+    "dates": "1862 - 1943",
+    "era": "Modern",
+    "motif": "Pappus-Hilbert Incidence Configuration & Parallel-Axiom Grid",
+    "ref": "David Hilbert (1912 Göttingen portrait), University of Göttingen / Wikimedia Commons"
+  },
+  {
+    "id": "bertrand_russell",
+    "slug": "bertrand-russell",
+    "study": "Study 14",
+    "name": "Bertrand Russell",
+    "dates": "1872 - 1970",
+    "era": "Modern",
+    "motif": "Projective Cross-Ratio Pencil & Intersecting Logic Circles",
+    "ref": "Bertrand Russell (1907), Wikimedia Commons (PD-1923)"
+  },
+  {
+    "id": "heath",
+    "slug": "heath",
+    "study": "Study 15",
+    "name": "Sir Thomas Little Heath",
+    "dates": "1861 - 1940",
+    "era": "Modern",
+    "motif": "Greek Elements Scroll & Book XIII Golden Section / Regular Solids",
+    "ref": "Sir Thomas Little Heath (c. 1910), MacTutor / Royal Society Obituary"
+  }
+];
+    let activeEra = "All";
 
     function svgUrl(id, theme) {
       return `../portraits/${id}_${theme}.svg`;
@@ -469,7 +534,11 @@
       const theme = document.documentElement.dataset.theme;
       grid.innerHTML = "";
 
-      for (const p of PORTRAITS) {
+      const filtered = activeEra === "All"
+        ? PORTRAITS
+        : PORTRAITS.filter((p) => p.era === activeEra);
+
+      for (const p of filtered) {
         const card = document.createElement("article");
         card.className = "card";
         card.tabIndex = 0;
@@ -567,6 +636,15 @@
         document.querySelectorAll("[data-set-scale]").forEach((b) => b.classList.remove("active"));
         btn.classList.add("active");
         document.documentElement.dataset.scale = btn.dataset.setScale;
+      });
+    });
+
+    document.querySelectorAll("[data-set-era]").forEach((btn) => {
+      btn.addEventListener("click", () => {
+        document.querySelectorAll("[data-set-era]").forEach((b) => b.classList.remove("active"));
+        btn.classList.add("active");
+        activeEra = btn.dataset.setEra;
+        renderGrid();
       });
     });
 
