@@ -10,7 +10,15 @@ from .census import (
     write_census_json,
 )
 from .cli import run_cli
-from .portrait_studies import build_durer_elements
+from .portrait_studies import (
+    build_aristotle_elements,
+    build_durer_elements,
+    build_euclid_elements,
+    build_euler_elements,
+    build_kepler_elements,
+    build_pacioli_elements,
+    build_plato_elements,
+)
 from .portraits import (
     MEDALLION_SPEC,
     PortraitRecord,
@@ -43,7 +51,13 @@ __all__ = [
     "ShelfCatalog",
     "WorkSpec",
     "__version__",
+    "build_aristotle_elements",
     "build_durer_elements",
+    "build_euclid_elements",
+    "build_euler_elements",
+    "build_kepler_elements",
+    "build_pacioli_elements",
+    "build_plato_elements",
     "load_census_snapshot",
     "load_portraits",
     "load_shelf",

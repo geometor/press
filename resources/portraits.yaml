@@ -68,7 +68,7 @@ portraits:
     dates: "fl. c. 300 BCE"
     era: "Antiquity"
     repo: "euclid"
-    status: "queued"
+    status: "complete"
     queue_order: 1
     pose: "Three-quarter left, dramatic chiaroscuro"
     reference:
@@ -80,6 +80,9 @@ portraits:
       local_ref: "resources/portraits_ref/euclid_ref.jpg"
       alternate_file: "File:Jusepe_de_Ribera_-_Euclid_-_2001.26_-_J._Paul_Getty_Museum.jpg"
     signature_motif: "Elements Book I Prop. 1 Vesica Piscis & Equilateral Triangle <A B C>"
+    outputs:
+      dark_svg: "docsrc/_static/portraits/euclid_dark.svg"
+      light_svg: "docsrc/_static/portraits/euclid_light.svg"
     notes: "Zoom crop onto head, full philosopher beard, and open V-tunic; reconstruct shadowed right half cleanly via three-quarter geometric symmetry."
 
   - id: "plato"
@@ -87,7 +90,7 @@ portraits:
     dates: "c. 428 - c. 348 BCE"
     era: "Antiquity"
     repo: "plato"
-    status: "queued"
+    status: "complete"
     queue_order: 2
     pose: "Three-quarter right profile, pointing upward"
     reference:
@@ -97,7 +100,11 @@ portraits:
       rights: "Public Domain"
       wikimedia_file: "File:Sanzio_01_Plato_Aristotle.jpg"
       url: "https://commons.wikimedia.org/wiki/File:Sanzio_01_Plato_Aristotle.jpg"
+      local_ref: "resources/portraits_ref/plato_aristotle_ref.jpg"
     signature_motif: "Divided Line (Republic VI) & dodecahedral projection"
+    outputs:
+      dark_svg: "docsrc/_static/portraits/plato_dark.svg"
+      light_svg: "docsrc/_static/portraits/plato_light.svg"
     notes: "Left figure of the central School of Athens pair."
 
   - id: "aristotle"
@@ -105,7 +112,7 @@ portraits:
     dates: "384 - 322 BCE"
     era: "Antiquity"
     repo: "aristotle"
-    status: "queued"
+    status: "complete"
     queue_order: 3
     pose: "Three-quarter left profile, palm extended horizontally"
     reference:
@@ -115,7 +122,11 @@ portraits:
       rights: "Public Domain"
       wikimedia_file: "File:Sanzio_01_Plato_Aristotle.jpg"
       url: "https://commons.wikimedia.org/wiki/File:Sanzio_01_Plato_Aristotle.jpg"
+      local_ref: "resources/portraits_ref/plato_aristotle_ref.jpg"
     signature_motif: "Continuum axis & geometric syllogism triangle"
+    outputs:
+      dark_svg: "docsrc/_static/portraits/aristotle_dark.svg"
+      light_svg: "docsrc/_static/portraits/aristotle_light.svg"
     notes: "Right figure of the central School of Athens pair; pairs visually across the gallery with Plato."
 
   - id: "pacioli"
@@ -123,7 +134,7 @@ portraits:
     dates: "c. 1447 - 1517"
     era: "Renaissance"
     repo: "pacioli"
-    status: "queued"
+    status: "complete"
     queue_order: 4
     pose: "Three-quarter left in Franciscan habit & cowl"
     reference:
@@ -133,7 +144,11 @@ portraits:
       rights: "Public Domain"
       wikimedia_file: "File:Pacioli.jpg"
       url: "https://commons.wikimedia.org/wiki/File:Pacioli.jpg"
+      local_ref: "resources/portraits_ref/pacioli_ref.jpg"
     signature_motif: "Suspended glass rhombicuboctahedron & Golden Ratio dividers"
+    outputs:
+      dark_svg: "docsrc/_static/portraits/pacioli_dark.svg"
+      light_svg: "docsrc/_static/portraits/pacioli_light.svg"
     notes: "Iconic cowl hood forms natural concentric circular arcs around face."
 
   - id: "kepler"
@@ -141,7 +156,7 @@ portraits:
     dates: "1571 - 1630"
     era: "Early Modern"
     repo: "kepler"
-    status: "queued"
+    status: "complete"
     queue_order: 5
     pose: "Three-quarter right with lace ruff collar"
     reference:
@@ -150,7 +165,11 @@ portraits:
       rights: "Public Domain"
       wikimedia_file: "File:JKepler.jpg"
       url: "https://commons.wikimedia.org/wiki/File:JKepler.jpg"
+      local_ref: "resources/portraits_ref/kepler_ref.jpg"
     signature_motif: "Kepler Right Triangle (1 : sqrt(phi) : phi) & nested Platonic orbits"
+    outputs:
+      dark_svg: "docsrc/_static/portraits/kepler_dark.svg"
+      light_svg: "docsrc/_static/portraits/kepler_light.svg"
     notes: "IMPORTANT: Use JKepler.jpg (authentic portrait). Do NOT use Portrait_Confused_With_Johannes_Kepler_1610.jpg, which Wikimedia flags as a 19th-century spurious copy of an unknown sitter."
 
   - id: "euler"
@@ -158,7 +177,7 @@ portraits:
     dates: "1707 - 1783"
     era: "Enlightenment"
     repo: "euler"
-    status: "queued"
+    status: "complete"
     queue_order: 6
     pose: "Three-quarter left in silk cap / turban"
     reference:
@@ -168,5 +187,9 @@ portraits:
       rights: "Public Domain"
       wikimedia_file: "File:Leonhard_Euler.jpg"
       url: "https://commons.wikimedia.org/wiki/File:Leonhard_Euler.jpg"
+      local_ref: "resources/portraits_ref/euler_ref.jpg"
     signature_motif: "Euler Line (O - G - H) & Nine-Point Circle"
+    outputs:
+      dark_svg: "docsrc/_static/portraits/euler_dark.svg"
+      light_svg: "docsrc/_static/portraits/euler_light.svg"
     notes: "Soft silk wrap around forehead lends itself directly to Euclid III.12 concentric arcs."

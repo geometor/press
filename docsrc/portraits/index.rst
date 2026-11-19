@@ -50,8 +50,128 @@ Constructed over Dürer's *Self-Portrait at Twenty-Eight* (1500, Alte Pinakothek
              loading="lazy"></iframe>
    </div>
 
-3. Verified Public-Domain Reference Queue
------------------------------------------
+3. Study 02 — Euclid of Alexandria (fl. c. 300 BCE)
+---------------------------------------------------
+
+Constructed over the Urbino Baroque portrait holding an open folio of the *Elements* (J. Paul Getty Museum / Google Art Project — Public Domain), with three-quarter geometric symmetry reconstructing the shadowed half of the face, ``Euclid III.12`` tangent circular arcs for the philosopher beard and rustic tunic folds, and Book I Proposition 1 (*Vesica Piscis* + Equilateral Triangle ``<A B C>``) in the golden layer.
+
+- **Vector Exports**: ``_static/portraits/euclid_dark.svg`` & ``_static/portraits/euclid_light.svg``
+
+.. raw:: html
+
+   <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1rem; margin: 1.25rem 0;">
+     <figure style="margin: 0; text-align: center;">
+       <img src="../_static/portraits/euclid_dark.svg" alt="Euclid of Alexandria Medallion — Obsidian Ink" style="width: 100%; border-radius: 10px; border: 1px solid rgba(160,160,160,0.25);" />
+       <figcaption style="font-size: 0.85rem; margin-top: 0.4rem;">Obsidian Ink (<code>euclid_dark.svg</code>)</figcaption>
+     </figure>
+     <figure style="margin: 0; text-align: center;">
+       <img src="../_static/portraits/euclid_light.svg" alt="Euclid of Alexandria Medallion — Warm Paper" style="width: 100%; border-radius: 10px; border: 1px solid rgba(160,160,160,0.25);" />
+       <figcaption style="font-size: 0.85rem; margin-top: 0.4rem;">Warm Paper (<code>euclid_light.svg</code>)</figcaption>
+     </figure>
+   </div>
+
+4. Study 03 — Plato of Athens (c. 428 – c. 348 BCE)
+----------------------------------------------------
+
+Constructed over Raphael's *The School of Athens* (1509–1511, Apostolic Palace, Vatican — Public Domain), capturing Plato's upward-pointing hand, flowing beard in ``Euclid III.12`` tangent circular arcs, the Divided Line (*Republic* VI), and a dodecahedral projection.
+
+- **Vector Exports**: ``_static/portraits/plato_dark.svg`` & ``_static/portraits/plato_light.svg``
+
+.. raw:: html
+
+   <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1rem; margin: 1.25rem 0;">
+     <figure style="margin: 0; text-align: center;">
+       <img src="../_static/portraits/plato_dark.svg" alt="Plato of Athens Medallion — Obsidian Ink" style="width: 100%; border-radius: 10px; border: 1px solid rgba(160,160,160,0.25);" />
+       <figcaption style="font-size: 0.85rem; margin-top: 0.4rem;">Obsidian Ink (<code>plato_dark.svg</code>)</figcaption>
+     </figure>
+     <figure style="margin: 0; text-align: center;">
+       <img src="../_static/portraits/plato_light.svg" alt="Plato of Athens Medallion — Warm Paper" style="width: 100%; border-radius: 10px; border: 1px solid rgba(160,160,160,0.25);" />
+       <figcaption style="font-size: 0.85rem; margin-top: 0.4rem;">Warm Paper (<code>plato_light.svg</code>)</figcaption>
+     </figure>
+   </div>
+
+5. Study 04 — Aristotle of Stagira (384 – 322 BCE)
+--------------------------------------------------
+
+Paired across the gallery with Plato from Raphael's *The School of Athens* (1509–1511, Vatican — Public Domain), featuring Aristotle's three-quarter left profile, curled beard in ``Euclid III.12`` tangent arcs, and the Continuum Axis & Geometric Syllogism Triangle.
+
+- **Vector Exports**: ``_static/portraits/aristotle_dark.svg`` & ``_static/portraits/aristotle_light.svg``
+
+.. raw:: html
+
+   <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1rem; margin: 1.25rem 0;">
+     <figure style="margin: 0; text-align: center;">
+       <img src="../_static/portraits/aristotle_dark.svg" alt="Aristotle of Stagira Medallion — Obsidian Ink" style="width: 100%; border-radius: 10px; border: 1px solid rgba(160,160,160,0.25);" />
+       <figcaption style="font-size: 0.85rem; margin-top: 0.4rem;">Obsidian Ink (<code>aristotle_dark.svg</code>)</figcaption>
+     </figure>
+     <figure style="margin: 0; text-align: center;">
+       <img src="../_static/portraits/aristotle_light.svg" alt="Aristotle of Stagira Medallion — Warm Paper" style="width: 100%; border-radius: 10px; border: 1px solid rgba(160,160,160,0.25);" />
+       <figcaption style="font-size: 0.85rem; margin-top: 0.4rem;">Warm Paper (<code>aristotle_light.svg</code>)</figcaption>
+     </figure>
+   </div>
+
+6. Study 05 — Fra Luca Pacioli (c. 1447 – 1517)
+-----------------------------------------------
+
+Constructed over Jacopo de' Barbari's 1495 portrait (Museo di Capodimonte, Naples — Public Domain), framing the Franciscan cowl hood in concentric circular arcs alongside the suspended glass rhombicuboctahedron and Golden Ratio dividers.
+
+- **Vector Exports**: ``_static/portraits/pacioli_dark.svg`` & ``_static/portraits/pacioli_light.svg``
+
+.. raw:: html
+
+   <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1rem; margin: 1.25rem 0;">
+     <figure style="margin: 0; text-align: center;">
+       <img src="../_static/portraits/pacioli_dark.svg" alt="Fra Luca Pacioli Medallion — Obsidian Ink" style="width: 100%; border-radius: 10px; border: 1px solid rgba(160,160,160,0.25);" />
+       <figcaption style="font-size: 0.85rem; margin-top: 0.4rem;">Obsidian Ink (<code>pacioli_dark.svg</code>)</figcaption>
+     </figure>
+     <figure style="margin: 0; text-align: center;">
+       <img src="../_static/portraits/pacioli_light.svg" alt="Fra Luca Pacioli Medallion — Warm Paper" style="width: 100%; border-radius: 10px; border: 1px solid rgba(160,160,160,0.25);" />
+       <figcaption style="font-size: 0.85rem; margin-top: 0.4rem;">Warm Paper (<code>pacioli_light.svg</code>)</figcaption>
+     </figure>
+   </div>
+
+7. Study 06 — Johannes Kepler (1571 – 1630)
+-------------------------------------------
+
+Constructed over the authentic Linz/Strasbourg portrait (``JKepler.jpg`` — Public Domain), pairing Kepler's lace ruff collar in ``Euclid III.12`` tangent arcs with the Kepler Right Triangle :math:`(1, \sqrt{\phi}, \phi)` and nested Platonic orbits.
+
+- **Vector Exports**: ``_static/portraits/kepler_dark.svg`` & ``_static/portraits/kepler_light.svg``
+
+.. raw:: html
+
+   <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1rem; margin: 1.25rem 0;">
+     <figure style="margin: 0; text-align: center;">
+       <img src="../_static/portraits/kepler_dark.svg" alt="Johannes Kepler Medallion — Obsidian Ink" style="width: 100%; border-radius: 10px; border: 1px solid rgba(160,160,160,0.25);" />
+       <figcaption style="font-size: 0.85rem; margin-top: 0.4rem;">Obsidian Ink (<code>kepler_dark.svg</code>)</figcaption>
+     </figure>
+     <figure style="margin: 0; text-align: center;">
+       <img src="../_static/portraits/kepler_light.svg" alt="Johannes Kepler Medallion — Warm Paper" style="width: 100%; border-radius: 10px; border: 1px solid rgba(160,160,160,0.25);" />
+       <figcaption style="font-size: 0.85rem; margin-top: 0.4rem;">Warm Paper (<code>kepler_light.svg</code>)</figcaption>
+     </figure>
+   </div>
+
+8. Study 07 — Leonhard Euler (1707 – 1783)
+------------------------------------------
+
+Constructed over Jakob Emanuel Handmann's 1753 pastel (Kunstmuseum Basel — Public Domain), rendering Euler's silk cap in concentric circular arcs framed by the Euler Line (``O–G–H``) and Nine-Point Circle.
+
+- **Vector Exports**: ``_static/portraits/euler_dark.svg`` & ``_static/portraits/euler_light.svg``
+
+.. raw:: html
+
+   <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1rem; margin: 1.25rem 0;">
+     <figure style="margin: 0; text-align: center;">
+       <img src="../_static/portraits/euler_dark.svg" alt="Leonhard Euler Medallion — Obsidian Ink" style="width: 100%; border-radius: 10px; border: 1px solid rgba(160,160,160,0.25);" />
+       <figcaption style="font-size: 0.85rem; margin-top: 0.4rem;">Obsidian Ink (<code>euler_dark.svg</code>)</figcaption>
+     </figure>
+     <figure style="margin: 0; text-align: center;">
+       <img src="../_static/portraits/euler_light.svg" alt="Leonhard Euler Medallion — Warm Paper" style="width: 100%; border-radius: 10px; border: 1px solid rgba(160,160,160,0.25);" />
+       <figcaption style="font-size: 0.85rem; margin-top: 0.4rem;">Warm Paper (<code>euler_light.svg</code>)</figcaption>
+     </figure>
+   </div>
+
+9. Completed Portrait Medallion Catalog
+---------------------------------------
 
 All portrait metadata, Wikimedia Commons identifiers, and museum holdings are tracked in ``resources/portraits.yaml`` and ``resources/portraits.json``:
 
@@ -59,31 +179,35 @@ All portrait metadata, Wikimedia Commons identifiers, and museum holdings are tr
    :header-rows: 1
    :widths: 14 20 34 32
 
-   * - Queue
+   * - Study
      - Subject
      - Verified Public-Domain Source
      - Signature Geometric Motif
-   * - **Next 1**
+   * - **Study 01**
+     - **Albrecht Dürer** (``durer``)
+     - *Self-Portrait at Twenty-Eight* (1500, Alte Pinakothek)
+     - 60° hair-cascade triangle & ``1500 AD`` monogram
+   * - **Study 02**
      - **Euclid** (``euclid``)
-     - Urbino Baroque portrait holding *Elements* (Getty / Google Art Project; local ref staged)
+     - Urbino Baroque portrait holding *Elements* (Getty / Google Art Project)
      - Book I Prop. 1 *Vesica Piscis* & Equilateral Triangle
-   * - **Next 2**
+   * - **Study 03**
      - **Plato** (``plato``)
      - Raphael, *The School of Athens* (1509–1511, Vatican — ``Sanzio_01_Plato_Aristotle.jpg``)
      - Divided Line (*Republic* VI) & dodecahedral projection
-   * - **Next 3**
+   * - **Study 04**
      - **Aristotle** (``aristotle``)
      - Raphael, *The School of Athens* (1509–1511, Vatican — ``Sanzio_01_Plato_Aristotle.jpg``)
      - Continuum axis & syllogism triangle
-   * - **Next 4**
+   * - **Study 05**
      - **Fra Luca Pacioli** (``pacioli``)
      - Jacopo de' Barbari (1495, Capodimonte, Naples — ``Pacioli.jpg``)
      - Suspended rhombicuboctahedron & Golden Ratio dividers
-   * - **Next 5**
+   * - **Study 06**
      - **Johannes Kepler** (``kepler``)
      - Authentic Linz portrait (``JKepler.jpg`` — avoiding the spurious 1610 copy)
      - Kepler Right Triangle :math:`(1, \sqrt{\phi}, \phi)` & nested spheres
-   * - **Queued**
+   * - **Study 07**
      - **Leonhard Euler** (``euler``)
      - Jakob Emanuel Handmann pastel (1753, Kunstmuseum Basel — ``Leonhard_Euler.jpg``)
      - Euler Line (``O–G–H``) & Nine-Point Circle
