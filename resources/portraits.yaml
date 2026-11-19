@@ -374,6 +374,7 @@ portraits:
       rights: "Public Domain (PD-old-100 / PD-Art)"
       wikimedia_file: "File:Apollonii Pergei Opera 1537 detail.jpg"
       url: "https://commons.wikimedia.org/wiki/File:Apollonii_Pergei_Opera_1537_detail.jpg"
+      local_ref: "resources/portraits_ref/apollonius_ref.jpg"
     signature_motif: "Apollonian Gasket (3 Mutual Tangent Circles) & Circle of Apollonius"
     outputs: {}
     notes: "Earliest printed historical depiction (1537 Venice Conics title page)."
@@ -394,6 +395,7 @@ portraits:
       rights: "Public Domain (PD-Mark 1.0 / PD-old-100)"
       wikimedia_file: "File:Hero of Alexandria.png"
       url: "https://commons.wikimedia.org/wiki/File:Hero_of_Alexandria.png"
+      local_ref: "resources/portraits_ref/heron_ref.jpg"
     signature_motif: "Heron Incircle & Semiperimeter Radii + Equal-Angle Reflection"
     outputs: {}
     notes: "Canonical 1688 Pneumatics engraving (avoids Byzantine Gregory of Nazianzus misattribution)."
@@ -414,6 +416,7 @@ portraits:
       rights: "Public Domain (PD-old-100 / PD-Art)"
       wikimedia_file: "File:Nikomachos von Gerasa.jpg"
       url: "https://commons.wikimedia.org/wiki/File:Nikomachos_von_Gerasa.jpg"
+      local_ref: "resources/portraits_ref/nicomachus_ref.jpg"
     signature_motif: "Pythagorean Figurate Gnomon Lattice & Polygonal Number Arrays"
     outputs: {}
     notes: "Earliest authoritative illumination explicitly naming Nicomachus."
@@ -440,7 +443,7 @@ portraits:
     birth_year: 100
     era: "Antiquity"
     repo: "ptolemy"
-    status: "researched"
+    status: "complete"
     queue_order: 19
     pose: "Three-quarter left in royal scholar robes cradling armillary sphere"
     reference:
@@ -450,8 +453,11 @@ portraits:
       rights: "Public Domain (PD-old-100 / PD-Art)"
       wikimedia_file: "File:Ptolemy 1476 with armillary sphere model.jpg"
       url: "https://commons.wikimedia.org/wiki/File:Ptolemy_1476_with_armillary_sphere_model.jpg"
+      local_ref: "resources/portraits_ref/ptolemy_ref.jpg"
     signature_motif: "Ptolemy Cyclic Quadrilateral & Epicycle-on-Deferent Orbits"
-    outputs: {}
+    outputs:
+      dark_svg: "docsrc/_static/portraits/ptolemy_dark.svg"
+      light_svg: "docsrc/_static/portraits/ptolemy_light.svg"
     notes: "Preeminent Renaissance Urbino Studiolo panel."
     portrait_type: "historical_depiction"
   - id: "pappus"
@@ -492,7 +498,7 @@ portraits:
     birth_year: 1170
     era: "Medieval"
     repo: "fibonacci"
-    status: "researched"
+    status: "complete"
     queue_order: 22
     pose: "Three-quarter right bust in medieval hooded chaperon cap"
     reference:
@@ -502,8 +508,11 @@ portraits:
       rights: "Public Domain (PD-old-100)"
       wikimedia_file: "File:Fibonacci.jpg"
       url: "https://commons.wikimedia.org/wiki/File:Fibonacci.jpg"
+      local_ref: "resources/portraits_ref/fibonacci_ref.jpg"
     signature_motif: "Fibonacci Whirling Squares & Quarter-Circle Golden Spiral"
-    outputs: {}
+    outputs:
+      dark_svg: "docsrc/_static/portraits/fibonacci_dark.svg"
+      light_svg: "docsrc/_static/portraits/fibonacci_light.svg"
     notes: "Canonical Public Domain c. 1850 monochrome engraving."
     portrait_type: "historical_depiction"
   - id: "cusa"
@@ -512,7 +521,7 @@ portraits:
     birth_year: 1401
     era: "Renaissance"
     repo: "cusa"
-    status: "researched"
+    status: "complete"
     queue_order: 23
     pose: "Devotional profile/three-quarter donor portrait in cardinal vestments"
     reference:
@@ -522,8 +531,11 @@ portraits:
       rights: "Public Domain (PD-old-100 / PD-Art)"
       wikimedia_file: "File:Nicholas of Cusa.jpg"
       url: "https://commons.wikimedia.org/wiki/File:Nicholas_of_Cusa.jpg"
+      local_ref: "resources/portraits_ref/cusa_ref.jpg"
     signature_motif: "Coincidentia Oppositorum Infinite Polygons & Expanding Tangent Circles"
-    outputs: {}
+    outputs:
+      dark_svg: "docsrc/_static/portraits/cusa_dark.svg"
+      light_svg: "docsrc/_static/portraits/cusa_light.svg"
     notes: "Authentic near-contemporary donor portrait at Cusanusstift."
     portrait_type: "authentic_portrait"
   - id: "piero"
@@ -532,7 +544,7 @@ portraits:
     birth_year: 1415
     era: "Renaissance"
     repo: "piero"
-    status: "researched"
+    status: "complete"
     queue_order: 24
     pose: "Dignified formal bust in Renaissance scholar robe and civic cap"
     reference:
@@ -542,8 +554,11 @@ portraits:
       rights: "Public Domain (PD-old-100 / PD-Art)"
       wikimedia_file: "File:Santi di Tito - Portrait of Piero della Francesca.jpg"
       url: "https://commons.wikimedia.org/wiki/File:Santi_di_Tito_-_Portrait_of_Piero_della_Francesca.jpg"
+      local_ref: "resources/portraits_ref/piero_ref.jpg"
     signature_motif: "One-Point Perspective Vanishing Grid & Wireframe Truncated Polyhedron"
-    outputs: {}
+    outputs:
+      dark_svg: "docsrc/_static/portraits/piero_dark.svg"
+      light_svg: "docsrc/_static/portraits/piero_light.svg"
     notes: "Santi di Tito Sansepolcro portrait informed by Vasari's 1568 Vite."
     portrait_type: "historical_depiction"
   - id: "leonardo"
@@ -552,7 +567,7 @@ portraits:
     birth_year: 1452
     era: "Renaissance"
     repo: "pacioli"
-    status: "researched"
+    status: "complete"
     queue_order: 25
     pose: "Three-quarter red-chalk head study with long flowing beard and hair"
     reference:
@@ -562,8 +577,11 @@ portraits:
       rights: "Public Domain (PD-old-100 / PD-Art)"
       wikimedia_file: "File:Leonardo da Vinci - presumed self-portrait - WGA12798.jpg"
       url: "https://commons.wikimedia.org/wiki/File:Leonardo_da_Vinci_-_presumed_self-portrait_-_WGA12798.jpg"
+      local_ref: "resources/portraits_ref/leonardo_ref.jpg"
     signature_motif: "Vitruvian Circle-and-Square Canon & Geometric Compass Rosette"
-    outputs: {}
+    outputs:
+      dark_svg: "docsrc/_static/portraits/leonardo_dark.svg"
+      light_svg: "docsrc/_static/portraits/leonardo_light.svg"
     notes: "Iconic Turin sanguine study; Francesco Melzi Windsor profile is alternate."
     portrait_type: "authentic_portrait"
   - id: "ceva"
@@ -598,6 +616,7 @@ portraits:
       rights: "Public Domain (PD-old-100 / CC0 PD Mark)"
       wikimedia_file: "File:Lorenzo_Mascheroni._Francesco_Redenti_sculp_(cropped).jpg"
       url: "https://commons.wikimedia.org/wiki/File:Lorenzo_Mascheroni._Francesco_Redenti_sculp_(cropped).jpg"
+      local_ref: "resources/portraits_ref/mascheroni_ref.jpg"
     signature_motif: "Compass-Only Circle Quartering (Napoleon's Problem) & Six-Petal Rose"
     outputs: {}
     notes: "Inscribed 'Da un dipinto fatto dal vivo'; crisp neoclassical profile."
@@ -617,6 +636,7 @@ portraits:
       rights: "Public Domain (PD-old-100 / CC0 PD Mark)"
       wikimedia_file: "File:Von_Staudt.jpg"
       url: "https://commons.wikimedia.org/wiki/File:Von_Staudt.jpg"
+      local_ref: "resources/portraits_ref/staudt_ref.jpg"
     signature_motif: "Complete Quadrangle Harmonic Conjugate H(A,B;C,D) & Polarity Circle"
     outputs: {}
     notes: "Authentic Rothenburg archive portrait honoring Geometrie der Lage (1847)."
@@ -636,6 +656,7 @@ portraits:
       rights: "Public Domain (PD-old-100 / CC0 PD Mark)"
       wikimedia_file: "File:Karl_Wilhelm_Feuerbach.jpg"
       url: "https://commons.wikimedia.org/wiki/File:Karl_Wilhelm_Feuerbach.jpg"
+      local_ref: "resources/portraits_ref/feuerbach_ref.jpg"
     signature_motif: "Feuerbach Nine-Point Circle Tangent to Incircle & Excircle"
     outputs: {}
     notes: "Accepted historical likeness of geometer Karl Wilhelm Feuerbach (1800-1834)."
@@ -655,6 +676,7 @@ portraits:
       rights: "Public Domain (PD-old-100 / CC0 PD Mark)"
       wikimedia_file: "File:John_Casey_01.jpg"
       url: "https://commons.wikimedia.org/wiki/File:John_Casey_01.jpg"
+      local_ref: "resources/portraits_ref/casey_ref.jpg"
     signature_motif: "Casey's Theorem (Four Circles Tangent to a Fifth Circle)"
     outputs: {}
     notes: "Verified authentic pre-1891 portrait of Irish geometer John Casey."
@@ -675,6 +697,7 @@ portraits:
       rights: "Public Domain (PD-old-100 / PD-US-expired)"
       wikimedia_file: "File:Portrait_of_Ernst_Haeckel.jpg"
       url: "https://commons.wikimedia.org/wiki/File:Portrait_of_Ernst_Haeckel.jpg"
+      local_ref: "resources/portraits_ref/ernst_haeckel_ref.jpg"
     signature_motif: "Radiolarian Icosahedral Symmetry & Concentric Diatom Star"
     outputs: {}
     notes: "Verified pre-1895 portrait by Friedrich Haack."
@@ -695,6 +718,7 @@ portraits:
       rights: "Public Domain (PD-old-100 / CC0 PD Mark)"
       wikimedia_file: "File:Julius_Petersen_by_Harald_Paetz.jpg"
       url: "https://commons.wikimedia.org/wiki/File:Julius_Petersen_by_Harald_Paetz.jpg"
+      local_ref: "resources/portraits_ref/petersen_ref.jpg"
     signature_motif: "Petersen Graph (Pentagon, Inner Pentagram & 5 Radial Spokes)"
     outputs: {}
     notes: "High-provenance Royal Library Copenhagen albumen print."
@@ -714,6 +738,7 @@ portraits:
       rights: "Public Domain (PD-old-100 / PD-US-expired)"
       wikimedia_file: "File:Lemoine.jpg"
       url: "https://commons.wikimedia.org/wiki/File:Lemoine.jpg"
+      local_ref: "resources/portraits_ref/lemoine_ref.jpg"
     signature_motif: "Symmedians at Lemoine Point K (X6) & First Lemoine Circle"
     outputs: {}
     notes: "Standard verified archival portrait honoring Geometrographie."
@@ -734,6 +759,7 @@ portraits:
       rights: "Public Domain (PD-old-100 / CC0 PD Mark)"
       wikimedia_file: "File:Portrait_of_Moritz_Pasch,_by_Gustav_Backofen_(Kunstbibliothek_Berlin).jpg"
       url: "https://commons.wikimedia.org/wiki/File:Portrait_of_Moritz_Pasch,_by_Gustav_Backofen_(Kunstbibliothek_Berlin).jpg"
+      local_ref: "resources/portraits_ref/pasch_ref.jpg"
     signature_motif: "Pasch's Axiom Transversal & Ordered Collinear Triad"
     outputs: {}
     notes: "Exceptional Kunstbibliothek Berlin provenance."
@@ -744,7 +770,7 @@ portraits:
     birth_year: 1849
     era: "19th Century"
     repo: "klein"
-    status: "researched"
+    status: "complete"
     queue_order: 35
     pose: "Commanding three-quarter bust with full dark beard and piercing gaze"
     reference:
@@ -754,8 +780,11 @@ portraits:
       rights: "Public Domain (PD-old-100 / PD-US-expired)"
       wikimedia_file: "File:Felix_Klein,_ante_1897_-_Accademia_delle_Scienze_di_Torino_0078_B.jpg"
       url: "https://commons.wikimedia.org/wiki/File:Felix_Klein,_ante_1897_-_Accademia_delle_Scienze_di_Torino_0078_B.jpg"
+      local_ref: "resources/portraits_ref/klein_ref.jpg"
     signature_motif: "Beltrami-Klein Hyperbolic Disk Model (Chords & Limiting Parallels)"
-    outputs: {}
+    outputs:
+      dark_svg: "docsrc/_static/portraits/klein_dark.svg"
+      light_svg: "docsrc/_static/portraits/klein_light.svg"
     notes: "Verified pre-1897 Turin Academy Göttingen photograph."
     portrait_type: "authentic_portrait"
   - id: "poincare"
@@ -764,7 +793,7 @@ portraits:
     birth_year: 1854
     era: "19th Century"
     repo: "poincare"
-    status: "researched"
+    status: "complete"
     queue_order: 36
     pose: "Slightly turned frontal bust with pince-nez spectacles and trimmed beard"
     reference:
@@ -774,8 +803,11 @@ portraits:
       rights: "Public Domain (PD-old-100 / PD-US-expired)"
       wikimedia_file: "File:Poincare.jpg"
       url: "https://commons.wikimedia.org/wiki/File:Poincare.jpg"
+      local_ref: "resources/portraits_ref/poincare_ref.jpg"
     signature_motif: "Poincaré Hyperbolic Disk (Orthogonal Geodesic Arcs & Ideal Triangle)"
-    outputs: {}
+    outputs:
+      dark_svg: "docsrc/_static/portraits/poincare_dark.svg"
+      light_svg: "docsrc/_static/portraits/poincare_light.svg"
     notes: "Classic 1887 Parisian studio portrait by Eugène Pirou."
     portrait_type: "authentic_portrait"
   - id: "thompson"
@@ -784,7 +816,7 @@ portraits:
     birth_year: 1860
     era: "Modern"
     repo: "thompson"
-    status: "researched"
+    status: "complete"
     queue_order: 37
     pose: "Three-quarter Victorian studio portrait with full mustache and beard"
     reference:
@@ -794,8 +826,11 @@ portraits:
       rights: "Public Domain (CC0 1.0)"
       wikimedia_file: "File:D'Arcy_Wentworth_Thompson,_1886.jpg"
       url: "https://commons.wikimedia.org/wiki/File:D%27Arcy_Wentworth_Thompson,_1886.jpg"
+      local_ref: "resources/portraits_ref/thompson_ref.jpg"
     signature_motif: "Logarithmic Gnomon Spiral & Cartesian-to-Polar Transformation Grid"
-    outputs: {}
+    outputs:
+      dark_svg: "docsrc/_static/portraits/thompson_dark.svg"
+      light_svg: "docsrc/_static/portraits/thompson_light.svg"
     notes: "Clean CC0 portrait from University of St Andrews Libraries and Museums."
     portrait_type: "authentic_portrait"
   - id: "hambidge"
@@ -820,7 +855,7 @@ portraits:
     birth_year: 1871
     era: "Modern"
     repo: "walter-russell"
-    status: "researched"
+    status: "complete"
     queue_order: 39
     pose: "Circular studio headshot portrait, frontal / three-quarter"
     reference:
@@ -829,8 +864,11 @@ portraits:
       rights: "Public Domain"
       wikimedia_file: "File:Walter_Russell_circular_portrait.jpg"
       url: "https://commons.wikimedia.org/wiki/File:Walter_Russell_circular_portrait.jpg"
+      local_ref: "resources/portraits_ref/walter_russell_ref.jpg"
     signature_motif: "Concentric Wave-Field Octave Circles & Cubic-Sphere Dual Projection"
-    outputs: {}
+    outputs:
+      dark_svg: "docsrc/_static/portraits/walter_russell_dark.svg"
+      light_svg: "docsrc/_static/portraits/walter_russell_light.svg"
     notes: "Circular headshot naturally mirrors medallion geometry."
     portrait_type: "authentic_portrait"
   - id: "hoenen"
@@ -839,7 +877,7 @@ portraits:
     birth_year: 1880
     era: "Modern"
     repo: "hoenen"
-    status: "researched"
+    status: "complete"
     queue_order: 40
     pose: "Head-and-shoulders clerical studio portrait in Jesuit collar"
     reference:
@@ -848,8 +886,11 @@ portraits:
       rights: "Public Domain (Public Domain Mark 1.0)"
       wikimedia_file: "File:PHJHoenen.jpg"
       url: "https://commons.wikimedia.org/wiki/File:PHJHoenen.jpg"
+      local_ref: "resources/portraits_ref/hoenen_ref.jpg"
     signature_motif: "Noetic Abstraction Triangle & Constructive Compass Arc"
-    outputs: {}
+    outputs:
+      dark_svg: "docsrc/_static/portraits/hoenen_dark.svg"
+      light_svg: "docsrc/_static/portraits/hoenen_light.svg"
     notes: "Verified 1930s portrait under Public Domain Mark 1.0."
     portrait_type: "authentic_portrait"
   - id: "altshiller-court"
@@ -948,6 +989,7 @@ portraits:
       rights: "Public Domain (NASA / ESA / STScI)"
       wikimedia_file: "File:Dr_Mario_Livio_(2009-34-2660).jpg"
       url: "https://commons.wikimedia.org/wiki/File:Dr_Mario_Livio_(2009-34-2660).jpg"
+      local_ref: "resources/portraits_ref/livio_ref.jpg"
     signature_motif: "Regular Inscribed Pentagram & Golden Ratio Phi Chord Division"
     outputs: {}
     notes: "Official NASA/ESA/STScI Public Domain portrait."

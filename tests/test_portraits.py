@@ -16,17 +16,27 @@ from geometor.press import (
     build_aristotle_elements,
     build_bertrand_russell_elements,
     build_byrne_elements,
+    build_cusa_elements,
     build_durer_elements,
     build_empty_medallion_svg,
     build_euclid_elements,
     build_euler_elements,
+    build_fibonacci_elements,
     build_heath_elements,
     build_hilbert_elements,
+    build_hoenen_elements,
     build_kepler_elements,
+    build_klein_elements,
+    build_leonardo_elements,
     build_pacioli_elements,
     build_pascal_elements,
+    build_piero_elements,
     build_plato_elements,
+    build_poincare_elements,
+    build_ptolemy_elements,
     build_steiner_elements,
+    build_thompson_elements,
+    build_walter_russell_elements,
     load_portraits,
     render_medallion_svg,
 )
@@ -49,9 +59,19 @@ PORTRAIT_BUILDERS: dict[str, Callable[[], dict[str, list[dict[str, object]]]]] =
     "hilbert": build_hilbert_elements,
     "bertrand_russell": build_bertrand_russell_elements,
     "heath": build_heath_elements,
+    "leonardo": build_leonardo_elements,
+    "piero": build_piero_elements,
+    "cusa": build_cusa_elements,
+    "fibonacci": build_fibonacci_elements,
+    "ptolemy": build_ptolemy_elements,
+    "klein": build_klein_elements,
+    "poincare": build_poincare_elements,
+    "thompson": build_thompson_elements,
+    "hoenen": build_hoenen_elements,
+    "walter_russell": build_walter_russell_elements,
 }
 
-BATCH2_IDS = {
+MEDALLION_BUILDER_IDS = {
     "archimedes",
     "aquinas",
     "pascal",
@@ -60,22 +80,32 @@ BATCH2_IDS = {
     "hilbert",
     "bertrand_russell",
     "heath",
+    "leonardo",
+    "piero",
+    "cusa",
+    "fibonacci",
+    "ptolemy",
+    "klein",
+    "poincare",
+    "thompson",
+    "hoenen",
+    "walter_russell",
 }
 
 
-def test_portraits_manifest_loads_pantheon_and_fifteen_complete() -> None:
-    """Verify resources/portraits.json loads the 48-slot Pantheon with 15 completed studies."""
+def test_portraits_manifest_loads_pantheon_and_twenty_five_complete() -> None:
+    """Verify resources/portraits.json loads the 48-slot Pantheon with 25 completed studies."""
     records = load_portraits()
     assert len(records) == 48
     ids = [rec.id for rec in records]
     assert ids[:7] == ["durer", "euclid", "plato", "aristotle", "pacioli", "kepler", "euler"]
     completed = [rec for rec in records if rec.status == "complete"]
-    assert len(completed) == 15
+    assert len(completed) == 25
     for rec in completed:
         assert "dark_svg" in rec.outputs
         assert "light_svg" in rec.outputs
     researched = [rec for rec in records if rec.status == "researched"]
-    assert len(researched) == 33
+    assert len(researched) == 23
     assert MEDALLION_SPEC["medallion_radius"] == 92.0
 
 
@@ -106,9 +136,9 @@ def test_portrait_medallion_strictly_lines_and_circles(
             assert " A " in path_d
 
 
-@pytest.mark.parametrize("portrait_id", sorted(BATCH2_IDS))
-def test_batch2_medallions_strictly_inside_medallion_bounds(portrait_id: str) -> None:
-    """Verify every line and arc endpoint in Batch 2 studies stays inside MED_R = 92.0."""
+@pytest.mark.parametrize("portrait_id", sorted(MEDALLION_BUILDER_IDS))
+def test_medallion_builder_studies_strictly_inside_medallion_bounds(portrait_id: str) -> None:
+    """Verify every line and arc endpoint in Studies 08-25 stays inside MED_R = 92.0."""
     layers = PORTRAIT_BUILDERS[portrait_id]()
     med_cx, med_cy = MEDALLION_SPEC["medallion_center"]
     limit = float(MEDALLION_SPEC["medallion_radius"]) + 1.0

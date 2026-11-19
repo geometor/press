@@ -10,7 +10,7 @@ Compass-and-Straightedge Portraits
 
 To give every author gallery, person card, and book title page a unified geometric signature, GEOMETOR Press constructs vector portraits **strictly from straight lines and circular arcs**—with **zero Bézier curves**—calibrated over verified public-domain masterworks.
 
-- **Unified Portrait Gallery (Studies 01–15)**: `Open Fullscreen <../_static/studios/portraits_gallery.html>`__ (or ``demos/portraits_gallery.html``)
+- **Unified Portrait Gallery (Studies 01–25)**: `Open Fullscreen <../_static/studios/portraits_gallery.html>`__ (or ``demos/portraits_gallery.html``)
 - **Live 48-Slot Pantheon Poster**: ``editions/posters/geometor_portraits_poster.png`` (`Open Full-Res Poster <../_static/portraits/geometor_portraits_poster.png>`__)
 
 .. raw:: html
@@ -26,7 +26,7 @@ To give every author gallery, person card, and book title page a unified geometr
      <a href="../_static/portraits/geometor_portraits_poster.png" target="_blank" rel="noopener">
        <img src="../_static/portraits/geometor_portraits_poster.png" alt="GEOMETOR Pantheon of Geometers — 48-Slot Live Dark Poster" style="width: 100%; border-radius: 12px; border: 1px solid rgba(212,175,55,0.35);" />
      </a>
-     <figcaption style="font-size: 0.85rem; margin-top: 0.5rem;">GEOMETOR Pantheon of Geometers (<code>15</code> Complete · <code>33</code> Researched · <code>48</code> Chronological Slots)</figcaption>
+     <figcaption style="font-size: 0.85rem; margin-top: 0.5rem;">GEOMETOR Pantheon of Geometers (<code>25</code> Complete · <code>23</code> Researched · <code>48</code> Chronological Slots)</figcaption>
    </figure>
 
 1. Canonical Medallion Specification
@@ -349,10 +349,210 @@ Constructed over the c. 1910 Royal Society / MacTutor studio portrait (Public Do
      </figure>
    </div>
 
-17. Completed Portrait Medallion Catalog (15 of 48 Pantheon Slots)
+17. Study 16 — Leonardo da Vinci (1452 – 1519)
+----------------------------------------------
+
+Constructed over the red-chalk *Portrait of a Man* (c. 1510–1515, Biblioteca Reale, Turin — Public Domain), balancing Leonardo's flowing sage beard with the **Vitruvian Circle-and-Square Canon** and **Geometric Compass Rosette**.
+
+- **Vector Exports**: ``_static/portraits/leonardo_dark.svg`` & ``_static/portraits/leonardo_light.svg``
+
+.. raw:: html
+
+   <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1rem; margin: 1.25rem 0;">
+     <figure style="margin: 0; text-align: center;">
+       <img src="../_static/portraits/leonardo_dark.svg" alt="Leonardo da Vinci Medallion — Obsidian Ink" style="width: 100%; border-radius: 10px; border: 1px solid rgba(160,160,160,0.25);" />
+       <figcaption style="font-size: 0.85rem; margin-top: 0.4rem;">Obsidian Ink (<code>leonardo_dark.svg</code>)</figcaption>
+     </figure>
+     <figure style="margin: 0; text-align: center;">
+       <img src="../_static/portraits/leonardo_light.svg" alt="Leonardo da Vinci Medallion — Warm Paper" style="width: 100%; border-radius: 10px; border: 1px solid rgba(160,160,160,0.25);" />
+       <figcaption style="font-size: 0.85rem; margin-top: 0.4rem;">Warm Paper (<code>leonardo_light.svg</code>)</figcaption>
+     </figure>
+   </div>
+
+18. Study 17 — Piero della Francesca (c. 1415 – 1492)
+-----------------------------------------------------
+
+Constructed over Santi di Tito's c. 1590 Sansepolcro portrait (Public Domain), pairing Piero's dignified Quattrocento silhouette with a **One-Point Perspective Vanishing Grid** and **Wireframe Truncated Polyhedron**.
+
+- **Vector Exports**: ``_static/portraits/piero_dark.svg`` & ``_static/portraits/piero_light.svg``
+
+.. raw:: html
+
+   <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1rem; margin: 1.25rem 0;">
+     <figure style="margin: 0; text-align: center;">
+       <img src="../_static/portraits/piero_dark.svg" alt="Piero della Francesca Medallion — Obsidian Ink" style="width: 100%; border-radius: 10px; border: 1px solid rgba(160,160,160,0.25);" />
+       <figcaption style="font-size: 0.85rem; margin-top: 0.4rem;">Obsidian Ink (<code>piero_dark.svg</code>)</figcaption>
+     </figure>
+     <figure style="margin: 0; text-align: center;">
+       <img src="../_static/portraits/piero_light.svg" alt="Piero della Francesca Medallion — Warm Paper" style="width: 100%; border-radius: 10px; border: 1px solid rgba(160,160,160,0.25);" />
+       <figcaption style="font-size: 0.85rem; margin-top: 0.4rem;">Warm Paper (<code>piero_light.svg</code>)</figcaption>
+     </figure>
+   </div>
+
+19. Study 18 — Nicholas of Cusa (1401 – 1464)
+---------------------------------------------
+
+Constructed over the Cusanusstift altar triptych donor portrait (c. 1460–1480, Bernkastel-Kues — Public Domain), framing Cusanus's cardinal biretta with **Coincidentia Oppositorum Infinite Polygons** and **Expanding Tangent Circles**.
+
+- **Vector Exports**: ``_static/portraits/cusa_dark.svg`` & ``_static/portraits/cusa_light.svg``
+
+.. raw:: html
+
+   <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1rem; margin: 1.25rem 0;">
+     <figure style="margin: 0; text-align: center;">
+       <img src="../_static/portraits/cusa_dark.svg" alt="Nicholas of Cusa Medallion — Obsidian Ink" style="width: 100%; border-radius: 10px; border: 1px solid rgba(160,160,160,0.25);" />
+       <figcaption style="font-size: 0.85rem; margin-top: 0.4rem;">Obsidian Ink (<code>cusa_dark.svg</code>)</figcaption>
+     </figure>
+     <figure style="margin: 0; text-align: center;">
+       <img src="../_static/portraits/cusa_light.svg" alt="Nicholas of Cusa Medallion — Warm Paper" style="width: 100%; border-radius: 10px; border: 1px solid rgba(160,160,160,0.25);" />
+       <figcaption style="font-size: 0.85rem; margin-top: 0.4rem;">Warm Paper (<code>cusa_light.svg</code>)</figcaption>
+     </figure>
+   </div>
+
+20. Study 19 — Leonardo Pisano / Fibonacci (c. 1170 – c. 1250)
+--------------------------------------------------------------
+
+Constructed over the c. 1850 Tuscan engraved portrait (Public Domain), uniting Fibonacci's medieval chaperon hood with **Fibonacci Whirling Squares**, a **Quarter-Circle Golden Spiral**, and an **Inscribed Pentagram**.
+
+- **Vector Exports**: ``_static/portraits/fibonacci_dark.svg`` & ``_static/portraits/fibonacci_light.svg``
+
+.. raw:: html
+
+   <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1rem; margin: 1.25rem 0;">
+     <figure style="margin: 0; text-align: center;">
+       <img src="../_static/portraits/fibonacci_dark.svg" alt="Leonardo Pisano Fibonacci Medallion — Obsidian Ink" style="width: 100%; border-radius: 10px; border: 1px solid rgba(160,160,160,0.25);" />
+       <figcaption style="font-size: 0.85rem; margin-top: 0.4rem;">Obsidian Ink (<code>fibonacci_dark.svg</code>)</figcaption>
+     </figure>
+     <figure style="margin: 0; text-align: center;">
+       <img src="../_static/portraits/fibonacci_light.svg" alt="Leonardo Pisano Fibonacci Medallion — Warm Paper" style="width: 100%; border-radius: 10px; border: 1px solid rgba(160,160,160,0.25);" />
+       <figcaption style="font-size: 0.85rem; margin-top: 0.4rem;">Warm Paper (<code>fibonacci_light.svg</code>)</figcaption>
+     </figure>
+   </div>
+
+21. Study 20 — Claudius Ptolemy (c. 100 – c. 170 CE)
+----------------------------------------------------
+
+Constructed over the Urbino Studiolo panel by Justus of Ghent & Pedro Berruguete (c. 1473–1476, Musée du Louvre — Public Domain), pairing Ptolemy's crowned scholar profile with **Ptolemy's Cyclic Quadrilateral** and **Epicycle-on-Deferent Orbits**.
+
+- **Vector Exports**: ``_static/portraits/ptolemy_dark.svg`` & ``_static/portraits/ptolemy_light.svg``
+
+.. raw:: html
+
+   <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1rem; margin: 1.25rem 0;">
+     <figure style="margin: 0; text-align: center;">
+       <img src="../_static/portraits/ptolemy_dark.svg" alt="Claudius Ptolemy Medallion — Obsidian Ink" style="width: 100%; border-radius: 10px; border: 1px solid rgba(160,160,160,0.25);" />
+       <figcaption style="font-size: 0.85rem; margin-top: 0.4rem;">Obsidian Ink (<code>ptolemy_dark.svg</code>)</figcaption>
+     </figure>
+     <figure style="margin: 0; text-align: center;">
+       <img src="../_static/portraits/ptolemy_light.svg" alt="Claudius Ptolemy Medallion — Warm Paper" style="width: 100%; border-radius: 10px; border: 1px solid rgba(160,160,160,0.25);" />
+       <figcaption style="font-size: 0.85rem; margin-top: 0.4rem;">Warm Paper (<code>ptolemy_light.svg</code>)</figcaption>
+     </figure>
+   </div>
+
+22. Study 21 — Felix Klein (1849 – 1925)
+----------------------------------------
+
+Constructed over the pre-1897 Gebrüder Noelle Göttingen studio portrait (Accademia delle Scienze di Torino — Public Domain), framing Klein's sweeping beard with the **Beltrami–Klein Hyperbolic Disk Model** and **Erlangen Symmetry Triad**.
+
+- **Vector Exports**: ``_static/portraits/klein_dark.svg`` & ``_static/portraits/klein_light.svg``
+
+.. raw:: html
+
+   <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1rem; margin: 1.25rem 0;">
+     <figure style="margin: 0; text-align: center;">
+       <img src="../_static/portraits/klein_dark.svg" alt="Felix Klein Medallion — Obsidian Ink" style="width: 100%; border-radius: 10px; border: 1px solid rgba(160,160,160,0.25);" />
+       <figcaption style="font-size: 0.85rem; margin-top: 0.4rem;">Obsidian Ink (<code>klein_dark.svg</code>)</figcaption>
+     </figure>
+     <figure style="margin: 0; text-align: center;">
+       <img src="../_static/portraits/klein_light.svg" alt="Felix Klein Medallion — Warm Paper" style="width: 100%; border-radius: 10px; border: 1px solid rgba(160,160,160,0.25);" />
+       <figcaption style="font-size: 0.85rem; margin-top: 0.4rem;">Warm Paper (<code>klein_light.svg</code>)</figcaption>
+     </figure>
+   </div>
+
+23. Study 22 — Henri Poincaré (1854 – 1912)
+-------------------------------------------
+
+Constructed over Eugène Pirou's 1887 Paris portrait (Public Domain), uniting Poincaré's pince-nez and pointed beard with the **Poincaré Hyperbolic Disk** (exact orthogonal geodesic arcs & ideal triangle) and **3-Body Phase Orbits**.
+
+- **Vector Exports**: ``_static/portraits/poincare_dark.svg`` & ``_static/portraits/poincare_light.svg``
+
+.. raw:: html
+
+   <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1rem; margin: 1.25rem 0;">
+     <figure style="margin: 0; text-align: center;">
+       <img src="../_static/portraits/poincare_dark.svg" alt="Henri Poincare Medallion — Obsidian Ink" style="width: 100%; border-radius: 10px; border: 1px solid rgba(160,160,160,0.25);" />
+       <figcaption style="font-size: 0.85rem; margin-top: 0.4rem;">Obsidian Ink (<code>poincare_dark.svg</code>)</figcaption>
+     </figure>
+     <figure style="margin: 0; text-align: center;">
+       <img src="../_static/portraits/poincare_light.svg" alt="Henri Poincare Medallion — Warm Paper" style="width: 100%; border-radius: 10px; border: 1px solid rgba(160,160,160,0.25);" />
+       <figcaption style="font-size: 0.85rem; margin-top: 0.4rem;">Warm Paper (<code>poincare_light.svg</code>)</figcaption>
+     </figure>
+   </div>
+
+24. Study 23 — Sir D'Arcy Wentworth Thompson (1860 – 1948)
+----------------------------------------------------------
+
+Constructed over Robertson's 1886 Dundee portrait (University of St Andrews — CC0 1.0), pairing Thompson's naturalistic poise with a **Logarithmic Gnomon Spiral** and **Cartesian-to-Polar Morphogenetic Transformation Grid**.
+
+- **Vector Exports**: ``_static/portraits/thompson_dark.svg`` & ``_static/portraits/thompson_light.svg``
+
+.. raw:: html
+
+   <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1rem; margin: 1.25rem 0;">
+     <figure style="margin: 0; text-align: center;">
+       <img src="../_static/portraits/thompson_dark.svg" alt="D'Arcy Wentworth Thompson Medallion — Obsidian Ink" style="width: 100%; border-radius: 10px; border: 1px solid rgba(160,160,160,0.25);" />
+       <figcaption style="font-size: 0.85rem; margin-top: 0.4rem;">Obsidian Ink (<code>thompson_dark.svg</code>)</figcaption>
+     </figure>
+     <figure style="margin: 0; text-align: center;">
+       <img src="../_static/portraits/thompson_light.svg" alt="D'Arcy Wentworth Thompson Medallion — Warm Paper" style="width: 100%; border-radius: 10px; border: 1px solid rgba(160,160,160,0.25);" />
+       <figcaption style="font-size: 0.85rem; margin-top: 0.4rem;">Warm Paper (<code>thompson_light.svg</code>)</figcaption>
+     </figure>
+   </div>
+
+25. Study 24 — Petrus Hoenen, S.J. (1880 – 1961)
+------------------------------------------------
+
+Constructed over the 1930s archival portrait (Public Domain Mark 1.0), framing Hoenen's Jesuit Roman collar and spectacles with the **Noetic Abstraction Triangle** (*Phantasm → Intelligible Matter → Judicium*) and **Constructive Compass Arc**.
+
+- **Vector Exports**: ``_static/portraits/hoenen_dark.svg`` & ``_static/portraits/hoenen_light.svg``
+
+.. raw:: html
+
+   <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1rem; margin: 1.25rem 0;">
+     <figure style="margin: 0; text-align: center;">
+       <img src="../_static/portraits/hoenen_dark.svg" alt="Petrus Hoenen Medallion — Obsidian Ink" style="width: 100%; border-radius: 10px; border: 1px solid rgba(160,160,160,0.25);" />
+       <figcaption style="font-size: 0.85rem; margin-top: 0.4rem;">Obsidian Ink (<code>hoenen_dark.svg</code>)</figcaption>
+     </figure>
+     <figure style="margin: 0; text-align: center;">
+       <img src="../_static/portraits/hoenen_light.svg" alt="Petrus Hoenen Medallion — Warm Paper" style="width: 100%; border-radius: 10px; border: 1px solid rgba(160,160,160,0.25);" />
+       <figcaption style="font-size: 0.85rem; margin-top: 0.4rem;">Warm Paper (<code>hoenen_light.svg</code>)</figcaption>
+     </figure>
+   </div>
+
+26. Study 25 — Walter Russell (1871 – 1963)
+-------------------------------------------
+
+Constructed over the archival circular portrait (Public Domain), uniting Russell's sculpted studio portrait with **Concentric Wave-Field Octave Circles** and the **Cubic-Sphere Dual Projection**.
+
+- **Vector Exports**: ``_static/portraits/walter_russell_dark.svg`` & ``_static/portraits/walter_russell_light.svg``
+
+.. raw:: html
+
+   <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1rem; margin: 1.25rem 0;">
+     <figure style="margin: 0; text-align: center;">
+       <img src="../_static/portraits/walter_russell_dark.svg" alt="Walter Russell Medallion — Obsidian Ink" style="width: 100%; border-radius: 10px; border: 1px solid rgba(160,160,160,0.25);" />
+       <figcaption style="font-size: 0.85rem; margin-top: 0.4rem;">Obsidian Ink (<code>walter_russell_dark.svg</code>)</figcaption>
+     </figure>
+     <figure style="margin: 0; text-align: center;">
+       <img src="../_static/portraits/walter_russell_light.svg" alt="Walter Russell Medallion — Warm Paper" style="width: 100%; border-radius: 10px; border: 1px solid rgba(160,160,160,0.25);" />
+       <figcaption style="font-size: 0.85rem; margin-top: 0.4rem;">Warm Paper (<code>walter_russell_light.svg</code>)</figcaption>
+     </figure>
+   </div>
+
+27. Completed Portrait Medallion Catalog (25 of 48 Pantheon Slots)
 ------------------------------------------------------------------
 
-All 48 Pantheon portrait records (15 complete, 33 researched with verified provenance and curated golden symbols) are tracked in ``resources/portraits.yaml`` and ``resources/portraits.json``:
+All 48 Pantheon portrait records (25 complete, 23 researched with verified provenance, locally staged portrait references, and curated golden symbols) are tracked in ``resources/portraits.yaml`` and ``resources/portraits.json``:
 
 .. list-table::
    :header-rows: 1
@@ -422,3 +622,43 @@ All 48 Pantheon portrait records (15 complete, 33 researched with verified prove
      - **Sir Thomas Little Heath** (``heath``)
      - c. 1910 studio portrait (MacTutor / Royal Society — ``Thomas Little Heath.jpg``)
      - *Elements* Scroll Golden Section & Book XIII Pentagon / Decagram
+   * - **Study 16**
+     - **Leonardo da Vinci** (``leonardo``)
+     - Red-chalk self-portrait (c. 1510–1515, Biblioteca Reale, Turin)
+     - Vitruvian Circle-and-Square Canon & Geometric Compass Rosette
+   * - **Study 17**
+     - **Piero della Francesca** (``piero``)
+     - Santi di Tito (c. 1590, Museo Civico di Sansepolcro)
+     - One-Point Perspective Vanishing Grid & Truncated Polyhedron
+   * - **Study 18**
+     - **Nicholas of Cusa** (``cusa``)
+     - Master of the Life of the Virgin (c. 1460–1480, Cusanusstift)
+     - *Coincidentia Oppositorum* Infinite Polygons & Expanding Tangent Circles
+   * - **Study 19**
+     - **Leonardo Pisano (Fibonacci)** (``fibonacci``)
+     - 19th-century Italian engraving (c. 1850 — ``Fibonacci.jpg``)
+     - Fibonacci Whirling Squares & Quarter-Circle Golden Spiral
+   * - **Study 20**
+     - **Claudius Ptolemy** (``ptolemy``)
+     - Justus of Ghent & Pedro Berruguete (c. 1473–1476, Louvre)
+     - Ptolemy Cyclic Quadrilateral & Epicycle-on-Deferent Orbits
+   * - **Study 21**
+     - **Felix Klein** (``klein``)
+     - Gebrüder Noelle (ante 1897, Accademia delle Scienze di Torino)
+     - Beltrami–Klein Hyperbolic Disk Model & Erlangen Symmetry Triad
+   * - **Study 22**
+     - **Henri Poincaré** (``poincare``)
+     - Eugène Pirou (1887, Paris — ``Poincare.jpg``)
+     - Poincaré Hyperbolic Disk Orthogonal Geodesics & 3-Body Orbits
+   * - **Study 23**
+     - **D'Arcy Wentworth Thompson** (``thompson``)
+     - Robertson, Dundee (1886, St Andrews — CC0 1.0)
+     - Logarithmic Gnomon Spiral & Morphogenetic Transformation Grid
+   * - **Study 24**
+     - **Petrus Hoenen, S.J.** (``hoenen``)
+     - Archival 1930s portrait (PD Mark 1.0 — ``PHJHoenen.jpg``)
+     - Noetic Abstraction Triangle & Constructive Compass Arc
+   * - **Study 25**
+     - **Walter Russell** (``walter-russell``)
+     - Archival circular portrait (Public Domain — ``Walter_Russell_circular_portrait.jpg``)
+     - Concentric Wave-Field Octave Circles & Cubic-Sphere Dual Projection
