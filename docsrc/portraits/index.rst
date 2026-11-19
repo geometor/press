@@ -10,6 +10,17 @@ Compass-and-Straightedge Portraits
 
 To give every author gallery, person card, and book title page a unified geometric signature, GEOMETOR Press constructs vector portraits **strictly from straight lines and circular arcs**—with **zero Bézier curves**—calibrated over verified public-domain masterworks.
 
+- **Unified Portrait Gallery (Studies 01–07)**: `Open Fullscreen <../_static/studios/portraits_gallery.html>`__ (or ``demos/portraits_gallery.html``)
+
+.. raw:: html
+
+   <div style="margin: 1.25rem 0 2rem; border: 1px solid rgba(160,160,160,0.3); border-radius: 12px; overflow: hidden;">
+     <iframe src="../_static/studios/portraits_gallery.html"
+             title="GEOMETOR Press — Compass-and-Straightedge Portrait Gallery"
+             style="width: 100%; height: 820px; border: 0; display: block;"
+             loading="lazy"></iframe>
+   </div>
+
 1. Canonical Medallion Specification
 ------------------------------------
 
