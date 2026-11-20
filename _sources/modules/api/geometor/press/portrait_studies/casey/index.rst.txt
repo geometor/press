@@ -1,0 +1,48 @@
+geometor.press.portrait_studies.casey
+=====================================
+
+.. py:module:: geometor.press.portrait_studies.casey
+
+.. autoapi-nested-parse::
+
+   Study 32: John Casey (after the 19th-century Irish studio portrait).
+
+
+
+Functions
+---------
+
+.. autoapisummary::
+
+   geometor.press.portrait_studies.casey.build_casey_elements
+   geometor.press.portrait_studies.casey.build_casey_svg
+   geometor.press.portrait_studies.casey.write_casey_svgs
+
+
+Module Contents
+---------------
+
+.. py:function:: build_casey_elements(wave_angle_deg: float = 28.0) -> dict[str, list[dict[str, Any]]]
+
+   Build the 4-layer geometric portrait of John Casey.
+
+   Calibrated to the 19th-century Irish studio portrait: dignified three-quarter
+   right-facing scholarly head with high smooth forehead, neatly combed
+   side-swept hair, fine Victorian sideburns along the jaw, steady resolute
+   eyes on ``y = -27``, strong nose and firm composed mouth, crisp standing
+   white collar, folded silk necktie with oval tiepin over a buttoned waistcoat,
+   and tailored Victorian coat lapels sweeping smoothly down to ``MED_R = 92.0``.
+   Margin motifs display Casey's Theorem (left) and Orthogonal Radical Circles
+   (right).
+
+
+.. py:function:: build_casey_svg(theme: str = 'dark', wave_angle_deg: float = 28.0) -> str
+
+   Render the John Casey medallion SVG for ``'dark'`` or ``'light'`` theme.
+
+
+.. py:function:: write_casey_svgs(out_dir: pathlib.Path | None = None, wave_angle_deg: float = 28.0) -> tuple[pathlib.Path, pathlib.Path]
+
+   Write ``casey_dark.svg`` and ``casey_light.svg`` to ``out_dir``.
+
+

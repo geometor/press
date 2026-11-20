@@ -1,0 +1,60 @@
+geometor.press.portrait_studies.ceva
+====================================
+
+.. py:module:: geometor.press.portrait_studies.ceva
+
+.. autoapi-nested-parse::
+
+   Study 41: Giovanni Ceva — Pure Sacred Geometric Emblem Medallion.
+
+   Celebrates Giovanni Ceva's *De lineis rectis se invicem secantibus statica
+   constructio* (1678), proving **Ceva's Concurrency Theorem** via barycentric
+   statics and illuminating the projective harmonic duality between **Ceva** and
+   **Menelaus**:
+
+   1. **Heroic Scalene Triangle ``ABC`` & Circumcircle**: Centered prominently
+      inside the unified ``R = 68`` graduated astrolabe seal with its exact
+      circumcircle and compass ratio arcs along each side.
+   2. **Three Exact Concurrent Cevians (``m_A : m_B : m_C = 3 : 2 : 5``)**:
+      Luminous golden cevians ``A-P-D``, ``B-P-E``, ``C-P-F`` meeting at the
+      radiant off-center concurrency star ``P`` near the heart of the medallion,
+      analytically verified so ``(|AF|/|FB|) * (|BD|/|DC|) * (|CE|/|EA|) = 1``.
+   3. **Inscribed Cevian Triangle ``DEF`` & Harmonic Trilinear Polar**: Crisp
+      cevian triangle ``DEF`` whose extended side ``EF`` meets extended ``BC`` at
+      the exact harmonic conjugate ``X`` (``H(B, C; D, X) = -1``), anchoring the
+      slanted luminous golden trilinear polar line ``X-Y-Z`` (verified collinear
+      with ``Y = FD ∩ CA`` and ``Z = DE ∩ AB`` to ``< 1e-11``).
+
+
+
+Functions
+---------
+
+.. autoapisummary::
+
+   geometor.press.portrait_studies.ceva.build_ceva_elements
+   geometor.press.portrait_studies.ceva.build_ceva_svg
+   geometor.press.portrait_studies.ceva.write_ceva_svgs
+
+
+Module Contents
+---------------
+
+.. py:function:: build_ceva_elements() -> dict[str, list[dict[str, Any]]]
+
+   Build the 4-layer sacred emblem medallion for Giovanni Ceva.
+
+   :returns: Dictionary mapping canonical layers (``scaffold``, ``golden``,
+             ``detail``, ``primary``) to lists of primitive geometry entries.
+
+
+.. py:function:: build_ceva_svg(theme: str = 'dark') -> str
+
+   Render the Giovanni Ceva medallion SVG for ``'dark'`` or ``'light'`` theme.
+
+
+.. py:function:: write_ceva_svgs(out_dir: pathlib.Path | None = None) -> tuple[pathlib.Path, pathlib.Path]
+
+   Write ``ceva_dark.svg`` and ``ceva_light.svg`` to ``out_dir``.
+
+

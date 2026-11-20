@@ -1,0 +1,992 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark" data-scale="gallery" data-mode="single">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>GEOMETOR Press — Compass-and-Straightedge Portrait Gallery</title>
+  <style>
+    :root {
+      --bg: #080c12;
+      --surface: #0f1621;
+      --surface-2: #151f2e;
+      --border: rgba(212, 175, 55, 0.24);
+      --border-subtle: rgba(142, 157, 178, 0.18);
+      --text: #eef2f7;
+      --muted: #8e9db2;
+      --gold: #d4af37;
+      --chip-bg: rgba(212, 175, 55, 0.12);
+    }
+
+    html[data-theme="light"] {
+      --bg: #fbf8f1;
+      --surface: #f4efe3;
+      --surface-2: #ebe4d4;
+      --border: rgba(176, 127, 16, 0.30);
+      --border-subtle: rgba(85, 97, 115, 0.18);
+      --text: #181c24;
+      --muted: #556173;
+      --gold: #b07f10;
+      --chip-bg: rgba(176, 127, 16, 0.12);
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      font-family: "Inter", "Segoe UI", system-ui, -apple-system, sans-serif;
+      line-height: 1.45;
+      transition: background 0.2s ease, color 0.2s ease;
+    }
+
+    .shell {
+      max-width: 1420px;
+      margin: 0 auto;
+      padding: 1.5rem 1.5rem 2.5rem;
+    }
+
+    header.topbar {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: flex-end;
+      justify-content: space-between;
+      gap: 1rem 1.5rem;
+      padding-bottom: 1.15rem;
+      margin-bottom: 1rem;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .title-block h1 {
+      margin: 0;
+      font-size: 1.35rem;
+      font-weight: 600;
+      letter-spacing: 0.02em;
+    }
+
+    .title-block p {
+      margin: 0.25rem 0 0;
+      font-size: 0.88rem;
+      color: var(--muted);
+    }
+
+    .controls, .era-bar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.65rem;
+      align-items: center;
+    }
+
+    .era-bar {
+      margin-bottom: 1.25rem;
+    }
+
+    .segmented {
+      display: inline-flex;
+      flex-wrap: wrap;
+      background: var(--surface);
+      border: 1px solid var(--border-subtle);
+      border-radius: 8px;
+      padding: 2px;
+      gap: 2px;
+    }
+
+    .segmented button,
+    .toggle-btn {
+      appearance: none;
+      border: 0;
+      background: transparent;
+      color: var(--muted);
+      font-size: 0.8rem;
+      font-weight: 500;
+      padding: 0.38rem 0.7rem;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background 0.15s ease, color 0.15s ease;
+    }
+
+    .segmented button.active,
+    .toggle-btn.active {
+      background: var(--chip-bg);
+      color: var(--gold);
+    }
+
+    .toggle-btn {
+      background: var(--surface);
+      border: 1px solid var(--border-subtle);
+      border-radius: 8px;
+      padding: 0.42rem 0.75rem;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      gap: 1.15rem;
+    }
+
+    html[data-scale="card"] .grid {
+      grid-template-columns: repeat(auto-fill, minmax(175px, 1fr));
+    }
+
+    html[data-scale="badge"] .grid {
+      grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+    }
+
+    html[data-mode="both"] .grid {
+      grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+    }
+
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--border-subtle);
+      border-radius: 12px;
+      padding: 1rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      cursor: pointer;
+      transition: transform 0.15s ease, border-color 0.15s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-2px);
+      border-color: var(--gold);
+    }
+
+    .card-head {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.74rem;
+      color: var(--muted);
+      margin-bottom: 0.65rem;
+    }
+
+    .study-num {
+      color: var(--gold);
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+
+    .medallion-pair {
+      display: flex;
+      gap: 0.75rem;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+    }
+
+    .medallion-wrap {
+      position: relative;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 10px;
+      overflow: hidden;
+    }
+
+    .medallion-wrap img {
+      display: block;
+      width: 210px;
+      height: auto;
+      transition: width 0.18s ease;
+    }
+
+    html[data-mode="both"] .medallion-wrap img {
+      width: 150px;
+    }
+
+    html[data-scale="card"] .medallion-wrap img {
+      width: 116px;
+    }
+
+    html[data-scale="badge"] .medallion-wrap img {
+      width: 48px;
+    }
+
+    .horizon-line {
+      display: none;
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 40.306%;
+      height: 1px;
+      border-top: 1px dashed var(--gold);
+      opacity: 0.75;
+      pointer-events: none;
+    }
+
+    html[data-horizon="on"] .horizon-line {
+      display: block;
+    }
+
+    .card-meta { margin-top: 0.8rem; }
+    .card-name { font-size: 1rem; font-weight: 600; margin: 0; }
+    .card-dates { font-size: 0.78rem; color: var(--muted); margin: 0.15rem 0 0.35rem; }
+    .card-motif { font-size: 0.76rem; color: var(--gold); margin: 0; }
+    html[data-scale="badge"] .card-motif { display: none; }
+
+    dialog#inspector {
+      background: var(--surface);
+      color: var(--text);
+      border: 1px solid var(--gold);
+      border-radius: 14px;
+      padding: 1.35rem;
+      max-width: 740px;
+      width: calc(100vw - 2rem);
+      box-shadow: 0 24px 60px rgba(0, 0, 0, 0.55);
+    }
+
+    dialog#inspector::backdrop {
+      background: rgba(4, 7, 12, 0.75);
+      backdrop-filter: blur(4px);
+    }
+
+    .modal-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 1rem;
+      margin-bottom: 1rem;
+    }
+
+    .modal-top h2 { margin: 0; font-size: 1.25rem; }
+    .modal-top p { margin: 0.2rem 0 0; font-size: 0.85rem; color: var(--muted); }
+
+    .close-btn {
+      appearance: none;
+      background: var(--surface-2);
+      color: var(--text);
+      border: 1px solid var(--border-subtle);
+      border-radius: 8px;
+      padding: 0.35rem 0.65rem;
+      cursor: pointer;
+      font-size: 0.85rem;
+    }
+
+    .modal-svgs {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1rem;
+      margin: 1rem 0;
+    }
+
+    .modal-pane {
+      border-radius: 10px;
+      padding: 0.75rem;
+      text-align: center;
+      border: 1px solid var(--border-subtle);
+    }
+
+    .modal-pane.dark-pane { background: #080c12; color: #eef2f7; }
+    .modal-pane.light-pane { background: #fbf8f1; color: #181c24; }
+
+    .modal-pane img {
+      width: 100%;
+      max-width: 260px;
+      height: auto;
+      display: block;
+      margin: 0 auto 0.5rem;
+    }
+
+    .modal-pane a { color: var(--gold); font-size: 0.78rem; text-decoration: none; }
+    .modal-details { font-size: 0.85rem; color: var(--muted); border-top: 1px solid var(--border-subtle); padding-top: 0.85rem; }
+    .modal-details strong { color: var(--text); }
+  </style>
+</head>
+<body>
+  <div class="shell">
+    <header class="topbar">
+      <div class="title-block">
+        <h1>GEOMETOR Compass-and-Straightedge Portraits</h1>
+        <p>Studies 01–48 (48 of 48 Pantheon slots complete) · Strictly lines, circles, and circular arcs (0 Bézier curves) · Eye-line y = −27</p>
+      </div>
+      <div class="controls">
+        <div class="segmented" role="group" aria-label="Theme">
+          <button type="button" data-set-mode="dark" class="active">Obsidian Ink</button>
+          <button type="button" data-set-mode="light">Warm Paper</button>
+          <button type="button" data-set-mode="both">Side-by-Side</button>
+        </div>
+        <div class="segmented" role="group" aria-label="Scale">
+          <button type="button" data-set-scale="gallery" class="active">Gallery</button>
+          <button type="button" data-set-scale="card">Card (116px)</button>
+          <button type="button" data-set-scale="badge">Badge (48px)</button>
+        </div>
+        <button type="button" class="toggle-btn" id="horizon-toggle">Eye-Line (y = −27)</button>
+      </div>
+    </header>
+
+    <div class="era-bar">
+      <div class="segmented" role="group" aria-label="Era Filter">
+        <button type="button" data-set-era="All" class="active">All (48)</button>
+        <button type="button" data-set-era="Renaissance">Renaissance</button>
+          <button type="button" data-set-era="Antiquity">Antiquity</button>
+          <button type="button" data-set-era="Early Modern">Early Modern</button>
+          <button type="button" data-set-era="Enlightenment">Enlightenment</button>
+          <button type="button" data-set-era="Medieval">Medieval</button>
+          <button type="button" data-set-era="19th Century">19th Century</button>
+          <button type="button" data-set-era="Modern">Modern</button>
+          <button type="button" data-set-era="Contemporary">Contemporary</button>
+      </div>
+    </div>
+
+    <main class="grid" id="gallery-grid"></main>
+  </div>
+
+  <dialog id="inspector">
+    <div class="modal-top">
+      <div>
+        <h2 id="m-title"></h2>
+        <p id="m-sub"></p>
+      </div>
+      <button type="button" class="close-btn" id="m-close">Close</button>
+    </div>
+    <div class="modal-svgs">
+      <div class="modal-pane dark-pane">
+        <img id="m-dark-img" alt="" />
+        <a id="m-dark-link" target="_blank" rel="noopener">Open Dark SVG</a>
+      </div>
+      <div class="modal-pane light-pane">
+        <img id="m-light-img" alt="" />
+        <a id="m-light-link" target="_blank" rel="noopener">Open Light SVG</a>
+      </div>
+    </div>
+    <div class="modal-details">
+      <p><strong>Signature Motif:</strong> <span id="m-motif"></span></p>
+      <p><strong>Reference Source:</strong> <span id="m-ref"></span></p>
+    </div>
+  </dialog>
+
+  <script>
+    const PORTRAITS = [
+  {
+    "id": "durer",
+    "slug": "durer",
+    "study": "Study 01",
+    "name": "Albrecht Durer",
+    "dates": "1471 - 1528",
+    "era": "Renaissance",
+    "motif": "60-degree equilateral hair-cascade triangle & 1500 AD monogram",
+    "ref": "Self-Portrait at Twenty-Eight (1500), Alte Pinakothek, Munich"
+  },
+  {
+    "id": "euclid",
+    "slug": "euclid",
+    "study": "Study 02",
+    "name": "Euclid of Alexandria",
+    "dates": "fl. c. 300 BCE",
+    "era": "Antiquity",
+    "motif": "Elements Book I Prop. 1 Vesica Piscis & Equilateral Triangle <A B C>",
+    "ref": "Euclid holding open folio of the Elements (Urbino / Baroque studio), J. Paul Getty Museum / Google Art Project"
+  },
+  {
+    "id": "plato",
+    "slug": "plato",
+    "study": "Study 03",
+    "name": "Plato of Athens",
+    "dates": "c. 428 - c. 348 BCE",
+    "era": "Antiquity",
+    "motif": "Divided Line (Republic VI) & dodecahedral projection",
+    "ref": "Raphael (Raffaello Sanzio, 1509-1511), The School of Athens — Plato (detail, modeled after Leonardo da Vinci), Apostolic Palace, Stanza della Segnatura, Vatican"
+  },
+  {
+    "id": "aristotle",
+    "slug": "aristotle",
+    "study": "Study 04",
+    "name": "Aristotle of Stagira",
+    "dates": "384 - 322 BCE",
+    "era": "Antiquity",
+    "motif": "Continuum axis & geometric syllogism triangle",
+    "ref": "Raphael (Raffaello Sanzio, 1509-1511), The School of Athens — Aristotle (detail), Apostolic Palace, Stanza della Segnatura, Vatican"
+  },
+  {
+    "id": "pacioli",
+    "slug": "pacioli",
+    "study": "Study 05",
+    "name": "Fra Luca Pacioli",
+    "dates": "c. 1447 - 1517",
+    "era": "Renaissance",
+    "motif": "Suspended glass rhombicuboctahedron & Golden Ratio dividers",
+    "ref": "Attributed to Jacopo de' Barbari, Portrait of Fra Luca Pacioli and an Unknown Young Man (1495), Museo di Capodimonte, Naples"
+  },
+  {
+    "id": "kepler",
+    "slug": "kepler",
+    "study": "Study 06",
+    "name": "Johannes Kepler",
+    "dates": "1571 - 1630",
+    "era": "Early Modern",
+    "motif": "Kepler Right Triangle (1 : sqrt(phi) : phi) & nested Platonic orbits",
+    "ref": "Authentic Portrait of Johannes Kepler (Linz / Strasbourg oil, c. 1620), Linz / Kepler Museum (Wikipedia infobox portrait)"
+  },
+  {
+    "id": "euler",
+    "slug": "euler",
+    "study": "Study 07",
+    "name": "Leonhard Euler",
+    "dates": "1707 - 1783",
+    "era": "Enlightenment",
+    "motif": "Euler Line (O - G - H) & Nine-Point Circle",
+    "ref": "Jakob Emanuel Handmann, Portrait of Leonhard Euler (1753 pastel), Kunstmuseum Basel"
+  },
+  {
+    "id": "archimedes",
+    "slug": "archimedes",
+    "study": "Study 08",
+    "name": "Archimedes of Syracuse",
+    "dates": "c. 287 - c. 212 BCE",
+    "era": "Antiquity",
+    "motif": "Circumscribed Cylinder & Inscribed Sphere (2:3) + Hexagon pi Bounds",
+    "ref": "Domenico Fetti (c. 1620), Portrait of a Scholar (Archimedes), Gemäldegalerie Alte Meister, Dresden"
+  },
+  {
+    "id": "aquinas",
+    "slug": "aquinas",
+    "study": "Study 09",
+    "name": "St. Thomas Aquinas",
+    "dates": "1225 - 1274",
+    "era": "Medieval",
+    "motif": "Radiant Sun of Materia Intelligibilis & Three Degrees of Abstraction",
+    "ref": "Carlo Crivelli, Saint Thomas Aquinas (1476, Demidoff Altarpiece), National Gallery, London"
+  },
+  {
+    "id": "pascal",
+    "slug": "pascal",
+    "study": "Study 10",
+    "name": "Blaise Pascal",
+    "dates": "1623 - 1662",
+    "era": "Early Modern",
+    "motif": "Hexagrammum Mysticum (Circle, Inscribed Hexagon & Pascal Line)",
+    "ref": "Portrait of Blaise Pascal (after François II Quesnel, 1691), Palace of Versailles"
+  },
+  {
+    "id": "steiner",
+    "slug": "steiner",
+    "study": "Study 11",
+    "name": "Jakob Steiner",
+    "dates": "1796 - 1863",
+    "era": "19th Century",
+    "motif": "Steiner Porism (Ring of Tangent Circles) & Poncelet-Steiner Circle",
+    "ref": "August Weger, Jakob Steiner portrait (1881 Gesammelte Werke frontispiece), ETH Zürich / Gesammelte Werke"
+  },
+  {
+    "id": "byrne",
+    "slug": "byrne",
+    "study": "Study 12",
+    "name": "Oliver Byrne",
+    "dates": "1810 - 1880",
+    "era": "19th Century",
+    "motif": "Elements I.47 Pythagorean Square-Dissection Diagram",
+    "ref": "Oliver Byrne Portrait (c. 1850), Public Domain archival portrait"
+  },
+  {
+    "id": "hilbert",
+    "slug": "hilbert",
+    "study": "Study 13",
+    "name": "David Hilbert",
+    "dates": "1862 - 1943",
+    "era": "Modern",
+    "motif": "Pappus-Hilbert Incidence Configuration & Parallel-Axiom Grid",
+    "ref": "David Hilbert (1912 Göttingen portrait), University of Göttingen / Wikimedia Commons"
+  },
+  {
+    "id": "bertrand_russell",
+    "slug": "bertrand-russell",
+    "study": "Study 14",
+    "name": "Bertrand Russell",
+    "dates": "1872 - 1970",
+    "era": "Modern",
+    "motif": "Projective Cross-Ratio Pencil & Intersecting Logic Circles",
+    "ref": "Bertrand Russell (1907), Wikimedia Commons (PD-1923)"
+  },
+  {
+    "id": "heath",
+    "slug": "heath",
+    "study": "Study 15",
+    "name": "Sir Thomas Little Heath",
+    "dates": "1861 - 1940",
+    "era": "Modern",
+    "motif": "Greek Elements Scroll & Book XIII Golden Section / Regular Solids",
+    "ref": "Sir Thomas Little Heath (c. 1910), MacTutor / Royal Society Obituary"
+  },
+  {
+    "id": "apollonius",
+    "slug": "apollonius",
+    "study": "Study 16",
+    "name": "Apollonius of Perga",
+    "dates": "c. 240 - c. 190 BCE",
+    "era": "Antiquity",
+    "motif": "Apollonian Gasket (3 Mutual Tangent Circles) & Circle of Apollonius",
+    "ref": "Unknown Venetian woodcut artist, Woodcut portrait of Apollonius of Perga (Apollonii Pergei Opera, Venice, 1537), First printed Latin edition of Conics Books I-IV, Venice, 1537"
+  },
+  {
+    "id": "heron",
+    "slug": "heron",
+    "study": "Study 17",
+    "name": "Heron of Alexandria",
+    "dates": "c. 10 - c. 70 CE",
+    "era": "Antiquity",
+    "motif": "Heron Incircle & Semiperimeter Radii + Equal-Angle Reflection",
+    "ref": "Unknown 17th-century German engraver, Engraved portrait of Hero of Alexandria (Pneumatics, Frankfurt, 1688), Buch von Lufft- und Wasser-Künsten, Frankfurt, 1688"
+  },
+  {
+    "id": "nicomachus",
+    "slug": "nicomachus",
+    "study": "Study 18",
+    "name": "Nicomachus of Gerasa",
+    "dates": "c. 60 - c. 120 CE",
+    "era": "Antiquity",
+    "motif": "Pythagorean Figurate Gnomon Lattice & Polygonal Number Arrays",
+    "ref": "Christ Church, Canterbury illuminator, Nicomachus of Gerasa (Boethius, De institutione musica, MS Ii.3.12, fol. 61v, c. 1130), Cambridge University Library, MS Ii.3.12, fol. 61v"
+  },
+  {
+    "id": "menelaus",
+    "slug": "menelaus",
+    "study": "Study 19",
+    "name": "Menelaus of Alexandria",
+    "dates": "c. 70 - c. 140 CE",
+    "era": "Antiquity",
+    "motif": "Menelaus Transversal Triangle & Spherical Great-Circle Triangle",
+    "ref": "No authentic portrait extant (emblem medallion only)"
+  },
+  {
+    "id": "ptolemy",
+    "slug": "ptolemy",
+    "study": "Study 20",
+    "name": "Claudius Ptolemy",
+    "dates": "c. 100 - c. 170 CE",
+    "era": "Antiquity",
+    "motif": "Ptolemy Cyclic Quadrilateral & Epicycle-on-Deferent Orbits",
+    "ref": "Justus of Ghent & Pedro Berruguete, Ptolemy (Studiolo of Federico da Montefeltro, Urbino, c. 1473-1476), Musée du Louvre, Paris (Inv. MI 657)"
+  },
+  {
+    "id": "pappus",
+    "slug": "pappus",
+    "study": "Study 21",
+    "name": "Pappus of Alexandria",
+    "dates": "c. 290 - c. 350 CE",
+    "era": "Antiquity",
+    "motif": "Pappus Hexagon Theorem & Arbelos Tangent Circle Chain",
+    "ref": "No authentic portrait extant (emblem medallion only)"
+  },
+  {
+    "id": "proclus",
+    "slug": "proclus",
+    "study": "Study 22",
+    "name": "Proclus Lycius",
+    "dates": "412 - 485 CE",
+    "era": "Antiquity",
+    "motif": "Elements I.1 Vesica Piscis & Concentric Neoplatonic Triad Circles",
+    "ref": "No authentic portrait extant (emblem medallion only)"
+  },
+  {
+    "id": "fibonacci",
+    "slug": "fibonacci",
+    "study": "Study 23",
+    "name": "Leonardo Pisano (Fibonacci)",
+    "dates": "c. 1170 - c. 1250",
+    "era": "Medieval",
+    "motif": "Fibonacci Whirling Squares & Quarter-Circle Golden Spiral",
+    "ref": "Unknown 19th-century Italian engraver, Engraved portrait of Leonardo Pisano (I benefattori dell'umanità, c. 1850), I benefattori dell'umanità, vol. VI (c. 1850)"
+  },
+  {
+    "id": "cusa",
+    "slug": "cusa",
+    "study": "Study 24",
+    "name": "Nicholas of Cusa",
+    "dates": "1401 - 1464",
+    "era": "Renaissance",
+    "motif": "Coincidentia Oppositorum Infinite Polygons & Expanding Tangent Circles",
+    "ref": "Master of the Life of the Virgin, Donor portrait of Cardinal Nicholas of Cusa (high altar triptych, c. 1460-1480), St.-Nikolaus-Hospital (Cusanusstift), Bernkastel-Kues"
+  },
+  {
+    "id": "piero",
+    "slug": "piero",
+    "study": "Study 25",
+    "name": "Piero della Francesca",
+    "dates": "c. 1415 - 1492",
+    "era": "Renaissance",
+    "motif": "One-Point Perspective Vanishing Grid & Wireframe Truncated Polyhedron",
+    "ref": "Santi di Tito (1536-1603), Portrait of Piero della Francesca (c. 1590), Museo Civico di Sansepolcro, Italy"
+  },
+  {
+    "id": "leonardo",
+    "slug": "leonardo",
+    "study": "Study 26",
+    "name": "Leonardo da Vinci",
+    "dates": "1452 - 1519",
+    "era": "Renaissance",
+    "motif": "Vitruvian Circle-and-Square Canon & Geometric Compass Rosette",
+    "ref": "Leonardo da Vinci, Portrait of a Man in Red Chalk (presumed self-portrait, c. 1510-1515), Biblioteca Reale, Turin (Inv. 15571)"
+  },
+  {
+    "id": "ceva",
+    "slug": "ceva",
+    "study": "Study 27",
+    "name": "Giovanni Ceva",
+    "dates": "1647 - 1734",
+    "era": "Early Modern",
+    "motif": "Concurrent Cevians Triangle (Ceva's Theorem, 1678)",
+    "ref": "No authentic portrait extant (emblem medallion only)"
+  },
+  {
+    "id": "mascheroni",
+    "slug": "mascheroni",
+    "study": "Study 28",
+    "name": "Lorenzo Mascheroni",
+    "dates": "1750 - 1800",
+    "era": "Enlightenment",
+    "motif": "Compass-Only Circle Quartering (Napoleon's Problem) & Six-Petal Rose",
+    "ref": "Francesco Redenti (sculp.), Lorenzo Mascheroni (copper engraving after a life painting, 1837), Iconografia italiana degli uomini e delle donne celebri (Milan, 1837)"
+  },
+  {
+    "id": "staudt",
+    "slug": "staudt",
+    "study": "Study 29",
+    "name": "Karl G. C. von Staudt",
+    "dates": "1798 - 1867",
+    "era": "19th Century",
+    "motif": "Complete Quadrangle Harmonic Conjugate H(A,B;C,D) & Polarity Circle",
+    "ref": "Portrait of Karl Georg Christian von Staudt (mid-19th century), Reichsstadt-Gymnasium Rothenburg archive"
+  },
+  {
+    "id": "feuerbach",
+    "slug": "feuerbach",
+    "study": "Study 30",
+    "name": "Karl Wilhelm Feuerbach",
+    "dates": "1800 - 1834",
+    "era": "19th Century",
+    "motif": "Feuerbach Nine-Point Circle Tangent to Incircle & Excircle",
+    "ref": "Portrait of Karl Wilhelm Feuerbach (early 19th century), MacTutor / Xavier Hubaut biographical archive"
+  },
+  {
+    "id": "casey",
+    "slug": "casey",
+    "study": "Study 31",
+    "name": "John Casey",
+    "dates": "1820 - 1891",
+    "era": "19th Century",
+    "motif": "Casey's Theorem (Four Circles Tangent to a Fifth Circle)",
+    "ref": "Portrait of John Casey (pre-1891), MacTutor History of Mathematics Archive, St Andrews"
+  },
+  {
+    "id": "ernst_haeckel",
+    "slug": "ernst-haeckel",
+    "study": "Study 32",
+    "name": "Ernst Haeckel",
+    "dates": "1834 - 1919",
+    "era": "19th Century",
+    "motif": "Radiolarian Icosahedral Symmetry & Concentric Diatom Star",
+    "ref": "Friedrich Haack (1841-1915, Jena), Portrait of Ernst Haeckel (c. 1895, Cassell's Universal Portrait Gallery), Cassell's Universal Portrait Gallery"
+  },
+  {
+    "id": "petersen",
+    "slug": "petersen",
+    "study": "Study 33",
+    "name": "Julius Petersen",
+    "dates": "1839 - 1910",
+    "era": "19th Century",
+    "motif": "Petersen Graph (Pentagon, Inner Pentagram & 5 Radial Spokes)",
+    "ref": "Harald Paetz (1837-1895, Copenhagen), Portrait of Julius Petersen (pre-1895), Det Kongelige Bibliotek (Royal Library, Copenhagen)"
+  },
+  {
+    "id": "lemoine",
+    "slug": "lemoine",
+    "study": "Study 34",
+    "name": "Émile Lemoine",
+    "dates": "1840 - 1912",
+    "era": "19th Century",
+    "motif": "Symmedians at Lemoine Point K (X6) & First Lemoine Circle",
+    "ref": "Portrait of Émile Lemoine (pre-1912), MacTutor History of Mathematics Archive, St Andrews"
+  },
+  {
+    "id": "pasch",
+    "slug": "pasch",
+    "study": "Study 35",
+    "name": "Moritz Pasch",
+    "dates": "1843 - 1930",
+    "era": "19th Century",
+    "motif": "Pasch's Axiom Transversal & Ordered Collinear Triad",
+    "ref": "Gustav Backofen (Giessen), Portrait of Moritz Pasch (c. 1870-1885, Das Fotoalbum für Weierstraß), Kunstbibliothek Berlin (Staatliche Museen zu Berlin)"
+  },
+  {
+    "id": "klein",
+    "slug": "klein",
+    "study": "Study 36",
+    "name": "Felix Klein",
+    "dates": "1849 - 1925",
+    "era": "19th Century",
+    "motif": "Beltrami-Klein Hyperbolic Disk Model (Chords & Limiting Parallels)",
+    "ref": "Gebrüder Noelle (Göttingen), Portrait of Felix Klein (before 1897, plate 0078 B), Accademia delle Scienze di Torino (Inv. IST. 4.1.3.1)"
+  },
+  {
+    "id": "poincare",
+    "slug": "poincare",
+    "study": "Study 37",
+    "name": "Henri Poincaré",
+    "dates": "1854 - 1912",
+    "era": "19th Century",
+    "motif": "Poincaré Hyperbolic Disk (Orthogonal Geodesic Arcs & Ideal Triangle)",
+    "ref": "Eugène Pirou (1841-1909, Paris), Portrait of Henri Poincaré (1887), Historical photographic archive"
+  },
+  {
+    "id": "thompson",
+    "slug": "thompson",
+    "study": "Study 38",
+    "name": "D'Arcy Wentworth Thompson",
+    "dates": "1860 - 1948",
+    "era": "Modern",
+    "motif": "Logarithmic Gnomon Spiral & Cartesian-to-Polar Transformation Grid",
+    "ref": "Robertson, Dundee, Scotland, D'Arcy Wentworth Thompson (1886), University of St Andrews Libraries and Museums (ms50128/2)"
+  },
+  {
+    "id": "hambidge",
+    "slug": "hambidge",
+    "study": "Study 39",
+    "name": "Jay Hambidge",
+    "dates": "1867 - 1924",
+    "era": "Modern",
+    "motif": "Dynamic Symmetry Root-5 Rectangle & Whirling-Square Golden Arc",
+    "ref": "No freely licensed portrait on Wikimedia Commons (emblem medallion only)"
+  },
+  {
+    "id": "walter_russell",
+    "slug": "walter-russell",
+    "study": "Study 40",
+    "name": "Walter Russell",
+    "dates": "1871 - 1963",
+    "era": "Modern",
+    "motif": "Concentric Wave-Field Octave Circles & Cubic-Sphere Dual Projection",
+    "ref": "Walter Russell (circular photographic portrait), Wikimedia Commons (Category:Walter Russell)"
+  },
+  {
+    "id": "hoenen",
+    "slug": "hoenen",
+    "study": "Study 41",
+    "name": "Petrus Hoenen, S.J.",
+    "dates": "1880 - 1961",
+    "era": "Modern",
+    "motif": "Noetic Abstraction Triangle & Constructive Compass Arc",
+    "ref": "Petrus Hoenen, S.J. (1930s portrait), Wikimedia Commons (PD Mark 1.0)"
+  },
+  {
+    "id": "altshiller_court",
+    "slug": "altshiller-court",
+    "study": "Study 42",
+    "name": "Nathan Altshiller-Court",
+    "dates": "1881 - 1968",
+    "era": "Modern",
+    "motif": "Orthocentric System (Altitudes & H) & Feuerbach Nine-Point Circle",
+    "ref": "No freely licensed portrait on Wikimedia Commons (emblem medallion only)"
+  },
+  {
+    "id": "hans_kayser",
+    "slug": "hans-kayser",
+    "study": "Study 43",
+    "name": "Hans Kayser",
+    "dates": "1891 - 1964",
+    "era": "Modern",
+    "motif": "Pythagorean-Kayser Lambdoma Ratio Lattice & Harmonic Arcs",
+    "ref": "No freely licensed portrait on Wikimedia Commons (emblem medallion only)"
+  },
+  {
+    "id": "huntley",
+    "slug": "huntley",
+    "study": "Study 44",
+    "name": "H. E. Huntley",
+    "dates": "1892 - 1977",
+    "era": "Modern",
+    "motif": "3-4-5 Angle-Bisector Golden Section & Nested Golden Gnomon Arcs",
+    "ref": "No freely licensed portrait on Wikimedia Commons (emblem medallion only)"
+  },
+  {
+    "id": "odom",
+    "slug": "odom",
+    "study": "Study 45",
+    "name": "George Odom",
+    "dates": "1941 - 2010",
+    "era": "Contemporary",
+    "motif": "Odom Equilateral Triangle Midpoint-Chord Golden Section (AB:BC = phi)",
+    "ref": "No freely licensed portrait on Wikimedia Commons (emblem medallion only)"
+  },
+  {
+    "id": "kimberling",
+    "slug": "kimberling",
+    "study": "Study 46",
+    "name": "Clark Kimberling",
+    "dates": "b. 1942",
+    "era": "Contemporary",
+    "motif": "Triangle Center Quartet X(1)-X(2)-X(3)-X(4) & Euler Line",
+    "ref": "No freely licensed portrait on Wikimedia Commons (emblem medallion only)"
+  },
+  {
+    "id": "livio",
+    "slug": "livio",
+    "study": "Study 47",
+    "name": "Mario Livio",
+    "dates": "b. 1945",
+    "era": "Contemporary",
+    "motif": "Regular Inscribed Pentagram & Golden Ratio Phi Chord Division",
+    "ref": "NASA, ESA, STScI, and John Coyle, Dr. Mario Livio — AAAS Fellow Official Portrait (STScI-2009-34), Space Telescope Science Institute (STScI-2009-34)"
+  },
+  {
+    "id": "wildberger",
+    "slug": "wildberger",
+    "study": "Study 48",
+    "name": "Norman J. Wildberger",
+    "dates": "b. 1957",
+    "era": "Contemporary",
+    "motif": "Rational Trigonometry Quadrance Squares & Spread Cross-Law",
+    "ref": "No freely licensed portrait on Wikimedia Commons (emblem medallion only)"
+  }
+];
+    let activeEra = "All";
+
+    function svgUrl(id, theme) {
+      return `../portraits/${id}_${theme}.svg`;
+    }
+
+    function attachFallback(img, id, theme) {
+      img.onerror = function () {
+        if (!this.dataset.triedFallback) {
+          this.dataset.triedFallback = "1";
+          this.src = `../docsrc/_static/portraits/${id}_${theme}.svg`;
+        }
+      };
+    }
+
+    const grid = document.getElementById("gallery-grid");
+
+    function renderGrid() {
+      const mode = document.documentElement.dataset.mode;
+      const theme = document.documentElement.dataset.theme;
+      grid.innerHTML = "";
+
+      const filtered = activeEra === "All"
+        ? PORTRAITS
+        : PORTRAITS.filter((p) => p.era === activeEra);
+
+      for (const p of filtered) {
+        const card = document.createElement("article");
+        card.className = "card";
+        card.tabIndex = 0;
+        card.setAttribute("role", "button");
+        card.setAttribute("aria-label", `Inspect ${p.name}`);
+
+        const head = document.createElement("div");
+        head.className = "card-head";
+        head.innerHTML = `<span class="study-num">${p.study}</span><span>${p.era}</span>`;
+        card.appendChild(head);
+
+        const pair = document.createElement("div");
+        pair.className = "medallion-pair";
+
+        const themesToShow = mode === "both" ? ["dark", "light"] : [theme];
+        for (const t of themesToShow) {
+          const wrap = document.createElement("div");
+          wrap.className = "medallion-wrap";
+          const img = document.createElement("img");
+          img.src = svgUrl(p.id, t);
+          img.alt = `${p.name} (${t})`;
+          attachFallback(img, p.id, t);
+          const horizon = document.createElement("div");
+          horizon.className = "horizon-line";
+          wrap.appendChild(img);
+          wrap.appendChild(horizon);
+          pair.appendChild(wrap);
+        }
+        card.appendChild(pair);
+
+        const meta = document.createElement("div");
+        meta.className = "card-meta";
+        meta.innerHTML = `
+          <h2 class="card-name">${p.name}</h2>
+          <div class="card-dates">${p.dates}</div>
+          <p class="card-motif">${p.motif}</p>
+        `;
+        card.appendChild(meta);
+
+        card.addEventListener("click", () => openModal(p));
+        card.addEventListener("keydown", (e) => {
+          if (e.key === "Enter" || e.key === " ") {
+            e.preventDefault();
+            openModal(p);
+          }
+        });
+
+        grid.appendChild(card);
+      }
+    }
+
+    const modal = document.getElementById("inspector");
+    function openModal(p) {
+      document.getElementById("m-title").textContent = `${p.study} — ${p.name}`;
+      document.getElementById("m-sub").textContent = `${p.dates} · ${p.era}`;
+      document.getElementById("m-motif").textContent = p.motif;
+      document.getElementById("m-ref").textContent = p.ref;
+
+      const dImg = document.getElementById("m-dark-img");
+      const lImg = document.getElementById("m-light-img");
+      delete dImg.dataset.triedFallback;
+      delete lImg.dataset.triedFallback;
+      dImg.src = svgUrl(p.id, "dark");
+      lImg.src = svgUrl(p.id, "light");
+      attachFallback(dImg, p.id, "dark");
+      attachFallback(lImg, p.id, "light");
+
+      document.getElementById("m-dark-link").href = svgUrl(p.id, "dark");
+      document.getElementById("m-light-link").href = svgUrl(p.id, "light");
+      modal.showModal();
+    }
+
+    document.getElementById("m-close").addEventListener("click", () => modal.close());
+    modal.addEventListener("click", (e) => {
+      if (e.target === modal) modal.close();
+    });
+
+    document.querySelectorAll("[data-set-mode]").forEach((btn) => {
+      btn.addEventListener("click", () => {
+        document.querySelectorAll("[data-set-mode]").forEach((b) => b.classList.remove("active"));
+        btn.classList.add("active");
+        const val = btn.dataset.setMode;
+        if (val === "both") {
+          document.documentElement.dataset.mode = "both";
+        } else {
+          document.documentElement.dataset.mode = "single";
+          document.documentElement.dataset.theme = val;
+        }
+        renderGrid();
+      });
+    });
+
+    document.querySelectorAll("[data-set-scale]").forEach((btn) => {
+      btn.addEventListener("click", () => {
+        document.querySelectorAll("[data-set-scale]").forEach((b) => b.classList.remove("active"));
+        btn.classList.add("active");
+        document.documentElement.dataset.scale = btn.dataset.setScale;
+      });
+    });
+
+    document.querySelectorAll("[data-set-era]").forEach((btn) => {
+      btn.addEventListener("click", () => {
+        document.querySelectorAll("[data-set-era]").forEach((b) => b.classList.remove("active"));
+        btn.classList.add("active");
+        activeEra = btn.dataset.setEra;
+        renderGrid();
+      });
+    });
+
+    const horizonBtn = document.getElementById("horizon-toggle");
+    horizonBtn.addEventListener("click", () => {
+      const active = document.documentElement.dataset.horizon === "on";
+      document.documentElement.dataset.horizon = active ? "off" : "on";
+      horizonBtn.classList.toggle("active", !active);
+    });
+
+    renderGrid();
+  </script>
+</body>
+</html>

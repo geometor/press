@@ -1,0 +1,45 @@
+geometor.press.portrait_studies.aristotle
+=========================================
+
+.. py:module:: geometor.press.portrait_studies.aristotle
+
+.. autoapi-nested-parse::
+
+   Study 04: Aristotle of Stagira (School of Athens) in lines and circular arcs.
+
+
+
+Functions
+---------
+
+.. autoapisummary::
+
+   geometor.press.portrait_studies.aristotle.build_aristotle_elements
+   geometor.press.portrait_studies.aristotle.build_aristotle_svg
+   geometor.press.portrait_studies.aristotle.write_aristotle_svgs
+
+
+Module Contents
+---------------
+
+.. py:function:: build_aristotle_elements(wave_angle_deg: float = 36.0) -> dict[str, list[dict[str, Any]]]
+
+   Construct Aristotle of Stagira medallion strictly from lines, circles, and circular arcs.
+
+   Calibrated to Raphael's *School of Athens* (right figure, three-quarter left profile).
+
+   :param wave_angle_deg: Half-angle (degrees) for Euclid III.12 tangent-arc beard & hair curls.
+
+   :returns: Dictionary of ``scaffold``, ``golden``, ``primary``, and ``detail`` primitive lists.
+
+
+.. py:function:: build_aristotle_svg(theme: str = 'dark', wave_angle_deg: float = 36.0) -> str
+
+   Render the Aristotle medallion SVG for ``'dark'`` or ``'light'`` theme.
+
+
+.. py:function:: write_aristotle_svgs(out_dir: pathlib.Path | None = None, wave_angle_deg: float = 36.0) -> tuple[pathlib.Path, pathlib.Path]
+
+   Write ``aristotle_dark.svg`` and ``aristotle_light.svg`` to ``out_dir``.
+
+

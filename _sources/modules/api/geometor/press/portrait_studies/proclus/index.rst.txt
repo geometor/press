@@ -1,0 +1,62 @@
+geometor.press.portrait_studies.proclus
+=======================================
+
+.. py:module:: geometor.press.portrait_studies.proclus
+
+.. autoapi-nested-parse::
+
+   Study 40: Proclus Lycius — Pure Sacred Geometric Emblem Medallion.
+
+   Celebrates Proclus Diadochus's *Commentary on the First Book of Euclid's
+   Elements* (412-485 CE) and his Neoplatonic philosophy of *Peras* (Limit),
+   *Apeiron* (Unlimited), and *Phantasia* (Imagination as the mirror projecting
+   pure intellectual forms into geometric space):
+
+   1. **Concentric Neoplatonic Triad Circles**: Three harmonically spaced rings
+      centered at ``(0, -8)`` in exact geometric progression ``1 : sqrt(3) : 3``
+      (*Monas* ``r_1 = a``, *Nous* ``r_2 = a * sqrt(3)``, *Psyche / Phantasia*
+      ``r_3 = 3a``) with 6-fold radial symmetry rays.
+   2. **Elements Book I, Proposition 1 Vesica Piscis**: Twin congruent compass
+      circles centered at horizontal foci ``A = (-a, -8)`` and ``B = (+a, -8)``
+      (radius ``2a``), each passing through the other's center and tangent
+      internally to the outer Triad ring ``r_3 = 3a``.
+   3. **Twin Reflected Golden Equilateral Triangles & Seed-of-Life Rosette**:
+      Upper ``<A B C>`` and lower ``<A B D>`` rising from unobstructed golden
+      shared base ``AB`` to the exact *Vesica* apexes ``C`` and ``D`` on
+      ``r_2 = a * sqrt(3)``, linked by the unobstructed golden vertical ``sqrt(3)``
+      axis ``C-D`` and cradling a luminous 6-petal Seed-of-Life rosette and
+      inscribed golden hexagram inside ``r_1 = a``.
+
+
+
+Functions
+---------
+
+.. autoapisummary::
+
+   geometor.press.portrait_studies.proclus.build_proclus_elements
+   geometor.press.portrait_studies.proclus.build_proclus_svg
+   geometor.press.portrait_studies.proclus.write_proclus_svgs
+
+
+Module Contents
+---------------
+
+.. py:function:: build_proclus_elements() -> dict[str, list[dict[str, Any]]]
+
+   Build the 4-layer sacred emblem medallion for Proclus Lycius.
+
+   :returns: Dictionary mapping canonical layers (``scaffold``, ``golden``,
+             ``detail``, ``primary``) to lists of primitive geometry entries.
+
+
+.. py:function:: build_proclus_svg(theme: str = 'dark') -> str
+
+   Render the Proclus Lycius medallion SVG for ``'dark'`` or ``'light'`` theme.
+
+
+.. py:function:: write_proclus_svgs(out_dir: pathlib.Path | None = None) -> tuple[pathlib.Path, pathlib.Path]
+
+   Write ``proclus_dark.svg`` and ``proclus_light.svg`` to ``out_dir``.
+
+

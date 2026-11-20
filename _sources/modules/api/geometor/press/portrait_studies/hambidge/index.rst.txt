@@ -1,0 +1,66 @@
+geometor.press.portrait_studies.hambidge
+========================================
+
+.. py:module:: geometor.press.portrait_studies.hambidge
+
+.. autoapi-nested-parse::
+
+   Study 42: Jay Hambidge — Pure Sacred Geometric Emblem Medallion.
+
+   Celebrates Jay Hambidge's *Dynamic Symmetry* (1920), uniting the compass-arc
+   unfolding of Root Rectangles (``1, sqrt(2), sqrt(3), sqrt(4), sqrt(5)``) with
+   the exact **Root-5 (``1 : sqrt(5)``)** and **Whirling-Square Golden Rectangle
+   (``1 : phi``)** reciprocal decompositions inside the unified ``R = 68``
+   graduated astrolabe seal:
+
+   1. **Root-5 Dynamic Rectangle, Central Unit Square, & Harmonic Circumcircles**:
+      Centered at ``(0, -8)`` with unit height ``h = 50`` and exact width
+      ``w = h * sqrt(5)``, partitioned into the central unit square (``1 x 1``)
+      flanked symmetrically by two vertical Reciprocal Golden Rectangles
+      (``1 x 1/phi``), framed by the exact circumcircles of the unit square
+      (``R_sq = h / sqrt(2)``) and Root-5 rectangle (``R_r5 = h * sqrt(6) / 2``,
+      ratio ``sqrt(3)``).
+   2. **Twin Generating Semicircles & Root-Rectangle Compass Unfolding**: Twin
+      generating semicircles (centered on the base and crown midpoints, radius
+      ``w/2``) sweep symmetrically through the unit square corners to establish
+      ``1/phi + 1 + 1/phi = sqrt(5)``, while four compass-swing unfolding arcs
+      from the bottom-left corner sweep ``1 -> sqrt(2) -> sqrt(3) -> sqrt(4) ->
+      sqrt(5)`` onto calibrated exterior ruler ticks along the base.
+   3. **Golden Dynamic Symmetry Diagonals & Whirling-Square Spiral**: Exact
+      orthogonal main and reciprocal diagonals meet at the Root-5 reciprocal pole
+      ``E_L`` (left) and the Golden "Eye" pole ``E_R`` (right), into which a
+      7-turn exact quarter-circle Whirling-Square Golden Spiral coils smoothly.
+
+
+
+Functions
+---------
+
+.. autoapisummary::
+
+   geometor.press.portrait_studies.hambidge.build_hambidge_elements
+   geometor.press.portrait_studies.hambidge.build_hambidge_svg
+   geometor.press.portrait_studies.hambidge.write_hambidge_svgs
+
+
+Module Contents
+---------------
+
+.. py:function:: build_hambidge_elements() -> dict[str, list[dict[str, Any]]]
+
+   Build the 4-layer sacred emblem medallion for Jay Hambidge.
+
+   :returns: Dictionary mapping canonical layers (``scaffold``, ``golden``,
+             ``detail``, ``primary``) to lists of primitive geometry entries.
+
+
+.. py:function:: build_hambidge_svg(theme: str = 'dark') -> str
+
+   Render the Jay Hambidge medallion SVG for ``'dark'`` or ``'light'`` theme.
+
+
+.. py:function:: write_hambidge_svgs(out_dir: pathlib.Path | None = None) -> tuple[pathlib.Path, pathlib.Path]
+
+   Write ``hambidge_dark.svg`` and ``hambidge_light.svg`` to ``out_dir``.
+
+

@@ -1,0 +1,50 @@
+geometor.press.portrait_studies.pasch
+=====================================
+
+.. py:module:: geometor.press.portrait_studies.pasch
+
+.. autoapi-nested-parse::
+
+   Study 36: Moritz Pasch (after the Giessen G. Backofen cabinet portrait).
+
+
+
+Functions
+---------
+
+.. autoapisummary::
+
+   geometor.press.portrait_studies.pasch.build_pasch_elements
+   geometor.press.portrait_studies.pasch.build_pasch_svg
+   geometor.press.portrait_studies.pasch.write_pasch_svgs
+
+
+Module Contents
+---------------
+
+.. py:function:: build_pasch_elements(wave_angle_deg: float = 30.0) -> dict[str, list[dict[str, Any]]]
+
+   Build the 4-layer geometric portrait of Moritz Pasch.
+
+   Calibrated to the Giessen G. Backofen cabinet portrait: smooth high domed
+   forehead framed by neatly rounded wavy side and crown hair, direct calm
+   eyes on ``y = -27`` framed by delicate thin pince-nez oval lenses with the
+   iconic fine vertical pince-nez cord hanging gracefully straight down past
+   his left cheek to the collar, straight nose, dense rounded full dark
+   scholar's beard and mustache (``Euclid III.12`` tangent waves), crisp
+   folded white collar with wide dark silk bow tie over a pale dress shirt,
+   and tailored notched German academic jacket lapels grounded smoothly to
+   ``MED_R = 92.0``. Margin motifs display Pasch's Axiom Transversal (left)
+   and Axioms of Order / Betweenness Triad (right).
+
+
+.. py:function:: build_pasch_svg(theme: str = 'dark', wave_angle_deg: float = 30.0) -> str
+
+   Render the Moritz Pasch medallion SVG for ``'dark'`` or ``'light'`` theme.
+
+
+.. py:function:: write_pasch_svgs(out_dir: pathlib.Path | None = None, wave_angle_deg: float = 30.0) -> tuple[pathlib.Path, pathlib.Path]
+
+   Write ``pasch_dark.svg`` and ``pasch_light.svg`` to ``out_dir``.
+
+

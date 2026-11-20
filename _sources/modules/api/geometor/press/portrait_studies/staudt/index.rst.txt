@@ -1,0 +1,47 @@
+geometor.press.portrait_studies.staudt
+======================================
+
+.. py:module:: geometor.press.portrait_studies.staudt
+
+.. autoapi-nested-parse::
+
+   Study 30: Karl Georg Christian von Staudt (after the 19th-century archival studio portrait).
+
+
+
+Functions
+---------
+
+.. autoapisummary::
+
+   geometor.press.portrait_studies.staudt.build_staudt_elements
+   geometor.press.portrait_studies.staudt.build_staudt_svg
+   geometor.press.portrait_studies.staudt.write_staudt_svgs
+
+
+Module Contents
+---------------
+
+.. py:function:: build_staudt_elements(wave_angle_deg: float = 30.0) -> dict[str, list[dict[str, Any]]]
+
+   Build the 4-layer geometric portrait of Karl Georg Christian von Staudt.
+
+   Calibrated to the 19th-century Erlangen archival portrait: windswept curly
+   silver hair rising over a broad brow, keen eyes on ``y = -27``, firm
+   composed mouth, distinctive chinstrap/mutton-chop beard leaving the chin
+   clean, wide silk bow tie over wing collar and pale waistcoat, and broad
+   notched coat lapels grounded smoothly to ``MED_R = 92.0``. Margin motifs
+   show von Staudt's Complete Quadrangle Harmonic Conjugate (left) and
+   Pole-and-Polar Circle Involution (right).
+
+
+.. py:function:: build_staudt_svg(theme: str = 'dark', wave_angle_deg: float = 30.0) -> str
+
+   Render the Karl G. C. von Staudt medallion SVG for ``'dark'`` or ``'light'`` theme.
+
+
+.. py:function:: write_staudt_svgs(out_dir: pathlib.Path | None = None, wave_angle_deg: float = 30.0) -> tuple[pathlib.Path, pathlib.Path]
+
+   Write ``staudt_dark.svg`` and ``staudt_light.svg`` to ``out_dir``.
+
+

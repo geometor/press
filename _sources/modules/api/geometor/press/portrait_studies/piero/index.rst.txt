@@ -1,0 +1,48 @@
+geometor.press.portrait_studies.piero
+=====================================
+
+.. py:module:: geometor.press.portrait_studies.piero
+
+.. autoapi-nested-parse::
+
+   Study 17: Piero della Francesca (after Santi di Tito, c. 1590) in lines and circular arcs.
+
+
+
+Functions
+---------
+
+.. autoapisummary::
+
+   geometor.press.portrait_studies.piero.build_piero_elements
+   geometor.press.portrait_studies.piero.build_piero_svg
+   geometor.press.portrait_studies.piero.write_piero_svgs
+
+
+Module Contents
+---------------
+
+.. py:function:: build_piero_elements(wave_angle_deg: float = 32.0) -> dict[str, list[dict[str, Any]]]
+
+   Construct Piero della Francesca medallion strictly from lines, circles, and circular arcs.
+
+   Calibrated to Santi di Tito's c. 1590 civic portrait (Museo Civico di Sansepolcro),
+   featuring Piero's rounded Renaissance cap (*berretto*) with rolled fur brim over
+   short curly bangs, calm three-quarter right gaze, strong nose, composed lips,
+   crisp white collar rim, and voluminous dark fur-trimmed scholar's robe.
+
+   :param wave_angle_deg: Half-angle (degrees) for Euclid III.12 fur-brim & lapel texture waves.
+
+   :returns: Dictionary of ``scaffold``, ``golden``, ``detail``, and ``primary`` primitive lists.
+
+
+.. py:function:: build_piero_svg(theme: str = 'dark', wave_angle_deg: float = 32.0) -> str
+
+   Render the Piero della Francesca medallion SVG for ``'dark'`` or ``'light'`` theme.
+
+
+.. py:function:: write_piero_svgs(out_dir: pathlib.Path | None = None, wave_angle_deg: float = 32.0) -> tuple[pathlib.Path, pathlib.Path]
+
+   Write ``piero_dark.svg`` and ``piero_light.svg`` to ``out_dir``.
+
+

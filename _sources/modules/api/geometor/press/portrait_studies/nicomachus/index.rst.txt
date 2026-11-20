@@ -1,0 +1,46 @@
+geometor.press.portrait_studies.nicomachus
+==========================================
+
+.. py:module:: geometor.press.portrait_studies.nicomachus
+
+.. autoapi-nested-parse::
+
+   Study 28: Nicomachus of Gerasa (after the 12th-century Cambridge MS miniature).
+
+
+
+Functions
+---------
+
+.. autoapisummary::
+
+   geometor.press.portrait_studies.nicomachus.build_nicomachus_elements
+   geometor.press.portrait_studies.nicomachus.build_nicomachus_svg
+   geometor.press.portrait_studies.nicomachus.write_nicomachus_svgs
+
+
+Module Contents
+---------------
+
+.. py:function:: build_nicomachus_elements(wave_angle_deg: float = 30.0) -> dict[str, list[dict[str, Any]]]
+
+   Build the 4-layer geometric portrait of Nicomachus of Gerasa.
+
+   Calibrated to the 12th-century Cambridge illuminated manuscript miniature:
+   youthful beardless scholar in three-quarter left gaze straddling ``y = -27``,
+   center-parted shoulder-length wavy medieval curls, ornate circular throat
+   clasp, draped liturgical scholar's cloak, and an open *Arithmetica* codex
+   held at his chest. Margin motifs display the Pythagorean Tetractys (left)
+   and the ``4 x 4`` Square Gnomon Lattice (right).
+
+
+.. py:function:: build_nicomachus_svg(theme: str = 'dark', wave_angle_deg: float = 30.0) -> str
+
+   Render the Nicomachus of Gerasa medallion SVG for ``'dark'`` or ``'light'`` theme.
+
+
+.. py:function:: write_nicomachus_svgs(out_dir: pathlib.Path | None = None, wave_angle_deg: float = 30.0) -> tuple[pathlib.Path, pathlib.Path]
+
+   Write ``nicomachus_dark.svg`` and ``nicomachus_light.svg`` to ``out_dir``.
+
+

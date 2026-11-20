@@ -1,0 +1,49 @@
+geometor.press.portrait_studies.livio
+=====================================
+
+.. py:module:: geometor.press.portrait_studies.livio
+
+.. autoapi-nested-parse::
+
+   Study 37: Mario Livio (after the NASA/STScI portrait).
+
+
+
+Functions
+---------
+
+.. autoapisummary::
+
+   geometor.press.portrait_studies.livio.build_livio_elements
+   geometor.press.portrait_studies.livio.build_livio_svg
+   geometor.press.portrait_studies.livio.write_livio_svgs
+
+
+Module Contents
+---------------
+
+.. py:function:: build_livio_elements(wave_angle_deg: float = 28.0) -> dict[str, list[dict[str, Any]]]
+
+   Build the 4-layer geometric portrait of Mario Livio.
+
+   Calibrated to the NASA/STScI portrait: clean-shaven approachable frontal-
+   slightly-left gaze with bright friendly eyes locked on ``y = -27``, neatly
+   side-swept graying hair above a clear rounded forehead, warm gentle smile
+   with subtle nasolabial dimples and clean tapered jaw/chin, open-collar
+   tailored button-down dress shirt with vertical placket and three small
+   circular buttons, and natural broad shoulders extending smoothly to
+   ``MED_R = 92.0``. Margin motifs display the Inscribed Pentagram ``phi``
+   Chord Division (left) and the Golden Triangle Penrose Subdivision & Spiral
+   (right).
+
+
+.. py:function:: build_livio_svg(theme: str = 'dark', wave_angle_deg: float = 28.0) -> str
+
+   Render the Mario Livio medallion SVG for ``'dark'`` or ``'light'`` theme.
+
+
+.. py:function:: write_livio_svgs(out_dir: pathlib.Path | None = None, wave_angle_deg: float = 28.0) -> tuple[pathlib.Path, pathlib.Path]
+
+   Write ``livio_dark.svg`` and ``livio_light.svg`` to ``out_dir``.
+
+

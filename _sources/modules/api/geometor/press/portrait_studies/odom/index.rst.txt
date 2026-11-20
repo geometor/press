@@ -1,0 +1,60 @@
+geometor.press.portrait_studies.odom
+====================================
+
+.. py:module:: geometor.press.portrait_studies.odom
+
+.. autoapi-nested-parse::
+
+   Study 46: George Odom — Pure Sacred Geometric Emblem Medallion.
+
+   Celebrates George Odom (1941-2010), polyhedral sculptor and discoverer of the
+   most minimal Golden Section construction in all of Euclidean geometry
+   (*American Mathematical Monthly* E3007, 1983), framed within the unified
+   ``R = 68`` graduated astrolabe seal:
+
+   1. **Equilateral Triangle ``PQR`` & Circumcircle ``(O, R_c = 55)``**: Upright
+      equilateral triangle inscribed in its bold primary circumcircle centered at
+      ``(0, -8)``, accompanied by its exact ``4 : 2 : 1`` octave-nested incircle
+      (``R_c / 2``) and medial incircle (``R_c / 4``), compass-construction arcs
+      from ``P, Q, R`` locating exact side midpoints ``A, B, M``, and the two
+      3-fold symmetric sister Odom chords forming the 6-pointed Star of Odom.
+   2. **Heroic Golden Midpoint-Chord ``D-A-B-C``**: Extending segment ``AB``
+      (joining midpoints of ``PQ`` and ``PR``) horizontally to cut the
+      circumcircle at ``D`` and ``C`` produces the exact golden division
+      ``|AB|/|BC| = |AC|/|AB| = |AB|/|DA| = |DB|/|AB| = phi`` and
+      ``|DC|/|AB| = sqrt(5)`` (verified to ``< 1e-12``), crowned by four radiant
+      double-ringed golden stars at ``D, A, B, C`` and golden ratio transfer arcs.
+
+
+
+Functions
+---------
+
+.. autoapisummary::
+
+   geometor.press.portrait_studies.odom.build_odom_elements
+   geometor.press.portrait_studies.odom.build_odom_svg
+   geometor.press.portrait_studies.odom.write_odom_svgs
+
+
+Module Contents
+---------------
+
+.. py:function:: build_odom_elements() -> dict[str, list[dict[str, Any]]]
+
+   Build the 4-layer sacred emblem medallion for George Odom.
+
+   :returns: Dictionary mapping canonical layers (``scaffold``, ``golden``,
+             ``detail``, ``primary``) to lists of primitive geometry entries.
+
+
+.. py:function:: build_odom_svg(theme: str = 'dark') -> str
+
+   Render the George Odom medallion SVG for ``'dark'`` or ``'light'`` theme.
+
+
+.. py:function:: write_odom_svgs(out_dir: pathlib.Path | None = None) -> tuple[pathlib.Path, pathlib.Path]
+
+   Write ``odom_dark.svg`` and ``odom_light.svg`` to ``out_dir``.
+
+

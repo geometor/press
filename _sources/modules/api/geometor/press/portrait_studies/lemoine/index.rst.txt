@@ -1,0 +1,49 @@
+geometor.press.portrait_studies.lemoine
+=======================================
+
+.. py:module:: geometor.press.portrait_studies.lemoine
+
+.. autoapi-nested-parse::
+
+   Study 35: Émile Lemoine (after the 19th-century French portrait).
+
+
+
+Functions
+---------
+
+.. autoapisummary::
+
+   geometor.press.portrait_studies.lemoine.build_lemoine_elements
+   geometor.press.portrait_studies.lemoine.build_lemoine_svg
+   geometor.press.portrait_studies.lemoine.write_lemoine_svgs
+
+
+Module Contents
+---------------
+
+.. py:function:: build_lemoine_elements(wave_angle_deg: float = 30.0) -> dict[str, list[dict[str, Any]]]
+
+   Build the 4-layer geometric portrait of Émile Lemoine.
+
+   Calibrated to the 19th-century French polytechnicien portrait: thick swept
+   wavy silver-gray hair crowning a broad intellectual forehead, thin oval
+   wire-rimmed spectacles resting cleanly across the nose with focused eyes on
+   ``y = -27``, full sweeping bushy mustache and rounded scholar's beard
+   (``Euclid III.12`` tangent waves), white collar & tiny shirt-front peek at
+   throat, and broad French scholar's coat shoulders and lapels sweeping
+   smoothly to ``MED_R = 92.0``. Margin motifs display the Lemoine Point
+   ``K = X(6)`` & First Lemoine Circle (left) and *Géométrographie*
+   compass-and-straightedge emblem (right).
+
+
+.. py:function:: build_lemoine_svg(theme: str = 'dark', wave_angle_deg: float = 30.0) -> str
+
+   Render the Émile Lemoine medallion SVG for ``'dark'`` or ``'light'`` theme.
+
+
+.. py:function:: write_lemoine_svgs(out_dir: pathlib.Path | None = None, wave_angle_deg: float = 30.0) -> tuple[pathlib.Path, pathlib.Path]
+
+   Write ``lemoine_dark.svg`` and ``lemoine_light.svg`` to ``out_dir``.
+
+

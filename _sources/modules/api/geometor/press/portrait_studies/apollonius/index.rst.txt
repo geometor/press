@@ -1,0 +1,46 @@
+geometor.press.portrait_studies.apollonius
+==========================================
+
+.. py:module:: geometor.press.portrait_studies.apollonius
+
+.. autoapi-nested-parse::
+
+   Study 26: Apollonius of Perga (after the 1537 Venice woodcut portrait).
+
+
+
+Functions
+---------
+
+.. autoapisummary::
+
+   geometor.press.portrait_studies.apollonius.build_apollonius_elements
+   geometor.press.portrait_studies.apollonius.build_apollonius_svg
+   geometor.press.portrait_studies.apollonius.write_apollonius_svgs
+
+
+Module Contents
+---------------
+
+.. py:function:: build_apollonius_elements(wave_angle_deg: float = 30.0) -> dict[str, list[dict[str, Any]]]
+
+   Build the 4-layer geometric portrait of Apollonius of Perga.
+
+   Calibrated to the 1537 Venice woodcut bust: high domed forehead with
+   contemplation furrows, curly framing hair, three-quarter right-turned
+   gaze on ``y = -27``, long tapered philosopher's beard crafted with
+   ``Euclid III.12`` tangent wave arcs, draped scholar's robe, and the
+   foreground geometric diagram disc & dividers. Margin motifs display an
+   exact Apollonian gasket (left) and coaxal Circles of Apollonius (right).
+
+
+.. py:function:: build_apollonius_svg(theme: str = 'dark', wave_angle_deg: float = 30.0) -> str
+
+   Render the Apollonius of Perga medallion SVG for ``'dark'`` or ``'light'`` theme.
+
+
+.. py:function:: write_apollonius_svgs(out_dir: pathlib.Path | None = None, wave_angle_deg: float = 30.0) -> tuple[pathlib.Path, pathlib.Path]
+
+   Write ``apollonius_dark.svg`` and ``apollonius_light.svg`` to ``out_dir``.
+
+

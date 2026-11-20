@@ -1,0 +1,43 @@
+geometor.press.portrait_studies.kepler
+======================================
+
+.. py:module:: geometor.press.portrait_studies.kepler
+
+.. autoapi-nested-parse::
+
+   Study 06: Johannes Kepler (c. 1620) in lines and circular arcs.
+
+
+
+Functions
+---------
+
+.. autoapisummary::
+
+   geometor.press.portrait_studies.kepler.build_kepler_elements
+   geometor.press.portrait_studies.kepler.build_kepler_svg
+   geometor.press.portrait_studies.kepler.write_kepler_svgs
+
+
+Module Contents
+---------------
+
+.. py:function:: build_kepler_elements(wave_angle_deg: float = 36.0) -> dict[str, list[dict[str, Any]]]
+
+   Construct Johannes Kepler (c. 1620) medallion strictly from lines, circles, and circular arcs.
+
+   :param wave_angle_deg: Half-angle (degrees) for Euclid III.12 tangent-arc lace ruff & beard curls.
+
+   :returns: Dictionary of ``scaffold``, ``golden``, ``primary``, and ``detail`` primitive lists.
+
+
+.. py:function:: build_kepler_svg(theme: str = 'dark', wave_angle_deg: float = 36.0) -> str
+
+   Build the complete Johannes Kepler medallion SVG string for ``theme`` ('dark' or 'light').
+
+
+.. py:function:: write_kepler_svgs(output_dir: pathlib.Path | None = None) -> tuple[pathlib.Path, pathlib.Path]
+
+   Write ``kepler_dark.svg`` and ``kepler_light.svg`` to ``output_dir``.
+
+

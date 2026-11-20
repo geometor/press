@@ -1,0 +1,43 @@
+geometor.press.portrait_studies.plato
+=====================================
+
+.. py:module:: geometor.press.portrait_studies.plato
+
+.. autoapi-nested-parse::
+
+   Study 03: Plato of Athens (School of Athens) in lines and circular arcs.
+
+
+
+Functions
+---------
+
+.. autoapisummary::
+
+   geometor.press.portrait_studies.plato.build_plato_elements
+   geometor.press.portrait_studies.plato.build_plato_svg
+   geometor.press.portrait_studies.plato.write_plato_svgs
+
+
+Module Contents
+---------------
+
+.. py:function:: build_plato_elements(wave_angle_deg: float = 33.0) -> dict[str, list[dict[str, Any]]]
+
+   Construct Plato of Athens medallion strictly from lines, circles, and circular arcs.
+
+   :param wave_angle_deg: Half-angle (degrees) for Euclid III.12 tangent-arc beard and hair locks.
+
+   :returns: Dictionary of ``scaffold``, ``golden``, ``primary``, and ``detail`` primitive lists.
+
+
+.. py:function:: build_plato_svg(theme: str = 'dark', wave_angle_deg: float = 33.0) -> str
+
+   Render the Plato of Athens portrait medallion SVG for ``'dark'`` or ``'light'`` theme.
+
+
+.. py:function:: write_plato_svgs(output_dir: pathlib.Path | None = None, wave_angle_deg: float = 33.0) -> tuple[pathlib.Path, pathlib.Path]
+
+   Write ``plato_dark.svg`` and ``plato_light.svg`` to ``docsrc/_static/portraits``.
+
+

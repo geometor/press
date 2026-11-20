@@ -1,0 +1,46 @@
+geometor.press.portrait_studies.feuerbach
+=========================================
+
+.. py:module:: geometor.press.portrait_studies.feuerbach
+
+.. autoapi-nested-parse::
+
+   Study 31: Karl Wilhelm Feuerbach (after the 19th-century Romantic pencil portrait).
+
+
+
+Functions
+---------
+
+.. autoapisummary::
+
+   geometor.press.portrait_studies.feuerbach.build_feuerbach_elements
+   geometor.press.portrait_studies.feuerbach.build_feuerbach_svg
+   geometor.press.portrait_studies.feuerbach.write_feuerbach_svgs
+
+
+Module Contents
+---------------
+
+.. py:function:: build_feuerbach_elements(wave_angle_deg: float = 30.0) -> dict[str, list[dict[str, Any]]]
+
+   Build the 4-layer geometric portrait of Karl Wilhelm Feuerbach.
+
+   Calibrated to the 19th-century Romantic pencil portrait: youthful clean-
+   shaven three-quarter left face with soulful direct gaze on ``y = -27``,
+   side-parted wavy dark Romantic hair (``Euclid III.12`` tangent waves),
+   high wrapped dark cravat with tailored bow, and dramatic high-collared
+   Romantic greatcoat lapels sweeping smoothly to ``MED_R = 92.0``. Margin
+   motifs display Feuerbach's Theorem (left) and the Nine-Point Circle (right).
+
+
+.. py:function:: build_feuerbach_svg(theme: str = 'dark', wave_angle_deg: float = 30.0) -> str
+
+   Render the Karl Wilhelm Feuerbach medallion SVG for ``'dark'`` or ``'light'`` theme.
+
+
+.. py:function:: write_feuerbach_svgs(out_dir: pathlib.Path | None = None, wave_angle_deg: float = 30.0) -> tuple[pathlib.Path, pathlib.Path]
+
+   Write ``feuerbach_dark.svg`` and ``feuerbach_light.svg`` to ``out_dir``.
+
+

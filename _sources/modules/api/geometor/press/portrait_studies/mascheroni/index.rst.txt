@@ -1,0 +1,46 @@
+geometor.press.portrait_studies.mascheroni
+==========================================
+
+.. py:module:: geometor.press.portrait_studies.mascheroni
+
+.. autoapi-nested-parse::
+
+   Study 29: Lorenzo Mascheroni (after the Neoclassical profile engraving by F. Redenti).
+
+
+
+Functions
+---------
+
+.. autoapisummary::
+
+   geometor.press.portrait_studies.mascheroni.build_mascheroni_elements
+   geometor.press.portrait_studies.mascheroni.build_mascheroni_svg
+   geometor.press.portrait_studies.mascheroni.write_mascheroni_svgs
+
+
+Module Contents
+---------------
+
+.. py:function:: build_mascheroni_elements(wave_angle_deg: float = 30.0) -> dict[str, list[dict[str, Any]]]
+
+   Build the 4-layer geometric portrait of Lorenzo Mascheroni.
+
+   Calibrated to F. Redenti's Neoclassical pure left-profile engraving:
+   sculpted forehead, straight classical nose, composed lips, rounded chin,
+   profile eye on ``y = -27``, flowing late-18th-century wavy back hair
+   modeled with ``Euclid III.12`` tangent wave strands, wrapped white cravat,
+   and tailored double-breasted coat collar & lapels grounded to ``MED_R``.
+   Both golden margin motifs are strictly compass-only (zero straight lines).
+
+
+.. py:function:: build_mascheroni_svg(theme: str = 'dark', wave_angle_deg: float = 30.0) -> str
+
+   Render the Lorenzo Mascheroni medallion SVG for ``'dark'`` or ``'light'`` theme.
+
+
+.. py:function:: write_mascheroni_svgs(out_dir: pathlib.Path | None = None, wave_angle_deg: float = 30.0) -> tuple[pathlib.Path, pathlib.Path]
+
+   Write ``mascheroni_dark.svg`` and ``mascheroni_light.svg`` to ``out_dir``.
+
+

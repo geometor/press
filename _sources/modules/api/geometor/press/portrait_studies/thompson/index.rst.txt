@@ -1,0 +1,42 @@
+geometor.press.portrait_studies.thompson
+========================================
+
+.. py:module:: geometor.press.portrait_studies.thompson
+
+.. autoapi-nested-parse::
+
+   Study 23: Sir D'Arcy Wentworth Thompson (after Robertson, Dundee, 1886).
+
+
+
+Functions
+---------
+
+.. autoapisummary::
+
+   geometor.press.portrait_studies.thompson.build_thompson_elements
+   geometor.press.portrait_studies.thompson.build_thompson_svg
+   geometor.press.portrait_studies.thompson.write_thompson_svgs
+
+
+Module Contents
+---------------
+
+.. py:function:: build_thompson_elements(wave_angle_deg: float = 30.0) -> dict[str, list[dict[str, Any]]]
+
+   Build the four-layer compass-and-straightedge geometry for D'Arcy Thompson.
+
+   Uses ``MedallionBuilder`` so every line and circular arc is clipped cleanly
+   within ``MED_R = 92.0`` with zero Bezier curves.
+
+
+.. py:function:: build_thompson_svg(theme: str = 'dark', wave_angle_deg: float = 30.0) -> str
+
+   Render the Sir D'Arcy Wentworth Thompson medallion SVG for ``'dark'`` or ``'light'``.
+
+
+.. py:function:: write_thompson_svgs(out_dir: pathlib.Path | None = None, wave_angle_deg: float = 30.0) -> tuple[pathlib.Path, pathlib.Path]
+
+   Write ``thompson_dark.svg`` and ``thompson_light.svg`` to ``out_dir``.
+
+

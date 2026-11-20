@@ -1,0 +1,48 @@
+geometor.press.portrait_studies.cusa
+====================================
+
+.. py:module:: geometor.press.portrait_studies.cusa
+
+.. autoapi-nested-parse::
+
+   Study 18: Nicholas of Cusa (after Cusanusstift donor portrait, c. 1470) in lines and arcs.
+
+
+
+Functions
+---------
+
+.. autoapisummary::
+
+   geometor.press.portrait_studies.cusa.build_cusa_elements
+   geometor.press.portrait_studies.cusa.build_cusa_svg
+   geometor.press.portrait_studies.cusa.write_cusa_svgs
+
+
+Module Contents
+---------------
+
+.. py:function:: build_cusa_elements(wave_angle_deg: float = 30.0) -> dict[str, list[dict[str, Any]]]
+
+   Construct Nicholas of Cusa medallion strictly from lines, circles, and circular arcs.
+
+   Calibrated to the Cusanusstift Bernkastel-Kues donor portrait (c. 1460-1480),
+   featuring Cusa's serene three-quarter left devotional gaze, tonsured bald crown,
+   refined ascetic features, slung crimson cardinal's *galero* hat with diagonal cord,
+   white surplice V-collar, flowing cardinal mantle, and gracefully raised hands.
+
+   :param wave_angle_deg: Half-angle (degrees) reserved for subtle Euclid III.12 mantle accents.
+
+   :returns: Dictionary of ``scaffold``, ``golden``, ``detail``, and ``primary`` primitive lists.
+
+
+.. py:function:: build_cusa_svg(theme: str = 'dark', wave_angle_deg: float = 30.0) -> str
+
+   Render the Nicholas of Cusa medallion SVG for ``'dark'`` or ``'light'`` theme.
+
+
+.. py:function:: write_cusa_svgs(out_dir: pathlib.Path | None = None, wave_angle_deg: float = 30.0) -> tuple[pathlib.Path, pathlib.Path]
+
+   Write ``cusa_dark.svg`` and ``cusa_light.svg`` to ``out_dir``.
+
+

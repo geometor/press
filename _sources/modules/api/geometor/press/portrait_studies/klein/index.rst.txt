@@ -1,0 +1,42 @@
+geometor.press.portrait_studies.klein
+=====================================
+
+.. py:module:: geometor.press.portrait_studies.klein
+
+.. autoapi-nested-parse::
+
+   Study 21: Felix Klein (after Gebruder Noelle, Gottingen, pre-1897) in lines and arcs.
+
+
+
+Functions
+---------
+
+.. autoapisummary::
+
+   geometor.press.portrait_studies.klein.build_klein_elements
+   geometor.press.portrait_studies.klein.build_klein_svg
+   geometor.press.portrait_studies.klein.write_klein_svgs
+
+
+Module Contents
+---------------
+
+.. py:function:: build_klein_elements(wave_angle_deg: float = 30.0) -> dict[str, list[dict[str, Any]]]
+
+   Build the four-layer compass-and-straightedge geometry for Felix Klein.
+
+   Uses ``MedallionBuilder`` so every line and circular arc is clipped cleanly
+   within ``MED_R = 92.0`` with zero Bezier curves.
+
+
+.. py:function:: build_klein_svg(theme: str = 'dark', wave_angle_deg: float = 30.0) -> str
+
+   Render the Felix Klein medallion SVG for ``'dark'`` or ``'light'`` theme.
+
+
+.. py:function:: write_klein_svgs(out_dir: pathlib.Path | None = None, wave_angle_deg: float = 30.0) -> tuple[pathlib.Path, pathlib.Path]
+
+   Write ``klein_dark.svg`` and ``klein_light.svg`` to ``out_dir``.
+
+

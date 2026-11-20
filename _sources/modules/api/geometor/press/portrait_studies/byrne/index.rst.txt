@@ -1,0 +1,48 @@
+geometor.press.portrait_studies.byrne
+=====================================
+
+.. py:module:: geometor.press.portrait_studies.byrne
+
+.. autoapi-nested-parse::
+
+   Study 12: Oliver Byrne (after historic c. 1850 portrait) in lines and circular arcs.
+
+
+
+Functions
+---------
+
+.. autoapisummary::
+
+   geometor.press.portrait_studies.byrne.build_byrne_elements
+   geometor.press.portrait_studies.byrne.build_byrne_svg
+   geometor.press.portrait_studies.byrne.write_byrne_svgs
+
+
+Module Contents
+---------------
+
+.. py:function:: build_byrne_elements(wave_angle_deg: float = 34.0) -> dict[str, list[dict[str, Any]]]
+
+   Construct Oliver Byrne medallion strictly from lines, circles, and circular arcs.
+
+   Calibrated to the historic c. 1850 Victorian Romantic portrait of Oliver Byrne,
+   featuring his high domed forehead, visionary upward-gazing eyes, flared billowing
+   curly side-wings, clean-shaven jaw with Victorian sideburns, upturned white wing
+   collar, knotted dark cravat over ruffled shirtfront, and tailored coat lapels.
+
+   :param wave_angle_deg: Half-angle (degrees) for Euclid III.12 tangent-arc Romantic side-curls.
+
+   :returns: Dictionary of ``scaffold``, ``golden``, ``detail``, and ``primary`` primitive lists.
+
+
+.. py:function:: build_byrne_svg(theme: str = 'dark', wave_angle_deg: float = 34.0) -> str
+
+   Render the Oliver Byrne medallion SVG for ``'dark'`` or ``'light'`` theme.
+
+
+.. py:function:: write_byrne_svgs(out_dir: pathlib.Path | None = None, wave_angle_deg: float = 34.0) -> tuple[pathlib.Path, pathlib.Path]
+
+   Write ``byrne_dark.svg`` and ``byrne_light.svg`` to ``out_dir``.
+
+

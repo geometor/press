@@ -1,0 +1,66 @@
+geometor.press.portrait_studies.wildberger
+==========================================
+
+.. py:module:: geometor.press.portrait_studies.wildberger
+
+.. autoapi-nested-parse::
+
+   Study 48: Norman J. Wildberger — Pure Sacred Geometric Emblem Medallion.
+
+   Celebrates Norman J. Wildberger (b. 1957), author of *Divine Proportions:
+   Rational Trigonometry to Universal Geometry* (2005), replacing transcendental
+   lengths and angles with 100% exact algebraic **Quadrances** (``Q = dx^2 + dy^2``)
+   and **Spreads** (``s = sin^2(theta)``) inside the unified ``R = 68`` graduated
+   astrolabe seal:
+
+   1. **Exact ``13-14-15`` Heronian Rational Triangle & Three Outward Quadrance
+      Squares**: Scaled cleanly on its exact rational circumcenter ``(7, 33/8)``
+      aligned directly to ``(0, -8)``, the triangle ``A_1 A_2 A_3`` has exact
+      integer quadrances ``Q_1 = 225``, ``Q_2 = 169``, ``Q_3 = 196``, with all
+      three bold outward quadrance squares fitting completely inside ``R = 68``
+      and subdivided as geometric area tiles (including the altitude split
+      ``70 + 126 = 196`` inside ``Q_3``).
+   2. **Exact Rational Trigonometry Laws (Verified in ``fractions.Fraction``)**:
+      Spreads ``s_1 = 144/169``, ``s_2 = 16/25``, ``s_3 = 3136/4225`` satisfy the
+      Spread Law (``s_i / Q_i = 16/4225``), the Cross Law
+      (``(Q_1 + Q_2 - Q_3)^2 = 4 Q_1 Q_2 (1 - s_3)``), and the Triple Spread
+      Formula identically with zero rounding error.
+   3. **Golden Altitude, Spread-Law Circumcircle, & Vertex Spread Drops**: The
+      exact rational altitude ``h = 12`` (splitting ``13-14-15`` into ``5-12-13``
+      and ``9-12-15``), the Spread-Law Circumcircle (``R_c = 65/8 * u``,
+      ``4 R_c^2 = Q_i / s_i``), and Wildberger's canonical vertex spread arcs with
+      perpendicular drop chords ``s_i = Q_opp / Q_hyp`` gleam in radiant gold.
+
+
+
+Functions
+---------
+
+.. autoapisummary::
+
+   geometor.press.portrait_studies.wildberger.build_wildberger_elements
+   geometor.press.portrait_studies.wildberger.build_wildberger_svg
+   geometor.press.portrait_studies.wildberger.write_wildberger_svgs
+
+
+Module Contents
+---------------
+
+.. py:function:: build_wildberger_elements() -> dict[str, list[dict[str, Any]]]
+
+   Build the 4-layer sacred emblem medallion for Norman J. Wildberger.
+
+   :returns: Dictionary mapping canonical layers (``scaffold``, ``golden``,
+             ``detail``, ``primary``) to lists of primitive geometry entries.
+
+
+.. py:function:: build_wildberger_svg(theme: str = 'dark') -> str
+
+   Render the Norman J. Wildberger medallion SVG for ``'dark'`` or ``'light'`` theme.
+
+
+.. py:function:: write_wildberger_svgs(out_dir: pathlib.Path | None = None) -> tuple[pathlib.Path, pathlib.Path]
+
+   Write ``wildberger_dark.svg`` and ``wildberger_light.svg`` to ``out_dir``.
+
+

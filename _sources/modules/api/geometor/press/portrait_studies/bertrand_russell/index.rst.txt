@@ -1,0 +1,49 @@
+geometor.press.portrait_studies.bertrand_russell
+================================================
+
+.. py:module:: geometor.press.portrait_studies.bertrand_russell
+
+.. autoapi-nested-parse::
+
+   Study 14: Bertrand Russell (after 1907 Edwardian portrait) in lines and circular arcs.
+
+
+
+Functions
+---------
+
+.. autoapisummary::
+
+   geometor.press.portrait_studies.bertrand_russell.build_bertrand_russell_elements
+   geometor.press.portrait_studies.bertrand_russell.build_bertrand_russell_svg
+   geometor.press.portrait_studies.bertrand_russell.write_bertrand_russell_svgs
+
+
+Module Contents
+---------------
+
+.. py:function:: build_bertrand_russell_elements(wave_angle_deg: float = 30.0) -> dict[str, list[dict[str, Any]]]
+
+   Construct Bertrand Russell medallion strictly from lines, circles, and circular arcs.
+
+   Calibrated to the 1907 Edwardian portrait of Bertrand Russell, featuring his
+   high aristocratic forehead, neatly side-parted wavy Edwardian hair, straight
+   decisive brows over intense direct eyes, slender nose, thick drooping Edwardian
+   walrus mustache, stiff rounded white club collar, knotted silk tie, waistcoat,
+   and tailored dark suit lapels.
+
+   :param wave_angle_deg: Half-angle (degrees) for Euclid III.12 Edwardian hair & mustache waves.
+
+   :returns: Dictionary of ``scaffold``, ``golden``, ``detail``, and ``primary`` primitive lists.
+
+
+.. py:function:: build_bertrand_russell_svg(theme: str = 'dark', wave_angle_deg: float = 30.0) -> str
+
+   Render the Bertrand Russell medallion SVG for ``'dark'`` or ``'light'`` theme.
+
+
+.. py:function:: write_bertrand_russell_svgs(out_dir: pathlib.Path | None = None, wave_angle_deg: float = 30.0) -> tuple[pathlib.Path, pathlib.Path]
+
+   Write ``bertrand_russell_dark.svg`` and ``bertrand_russell_light.svg`` to ``out_dir``.
+
+

@@ -1,0 +1,41 @@
+geometor.press.portrait_studies.pacioli
+=======================================
+
+.. py:module:: geometor.press.portrait_studies.pacioli
+
+.. autoapi-nested-parse::
+
+   Study 05: Fra Luca Pacioli (1495) in lines, circles, and circular arcs.
+
+
+
+Functions
+---------
+
+.. autoapisummary::
+
+   geometor.press.portrait_studies.pacioli.build_pacioli_elements
+   geometor.press.portrait_studies.pacioli.build_pacioli_svg
+   geometor.press.portrait_studies.pacioli.write_pacioli_svgs
+
+
+Module Contents
+---------------
+
+.. py:function:: build_pacioli_elements() -> dict[str, list[dict[str, Any]]]
+
+   Construct Fra Luca Pacioli medallion strictly from lines, circles, and circular arcs.
+
+   :returns: Dictionary of ``scaffold``, ``golden``, ``primary``, and ``detail`` primitive lists.
+
+
+.. py:function:: build_pacioli_svg(theme: str = 'dark') -> str
+
+   Build the complete Fra Luca Pacioli medallion SVG for ``'dark'`` or ``'light'`` theme.
+
+
+.. py:function:: write_pacioli_svgs(output_dir: pathlib.Path | None = None) -> tuple[pathlib.Path, pathlib.Path]
+
+   Write ``pacioli_dark.svg`` and ``pacioli_light.svg`` to ``output_dir``.
+
+

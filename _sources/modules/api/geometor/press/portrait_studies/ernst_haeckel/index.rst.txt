@@ -1,0 +1,49 @@
+geometor.press.portrait_studies.ernst_haeckel
+=============================================
+
+.. py:module:: geometor.press.portrait_studies.ernst_haeckel
+
+.. autoapi-nested-parse::
+
+   Study 33: Ernst Haeckel (after the archival German naturalist portrait).
+
+
+
+Functions
+---------
+
+.. autoapisummary::
+
+   geometor.press.portrait_studies.ernst_haeckel.build_ernst_haeckel_elements
+   geometor.press.portrait_studies.ernst_haeckel.build_ernst_haeckel_svg
+   geometor.press.portrait_studies.ernst_haeckel.write_ernst_haeckel_svgs
+
+
+Module Contents
+---------------
+
+.. py:function:: build_ernst_haeckel_elements(wave_angle_deg: float = 30.0) -> dict[str, list[dict[str, Any]]]
+
+   Build the 4-layer geometric portrait of Ernst Haeckel.
+
+   Calibrated to the archival German naturalist portrait: noble near-profile
+   three-quarter-left gaze with high receding forehead, swept-back silver hair
+   over a clear ear, bushy brows and steady eyes on ``y = -27``, classic
+   aquiline nose, full flowing naturalist's mustache and curling silver beard
+   (``Euclid III.12`` tangent waves), crisp standing white shirt collar, dark
+   knotted tie, buttoned high-cut waistcoat with three circular buttons, and
+   dark professor's coat lapels sweeping cleanly to ``MED_R = 92.0``. Margin
+   motifs display *Circogonia icosahedra* (left) and *Actinoptychus* diatom
+   star (right).
+
+
+.. py:function:: build_ernst_haeckel_svg(theme: str = 'dark', wave_angle_deg: float = 30.0) -> str
+
+   Render the Ernst Haeckel medallion SVG for ``'dark'`` or ``'light'`` theme.
+
+
+.. py:function:: write_ernst_haeckel_svgs(out_dir: pathlib.Path | None = None, wave_angle_deg: float = 30.0) -> tuple[pathlib.Path, pathlib.Path]
+
+   Write ``ernst_haeckel_dark.svg`` and ``ernst_haeckel_light.svg`` to ``out_dir``.
+
+

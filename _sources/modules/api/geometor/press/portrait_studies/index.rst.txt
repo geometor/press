@@ -15,7 +15,54 @@ Submodules
 .. toctree::
    :maxdepth: 1
 
+   /modules/api/geometor/press/portrait_studies/altshiller_court/index
+   /modules/api/geometor/press/portrait_studies/apollonius/index
+   /modules/api/geometor/press/portrait_studies/aquinas/index
+   /modules/api/geometor/press/portrait_studies/archimedes/index
+   /modules/api/geometor/press/portrait_studies/aristotle/index
+   /modules/api/geometor/press/portrait_studies/bertrand_russell/index
+   /modules/api/geometor/press/portrait_studies/byrne/index
+   /modules/api/geometor/press/portrait_studies/casey/index
+   /modules/api/geometor/press/portrait_studies/ceva/index
+   /modules/api/geometor/press/portrait_studies/cusa/index
    /modules/api/geometor/press/portrait_studies/durer/index
+   /modules/api/geometor/press/portrait_studies/ernst_haeckel/index
+   /modules/api/geometor/press/portrait_studies/euclid/index
+   /modules/api/geometor/press/portrait_studies/euler/index
+   /modules/api/geometor/press/portrait_studies/feuerbach/index
+   /modules/api/geometor/press/portrait_studies/fibonacci/index
+   /modules/api/geometor/press/portrait_studies/hambidge/index
+   /modules/api/geometor/press/portrait_studies/hans_kayser/index
+   /modules/api/geometor/press/portrait_studies/heath/index
+   /modules/api/geometor/press/portrait_studies/heron/index
+   /modules/api/geometor/press/portrait_studies/hilbert/index
+   /modules/api/geometor/press/portrait_studies/hoenen/index
+   /modules/api/geometor/press/portrait_studies/huntley/index
+   /modules/api/geometor/press/portrait_studies/kepler/index
+   /modules/api/geometor/press/portrait_studies/kimberling/index
+   /modules/api/geometor/press/portrait_studies/klein/index
+   /modules/api/geometor/press/portrait_studies/lemoine/index
+   /modules/api/geometor/press/portrait_studies/leonardo/index
+   /modules/api/geometor/press/portrait_studies/livio/index
+   /modules/api/geometor/press/portrait_studies/mascheroni/index
+   /modules/api/geometor/press/portrait_studies/menelaus/index
+   /modules/api/geometor/press/portrait_studies/nicomachus/index
+   /modules/api/geometor/press/portrait_studies/odom/index
+   /modules/api/geometor/press/portrait_studies/pacioli/index
+   /modules/api/geometor/press/portrait_studies/pappus/index
+   /modules/api/geometor/press/portrait_studies/pascal/index
+   /modules/api/geometor/press/portrait_studies/pasch/index
+   /modules/api/geometor/press/portrait_studies/petersen/index
+   /modules/api/geometor/press/portrait_studies/piero/index
+   /modules/api/geometor/press/portrait_studies/plato/index
+   /modules/api/geometor/press/portrait_studies/poincare/index
+   /modules/api/geometor/press/portrait_studies/proclus/index
+   /modules/api/geometor/press/portrait_studies/ptolemy/index
+   /modules/api/geometor/press/portrait_studies/staudt/index
+   /modules/api/geometor/press/portrait_studies/steiner/index
+   /modules/api/geometor/press/portrait_studies/thompson/index
+   /modules/api/geometor/press/portrait_studies/walter_russell/index
+   /modules/api/geometor/press/portrait_studies/wildberger/index
 
 
 Functions
@@ -23,11 +70,182 @@ Functions
 
 .. autoapisummary::
 
+   geometor.press.portrait_studies.build_altshiller_court_elements
+   geometor.press.portrait_studies.build_apollonius_elements
+   geometor.press.portrait_studies.build_aquinas_elements
+   geometor.press.portrait_studies.build_archimedes_elements
+   geometor.press.portrait_studies.build_aristotle_elements
+   geometor.press.portrait_studies.build_bertrand_russell_elements
+   geometor.press.portrait_studies.build_byrne_elements
+   geometor.press.portrait_studies.build_casey_elements
+   geometor.press.portrait_studies.build_ceva_elements
+   geometor.press.portrait_studies.build_cusa_elements
    geometor.press.portrait_studies.build_durer_elements
+   geometor.press.portrait_studies.build_ernst_haeckel_elements
+   geometor.press.portrait_studies.build_euclid_elements
+   geometor.press.portrait_studies.build_euler_elements
+   geometor.press.portrait_studies.build_feuerbach_elements
+   geometor.press.portrait_studies.build_fibonacci_elements
+   geometor.press.portrait_studies.build_hambidge_elements
+   geometor.press.portrait_studies.build_hans_kayser_elements
+   geometor.press.portrait_studies.build_heath_elements
+   geometor.press.portrait_studies.build_heron_elements
+   geometor.press.portrait_studies.build_hilbert_elements
+   geometor.press.portrait_studies.build_hoenen_elements
+   geometor.press.portrait_studies.build_huntley_elements
+   geometor.press.portrait_studies.build_kepler_elements
+   geometor.press.portrait_studies.build_kimberling_elements
+   geometor.press.portrait_studies.build_klein_elements
+   geometor.press.portrait_studies.build_lemoine_elements
+   geometor.press.portrait_studies.build_leonardo_elements
+   geometor.press.portrait_studies.build_livio_elements
+   geometor.press.portrait_studies.build_mascheroni_elements
+   geometor.press.portrait_studies.build_menelaus_elements
+   geometor.press.portrait_studies.build_nicomachus_elements
+   geometor.press.portrait_studies.build_odom_elements
+   geometor.press.portrait_studies.build_pacioli_elements
+   geometor.press.portrait_studies.build_pappus_elements
+   geometor.press.portrait_studies.build_pascal_elements
+   geometor.press.portrait_studies.build_pasch_elements
+   geometor.press.portrait_studies.build_petersen_elements
+   geometor.press.portrait_studies.build_piero_elements
+   geometor.press.portrait_studies.build_plato_elements
+   geometor.press.portrait_studies.build_poincare_elements
+   geometor.press.portrait_studies.build_proclus_elements
+   geometor.press.portrait_studies.build_ptolemy_elements
+   geometor.press.portrait_studies.build_staudt_elements
+   geometor.press.portrait_studies.build_steiner_elements
+   geometor.press.portrait_studies.build_thompson_elements
+   geometor.press.portrait_studies.build_walter_russell_elements
+   geometor.press.portrait_studies.build_wildberger_elements
 
 
 Package Contents
 ----------------
+
+.. py:function:: build_altshiller_court_elements() -> dict[str, list[dict[str, Any]]]
+
+   Build the 4-layer sacred emblem medallion for Nathan Altshiller-Court.
+
+   :returns: Dictionary mapping canonical layers (``scaffold``, ``golden``,
+             ``detail``, ``primary``) to lists of primitive geometry entries.
+
+
+.. py:function:: build_apollonius_elements(wave_angle_deg: float = 30.0) -> dict[str, list[dict[str, Any]]]
+
+   Build the 4-layer geometric portrait of Apollonius of Perga.
+
+   Calibrated to the 1537 Venice woodcut bust: high domed forehead with
+   contemplation furrows, curly framing hair, three-quarter right-turned
+   gaze on ``y = -27``, long tapered philosopher's beard crafted with
+   ``Euclid III.12`` tangent wave arcs, draped scholar's robe, and the
+   foreground geometric diagram disc & dividers. Margin motifs display an
+   exact Apollonian gasket (left) and coaxal Circles of Apollonius (right).
+
+
+.. py:function:: build_aquinas_elements(wave_angle_deg: float = 32.0) -> dict[str, list[dict[str, Any]]]
+
+   Construct St. Thomas Aquinas medallion strictly from lines, circles, and circular arcs.
+
+   Calibrated to Carlo Crivelli's *St. Thomas Aquinas* (1476, National Gallery, London)
+   with three-quarter left upward-lifted gaze, concentric Dominican tonsure crown,
+   strong Roman nose, sculpted ear, black Dominican hood & scapular habit, and
+   signature golden Sun of *Materia Intelligibilis*.
+
+   :param wave_angle_deg: Half-angle (degrees) reserved for subtle Euclid III.12 drapery/hair accents.
+
+   :returns: Dictionary of ``scaffold``, ``golden``, ``detail``, and ``primary`` primitive lists.
+
+
+.. py:function:: build_archimedes_elements(wave_angle_deg: float = 34.0) -> dict[str, list[dict[str, Any]]]
+
+   Construct Archimedes of Syracuse medallion strictly from lines, circles, and circular arcs.
+
+   Calibrated to Domenico Fetti's *Archimedes Thoughtful* (1620, Gemaldegalerie Alte Meister,
+   Dresden) with downward-right contemplative gaze, furrowed scholar's brow, thick curly hair,
+   bushy scholar beard, thoughtful hand resting under jaw/beard, and gathered white sleeve cuff.
+
+   :param wave_angle_deg: Half-angle (degrees) for Euclid III.12 tangent-arc beard, hair, and
+                          drapery waves.
+
+   :returns: Dictionary of ``scaffold``, ``golden``, ``detail``, and ``primary`` primitive lists.
+
+
+.. py:function:: build_aristotle_elements(wave_angle_deg: float = 36.0) -> dict[str, list[dict[str, Any]]]
+
+   Construct Aristotle of Stagira medallion strictly from lines, circles, and circular arcs.
+
+   Calibrated to Raphael's *School of Athens* (right figure, three-quarter left profile).
+
+   :param wave_angle_deg: Half-angle (degrees) for Euclid III.12 tangent-arc beard & hair curls.
+
+   :returns: Dictionary of ``scaffold``, ``golden``, ``primary``, and ``detail`` primitive lists.
+
+
+.. py:function:: build_bertrand_russell_elements(wave_angle_deg: float = 30.0) -> dict[str, list[dict[str, Any]]]
+
+   Construct Bertrand Russell medallion strictly from lines, circles, and circular arcs.
+
+   Calibrated to the 1907 Edwardian portrait of Bertrand Russell, featuring his
+   high aristocratic forehead, neatly side-parted wavy Edwardian hair, straight
+   decisive brows over intense direct eyes, slender nose, thick drooping Edwardian
+   walrus mustache, stiff rounded white club collar, knotted silk tie, waistcoat,
+   and tailored dark suit lapels.
+
+   :param wave_angle_deg: Half-angle (degrees) for Euclid III.12 Edwardian hair & mustache waves.
+
+   :returns: Dictionary of ``scaffold``, ``golden``, ``detail``, and ``primary`` primitive lists.
+
+
+.. py:function:: build_byrne_elements(wave_angle_deg: float = 34.0) -> dict[str, list[dict[str, Any]]]
+
+   Construct Oliver Byrne medallion strictly from lines, circles, and circular arcs.
+
+   Calibrated to the historic c. 1850 Victorian Romantic portrait of Oliver Byrne,
+   featuring his high domed forehead, visionary upward-gazing eyes, flared billowing
+   curly side-wings, clean-shaven jaw with Victorian sideburns, upturned white wing
+   collar, knotted dark cravat over ruffled shirtfront, and tailored coat lapels.
+
+   :param wave_angle_deg: Half-angle (degrees) for Euclid III.12 tangent-arc Romantic side-curls.
+
+   :returns: Dictionary of ``scaffold``, ``golden``, ``detail``, and ``primary`` primitive lists.
+
+
+.. py:function:: build_casey_elements(wave_angle_deg: float = 28.0) -> dict[str, list[dict[str, Any]]]
+
+   Build the 4-layer geometric portrait of John Casey.
+
+   Calibrated to the 19th-century Irish studio portrait: dignified three-quarter
+   right-facing scholarly head with high smooth forehead, neatly combed
+   side-swept hair, fine Victorian sideburns along the jaw, steady resolute
+   eyes on ``y = -27``, strong nose and firm composed mouth, crisp standing
+   white collar, folded silk necktie with oval tiepin over a buttoned waistcoat,
+   and tailored Victorian coat lapels sweeping smoothly down to ``MED_R = 92.0``.
+   Margin motifs display Casey's Theorem (left) and Orthogonal Radical Circles
+   (right).
+
+
+.. py:function:: build_ceva_elements() -> dict[str, list[dict[str, Any]]]
+
+   Build the 4-layer sacred emblem medallion for Giovanni Ceva.
+
+   :returns: Dictionary mapping canonical layers (``scaffold``, ``golden``,
+             ``detail``, ``primary``) to lists of primitive geometry entries.
+
+
+.. py:function:: build_cusa_elements(wave_angle_deg: float = 30.0) -> dict[str, list[dict[str, Any]]]
+
+   Construct Nicholas of Cusa medallion strictly from lines, circles, and circular arcs.
+
+   Calibrated to the Cusanusstift Bernkastel-Kues donor portrait (c. 1460-1480),
+   featuring Cusa's serene three-quarter left devotional gaze, tonsured bald crown,
+   refined ascetic features, slung crimson cardinal's *galero* hat with diagonal cord,
+   white surplice V-collar, flowing cardinal mantle, and gracefully raised hands.
+
+   :param wave_angle_deg: Half-angle (degrees) reserved for subtle Euclid III.12 mantle accents.
+
+   :returns: Dictionary of ``scaffold``, ``golden``, ``detail``, and ``primary`` primitive lists.
+
 
 .. py:function:: build_durer_elements(wave_angle_deg: float = 34.0) -> dict[str, list[dict[str, Any]]]
 
@@ -36,5 +254,395 @@ Package Contents
    :param wave_angle_deg: Half-angle (degrees) for Euclid III.12 tangent-arc hair curls.
 
    :returns: Dictionary of ``scaffold``, ``golden``, ``primary``, and ``detail`` primitive lists.
+
+
+.. py:function:: build_ernst_haeckel_elements(wave_angle_deg: float = 30.0) -> dict[str, list[dict[str, Any]]]
+
+   Build the 4-layer geometric portrait of Ernst Haeckel.
+
+   Calibrated to the archival German naturalist portrait: noble near-profile
+   three-quarter-left gaze with high receding forehead, swept-back silver hair
+   over a clear ear, bushy brows and steady eyes on ``y = -27``, classic
+   aquiline nose, full flowing naturalist's mustache and curling silver beard
+   (``Euclid III.12`` tangent waves), crisp standing white shirt collar, dark
+   knotted tie, buttoned high-cut waistcoat with three circular buttons, and
+   dark professor's coat lapels sweeping cleanly to ``MED_R = 92.0``. Margin
+   motifs display *Circogonia icosahedra* (left) and *Actinoptychus* diatom
+   star (right).
+
+
+.. py:function:: build_euclid_elements(wave_angle_deg: float = 30.0) -> dict[str, list[dict[str, Any]]]
+
+   Construct Euclid of Alexandria medallion strictly from lines, circles, and circular arcs.
+
+   :param wave_angle_deg: Half-angle (degrees) for Euclid III.12 tangent-arc beard & drapery waves.
+
+   :returns: Dictionary of ``scaffold``, ``golden``, ``primary``, and ``detail`` primitive lists.
+
+
+.. py:function:: build_euler_elements(fold_angle_deg: float = 30.0) -> dict[str, list[dict[str, Any]]]
+
+   Construct Leonhard Euler (1753) medallion strictly from lines, circles, and circular arcs.
+
+   :param fold_angle_deg: Half-angle (degrees) for Euclid III.12 tangent-arc silk cap folds.
+
+   :returns: Dictionary of ``scaffold``, ``golden``, ``primary``, and ``detail`` primitive lists.
+
+
+.. py:function:: build_feuerbach_elements(wave_angle_deg: float = 30.0) -> dict[str, list[dict[str, Any]]]
+
+   Build the 4-layer geometric portrait of Karl Wilhelm Feuerbach.
+
+   Calibrated to the 19th-century Romantic pencil portrait: youthful clean-
+   shaven three-quarter left face with soulful direct gaze on ``y = -27``,
+   side-parted wavy dark Romantic hair (``Euclid III.12`` tangent waves),
+   high wrapped dark cravat with tailored bow, and dramatic high-collared
+   Romantic greatcoat lapels sweeping smoothly to ``MED_R = 92.0``. Margin
+   motifs display Feuerbach's Theorem (left) and the Nine-Point Circle (right).
+
+
+.. py:function:: build_fibonacci_elements(wave_angle_deg: float = 30.0) -> dict[str, list[dict[str, Any]]]
+
+   Build the four-layer compass-and-straightedge geometry for Fibonacci.
+
+   Uses ``MedallionBuilder`` so every line and circular arc is clipped cleanly
+   within ``MED_R = 92.0`` with zero Bezier curves.
+
+
+.. py:function:: build_hambidge_elements() -> dict[str, list[dict[str, Any]]]
+
+   Build the 4-layer sacred emblem medallion for Jay Hambidge.
+
+   :returns: Dictionary mapping canonical layers (``scaffold``, ``golden``,
+             ``detail``, ``primary``) to lists of primitive geometry entries.
+
+
+.. py:function:: build_hans_kayser_elements() -> dict[str, list[dict[str, Any]]]
+
+   Build the 4-layer sacred emblem medallion for Hans Kayser.
+
+   :returns: Dictionary mapping canonical layers (``scaffold``, ``golden``,
+             ``detail``, ``primary``) to lists of primitive geometry entries.
+
+
+.. py:function:: build_heath_elements(wave_angle_deg: float = 30.0) -> dict[str, list[dict[str, Any]]]
+
+   Construct Sir Thomas Little Heath medallion strictly from lines, circles, and circular arcs.
+
+   Calibrated to the c. 1910 studio portrait of Sir Thomas Little Heath, featuring
+   his sweeping parted silver-white hair with sculpted temple wave, calm three-quarter
+   left scholarly gaze, straight classical nose, neatly trimmed British brush mustache,
+   sculpted right ear, high white rounded Edwardian collar, silk tie, waistcoat,
+   and tailored dark coat lapels.
+
+   :param wave_angle_deg: Half-angle (degrees) for Euclid III.12 silver hair waves.
+
+   :returns: Dictionary of ``scaffold``, ``golden``, ``detail``, and ``primary`` primitive lists.
+
+
+.. py:function:: build_heron_elements(wave_angle_deg: float = 30.0) -> dict[str, list[dict[str, Any]]]
+
+   Build the 4-layer geometric portrait of Heron of Alexandria.
+
+   Calibrated to the classical Hellenic marble-bust engraving: short sculpted
+   curly locks framing the crown, calm three-quarter right gaze on ``y = -27``,
+   classical Greek nose, full curly philosopher's mustache and rounded beard
+   modeled with ``Euclid III.12`` tangent wave strands, and a dignified Greek
+   chiton/himation neckline descending smoothly to the medallion rim.
+
+
+.. py:function:: build_hilbert_elements(wave_angle_deg: float = 30.0) -> dict[str, list[dict[str, Any]]]
+
+   Construct David Hilbert medallion strictly from lines, circles, and circular arcs.
+
+   Calibrated to the iconic 1912 Gottingen portrait featuring Hilbert's sweeping
+   Panama hat with dark hatband, oval pince-nez spectacles, penetrating gaze,
+   trimmed mustache and pointed goatee, stiff white wing collar, silk tie, and
+   formal academic jacket lapels.
+
+   :param wave_angle_deg: Half-angle (degrees) for subtle Euclid III.12 beard/goatee accents.
+
+   :returns: Dictionary of ``scaffold``, ``golden``, ``detail``, and ``primary`` primitive lists.
+
+
+.. py:function:: build_hoenen_elements(wave_angle_deg: float = 30.0) -> dict[str, list[dict[str, Any]]]
+
+   Build the four-layer compass-and-straightedge geometry for Petrus Hoenen, S.J.
+
+   Uses ``MedallionBuilder`` so every line and circular arc is clipped cleanly
+   within ``MED_R = 92.0`` with zero Bezier curves.
+
+
+.. py:function:: build_huntley_elements() -> dict[str, list[dict[str, Any]]]
+
+   Build the 4-layer sacred emblem medallion for H. E. Huntley.
+
+   :returns: Dictionary mapping canonical layers (``scaffold``, ``golden``,
+             ``detail``, ``primary``) to lists of primitive geometry entries.
+
+
+.. py:function:: build_kepler_elements(wave_angle_deg: float = 36.0) -> dict[str, list[dict[str, Any]]]
+
+   Construct Johannes Kepler (c. 1620) medallion strictly from lines, circles, and circular arcs.
+
+   :param wave_angle_deg: Half-angle (degrees) for Euclid III.12 tangent-arc lace ruff & beard curls.
+
+   :returns: Dictionary of ``scaffold``, ``golden``, ``primary``, and ``detail`` primitive lists.
+
+
+.. py:function:: build_kimberling_elements() -> dict[str, list[dict[str, Any]]]
+
+   Build the 4-layer sacred emblem medallion for Clark Kimberling.
+
+   :returns: Dictionary mapping canonical layers (``scaffold``, ``golden``,
+             ``detail``, ``primary``) to lists of primitive geometry entries.
+
+
+.. py:function:: build_klein_elements(wave_angle_deg: float = 30.0) -> dict[str, list[dict[str, Any]]]
+
+   Build the four-layer compass-and-straightedge geometry for Felix Klein.
+
+   Uses ``MedallionBuilder`` so every line and circular arc is clipped cleanly
+   within ``MED_R = 92.0`` with zero Bezier curves.
+
+
+.. py:function:: build_lemoine_elements(wave_angle_deg: float = 30.0) -> dict[str, list[dict[str, Any]]]
+
+   Build the 4-layer geometric portrait of Émile Lemoine.
+
+   Calibrated to the 19th-century French polytechnicien portrait: thick swept
+   wavy silver-gray hair crowning a broad intellectual forehead, thin oval
+   wire-rimmed spectacles resting cleanly across the nose with focused eyes on
+   ``y = -27``, full sweeping bushy mustache and rounded scholar's beard
+   (``Euclid III.12`` tangent waves), white collar & tiny shirt-front peek at
+   throat, and broad French scholar's coat shoulders and lapels sweeping
+   smoothly to ``MED_R = 92.0``. Margin motifs display the Lemoine Point
+   ``K = X(6)`` & First Lemoine Circle (left) and *Géométrographie*
+   compass-and-straightedge emblem (right).
+
+
+.. py:function:: build_leonardo_elements(wave_angle_deg: float = 32.0) -> dict[str, list[dict[str, Any]]]
+
+   Construct Leonardo da Vinci medallion strictly from lines, circles, and circular arcs.
+
+   Calibrated to the Turin red-chalk presumed self-portrait (c. 1510-1515, Biblioteca
+   Reale, Turin), featuring his noble high furrowed brow, heavy bushy overhanging
+   eyebrows, deep-set sage eyes, aquiline nose, downturned solemn philosopher's mouth,
+   and cascading Euclid III.12 locks of hair and flowing patriarch beard.
+
+   :param wave_angle_deg: Half-angle (degrees) for Euclid III.12 hair and beard waves.
+
+   :returns: Dictionary of ``scaffold``, ``golden``, ``detail``, and ``primary`` primitive lists.
+
+
+.. py:function:: build_livio_elements(wave_angle_deg: float = 28.0) -> dict[str, list[dict[str, Any]]]
+
+   Build the 4-layer geometric portrait of Mario Livio.
+
+   Calibrated to the NASA/STScI portrait: clean-shaven approachable frontal-
+   slightly-left gaze with bright friendly eyes locked on ``y = -27``, neatly
+   side-swept graying hair above a clear rounded forehead, warm gentle smile
+   with subtle nasolabial dimples and clean tapered jaw/chin, open-collar
+   tailored button-down dress shirt with vertical placket and three small
+   circular buttons, and natural broad shoulders extending smoothly to
+   ``MED_R = 92.0``. Margin motifs display the Inscribed Pentagram ``phi``
+   Chord Division (left) and the Golden Triangle Penrose Subdivision & Spiral
+   (right).
+
+
+.. py:function:: build_mascheroni_elements(wave_angle_deg: float = 30.0) -> dict[str, list[dict[str, Any]]]
+
+   Build the 4-layer geometric portrait of Lorenzo Mascheroni.
+
+   Calibrated to F. Redenti's Neoclassical pure left-profile engraving:
+   sculpted forehead, straight classical nose, composed lips, rounded chin,
+   profile eye on ``y = -27``, flowing late-18th-century wavy back hair
+   modeled with ``Euclid III.12`` tangent wave strands, wrapped white cravat,
+   and tailored double-breasted coat collar & lapels grounded to ``MED_R``.
+   Both golden margin motifs are strictly compass-only (zero straight lines).
+
+
+.. py:function:: build_menelaus_elements() -> dict[str, list[dict[str, Any]]]
+
+   Build the 4-layer sacred emblem medallion for Menelaus of Alexandria.
+
+   :returns: Dictionary mapping canonical layers (``scaffold``, ``golden``,
+             ``detail``, ``primary``) to lists of primitive geometry entries.
+
+
+.. py:function:: build_nicomachus_elements(wave_angle_deg: float = 30.0) -> dict[str, list[dict[str, Any]]]
+
+   Build the 4-layer geometric portrait of Nicomachus of Gerasa.
+
+   Calibrated to the 12th-century Cambridge illuminated manuscript miniature:
+   youthful beardless scholar in three-quarter left gaze straddling ``y = -27``,
+   center-parted shoulder-length wavy medieval curls, ornate circular throat
+   clasp, draped liturgical scholar's cloak, and an open *Arithmetica* codex
+   held at his chest. Margin motifs display the Pythagorean Tetractys (left)
+   and the ``4 x 4`` Square Gnomon Lattice (right).
+
+
+.. py:function:: build_odom_elements() -> dict[str, list[dict[str, Any]]]
+
+   Build the 4-layer sacred emblem medallion for George Odom.
+
+   :returns: Dictionary mapping canonical layers (``scaffold``, ``golden``,
+             ``detail``, ``primary``) to lists of primitive geometry entries.
+
+
+.. py:function:: build_pacioli_elements() -> dict[str, list[dict[str, Any]]]
+
+   Construct Fra Luca Pacioli medallion strictly from lines, circles, and circular arcs.
+
+   :returns: Dictionary of ``scaffold``, ``golden``, ``primary``, and ``detail`` primitive lists.
+
+
+.. py:function:: build_pappus_elements() -> dict[str, list[dict[str, Any]]]
+
+   Build the 4-layer sacred emblem medallion for Pappus of Alexandria.
+
+   :returns: Dictionary mapping canonical layers (``scaffold``, ``golden``,
+             ``detail``, ``primary``) to lists of primitive geometry entries.
+
+
+.. py:function:: build_pascal_elements(wave_angle_deg: float = 30.0) -> dict[str, list[dict[str, Any]]]
+
+   Construct Blaise Pascal medallion strictly from lines, circles, and circular arcs.
+
+   Calibrated to the Palace of Versailles portrait after Francois II Quesnel (1691),
+   capturing his refined Baroque three-quarter left gaze, aquiline French nose,
+   flowing shoulder-length wavy hair, pointed white *rabat* collar, and draped cloak.
+
+   :param wave_angle_deg: Half-angle (degrees) for Euclid III.12 tangent-arc Baroque hair waves.
+
+   :returns: Dictionary of ``scaffold``, ``golden``, ``detail``, and ``primary`` primitive lists.
+
+
+.. py:function:: build_pasch_elements(wave_angle_deg: float = 30.0) -> dict[str, list[dict[str, Any]]]
+
+   Build the 4-layer geometric portrait of Moritz Pasch.
+
+   Calibrated to the Giessen G. Backofen cabinet portrait: smooth high domed
+   forehead framed by neatly rounded wavy side and crown hair, direct calm
+   eyes on ``y = -27`` framed by delicate thin pince-nez oval lenses with the
+   iconic fine vertical pince-nez cord hanging gracefully straight down past
+   his left cheek to the collar, straight nose, dense rounded full dark
+   scholar's beard and mustache (``Euclid III.12`` tangent waves), crisp
+   folded white collar with wide dark silk bow tie over a pale dress shirt,
+   and tailored notched German academic jacket lapels grounded smoothly to
+   ``MED_R = 92.0``. Margin motifs display Pasch's Axiom Transversal (left)
+   and Axioms of Order / Betweenness Triad (right).
+
+
+.. py:function:: build_petersen_elements(wave_angle_deg: float = 32.0) -> dict[str, list[dict[str, Any]]]
+
+   Build the 4-layer geometric portrait of Julius Petersen.
+
+   Calibrated to the 19th-century Danish cabinet portrait: tall voluminous
+   curly swept-up Victorian hair crowning a clean broad forehead, calm direct
+   eyes on ``y = -27``, straight nose, neat full 19th-century mustache and
+   small soul-patch above a clean tapered chin, crisp folded white collar and
+   knotted ascot tie over a buttoned pale waistcoat, and tailored dark
+   Victorian coat lapels & sloped shoulders sweeping cleanly to ``MED_R = 92.0``.
+   Margin motifs display the Petersen Graph (left) and Petersen's Method of
+   Homothety (right).
+
+
+.. py:function:: build_piero_elements(wave_angle_deg: float = 32.0) -> dict[str, list[dict[str, Any]]]
+
+   Construct Piero della Francesca medallion strictly from lines, circles, and circular arcs.
+
+   Calibrated to Santi di Tito's c. 1590 civic portrait (Museo Civico di Sansepolcro),
+   featuring Piero's rounded Renaissance cap (*berretto*) with rolled fur brim over
+   short curly bangs, calm three-quarter right gaze, strong nose, composed lips,
+   crisp white collar rim, and voluminous dark fur-trimmed scholar's robe.
+
+   :param wave_angle_deg: Half-angle (degrees) for Euclid III.12 fur-brim & lapel texture waves.
+
+   :returns: Dictionary of ``scaffold``, ``golden``, ``detail``, and ``primary`` primitive lists.
+
+
+.. py:function:: build_plato_elements(wave_angle_deg: float = 33.0) -> dict[str, list[dict[str, Any]]]
+
+   Construct Plato of Athens medallion strictly from lines, circles, and circular arcs.
+
+   :param wave_angle_deg: Half-angle (degrees) for Euclid III.12 tangent-arc beard and hair locks.
+
+   :returns: Dictionary of ``scaffold``, ``golden``, ``primary``, and ``detail`` primitive lists.
+
+
+.. py:function:: build_poincare_elements(wave_angle_deg: float = 30.0) -> dict[str, list[dict[str, Any]]]
+
+   Build the four-layer compass-and-straightedge geometry for Henri Poincare.
+
+   Uses ``MedallionBuilder`` so every line and circular arc is clipped cleanly
+   within ``MED_R = 92.0`` with zero Bezier curves.
+
+
+.. py:function:: build_proclus_elements() -> dict[str, list[dict[str, Any]]]
+
+   Build the 4-layer sacred emblem medallion for Proclus Lycius.
+
+   :returns: Dictionary mapping canonical layers (``scaffold``, ``golden``,
+             ``detail``, ``primary``) to lists of primitive geometry entries.
+
+
+.. py:function:: build_ptolemy_elements(wave_angle_deg: float = 30.0) -> dict[str, list[dict[str, Any]]]
+
+   Build the four-layer compass-and-straightedge geometry for Claudius Ptolemy.
+
+   Uses ``MedallionBuilder`` so every line and circular arc is clipped cleanly
+   within ``MED_R = 92.0`` with zero Bezier curves.
+
+
+.. py:function:: build_staudt_elements(wave_angle_deg: float = 30.0) -> dict[str, list[dict[str, Any]]]
+
+   Build the 4-layer geometric portrait of Karl Georg Christian von Staudt.
+
+   Calibrated to the 19th-century Erlangen archival portrait: windswept curly
+   silver hair rising over a broad brow, keen eyes on ``y = -27``, firm
+   composed mouth, distinctive chinstrap/mutton-chop beard leaving the chin
+   clean, wide silk bow tie over wing collar and pale waistcoat, and broad
+   notched coat lapels grounded smoothly to ``MED_R = 92.0``. Margin motifs
+   show von Staudt's Complete Quadrangle Harmonic Conjugate (left) and
+   Pole-and-Polar Circle Involution (right).
+
+
+.. py:function:: build_steiner_elements(wave_angle_deg: float = 34.0) -> dict[str, list[dict[str, Any]]]
+
+   Construct Jakob Steiner medallion strictly from lines, circles, and circular arcs.
+
+   Calibrated to August Weger's 1881 *Gesammelte Werke* frontispiece engraving,
+   featuring Steiner's high forehead, knitted brows, direct piercing gaze, sculpted
+   curling mustache, lush square-rounded philosopher's beard, notched frock-coat
+   lapels, and folded arms.
+
+   :param wave_angle_deg: Half-angle (degrees) for Euclid III.12 tangent-arc beard & hair waves.
+
+   :returns: Dictionary of ``scaffold``, ``golden``, ``detail``, and ``primary`` primitive lists.
+
+
+.. py:function:: build_thompson_elements(wave_angle_deg: float = 30.0) -> dict[str, list[dict[str, Any]]]
+
+   Build the four-layer compass-and-straightedge geometry for D'Arcy Thompson.
+
+   Uses ``MedallionBuilder`` so every line and circular arc is clipped cleanly
+   within ``MED_R = 92.0`` with zero Bezier curves.
+
+
+.. py:function:: build_walter_russell_elements(wave_angle_deg: float = 30.0) -> dict[str, list[dict[str, Any]]]
+
+   Build the four-layer compass-and-straightedge geometry for Walter Russell.
+
+   Uses ``MedallionBuilder`` so every line and circular arc is clipped cleanly
+   within ``MED_R = 92.0`` with zero Bezier curves.
+
+
+.. py:function:: build_wildberger_elements() -> dict[str, list[dict[str, Any]]]
+
+   Build the 4-layer sacred emblem medallion for Norman J. Wildberger.
+
+   :returns: Dictionary mapping canonical layers (``scaffold``, ``golden``,
+             ``detail``, ``primary``) to lists of primitive geometry entries.
 
 

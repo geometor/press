@@ -1,0 +1,43 @@
+geometor.press.portrait_studies.euler
+=====================================
+
+.. py:module:: geometor.press.portrait_studies.euler
+
+.. autoapi-nested-parse::
+
+   Study 07: Leonhard Euler (1753 Handmann pastel) in lines and circular arcs.
+
+
+
+Functions
+---------
+
+.. autoapisummary::
+
+   geometor.press.portrait_studies.euler.build_euler_elements
+   geometor.press.portrait_studies.euler.build_euler_svg
+   geometor.press.portrait_studies.euler.write_euler_svgs
+
+
+Module Contents
+---------------
+
+.. py:function:: build_euler_elements(fold_angle_deg: float = 30.0) -> dict[str, list[dict[str, Any]]]
+
+   Construct Leonhard Euler (1753) medallion strictly from lines, circles, and circular arcs.
+
+   :param fold_angle_deg: Half-angle (degrees) for Euclid III.12 tangent-arc silk cap folds.
+
+   :returns: Dictionary of ``scaffold``, ``golden``, ``primary``, and ``detail`` primitive lists.
+
+
+.. py:function:: build_euler_svg(theme: str = 'dark') -> str
+
+   Render Leonhard Euler portrait medallion SVG for ``'dark'`` or ``'light'`` theme.
+
+
+.. py:function:: write_euler_svgs(output_dir: pathlib.Path | None = None) -> tuple[pathlib.Path, pathlib.Path]
+
+   Write ``euler_dark.svg`` and ``euler_light.svg`` to ``docsrc/_static/portraits/``.
+
+

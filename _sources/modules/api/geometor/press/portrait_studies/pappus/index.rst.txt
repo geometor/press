@@ -1,0 +1,58 @@
+geometor.press.portrait_studies.pappus
+======================================
+
+.. py:module:: geometor.press.portrait_studies.pappus
+
+.. autoapi-nested-parse::
+
+   Study 39: Pappus of Alexandria — Pure Sacred Geometric Emblem Medallion.
+
+   Unites the two crown jewels of Pappus's *Synagoge* (c. 340 CE) within the
+   calibrated astrolabe-seal framing language of the GEOMETOR Emblem Pantheon:
+
+   1. **Upper / Center — Pappus's Hexagon Theorem (Book VII, Prop. 139)**: Two
+      bold slanted carrier lines ``l1`` (carrying ``A, B, C``) and ``l2``
+      (carrying ``A', B', C'``) linked by the six cross-join segments
+      ``(AB', A'B)``, ``(AC', A'C)``, and ``(BC', B'C)``. Their exact analytical
+      intersections ``P, Q, R`` are verified collinear to ``< 1e-12``, blazing the
+      luminous golden Pappus Line ``P-Q-R`` across the heart of the medallion.
+   2. **Lower Arch — Pappus's Arbelos & Tangent Circle Chain (Book IV)**: A crisp
+      symmetric Arbelos cradling the lower arch inside ``R = 68``, populated with
+      exact inversion-derived mutually tangent Pappus Chain circles
+      (``C_1`` centered, flanked symmetrically by ``C_2..C_5`` into both cusps),
+      verified to machine precision for all tangencies and Pappus's height law
+      ``h_n = n * d_n``, illustrated with calibrated golden height-ratio ticks.
+
+
+
+Functions
+---------
+
+.. autoapisummary::
+
+   geometor.press.portrait_studies.pappus.build_pappus_elements
+   geometor.press.portrait_studies.pappus.build_pappus_svg
+   geometor.press.portrait_studies.pappus.write_pappus_svgs
+
+
+Module Contents
+---------------
+
+.. py:function:: build_pappus_elements() -> dict[str, list[dict[str, Any]]]
+
+   Build the 4-layer sacred emblem medallion for Pappus of Alexandria.
+
+   :returns: Dictionary mapping canonical layers (``scaffold``, ``golden``,
+             ``detail``, ``primary``) to lists of primitive geometry entries.
+
+
+.. py:function:: build_pappus_svg(theme: str = 'dark') -> str
+
+   Render the Pappus of Alexandria medallion SVG for ``'dark'`` or ``'light'`` theme.
+
+
+.. py:function:: write_pappus_svgs(out_dir: pathlib.Path | None = None) -> tuple[pathlib.Path, pathlib.Path]
+
+   Write ``pappus_dark.svg`` and ``pappus_light.svg`` to ``out_dir``.
+
+

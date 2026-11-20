@@ -1,0 +1,58 @@
+geometor.press.portrait_studies.menelaus
+========================================
+
+.. py:module:: geometor.press.portrait_studies.menelaus
+
+.. autoapi-nested-parse::
+
+   Study 38: Menelaus of Alexandria — Pure Sacred Geometric Emblem Medallion.
+
+   Unites both foundational breakthroughs of Menelaus's *Sphaerica* (c. 100 CE):
+
+   1. **Celestial Sphere & Spherical Triangle**: An astrolabe-framed stereographic
+      celestial sphere (``R = 68``) centered at ``(0, -8)`` bearing an oblique
+      meridian-and-parallel web and a sculpted spherical triangle ``ABC`` bounded
+      by three exact stereographic great-circle arcs passing through antipodal
+      points on the sphere limb.
+   2. **Planar & Spherical Menelaus Theorem**: Inscribed on the exact same
+      vertices ``A, B, C``, the straight chordal triangle ``ABC`` with side ``BC``
+      extended to external point ``F`` is crossed by the luminous golden Menelaus
+      transversal ``D-E-F`` cutting internal side ``AB`` at ``D``, internal side
+      ``AC`` at ``E``, and extended ``BC`` at ``F``, analytically verified so
+      ``(|AD|/|DB|) * (|BF|/|FC|) * (|CE|/|EA|) = 1``. A companion stereographic
+      great-circle transversal through ``(D, E)`` meets the extended great circle
+      of ``BC`` at ``F_s``, illustrating the exact spherical-to-planar duality.
+
+
+
+Functions
+---------
+
+.. autoapisummary::
+
+   geometor.press.portrait_studies.menelaus.build_menelaus_elements
+   geometor.press.portrait_studies.menelaus.build_menelaus_svg
+   geometor.press.portrait_studies.menelaus.write_menelaus_svgs
+
+
+Module Contents
+---------------
+
+.. py:function:: build_menelaus_elements() -> dict[str, list[dict[str, Any]]]
+
+   Build the 4-layer sacred emblem medallion for Menelaus of Alexandria.
+
+   :returns: Dictionary mapping canonical layers (``scaffold``, ``golden``,
+             ``detail``, ``primary``) to lists of primitive geometry entries.
+
+
+.. py:function:: build_menelaus_svg(theme: str = 'dark') -> str
+
+   Render the Menelaus of Alexandria medallion SVG for ``'dark'`` or ``'light'`` theme.
+
+
+.. py:function:: write_menelaus_svgs(out_dir: pathlib.Path | None = None) -> tuple[pathlib.Path, pathlib.Path]
+
+   Write ``menelaus_dark.svg`` and ``menelaus_light.svg`` to ``out_dir``.
+
+

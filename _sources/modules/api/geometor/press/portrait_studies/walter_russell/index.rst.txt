@@ -1,0 +1,42 @@
+geometor.press.portrait_studies.walter_russell
+==============================================
+
+.. py:module:: geometor.press.portrait_studies.walter_russell
+
+.. autoapi-nested-parse::
+
+   Study 25: Walter Russell (after archival circular studio portrait) in lines and arcs.
+
+
+
+Functions
+---------
+
+.. autoapisummary::
+
+   geometor.press.portrait_studies.walter_russell.build_walter_russell_elements
+   geometor.press.portrait_studies.walter_russell.build_walter_russell_svg
+   geometor.press.portrait_studies.walter_russell.write_walter_russell_svgs
+
+
+Module Contents
+---------------
+
+.. py:function:: build_walter_russell_elements(wave_angle_deg: float = 30.0) -> dict[str, list[dict[str, Any]]]
+
+   Build the four-layer compass-and-straightedge geometry for Walter Russell.
+
+   Uses ``MedallionBuilder`` so every line and circular arc is clipped cleanly
+   within ``MED_R = 92.0`` with zero Bezier curves.
+
+
+.. py:function:: build_walter_russell_svg(theme: str = 'dark', wave_angle_deg: float = 30.0) -> str
+
+   Render the Walter Russell medallion SVG for ``'dark'`` or ``'light'`` theme.
+
+
+.. py:function:: write_walter_russell_svgs(out_dir: pathlib.Path | None = None, wave_angle_deg: float = 30.0) -> tuple[pathlib.Path, pathlib.Path]
+
+   Write ``walter_russell_dark.svg`` and ``walter_russell_light.svg`` to ``out_dir``.
+
+

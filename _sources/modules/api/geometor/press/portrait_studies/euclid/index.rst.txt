@@ -1,0 +1,43 @@
+geometor.press.portrait_studies.euclid
+======================================
+
+.. py:module:: geometor.press.portrait_studies.euclid
+
+.. autoapi-nested-parse::
+
+   Study 02: Euclid of Alexandria in lines, circles, and circular arcs.
+
+
+
+Functions
+---------
+
+.. autoapisummary::
+
+   geometor.press.portrait_studies.euclid.build_euclid_elements
+   geometor.press.portrait_studies.euclid.build_euclid_svg
+   geometor.press.portrait_studies.euclid.write_euclid_svgs
+
+
+Module Contents
+---------------
+
+.. py:function:: build_euclid_elements(wave_angle_deg: float = 30.0) -> dict[str, list[dict[str, Any]]]
+
+   Construct Euclid of Alexandria medallion strictly from lines, circles, and circular arcs.
+
+   :param wave_angle_deg: Half-angle (degrees) for Euclid III.12 tangent-arc beard & drapery waves.
+
+   :returns: Dictionary of ``scaffold``, ``golden``, ``primary``, and ``detail`` primitive lists.
+
+
+.. py:function:: build_euclid_svg(theme: str = 'dark', wave_angle_deg: float = 30.0) -> str
+
+   Build the complete SVG string for Euclid of Alexandria.
+
+
+.. py:function:: write_euclid_svgs(output_dir: pathlib.Path | None = None) -> tuple[pathlib.Path, pathlib.Path]
+
+   Write ``euclid_dark.svg`` and ``euclid_light.svg`` to ``docsrc/_static/portraits``.
+
+

@@ -1,0 +1,61 @@
+geometor.press.portrait_studies.huntley
+=======================================
+
+.. py:module:: geometor.press.portrait_studies.huntley
+
+.. autoapi-nested-parse::
+
+   Study 45: H. E. Huntley — Pure Sacred Geometric Emblem Medallion.
+
+   Celebrates H. E. Huntley's *The Divine Proportion: A Study in Mathematical
+   Beauty* (1970), uniting two of Huntley's signature golden constructions across
+   a shared diameter ``AB`` inside the unified ``R = 68`` graduated astrolabe seal:
+
+   1. **Upper Semicircle — ``3-4-5`` Right-Triangle Angle-Bisector Golden Section**:
+      Inscribed on horizontal diameter ``AB = 5u``, right triangle ``ABC``
+      (``AC = 3u``, ``BC = 4u``, ``AB = 5u``) has internal angle bisector of
+      ``angle A`` meeting leg ``BC`` at ``D`` (``CD = 1.5u``, ``DB = 2.5u``).
+      The golden circle ``(D, r = DC)`` is simultaneously tangent to leg ``AC`` at
+      ``C`` and hypotenuse ``AB`` at ``T``, cutting ray ``AD`` at ``P`` and ``Q``
+      in exact golden proportion:
+      ``|AQ|/|AC| = |AC|/|AP| = |AQ|/|PQ| = |PQ|/|AP| = phi`` (verified ``< 1e-12``).
+   2. **Lower Semicircle — Golden Gnomon, Golden Triangle (``36-72-72``), &
+      ``G1``-Smooth *Spira Mirabilis***: Sharing base ``AB``, the obtuse Golden
+      Gnomon ``ABW`` (``108-36-36``) subdivides at golden-section point ``K`` into
+      a ``36-72-72`` Golden Triangle ``BKW`` and recursive golden triangles whose
+      seven ``108 deg`` circular arcs connect with exact ``G1`` tangency into the
+      luminous golden spiral pole.
+
+
+
+Functions
+---------
+
+.. autoapisummary::
+
+   geometor.press.portrait_studies.huntley.build_huntley_elements
+   geometor.press.portrait_studies.huntley.build_huntley_svg
+   geometor.press.portrait_studies.huntley.write_huntley_svgs
+
+
+Module Contents
+---------------
+
+.. py:function:: build_huntley_elements() -> dict[str, list[dict[str, Any]]]
+
+   Build the 4-layer sacred emblem medallion for H. E. Huntley.
+
+   :returns: Dictionary mapping canonical layers (``scaffold``, ``golden``,
+             ``detail``, ``primary``) to lists of primitive geometry entries.
+
+
+.. py:function:: build_huntley_svg(theme: str = 'dark') -> str
+
+   Render the H. E. Huntley medallion SVG for ``'dark'`` or ``'light'`` theme.
+
+
+.. py:function:: write_huntley_svgs(out_dir: pathlib.Path | None = None) -> tuple[pathlib.Path, pathlib.Path]
+
+   Write ``huntley_dark.svg`` and ``huntley_light.svg`` to ``out_dir``.
+
+

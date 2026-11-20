@@ -1,0 +1,63 @@
+geometor.press.portrait_studies.hans_kayser
+===========================================
+
+.. py:module:: geometor.press.portrait_studies.hans_kayser
+
+.. autoapi-nested-parse::
+
+   Study 44: Hans Kayser — Pure Sacred Geometric Emblem Medallion.
+
+   Celebrates Hans Kayser (1891-1964), founder of modern *Harmonik* (*Lehrbuch der
+   Harmonik*, 1950), and the **Pythagorean-Kayser Lambdoma (``n/m`` Harmonic Ratio
+   Lattice)** uniting musical overtone/undertone proportions with exact projective
+   geometry inside the unified ``R = 68`` graduated astrolabe seal:
+
+   1. **Diamond-Rotated ``6 x 6`` Lambdoma Ratio Lattice**: Anchored beneath the
+      ``0/0`` apex origin at ``(0, -65)``, the ``45 deg``-rotated square lattice
+      of nodes ``(m, n)`` (``1 <= m, n <= 6``) spans symmetrically around
+      ``(0, -8)`` with bold primary Undertone (``1/1..1/6``) and Overtone
+      (``1/1..6/1``) outer axes and a crisp internal ``detail`` ratio grid.
+   2. **Radiating Golden Harmonic Interval Rays**: From the unobstructed ``0/0``
+      golden star apex, exact constant-ratio projective rays blaze through all
+      equivalent fraction nodes (verified collinear to ``< 1e-12``): Unison
+      (``1/1..6/6``), Octave (``2/1, 1/2``), Twelfth (``3/1, 1/3``), Perfect
+      Fifth (``3/2, 2/3``), Perfect Fourth (``4/3, 3/4``), and Major Third
+      (``5/4, 4/5``).
+   3. **Acoustic Monochord Wave-Front Arcs**: Sweeping concentric circular arcs
+      centered at the ``0/0`` origin pass strictly through the unison nodes
+      ``(k, k)`` inside the full ``45 deg`` acoustic horn extending cleanly to
+      the ``R = 68`` astrolabe rim.
+
+
+
+Functions
+---------
+
+.. autoapisummary::
+
+   geometor.press.portrait_studies.hans_kayser.build_hans_kayser_elements
+   geometor.press.portrait_studies.hans_kayser.build_hans_kayser_svg
+   geometor.press.portrait_studies.hans_kayser.write_hans_kayser_svgs
+
+
+Module Contents
+---------------
+
+.. py:function:: build_hans_kayser_elements() -> dict[str, list[dict[str, Any]]]
+
+   Build the 4-layer sacred emblem medallion for Hans Kayser.
+
+   :returns: Dictionary mapping canonical layers (``scaffold``, ``golden``,
+             ``detail``, ``primary``) to lists of primitive geometry entries.
+
+
+.. py:function:: build_hans_kayser_svg(theme: str = 'dark') -> str
+
+   Render the Hans Kayser medallion SVG for ``'dark'`` or ``'light'`` theme.
+
+
+.. py:function:: write_hans_kayser_svgs(out_dir: pathlib.Path | None = None) -> tuple[pathlib.Path, pathlib.Path]
+
+   Write ``hans_kayser_dark.svg`` and ``hans_kayser_light.svg`` to ``out_dir``.
+
+

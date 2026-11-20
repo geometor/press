@@ -1,0 +1,48 @@
+geometor.press.portrait_studies.leonardo
+========================================
+
+.. py:module:: geometor.press.portrait_studies.leonardo
+
+.. autoapi-nested-parse::
+
+   Study 16: Leonardo da Vinci (after Turin sanguine self-portrait, c. 1512) in lines and arcs.
+
+
+
+Functions
+---------
+
+.. autoapisummary::
+
+   geometor.press.portrait_studies.leonardo.build_leonardo_elements
+   geometor.press.portrait_studies.leonardo.build_leonardo_svg
+   geometor.press.portrait_studies.leonardo.write_leonardo_svgs
+
+
+Module Contents
+---------------
+
+.. py:function:: build_leonardo_elements(wave_angle_deg: float = 32.0) -> dict[str, list[dict[str, Any]]]
+
+   Construct Leonardo da Vinci medallion strictly from lines, circles, and circular arcs.
+
+   Calibrated to the Turin red-chalk presumed self-portrait (c. 1510-1515, Biblioteca
+   Reale, Turin), featuring his noble high furrowed brow, heavy bushy overhanging
+   eyebrows, deep-set sage eyes, aquiline nose, downturned solemn philosopher's mouth,
+   and cascading Euclid III.12 locks of hair and flowing patriarch beard.
+
+   :param wave_angle_deg: Half-angle (degrees) for Euclid III.12 hair and beard waves.
+
+   :returns: Dictionary of ``scaffold``, ``golden``, ``detail``, and ``primary`` primitive lists.
+
+
+.. py:function:: build_leonardo_svg(theme: str = 'dark', wave_angle_deg: float = 32.0) -> str
+
+   Render the Leonardo da Vinci medallion SVG for ``'dark'`` or ``'light'`` theme.
+
+
+.. py:function:: write_leonardo_svgs(out_dir: pathlib.Path | None = None, wave_angle_deg: float = 32.0) -> tuple[pathlib.Path, pathlib.Path]
+
+   Write ``leonardo_dark.svg`` and ``leonardo_light.svg`` to ``out_dir``.
+
+

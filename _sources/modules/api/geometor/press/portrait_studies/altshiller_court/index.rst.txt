@@ -1,0 +1,62 @@
+geometor.press.portrait_studies.altshiller_court
+================================================
+
+.. py:module:: geometor.press.portrait_studies.altshiller_court
+
+.. autoapi-nested-parse::
+
+   Study 43: Nathan Altshiller-Court — Pure Sacred Geometric Emblem Medallion.
+
+   Celebrates Nathan Altshiller-Court's *College Geometry* (1925 / 1952), the
+   classic modern Euclidean treatise on the **Orthocentric System ``{A, B, C, H}``**,
+   its **Four Congruent Circumcircles**, and its single shared **Nine-Point Circle**:
+
+   1. **Orthocentric Quartet ``{A, B, C, H}`` & Four Congruent Circumcircles**:
+      Centered on the Nine-Point Center ``N = (0, -8)`` inside the unified
+      ``R = 68`` graduated astrolabe seal, an upright acute scalene triangle
+      ``ABC`` (angles ``50 deg, 60 deg, 70 deg``) and its three altitudes
+      ``A-H-D``, ``B-H-E``, ``C-H-F`` (with exact right-angle ticks at feet
+      ``D, E, F``) generate a complete, unbroken four-circle rosette of congruent
+      circumcircles (``Omega_ABC``, ``Omega_HBC``, ``Omega_HCA``, ``Omega_HAB``),
+      each of identical radius ``R_c`` and symmetric about ``N``.
+   2. **Shared Golden Nine-Point Circle & Orthic Triangle ``DEF``**: The luminous
+      golden Nine-Point Circle (radius ``R_c / 2`` centered at ``N``) passes
+      through all nine canonical points — three side midpoints, three altitude
+      feet ``D, E, F``, and three Euler midpoints of ``HA, HB, HC`` — verified
+      concyclic to ``< 1e-12``, framing the unobstructed golden Orthic Triangle
+      ``DEF``, the Euler segment ``O_c-N-H``, and double-ringed golden stars at
+      ``H`` and ``N``.
+
+
+
+Functions
+---------
+
+.. autoapisummary::
+
+   geometor.press.portrait_studies.altshiller_court.build_altshiller_court_elements
+   geometor.press.portrait_studies.altshiller_court.build_altshiller_court_svg
+   geometor.press.portrait_studies.altshiller_court.write_altshiller_court_svgs
+
+
+Module Contents
+---------------
+
+.. py:function:: build_altshiller_court_elements() -> dict[str, list[dict[str, Any]]]
+
+   Build the 4-layer sacred emblem medallion for Nathan Altshiller-Court.
+
+   :returns: Dictionary mapping canonical layers (``scaffold``, ``golden``,
+             ``detail``, ``primary``) to lists of primitive geometry entries.
+
+
+.. py:function:: build_altshiller_court_svg(theme: str = 'dark') -> str
+
+   Render the Nathan Altshiller-Court medallion SVG for ``'dark'`` or ``'light'`` theme.
+
+
+.. py:function:: write_altshiller_court_svgs(out_dir: pathlib.Path | None = None) -> tuple[pathlib.Path, pathlib.Path]
+
+   Write ``altshiller_court_dark.svg`` and ``altshiller_court_light.svg`` to ``out_dir``.
+
+

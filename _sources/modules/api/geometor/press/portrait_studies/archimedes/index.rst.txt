@@ -1,0 +1,48 @@
+geometor.press.portrait_studies.archimedes
+==========================================
+
+.. py:module:: geometor.press.portrait_studies.archimedes
+
+.. autoapi-nested-parse::
+
+   Study 08: Archimedes of Syracuse (after Domenico Fetti, 1620) in lines and circular arcs.
+
+
+
+Functions
+---------
+
+.. autoapisummary::
+
+   geometor.press.portrait_studies.archimedes.build_archimedes_elements
+   geometor.press.portrait_studies.archimedes.build_archimedes_svg
+   geometor.press.portrait_studies.archimedes.write_archimedes_svgs
+
+
+Module Contents
+---------------
+
+.. py:function:: build_archimedes_elements(wave_angle_deg: float = 34.0) -> dict[str, list[dict[str, Any]]]
+
+   Construct Archimedes of Syracuse medallion strictly from lines, circles, and circular arcs.
+
+   Calibrated to Domenico Fetti's *Archimedes Thoughtful* (1620, Gemaldegalerie Alte Meister,
+   Dresden) with downward-right contemplative gaze, furrowed scholar's brow, thick curly hair,
+   bushy scholar beard, thoughtful hand resting under jaw/beard, and gathered white sleeve cuff.
+
+   :param wave_angle_deg: Half-angle (degrees) for Euclid III.12 tangent-arc beard, hair, and
+                          drapery waves.
+
+   :returns: Dictionary of ``scaffold``, ``golden``, ``detail``, and ``primary`` primitive lists.
+
+
+.. py:function:: build_archimedes_svg(theme: str = 'dark', wave_angle_deg: float = 34.0) -> str
+
+   Render the Archimedes medallion SVG for ``'dark'`` or ``'light'`` theme.
+
+
+.. py:function:: write_archimedes_svgs(out_dir: pathlib.Path | None = None, wave_angle_deg: float = 34.0) -> tuple[pathlib.Path, pathlib.Path]
+
+   Write ``archimedes_dark.svg`` and ``archimedes_light.svg`` to ``out_dir``.
+
+

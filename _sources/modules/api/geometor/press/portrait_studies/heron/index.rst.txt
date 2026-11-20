@@ -1,0 +1,45 @@
+geometor.press.portrait_studies.heron
+=====================================
+
+.. py:module:: geometor.press.portrait_studies.heron
+
+.. autoapi-nested-parse::
+
+   Study 27: Heron of Alexandria (after the classical Hellenic marble-bust engraving).
+
+
+
+Functions
+---------
+
+.. autoapisummary::
+
+   geometor.press.portrait_studies.heron.build_heron_elements
+   geometor.press.portrait_studies.heron.build_heron_svg
+   geometor.press.portrait_studies.heron.write_heron_svgs
+
+
+Module Contents
+---------------
+
+.. py:function:: build_heron_elements(wave_angle_deg: float = 30.0) -> dict[str, list[dict[str, Any]]]
+
+   Build the 4-layer geometric portrait of Heron of Alexandria.
+
+   Calibrated to the classical Hellenic marble-bust engraving: short sculpted
+   curly locks framing the crown, calm three-quarter right gaze on ``y = -27``,
+   classical Greek nose, full curly philosopher's mustache and rounded beard
+   modeled with ``Euclid III.12`` tangent wave strands, and a dignified Greek
+   chiton/himation neckline descending smoothly to the medallion rim.
+
+
+.. py:function:: build_heron_svg(theme: str = 'dark', wave_angle_deg: float = 30.0) -> str
+
+   Render the Heron of Alexandria medallion SVG for ``'dark'`` or ``'light'`` theme.
+
+
+.. py:function:: write_heron_svgs(out_dir: pathlib.Path | None = None, wave_angle_deg: float = 30.0) -> tuple[pathlib.Path, pathlib.Path]
+
+   Write ``heron_dark.svg`` and ``heron_light.svg`` to ``out_dir``.
+
+

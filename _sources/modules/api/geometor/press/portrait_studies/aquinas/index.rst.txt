@@ -1,0 +1,48 @@
+geometor.press.portrait_studies.aquinas
+=======================================
+
+.. py:module:: geometor.press.portrait_studies.aquinas
+
+.. autoapi-nested-parse::
+
+   Study 09: St. Thomas Aquinas (after Carlo Crivelli, 1476) in lines and circular arcs.
+
+
+
+Functions
+---------
+
+.. autoapisummary::
+
+   geometor.press.portrait_studies.aquinas.build_aquinas_elements
+   geometor.press.portrait_studies.aquinas.build_aquinas_svg
+   geometor.press.portrait_studies.aquinas.write_aquinas_svgs
+
+
+Module Contents
+---------------
+
+.. py:function:: build_aquinas_elements(wave_angle_deg: float = 32.0) -> dict[str, list[dict[str, Any]]]
+
+   Construct St. Thomas Aquinas medallion strictly from lines, circles, and circular arcs.
+
+   Calibrated to Carlo Crivelli's *St. Thomas Aquinas* (1476, National Gallery, London)
+   with three-quarter left upward-lifted gaze, concentric Dominican tonsure crown,
+   strong Roman nose, sculpted ear, black Dominican hood & scapular habit, and
+   signature golden Sun of *Materia Intelligibilis*.
+
+   :param wave_angle_deg: Half-angle (degrees) reserved for subtle Euclid III.12 drapery/hair accents.
+
+   :returns: Dictionary of ``scaffold``, ``golden``, ``detail``, and ``primary`` primitive lists.
+
+
+.. py:function:: build_aquinas_svg(theme: str = 'dark', wave_angle_deg: float = 32.0) -> str
+
+   Render the St. Thomas Aquinas medallion SVG for ``'dark'`` or ``'light'`` theme.
+
+
+.. py:function:: write_aquinas_svgs(out_dir: pathlib.Path | None = None, wave_angle_deg: float = 32.0) -> tuple[pathlib.Path, pathlib.Path]
+
+   Write ``aquinas_dark.svg`` and ``aquinas_light.svg`` to ``out_dir``.
+
+

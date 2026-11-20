@@ -1,0 +1,48 @@
+geometor.press.portrait_studies.petersen
+========================================
+
+.. py:module:: geometor.press.portrait_studies.petersen
+
+.. autoapi-nested-parse::
+
+   Study 34: Julius Petersen (after the 19th-century Danish cabinet portrait).
+
+
+
+Functions
+---------
+
+.. autoapisummary::
+
+   geometor.press.portrait_studies.petersen.build_petersen_elements
+   geometor.press.portrait_studies.petersen.build_petersen_svg
+   geometor.press.portrait_studies.petersen.write_petersen_svgs
+
+
+Module Contents
+---------------
+
+.. py:function:: build_petersen_elements(wave_angle_deg: float = 32.0) -> dict[str, list[dict[str, Any]]]
+
+   Build the 4-layer geometric portrait of Julius Petersen.
+
+   Calibrated to the 19th-century Danish cabinet portrait: tall voluminous
+   curly swept-up Victorian hair crowning a clean broad forehead, calm direct
+   eyes on ``y = -27``, straight nose, neat full 19th-century mustache and
+   small soul-patch above a clean tapered chin, crisp folded white collar and
+   knotted ascot tie over a buttoned pale waistcoat, and tailored dark
+   Victorian coat lapels & sloped shoulders sweeping cleanly to ``MED_R = 92.0``.
+   Margin motifs display the Petersen Graph (left) and Petersen's Method of
+   Homothety (right).
+
+
+.. py:function:: build_petersen_svg(theme: str = 'dark', wave_angle_deg: float = 32.0) -> str
+
+   Render the Julius Petersen medallion SVG for ``'dark'`` or ``'light'`` theme.
+
+
+.. py:function:: write_petersen_svgs(out_dir: pathlib.Path | None = None, wave_angle_deg: float = 32.0) -> tuple[pathlib.Path, pathlib.Path]
+
+   Write ``petersen_dark.svg`` and ``petersen_light.svg`` to ``out_dir``.
+
+

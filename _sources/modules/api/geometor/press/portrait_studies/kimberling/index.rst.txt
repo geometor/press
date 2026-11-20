@@ -1,0 +1,64 @@
+geometor.press.portrait_studies.kimberling
+==========================================
+
+.. py:module:: geometor.press.portrait_studies.kimberling
+
+.. autoapi-nested-parse::
+
+   Study 47: Clark Kimberling — Pure Sacred Geometric Emblem Medallion.
+
+   Celebrates Clark Kimberling (b. 1942), creator of the *Encyclopedia of Triangle
+   Centers* (``ETC``, ``X(1)`` through ``X(53,000+)``), uniting the foundational
+   **Classical Quartet of Triangle Centers** (``X(1)`` Incenter, ``X(2)`` Centroid,
+   ``X(3)`` Circumcenter, ``X(4)`` Orthocenter) with ``X(5)`` Nine-Point Center,
+   ``X(6)`` Symmedian Point, and ``X(11)`` Feuerbach Point inside the unified
+   ``R = 68`` graduated astrolabe seal:
+
+   1. **Canonical Acute Scalene Triangle ``ABC`` & Circumcircle**: Inscribed in
+      bold primary circumcircle ``(X(3), R_c = 54)`` centered at ``(0, -8)`` with
+      strongly asymmetric acute angles (``29 deg, 64 deg, 87 deg``) tuned so every
+      pair of the six featured centers is separated by ``> 7.2`` units.
+   2. **Four Foundational Center Systems**: Exact Incircle ``(X(1), r_in)`` with
+      vertex angle-bisector arcs, subtle Medians concurring at ``X(2)``, crisp
+      Altitudes concurring at ``X(4)`` with right-angle ticks, and the Nine-Point
+      Circle ``(X(5), R_c / 2)`` kissing the Incircle internally at Feuerbach
+      Point ``X(11)`` (verified ``|X(5)-X(1)| == R_9 - r_in`` to ``< 1e-11``).
+   3. **Blazing Golden Euler Line & Center Constellation**: Full rim-to-rim
+      golden Euler Line analytically verified through ``X(3)-X(2)-X(5)-X(4)`` in
+      exact ``2 : 1 : 3`` proportion (``< 1e-12``), linked by golden constellation
+      axes to ``X(1)`` and ``X(6)`` with distinct radiant double-ringed stars
+      crowning the Classical Quartet.
+
+
+
+Functions
+---------
+
+.. autoapisummary::
+
+   geometor.press.portrait_studies.kimberling.build_kimberling_elements
+   geometor.press.portrait_studies.kimberling.build_kimberling_svg
+   geometor.press.portrait_studies.kimberling.write_kimberling_svgs
+
+
+Module Contents
+---------------
+
+.. py:function:: build_kimberling_elements() -> dict[str, list[dict[str, Any]]]
+
+   Build the 4-layer sacred emblem medallion for Clark Kimberling.
+
+   :returns: Dictionary mapping canonical layers (``scaffold``, ``golden``,
+             ``detail``, ``primary``) to lists of primitive geometry entries.
+
+
+.. py:function:: build_kimberling_svg(theme: str = 'dark') -> str
+
+   Render the Clark Kimberling medallion SVG for ``'dark'`` or ``'light'`` theme.
+
+
+.. py:function:: write_kimberling_svgs(out_dir: pathlib.Path | None = None) -> tuple[pathlib.Path, pathlib.Path]
+
+   Write ``kimberling_dark.svg`` and ``kimberling_light.svg`` to ``out_dir``.
+
+
