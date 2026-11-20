@@ -447,7 +447,7 @@
       "birth_year": -240,
       "era": "Antiquity",
       "repo": "apollonius",
-      "status": "researched",
+      "status": "complete",
       "queue_order": 15,
       "pose": "Renaissance woodcut portrait with mathematical attributes",
       "reference": {
@@ -460,7 +460,10 @@
         "local_ref": "resources/portraits_ref/apollonius_ref.jpg"
       },
       "signature_motif": "Apollonian Gasket (3 Mutual Tangent Circles) & Circle of Apollonius",
-      "outputs": {},
+      "outputs": {
+        "dark_svg": "docsrc/_static/portraits/apollonius_dark.svg",
+        "light_svg": "docsrc/_static/portraits/apollonius_light.svg"
+      },
       "notes": "Earliest printed historical depiction (1537 Venice Conics title page).",
       "portrait_type": "historical_depiction"
     },
@@ -471,7 +474,7 @@
       "birth_year": 10,
       "era": "Antiquity",
       "repo": "heron",
-      "status": "researched",
+      "status": "complete",
       "queue_order": 16,
       "pose": "Bearded classical scholar in turban and draped robe, three-quarter right",
       "reference": {
@@ -484,7 +487,10 @@
         "local_ref": "resources/portraits_ref/heron_ref.jpg"
       },
       "signature_motif": "Heron Incircle & Semiperimeter Radii + Equal-Angle Reflection",
-      "outputs": {},
+      "outputs": {
+        "dark_svg": "docsrc/_static/portraits/heron_dark.svg",
+        "light_svg": "docsrc/_static/portraits/heron_light.svg"
+      },
       "notes": "Canonical 1688 Pneumatics engraving (avoids Byzantine Gregory of Nazianzus misattribution).",
       "portrait_type": "historical_depiction"
     },
@@ -495,7 +501,7 @@
       "birth_year": 60,
       "era": "Antiquity",
       "repo": "nicomachus",
-      "status": "researched",
+      "status": "complete",
       "queue_order": 17,
       "pose": "Seated Romanesque bearded sage within arched illumination",
       "reference": {
@@ -508,7 +514,10 @@
         "local_ref": "resources/portraits_ref/nicomachus_ref.jpg"
       },
       "signature_motif": "Pythagorean Figurate Gnomon Lattice & Polygonal Number Arrays",
-      "outputs": {},
+      "outputs": {
+        "dark_svg": "docsrc/_static/portraits/nicomachus_dark.svg",
+        "light_svg": "docsrc/_static/portraits/nicomachus_light.svg"
+      },
       "notes": "Earliest authoritative illumination explicitly naming Nicomachus.",
       "portrait_type": "historical_depiction"
     },
@@ -730,7 +739,7 @@
       "birth_year": 1750,
       "era": "Enlightenment",
       "repo": "mascheroni",
-      "status": "researched",
+      "status": "complete",
       "queue_order": 27,
       "pose": "Classical side-profile bust, clean-shaven Enlightenment scholar",
       "reference": {
@@ -743,7 +752,10 @@
         "local_ref": "resources/portraits_ref/mascheroni_ref.jpg"
       },
       "signature_motif": "Compass-Only Circle Quartering (Napoleon's Problem) & Six-Petal Rose",
-      "outputs": {},
+      "outputs": {
+        "dark_svg": "docsrc/_static/portraits/mascheroni_dark.svg",
+        "light_svg": "docsrc/_static/portraits/mascheroni_light.svg"
+      },
       "notes": "Inscribed 'Da un dipinto fatto dal vivo'; crisp neoclassical profile.",
       "portrait_type": "authentic_portrait"
     },
@@ -754,7 +766,7 @@
       "birth_year": 1798,
       "era": "19th Century",
       "repo": "staudt",
-      "status": "researched",
+      "status": "complete",
       "queue_order": 28,
       "pose": "Formal three-quarter bust, bearded 19th-century professor",
       "reference": {
@@ -766,7 +778,10 @@
         "local_ref": "resources/portraits_ref/staudt_ref.jpg"
       },
       "signature_motif": "Complete Quadrangle Harmonic Conjugate H(A,B;C,D) & Polarity Circle",
-      "outputs": {},
+      "outputs": {
+        "dark_svg": "docsrc/_static/portraits/staudt_dark.svg",
+        "light_svg": "docsrc/_static/portraits/staudt_light.svg"
+      },
       "notes": "Authentic Rothenburg archive portrait honoring Geometrie der Lage (1847).",
       "portrait_type": "authentic_portrait"
     },
@@ -777,7 +792,7 @@
       "birth_year": 1800,
       "era": "19th Century",
       "repo": "feuerbach",
-      "status": "researched",
+      "status": "complete",
       "queue_order": 29,
       "pose": "Front-facing slightly angled Romantic-era scholar bust",
       "reference": {
@@ -789,7 +804,10 @@
         "local_ref": "resources/portraits_ref/feuerbach_ref.jpg"
       },
       "signature_motif": "Feuerbach Nine-Point Circle Tangent to Incircle & Excircle",
-      "outputs": {},
+      "outputs": {
+        "dark_svg": "docsrc/_static/portraits/feuerbach_dark.svg",
+        "light_svg": "docsrc/_static/portraits/feuerbach_light.svg"
+      },
       "notes": "Accepted historical likeness of geometer Karl Wilhelm Feuerbach (1800-1834).",
       "portrait_type": "authentic_portrait"
     },
@@ -800,7 +818,7 @@
       "birth_year": 1820,
       "era": "19th Century",
       "repo": "casey",
-      "status": "researched",
+      "status": "complete",
       "queue_order": 30,
       "pose": "Formal studio bust with full Victorian beard",
       "reference": {
@@ -812,7 +830,10 @@
         "local_ref": "resources/portraits_ref/casey_ref.jpg"
       },
       "signature_motif": "Casey's Theorem (Four Circles Tangent to a Fifth Circle)",
-      "outputs": {},
+      "outputs": {
+        "dark_svg": "docsrc/_static/portraits/casey_dark.svg",
+        "light_svg": "docsrc/_static/portraits/casey_light.svg"
+      },
       "notes": "Verified authentic pre-1891 portrait of Irish geometer John Casey.",
       "portrait_type": "authentic_portrait"
     },
@@ -823,7 +844,7 @@
       "birth_year": 1834,
       "era": "19th Century",
       "repo": "phyllotaxis",
-      "status": "researched",
+      "status": "complete",
       "queue_order": 31,
       "pose": "Three-quarter studio bust with flowing white naturalist beard",
       "reference": {
@@ -836,7 +857,10 @@
         "local_ref": "resources/portraits_ref/ernst_haeckel_ref.jpg"
       },
       "signature_motif": "Radiolarian Icosahedral Symmetry & Concentric Diatom Star",
-      "outputs": {},
+      "outputs": {
+        "dark_svg": "docsrc/_static/portraits/ernst_haeckel_dark.svg",
+        "light_svg": "docsrc/_static/portraits/ernst_haeckel_light.svg"
+      },
       "notes": "Verified pre-1895 portrait by Friedrich Haack.",
       "portrait_type": "authentic_portrait"
     },
@@ -847,7 +871,7 @@
       "birth_year": 1839,
       "era": "19th Century",
       "repo": "petersen",
-      "status": "researched",
+      "status": "complete",
       "queue_order": 32,
       "pose": "Three-quarter studio bust, bearded Danish professor",
       "reference": {
@@ -860,7 +884,10 @@
         "local_ref": "resources/portraits_ref/petersen_ref.jpg"
       },
       "signature_motif": "Petersen Graph (Pentagon, Inner Pentagram & 5 Radial Spokes)",
-      "outputs": {},
+      "outputs": {
+        "dark_svg": "docsrc/_static/portraits/petersen_dark.svg",
+        "light_svg": "docsrc/_static/portraits/petersen_light.svg"
+      },
       "notes": "High-provenance Royal Library Copenhagen albumen print.",
       "portrait_type": "authentic_portrait"
     },
@@ -871,7 +898,7 @@
       "birth_year": 1840,
       "era": "19th Century",
       "repo": "lemoine",
-      "status": "researched",
+      "status": "complete",
       "queue_order": 33,
       "pose": "Head-and-shoulders studio bust with trimmed beard and high collar",
       "reference": {
@@ -883,7 +910,10 @@
         "local_ref": "resources/portraits_ref/lemoine_ref.jpg"
       },
       "signature_motif": "Symmedians at Lemoine Point K (X6) & First Lemoine Circle",
-      "outputs": {},
+      "outputs": {
+        "dark_svg": "docsrc/_static/portraits/lemoine_dark.svg",
+        "light_svg": "docsrc/_static/portraits/lemoine_light.svg"
+      },
       "notes": "Standard verified archival portrait honoring Geometrographie.",
       "portrait_type": "authentic_portrait"
     },
@@ -894,7 +924,7 @@
       "birth_year": 1843,
       "era": "19th Century",
       "repo": "pasch",
-      "status": "researched",
+      "status": "complete",
       "queue_order": 34,
       "pose": "Chest-up studio carte-de-visite bust, bearded German mathematician",
       "reference": {
@@ -907,7 +937,10 @@
         "local_ref": "resources/portraits_ref/pasch_ref.jpg"
       },
       "signature_motif": "Pasch's Axiom Transversal & Ordered Collinear Triad",
-      "outputs": {},
+      "outputs": {
+        "dark_svg": "docsrc/_static/portraits/pasch_dark.svg",
+        "light_svg": "docsrc/_static/portraits/pasch_light.svg"
+      },
       "notes": "Exceptional Kunstbibliothek Berlin provenance.",
       "portrait_type": "authentic_portrait"
     },
@@ -1165,7 +1198,7 @@
       "birth_year": 1945,
       "era": "Contemporary",
       "repo": "livio",
-      "status": "researched",
+      "status": "complete",
       "queue_order": 46,
       "pose": "Formal studio headshot with eyeglasses",
       "reference": {
@@ -1178,7 +1211,10 @@
         "local_ref": "resources/portraits_ref/livio_ref.jpg"
       },
       "signature_motif": "Regular Inscribed Pentagram & Golden Ratio Phi Chord Division",
-      "outputs": {},
+      "outputs": {
+        "dark_svg": "docsrc/_static/portraits/livio_dark.svg",
+        "light_svg": "docsrc/_static/portraits/livio_light.svg"
+      },
       "notes": "Official NASA/ESA/STScI Public Domain portrait.",
       "portrait_type": "authentic_portrait"
     },
