@@ -1,0 +1,59 @@
+geometor.press.project_medallions.polyhedra
+===========================================
+
+.. py:module:: geometor.press.project_medallions.polyhedra
+
+.. autoapi-nested-parse::
+
+   Project Medallion: Polyhedra (geometor/polyhedra) — Exact 3D Polyhedra Catalog.
+
+   Renders an exact 3D orthographic projection of concentric nested Platonic
+   polyhedra inside a celestial circumsphere within the unified ``R = 68``
+   graduated astrolabe seal:
+
+   1. **Outer Regular Dodecahedron (``R = 56``)**: All 20 exact golden-ratio
+      vertices and 30 edges projected through a clean SO(3) rotation, separating
+      front-facing edges (``primary``) from back-facing wireframe edges
+      (``detail``) for immediate spatial depth.
+   2. **Middle Cube & Face-Center Dual Octahedron**: An exact cube
+      (``R_cube = 36``) gleams in ``golden`` enclosing its exact face-center dual
+      octahedron (``R_oct = 36 / sqrt(3)``) in crisp ``primary``, with all 6
+      octahedron vertices resting strictly on the cube's 6 face centroids
+      (verified to ``< 1e-12``).
+   3. **Inner Regular Tetrahedron Star Core**: An exact regular tetrahedron
+      (``R_tet = 14``) nested at the heart of the octahedron completes the
+      four-tier concentric Platonic hierarchy inside concentric spherical rings.
+
+
+
+Functions
+---------
+
+.. autoapisummary::
+
+   geometor.press.project_medallions.polyhedra.build_polyhedra_elements
+   geometor.press.project_medallions.polyhedra.build_polyhedra_svg
+   geometor.press.project_medallions.polyhedra.write_polyhedra_svgs
+
+
+Module Contents
+---------------
+
+.. py:function:: build_polyhedra_elements() -> dict[str, list[dict[str, Any]]]
+
+   Build the 4-layer sacred emblem medallion for ``geometor/polyhedra``.
+
+   :returns: Dictionary mapping canonical layers (``scaffold``, ``golden``,
+             ``detail``, ``primary``) to lists of primitive geometry entries.
+
+
+.. py:function:: build_polyhedra_svg(theme: str = 'dark') -> str
+
+   Render the ``geometor/polyhedra`` medallion SVG for ``'dark'`` or ``'light'`` theme.
+
+
+.. py:function:: write_polyhedra_svgs(out_dir: pathlib.Path | None = None) -> tuple[pathlib.Path, pathlib.Path]
+
+   Write ``polyhedra_dark.svg`` and ``polyhedra_light.svg`` to ``out_dir``.
+
+

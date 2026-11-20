@@ -1,0 +1,58 @@
+geometor.press.project_medallions.fundamentals
+==============================================
+
+.. py:module:: geometor.press.project_medallions.fundamentals
+
+.. autoapi-nested-parse::
+
+   Project Medallion: Fundamentals (geometor/fundamentals) — Axiomatic Primer.
+
+   Presents the Classical Triad of elementary compass-and-straightedge
+   constructions inside the unified ``R = 68`` graduated astrolabe seal:
+
+   1. **Shared Circumcircle ``R = 54`` & Classical Polygon Triad**: Regular
+      hexagon (``6``-gon), inscribed square (``4``-gon), and upright equilateral
+      triangle (``3``-gon) all sharing one exact circumcircle centered at
+      ``(0, -8)``.
+   2. **Perpendicular-Bisector & Seed-of-Life Compass Arcs**: Six compass-radius
+      arcs centered on the hexagon vertices sweep through the center inside
+      ``R = 54``, paired with orthogonal perpendicular-bisector axes and exact
+      inscribed circles of the square (``R / sqrt(2)``) and triangle (``R / 2``).
+   3. **Golden Angle-Bisector Construction Arcs**: Exact paired angle-bisector
+      compass arcs from the cardinal points locate the ``45 deg`` diagonals to
+      the square vertices, uniting perpendicularity, bisection, and threefold,
+      fourfold, and sixfold symmetry in one emblem.
+
+
+
+Functions
+---------
+
+.. autoapisummary::
+
+   geometor.press.project_medallions.fundamentals.build_fundamentals_elements
+   geometor.press.project_medallions.fundamentals.build_fundamentals_svg
+   geometor.press.project_medallions.fundamentals.write_fundamentals_svgs
+
+
+Module Contents
+---------------
+
+.. py:function:: build_fundamentals_elements() -> dict[str, list[dict[str, Any]]]
+
+   Build the 4-layer sacred emblem medallion for ``geometor/fundamentals``.
+
+   :returns: Dictionary mapping canonical layers (``scaffold``, ``golden``,
+             ``detail``, ``primary``) to lists of primitive geometry entries.
+
+
+.. py:function:: build_fundamentals_svg(theme: str = 'dark') -> str
+
+   Render the ``geometor/fundamentals`` medallion SVG for ``'dark'`` or ``'light'`` theme.
+
+
+.. py:function:: write_fundamentals_svgs(out_dir: pathlib.Path | None = None) -> tuple[pathlib.Path, pathlib.Path]
+
+   Write ``fundamentals_dark.svg`` and ``fundamentals_light.svg`` to ``out_dir``.
+
+

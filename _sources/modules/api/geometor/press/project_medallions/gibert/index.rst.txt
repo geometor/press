@@ -1,0 +1,63 @@
+geometor.press.project_medallions.gibert
+========================================
+
+.. py:module:: geometor.press.project_medallions.gibert
+
+.. autoapi-nested-parse::
+
+   Author Medallion: Bernard Gibert — Catalogue of Triangle Cubics (CTC).
+
+   Sacred geometric emblem celebrating Bernard Gibert's *Catalogue of Triangle
+   Cubics* (``CTC``) and the iconic **Neuberg Cubic (``K001``)**, framed within
+   the unified ``R = 68`` graduated astrolabe seal:
+
+   1. **Acute Scalene Triangle ``ABC``, Circumcircle ``(O, R = 42)``, & Incircle
+      ``(I, r)``**: An exact acute scalene reference triangle (angles ``76 deg,
+      58 deg, 46 deg``) inscribed in its primary circumcircle centered at
+      ``O = X(3) = (0, -8)``, accompanied by its exact incircle ``(I, r)``,
+      altitudes meeting at orthocenter ``H = X(4)``, and Euler line ``O-H``.
+   2. **Exact Isogonal-Conjugate Pairs & Sideline Reflections**: Verifies exact
+      triangle centers ``X(1) = I`` (self-isogonal), ``(X(3) = O, X(4) = H)``,
+      and ``(X(13) = Fermat, X(15) = Isodynamic)``, along with the sideline
+      reflections ``A', B', C'`` across ``BC, CA, AB`` — every one of which
+      satisfies the exact Neuberg Cubic equation ``F(P) = 0`` to ``< 1e-10``.
+   3. **Exact Neuberg Cubic (``K001``) via Circular Osculating Arcs**: Traces the
+      exact real algebraic locus ``(S* (P* - P)) x (H - O) = 0`` inside the
+      ``R = 68`` seal via Newton-polished contour extraction and renders both
+      branches as a smooth chain of exact 3-point circular osculating arcs
+      (zero Beziers) threading precisely through ``A, B, C, I, O, H, X(13), X(15)``
+      and sideline reflections.
+
+
+
+Functions
+---------
+
+.. autoapisummary::
+
+   geometor.press.project_medallions.gibert.build_gibert_elements
+   geometor.press.project_medallions.gibert.build_gibert_svg
+   geometor.press.project_medallions.gibert.write_gibert_svgs
+
+
+Module Contents
+---------------
+
+.. py:function:: build_gibert_elements() -> dict[str, list[dict[str, Any]]]
+
+   Build the 4-layer sacred emblem medallion for Bernard Gibert (``CTC``).
+
+   :returns: Dictionary mapping canonical layers (``scaffold``, ``golden``,
+             ``detail``, ``primary``) to lists of primitive geometry entries.
+
+
+.. py:function:: build_gibert_svg(theme: str = 'dark') -> str
+
+   Render the Bernard Gibert (CTC) medallion SVG for ``'dark'`` or ``'light'`` theme.
+
+
+.. py:function:: write_gibert_svgs(out_dir: pathlib.Path | None = None) -> tuple[pathlib.Path, pathlib.Path]
+
+   Write ``gibert_dark.svg`` and ``gibert_light.svg`` to ``out_dir``.
+
+

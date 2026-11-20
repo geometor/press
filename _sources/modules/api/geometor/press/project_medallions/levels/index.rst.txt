@@ -1,0 +1,63 @@
+geometor.press.project_medallions.levels
+========================================
+
+.. py:module:: geometor.press.project_medallions.levels
+
+.. autoapi-nested-parse::
+
+   Project Medallion: Levels — Constructive Depth Stratification.
+
+   Sacred geometric emblem for ``geometor/levels`` framed within the unified
+   ``R = 68`` graduated astrolabe seal:
+
+   1. **Five Concentric Constructive Depth Strata Rings (``L_0 .. L_4``)**:
+      Harmonic stratification centered at ``(0, -8)`` charting the genealogy of
+      exact ruler-and-compass generation:
+
+      - ``L_0`` (``r = 11``): Seed Pair ``A, B`` and foundational baseline.
+      - ``L_1`` (``r = 22``): Canonical *Vesica Piscis* circles centered at
+        ``A, B`` with radius ``|AB| = 22``.
+      - ``L_2`` (``r = 33``): 6-pointed Constructive Intersection Star inscribed
+        on the outer Vesica envelope ``3a``.
+      - ``L_3`` (``r = 44``): Six secondary constructive circles centered on the
+        ``L_1`` hexagonal nodes reaching exact outer envelope ``4a``.
+      - ``L_4`` (``r = 58``): Outer Constructive Horizon ring crowned with 12
+        harmonic depth-horizon jewels.
+
+   2. **Radiating Golden Depth-Level Nodes**: Six constructive genealogy rays
+      climb outward across all five strata rings with stepped golden node rings,
+      connecting segments, and stratum transfer arcs.
+
+
+
+Functions
+---------
+
+.. autoapisummary::
+
+   geometor.press.project_medallions.levels.build_levels_elements
+   geometor.press.project_medallions.levels.build_levels_svg
+   geometor.press.project_medallions.levels.write_levels_svgs
+
+
+Module Contents
+---------------
+
+.. py:function:: build_levels_elements() -> dict[str, list[dict[str, Any]]]
+
+   Build the 4-layer sacred emblem medallion for ``geometor/levels``.
+
+   :returns: Dictionary mapping canonical layers (``scaffold``, ``golden``,
+             ``detail``, ``primary``) to lists of primitive geometry entries.
+
+
+.. py:function:: build_levels_svg(theme: str = 'dark') -> str
+
+   Render the Levels project medallion SVG for ``'dark'`` or ``'light'`` theme.
+
+
+.. py:function:: write_levels_svgs(out_dir: pathlib.Path | None = None) -> tuple[pathlib.Path, pathlib.Path]
+
+   Write ``levels_dark.svg`` and ``levels_light.svg`` to ``out_dir``.
+
+

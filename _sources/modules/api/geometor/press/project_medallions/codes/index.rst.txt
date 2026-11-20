@@ -1,0 +1,59 @@
+geometor.press.project_medallions.codes
+=======================================
+
+.. py:module:: geometor.press.project_medallions.codes
+
+.. autoapi-nested-parse::
+
+   Project Medallion: Codes (geometor/codes) — Geometric Theorem Provers Catalog.
+
+   Celebrates automated projective theorem proving through **Desargues's Theorem
+   (``10_3`` Configuration)** inside the unified ``R = 68`` graduated astrolabe
+   seal:
+
+   1. **Golden Perspectivity Center ``O`` & Three Radiating Rays**: Centered on
+      the upper meridian at ``O = (0, -60)``, three luminous golden perspectivity
+      rays ``O-A-A'``, ``O-B-B'``, and ``O-C-C'`` establish exact point-to-point
+      perspectivity between two bold triangles ``ABC`` and ``A'B'C'``.
+   2. **Exact Projective Homology & All 10 Incidences**: Triangle ``A'B'C'`` is
+      constructed via an exact projective homology centered at ``O``, guaranteeing
+      that the three pairs of corresponding sides ``(AB, A'B')``, ``(BC, B'C')``,
+      and ``(CA, C'A')`` intersect at exact points ``P, Q, R`` inside ``R = 68``.
+   3. **Blazing Golden Desargues Perspectivity Axis ``P--Q--R``**: Collinearity of
+      ``P, Q, R`` and concurrency of ``AA', BB', CC'`` at ``O`` are verified to
+      ``< 1e-12``, crowned by radiant double-ringed golden stars at ``O, P, Q, R``
+      and ringed nodes across all ten points of the ``10_3`` configuration.
+
+
+
+Functions
+---------
+
+.. autoapisummary::
+
+   geometor.press.project_medallions.codes.build_codes_elements
+   geometor.press.project_medallions.codes.build_codes_svg
+   geometor.press.project_medallions.codes.write_codes_svgs
+
+
+Module Contents
+---------------
+
+.. py:function:: build_codes_elements() -> dict[str, list[dict[str, Any]]]
+
+   Build the 4-layer sacred emblem medallion for ``geometor/codes``.
+
+   :returns: Dictionary mapping canonical layers (``scaffold``, ``golden``,
+             ``detail``, ``primary``) to lists of primitive geometry entries.
+
+
+.. py:function:: build_codes_svg(theme: str = 'dark') -> str
+
+   Render the ``geometor/codes`` medallion SVG for ``'dark'`` or ``'light'`` theme.
+
+
+.. py:function:: write_codes_svgs(out_dir: pathlib.Path | None = None) -> tuple[pathlib.Path, pathlib.Path]
+
+   Write ``codes_dark.svg`` and ``codes_light.svg`` to ``out_dir``.
+
+

@@ -1,0 +1,59 @@
+geometor.press.project_medallions.elementarium
+==============================================
+
+.. py:module:: geometor.press.project_medallions.elementarium
+
+.. autoapi-nested-parse::
+
+   Project Medallion: Elementarium (geometor/elementarium) — Passive Optical Archive.
+
+   Carves a zero-context Universal Geometric Primer Disc evoking a Voyager/Pioneer
+   stone-and-gold optical calibration tablet inside the unified ``R = 68``
+   graduated astrolabe seal:
+
+   1. **Central *Vesica Piscis* Core Chamber (``R_0 = 14.2``)**: Twin congruent
+      circles (``r = 9.2``) cradling the genesis equilateral seed diamond inside
+      the innermost calibration ring.
+   2. **Exact Tangent-Nested ``3, 4, 5, 6``-Gon Optical Rings**: Each regular
+      polygon is simultaneously circumscribed tangent to the previous ring and
+      inscribed in the next via exact secant progression:
+      ``R_0 = 14.2 -> R_1 = R_0 * sec(60 deg) -> R_2 = R_1 * sec(45 deg) ->
+      R_3 = R_2 * sec(36 deg) -> R_4 = R_3 * sec(30 deg) = 57.32 < 68.0``
+      (verified to ``< 1e-12`` for exact circle-edge tangency at every tier).
+   3. **Voyager Optical Calibration Track (``R = 62.6``)**: Unary dot-bar glyph
+      clusters (``3, 4, 5, 6`` encoded along the cardinal compass arcs) and crisp
+      radial index ticks turn the rim into a self-decoding geometric primer.
+
+
+
+Functions
+---------
+
+.. autoapisummary::
+
+   geometor.press.project_medallions.elementarium.build_elementarium_elements
+   geometor.press.project_medallions.elementarium.build_elementarium_svg
+   geometor.press.project_medallions.elementarium.write_elementarium_svgs
+
+
+Module Contents
+---------------
+
+.. py:function:: build_elementarium_elements() -> dict[str, list[dict[str, Any]]]
+
+   Build the 4-layer sacred emblem medallion for ``geometor/elementarium``.
+
+   :returns: Dictionary mapping canonical layers (``scaffold``, ``golden``,
+             ``detail``, ``primary``) to lists of primitive geometry entries.
+
+
+.. py:function:: build_elementarium_svg(theme: str = 'dark') -> str
+
+   Render the ``geometor/elementarium`` medallion SVG for ``'dark'`` or ``'light'`` theme.
+
+
+.. py:function:: write_elementarium_svgs(out_dir: pathlib.Path | None = None) -> tuple[pathlib.Path, pathlib.Path]
+
+   Write ``elementarium_dark.svg`` and ``elementarium_light.svg`` to ``out_dir``.
+
+

@@ -1,0 +1,58 @@
+geometor.press.project_medallions.explorer
+==========================================
+
+.. py:module:: geometor.press.project_medallions.explorer
+
+.. autoapi-nested-parse::
+
+   Project Medallion: Explorer (geometor/explorer) — Interactive SVG Workbench.
+
+   Frames an active golden circle-line intersection construction inside a
+   precision optical surveying reticle and interactive SVG workbench lens within
+   the unified ``R = 68`` graduated astrolabe seal:
+
+   1. **Calibrated Reticle Lens & Degree Ticks**: Concentric optical lens rings
+      (``R = 56`` and ``R = 51``) graduated at ``0, 30, 45, 60, 90`` degrees across
+      all four quadrants, paired with ruled Cartesian coordinate axes and corner
+      viewfinder arc brackets.
+   2. **Active Circle-Line Intersection Construction**: Two intersecting
+      construction circles pierced by a bold golden secant chord generating exact
+      analytical circle-line (``I_1..I_4``) and circle-circle (``P_1, P_2``)
+      intersection nodes (verified to ``< 1e-12``).
+   3. **Concentric Selection Target Rings**: Multi-ring optical target crosshairs
+      lock onto the hero focus intersections, evoking interactive geometric
+      inspection and live SVG coordinate telemetry.
+
+
+
+Functions
+---------
+
+.. autoapisummary::
+
+   geometor.press.project_medallions.explorer.build_explorer_elements
+   geometor.press.project_medallions.explorer.build_explorer_svg
+   geometor.press.project_medallions.explorer.write_explorer_svgs
+
+
+Module Contents
+---------------
+
+.. py:function:: build_explorer_elements() -> dict[str, list[dict[str, Any]]]
+
+   Build the 4-layer sacred emblem medallion for ``geometor/explorer``.
+
+   :returns: Dictionary mapping canonical layers (``scaffold``, ``golden``,
+             ``detail``, ``primary``) to lists of primitive geometry entries.
+
+
+.. py:function:: build_explorer_svg(theme: str = 'dark') -> str
+
+   Render the ``geometor/explorer`` medallion SVG for ``'dark'`` or ``'light'`` theme.
+
+
+.. py:function:: write_explorer_svgs(out_dir: pathlib.Path | None = None) -> tuple[pathlib.Path, pathlib.Path]
+
+   Write ``explorer_dark.svg`` and ``explorer_light.svg`` to ``out_dir``.
+
+

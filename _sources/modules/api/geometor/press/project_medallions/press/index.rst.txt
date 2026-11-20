@@ -1,0 +1,58 @@
+geometor.press.project_medallions.press
+=======================================
+
+.. py:module:: geometor.press.project_medallions.press
+
+.. autoapi-nested-parse::
+
+   Project Medallion: Press (geometor/press) — Digital Scriptorium Press.
+
+   Frames an open architectural Codex Book Spread and golden hinged compass inside
+   the unified ``R = 68`` graduated astrolabe seal:
+
+   1. **Open Codex Book Spread (`1 : sqrt(2)` Folio Canon)**: Twin facing pages
+      with crisp architectural binding boards, stepped folio fore-edges, and a
+      pure circular-arc curved spine cradle, fitting comfortably inside ``R = 68``.
+   2. **Exact *Van de Graaf* / Villard de Honnecourt Page-Margin Canon**: Full
+      spread diagonals and single-page diagonals intersect analytically to carve
+      out exact ``1/9`` inner/top and ``2/9`` outer/bottom margins on both facing
+      pages (verified to ``< 1e-12``), enclosing two matching ``1 : sqrt(2)``
+      golden-framed text blocks ruled with manuscript lines.
+   3. **Crowning Golden Hinged Compass**: Centered directly above the codex spine,
+      a precision geometric compass with double-ring hinge joint, finial stem,
+      tapered needle legs, and calibrated circular wing-arc presides over the
+      spread.
+
+
+
+Functions
+---------
+
+.. autoapisummary::
+
+   geometor.press.project_medallions.press.build_press_elements
+   geometor.press.project_medallions.press.build_press_svg
+   geometor.press.project_medallions.press.write_press_svgs
+
+
+Module Contents
+---------------
+
+.. py:function:: build_press_elements() -> dict[str, list[dict[str, Any]]]
+
+   Build the 4-layer sacred emblem medallion for ``geometor/press``.
+
+   :returns: Dictionary mapping canonical layers (``scaffold``, ``golden``,
+             ``detail``, ``primary``) to lists of primitive geometry entries.
+
+
+.. py:function:: build_press_svg(theme: str = 'dark') -> str
+
+   Render the ``geometor/press`` medallion SVG for ``'dark'`` or ``'light'`` theme.
+
+
+.. py:function:: write_press_svgs(out_dir: pathlib.Path | None = None) -> tuple[pathlib.Path, pathlib.Path]
+
+   Write ``press_dark.svg`` and ``press_light.svg`` to ``out_dir``.
+
+

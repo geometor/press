@@ -1,0 +1,57 @@
+geometor.press.project_medallions.seer_navigator
+================================================
+
+.. py:module:: geometor.press.project_medallions.seer_navigator
+
+.. autoapi-nested-parse::
+
+   Project Medallion: Seer Navigator — Reasoning Trajectory Browser TUI.
+
+   Sacred geometric emblem for ``geometor/seer_navigator`` framed within the
+   unified ``R = 68`` graduated astrolabe seal:
+
+   1. **8-Point Precision Navigational Compass Rose**: Four bold cardinal star
+      blades (``N, E, S, W``) and four intercardinal blades (``NE, SE, SW, NW``)
+      nested inside concentric navigational bearing rings, calibrated to evoke an
+      exploratory reasoning instrument plate.
+   2. **Branching Search-Trajectory Tree**: A crisp multi-level search tree
+      rises from the South Root node across five depth horizons toward the North
+      Goal Star, depicting explored reasoning trials and cleanly pruned dead ends.
+   3. **Glowing Golden Winning Solution Path**: One uninterrupted golden winning
+      trajectory threads through the tree from Root to the radiant North Goal
+      Star, marked with double-ringed golden decision waypoints and directional
+      compass arc indicators.
+
+
+
+Functions
+---------
+
+.. autoapisummary::
+
+   geometor.press.project_medallions.seer_navigator.build_seer_navigator_elements
+   geometor.press.project_medallions.seer_navigator.build_seer_navigator_svg
+   geometor.press.project_medallions.seer_navigator.write_seer_navigator_svgs
+
+
+Module Contents
+---------------
+
+.. py:function:: build_seer_navigator_elements() -> dict[str, list[dict[str, Any]]]
+
+   Build the 4-layer sacred emblem medallion for ``geometor/seer_navigator``.
+
+   :returns: Dictionary mapping canonical layers (``scaffold``, ``golden``,
+             ``detail``, ``primary``) to lists of primitive geometry entries.
+
+
+.. py:function:: build_seer_navigator_svg(theme: str = 'dark') -> str
+
+   Render the Seer Navigator project medallion SVG for ``'dark'`` or ``'light'`` theme.
+
+
+.. py:function:: write_seer_navigator_svgs(out_dir: pathlib.Path | None = None) -> tuple[pathlib.Path, pathlib.Path]
+
+   Write ``seer_navigator_dark.svg`` and ``seer_navigator_light.svg`` to ``out_dir``.
+
+

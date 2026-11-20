@@ -44,6 +44,7 @@ Functions
    geometor.press.portraits.arc_path
    geometor.press.portraits.tangent_wave_arcs
    geometor.press.portraits.render_medallion_svg
+   geometor.press.portraits.render_medallion_coin_svg
    geometor.press.portraits.arc_through
    geometor.press.portraits.clip_arc_to_medallion
    geometor.press.portraits.build_empty_medallion_elements
@@ -171,6 +172,15 @@ Module Contents
 .. py:function:: render_medallion_svg(layers: dict[str, list[dict[str, Any]]], theme: str = 'dark') -> str
 
    Render a 4-layer portrait medallion SVG and assert zero Bezier commands.
+
+
+.. py:function:: render_medallion_coin_svg(layers: dict[str, list[dict[str, Any]]], theme: str = 'adaptive') -> str
+
+   Render a square transparent-exterior circular medallion coin SVG.
+
+   Centers the canonical medallion ``(MED_CX=0, MED_CY=-8, RIM_R=95.2)`` inside a
+   ``1:1`` ``viewBox="-100 -108 200 200"`` with transparent exterior corners so it
+   displays cleanly as a site logo, hero emblem, or collection thumbnail.
 
 
 .. py:function:: arc_through(p1: tuple[float, float], p2: tuple[float, float], sagitta: float) -> tuple[float, float, float, float, float]

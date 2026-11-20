@@ -1,0 +1,60 @@
+geometor.press.project_medallions.constructions
+===============================================
+
+.. py:module:: geometor.press.project_medallions.constructions
+
+.. autoapi-nested-parse::
+
+   Project Medallion: Constructions — Geometric Studies & Ad Quadratum Motion.
+
+   Sacred geometric emblem for ``geometor/constructions`` framed within the
+   unified ``R = 68`` graduated astrolabe seal:
+
+   1. **Dynamic Concentric Root-Squares (``1, sqrt(2), 2, 2*sqrt(2)``)**: Four
+      nested *ad quadratum* squares rotated ``45 deg`` per generation so each
+      square's vertices touch the exact midpoints of the next larger square's
+      sides, verifying the geometric progression ``R_k = R_0 * (sqrt(2))^k`` to
+      ``< 1e-12``.
+   2. **Roman Sacred Cut Compass Arcs**: Four compass arcs centered at the outer
+      square's corners with radius equal to its half-diagonal (``R_2``) sweep
+      across the interior through the exact center ``O``, framing the canonical
+      Sacred Cut octagon.
+   3. **Golden Constructive Unfolding & Kinetic Sweep Arcs**: Four rotational
+      golden spiral arms (exact 3-point circular arcs) thread outward across the
+      rotating vertices ``V_{0,j} -> V_{1,j} -> V_{2,j} -> V_{3,j}``, paired with
+      ``45 deg`` rotational sweep arcs along each root-circle showing continuous
+      constructive motion.
+
+
+
+Functions
+---------
+
+.. autoapisummary::
+
+   geometor.press.project_medallions.constructions.build_constructions_elements
+   geometor.press.project_medallions.constructions.build_constructions_svg
+   geometor.press.project_medallions.constructions.write_constructions_svgs
+
+
+Module Contents
+---------------
+
+.. py:function:: build_constructions_elements() -> dict[str, list[dict[str, Any]]]
+
+   Build the 4-layer sacred emblem medallion for ``geometor/constructions``.
+
+   :returns: Dictionary mapping canonical layers (``scaffold``, ``golden``,
+             ``detail``, ``primary``) to lists of primitive geometry entries.
+
+
+.. py:function:: build_constructions_svg(theme: str = 'dark') -> str
+
+   Render the Constructions project medallion SVG for ``'dark'`` or ``'light'`` theme.
+
+
+.. py:function:: write_constructions_svgs(out_dir: pathlib.Path | None = None) -> tuple[pathlib.Path, pathlib.Path]
+
+   Write ``constructions_dark.svg`` and ``constructions_light.svg`` to ``out_dir``.
+
+

@@ -8,6 +8,10 @@
 GEOMETOR Press
 ==============
 
+.. image:: _static/medallion.svg
+   :alt: GEOMETOR Press Medallion
+   :class: repo-medallion-hero
+
 .. include:: intro.rst
 
 .. toctree::

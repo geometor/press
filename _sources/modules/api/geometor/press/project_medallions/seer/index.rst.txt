@@ -1,0 +1,57 @@
+geometor.press.project_medallions.seer
+======================================
+
+.. py:module:: geometor.press.project_medallions.seer
+
+.. autoapi-nested-parse::
+
+   Project Medallion: Seer — ARC-AGI Visual Reasoning Engine.
+
+   Sacred geometric emblem for ``geometor/seer`` framed within the unified
+   ``R = 68`` graduated astrolabe seal:
+
+   1. **Luminous Horizontal *Vesica Piscis* "Eye of Reasoning" Lens**: Two exact
+      equilateral Vesica circles (``R_v = 64``, center offset ``d = 32``) form a
+      sweeping horizontal eye lens of width ``64 * sqrt(3)`` and height ``64``,
+      framed by a concentric circular iris ring and golden lens aura arcs.
+   2. **Bold ``3 x 3`` Geometric Pattern-Transformation Grid**: Centered cleanly
+      within the iris of the eye (side ``36``, cell ``12 x 12``), with crisp
+      structural grid lines and geometric ARC pattern motifs across all nine cells.
+   3. **Golden Symmetry Diagonals & Pattern Highlight Cells**: Radiant golden
+      symmetry diagonals cut through the grid and iris, illuminating the central
+      reasoning pupil diamond, four cardinal highlight squares, corner symmetry
+      chevrons, and twin golden eye-corner jewels.
+
+
+
+Functions
+---------
+
+.. autoapisummary::
+
+   geometor.press.project_medallions.seer.build_seer_elements
+   geometor.press.project_medallions.seer.build_seer_svg
+   geometor.press.project_medallions.seer.write_seer_svgs
+
+
+Module Contents
+---------------
+
+.. py:function:: build_seer_elements() -> dict[str, list[dict[str, Any]]]
+
+   Build the 4-layer sacred emblem medallion for ``geometor/seer``.
+
+   :returns: Dictionary mapping canonical layers (``scaffold``, ``golden``,
+             ``detail``, ``primary``) to lists of primitive geometry entries.
+
+
+.. py:function:: build_seer_svg(theme: str = 'dark') -> str
+
+   Render the Seer project medallion SVG for ``'dark'`` or ``'light'`` theme.
+
+
+.. py:function:: write_seer_svgs(out_dir: pathlib.Path | None = None) -> tuple[pathlib.Path, pathlib.Path]
+
+   Write ``seer_dark.svg`` and ``seer_light.svg`` to ``out_dir``.
+
+

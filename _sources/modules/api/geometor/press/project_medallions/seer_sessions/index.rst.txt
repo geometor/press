@@ -1,0 +1,57 @@
+geometor.press.project_medallions.seer_sessions
+===============================================
+
+.. py:module:: geometor.press.project_medallions.seer_sessions
+
+.. autoapi-nested-parse::
+
+   Project Medallion: Seer Sessions — Empirical Reasoning Archive.
+
+   Sacred geometric emblem for ``geometor/seer_sessions`` framed within the
+   unified ``R = 68`` graduated astrolabe seal:
+
+   1. **Four Concentric Quartile Telemetry Rings (``Q1..Q4``)**: Calibrated radial
+      benchmark rings at ``25%, 50%, 75%, 100%`` (``r = 13, 26, 39, 52``) divided
+      cleanly into 12 radial session epochs by precision sector dividers.
+   2. **Radially Plotted Golden Convergence Curve & Baseline Envelope**: Across
+      all 12 benchmark epochs, a golden convergence trajectory climbs steadily
+      from ``42%`` to ``96%`` with radial telemetry bars and double-ringed peak
+      jewels, contrasted against an inner ``detail`` baseline benchmark polygon.
+   3. **Outer Cumulative Arc Gauge (``84%`` Solved Span)**: A double-rail outer
+      circular gauge (``r = 58.0..62.4``) tracks cumulative archive convergence
+      clockwise from North with radiant golden arc bands, calibrated ``10 deg``
+      metric ticks, and a luminous end-cap needle.
+
+
+
+Functions
+---------
+
+.. autoapisummary::
+
+   geometor.press.project_medallions.seer_sessions.build_seer_sessions_elements
+   geometor.press.project_medallions.seer_sessions.build_seer_sessions_svg
+   geometor.press.project_medallions.seer_sessions.write_seer_sessions_svgs
+
+
+Module Contents
+---------------
+
+.. py:function:: build_seer_sessions_elements() -> dict[str, list[dict[str, Any]]]
+
+   Build the 4-layer sacred emblem medallion for ``geometor/seer_sessions``.
+
+   :returns: Dictionary mapping canonical layers (``scaffold``, ``golden``,
+             ``detail``, ``primary``) to lists of primitive geometry entries.
+
+
+.. py:function:: build_seer_sessions_svg(theme: str = 'dark') -> str
+
+   Render the Seer Sessions project medallion SVG for ``'dark'`` or ``'light'`` theme.
+
+
+.. py:function:: write_seer_sessions_svgs(out_dir: pathlib.Path | None = None) -> tuple[pathlib.Path, pathlib.Path]
+
+   Write ``seer_sessions_dark.svg`` and ``seer_sessions_light.svg`` to ``out_dir``.
+
+

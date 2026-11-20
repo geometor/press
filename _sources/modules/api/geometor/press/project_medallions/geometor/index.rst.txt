@@ -1,0 +1,60 @@
+geometor.press.project_medallions.geometor
+==========================================
+
+.. py:module:: geometor.press.project_medallions.geometor
+
+.. autoapi-nested-parse::
+
+   Project Medallion: GEOMETOR (geometor.com) — Central Brand Seal.
+
+   The canonical GEOMETOR *Vesica Piscis* to Golden Section (``phi``) construction
+   framed within the unified ``R = 68`` graduated astrolabe seal:
+
+   1. **Twin Congruent Vesica Piscis Circles (``r = 32``)**: Centered on baseline
+      ``A = (-16, -8)`` and ``B = (+16, -8)`` (``|AB| = 32``), intersecting at the
+      upper and lower equilateral apices ``P`` and ``Q`` to form the twin
+      equilateral triangles ``ABP`` and ``ABQ`` and central square scaffold on
+      ``AB``.
+   2. **Exact Golden Section Diameter ``C--A--B--D``**: Swinging the exact
+      half-diagonal radius ``|M B_top| = (sqrt(5) / 2) * r`` from midpoint
+      ``M = (0, -8)`` cuts the extended baseline at ``C`` and ``D``, satisfying
+      ``|AB| / |BD| = |AD| / |AB| = |AB| / |CA| = |CB| / |AB| = phi`` (verified
+      to ``< 1e-12``).
+   3. **Outer Golden Halo ``R * phi`` & Double-Ringed Golden Nodes**: Crowned by
+      the golden sweep circle ``(M, r * sqrt(5) / 2)``, the outer golden circle
+      ``(M, r * phi)``, golden ratio ticks, and radiant double-ringed nodes at
+      ``C, A, M, B, D, P, Q``.
+
+
+
+Functions
+---------
+
+.. autoapisummary::
+
+   geometor.press.project_medallions.geometor.build_geometor_elements
+   geometor.press.project_medallions.geometor.build_geometor_svg
+   geometor.press.project_medallions.geometor.write_geometor_svgs
+
+
+Module Contents
+---------------
+
+.. py:function:: build_geometor_elements() -> dict[str, list[dict[str, Any]]]
+
+   Build the 4-layer sacred emblem medallion for GEOMETOR (geometor.com).
+
+   :returns: Dictionary mapping canonical layers (``scaffold``, ``golden``,
+             ``detail``, ``primary``) to lists of primitive geometry entries.
+
+
+.. py:function:: build_geometor_svg(theme: str = 'dark') -> str
+
+   Render the GEOMETOR central brand seal SVG for ``'dark'`` or ``'light'`` theme.
+
+
+.. py:function:: write_geometor_svgs(out_dir: pathlib.Path | None = None) -> tuple[pathlib.Path, pathlib.Path]
+
+   Write ``geometor_dark.svg`` and ``geometor_light.svg`` to ``out_dir``.
+
+

@@ -1,0 +1,58 @@
+geometor.press.project_medallions.divine
+========================================
+
+.. py:module:: geometor.press.project_medallions.divine
+
+.. autoapi-nested-parse::
+
+   Project Medallion: Divine (geometor/divine) — Golden Ratio Discovery Engine.
+
+   Celebrates automated golden-section discovery inside the unified ``R = 68``
+   graduated astrolabe seal through the supreme fivefold geometry of ``phi``:
+
+   1. **Regular Pentagon & Inscribed ``{5/2}`` Pentagram Star**: Upright regular
+      pentagon inscribed in circumcircle ``R_5 = 54`` with all five chords forming
+      the radiant golden ``{5/2}`` pentagram, generating the exact inverted inner
+      pentagon at ``R_5 / phi^2`` and a nested micro-pentagram at its heart.
+   2. **Exact ``1 : phi : phi^2`` Nested Golden Circles & Compass Arcs**: Three
+      concentric golden-progression circles (``R_5 / phi^2``, ``R_5 / phi``,
+      ``R_5``) paired with ten compass-transfer arcs from the pentagon vertices
+      sweeping directly through the exact golden-cut intersections of every chord
+      (all ratios verified to ``< 1e-12``).
+   3. **Harmonic Golden Chord Ticks & Star Jewels**: Calibrated golden ratio ticks
+      along the horizontal pentagram chord illuminate ``1/phi : 1/phi^2 : 1/phi``,
+      crowned by double-ringed golden nodes at all ten star vertices and center.
+
+
+
+Functions
+---------
+
+.. autoapisummary::
+
+   geometor.press.project_medallions.divine.build_divine_elements
+   geometor.press.project_medallions.divine.build_divine_svg
+   geometor.press.project_medallions.divine.write_divine_svgs
+
+
+Module Contents
+---------------
+
+.. py:function:: build_divine_elements() -> dict[str, list[dict[str, Any]]]
+
+   Build the 4-layer sacred emblem medallion for ``geometor/divine``.
+
+   :returns: Dictionary mapping canonical layers (``scaffold``, ``golden``,
+             ``detail``, ``primary``) to lists of primitive geometry entries.
+
+
+.. py:function:: build_divine_svg(theme: str = 'dark') -> str
+
+   Render the ``geometor/divine`` medallion SVG for ``'dark'`` or ``'light'`` theme.
+
+
+.. py:function:: write_divine_svgs(out_dir: pathlib.Path | None = None) -> tuple[pathlib.Path, pathlib.Path]
+
+   Write ``divine_dark.svg`` and ``divine_light.svg`` to ``out_dir``.
+
+

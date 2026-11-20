@@ -1,0 +1,239 @@
+geometor.press.project_medallions
+=================================
+
+.. py:module:: geometor.press.project_medallions
+
+.. autoapi-nested-parse::
+
+   Bespoke compass-and-straightedge project and catalog medallions for :mod:`geometor.press`.
+
+
+
+Submodules
+----------
+
+.. toctree::
+   :maxdepth: 1
+
+   /modules/api/geometor/press/project_medallions/codes/index
+   /modules/api/geometor/press/project_medallions/constructions/index
+   /modules/api/geometor/press/project_medallions/divine/index
+   /modules/api/geometor/press/project_medallions/elementarium/index
+   /modules/api/geometor/press/project_medallions/elements/index
+   /modules/api/geometor/press/project_medallions/explorer/index
+   /modules/api/geometor/press/project_medallions/fundamentals/index
+   /modules/api/geometor/press/project_medallions/geometor/index
+   /modules/api/geometor/press/project_medallions/gibert/index
+   /modules/api/geometor/press/project_medallions/heptadecagon/index
+   /modules/api/geometor/press/project_medallions/knott/index
+   /modules/api/geometor/press/project_medallions/levels/index
+   /modules/api/geometor/press/project_medallions/model/index
+   /modules/api/geometor/press/project_medallions/phyllotaxis/index
+   /modules/api/geometor/press/project_medallions/polyhedra/index
+   /modules/api/geometor/press/project_medallions/posamentier/index
+   /modules/api/geometor/press/project_medallions/press/index
+   /modules/api/geometor/press/project_medallions/seer/index
+   /modules/api/geometor/press/project_medallions/seer_navigator/index
+   /modules/api/geometor/press/project_medallions/seer_sessions/index
+   /modules/api/geometor/press/project_medallions/trees/index
+
+
+Functions
+---------
+
+.. autoapisummary::
+
+   geometor.press.project_medallions.build_codes_elements
+   geometor.press.project_medallions.build_constructions_elements
+   geometor.press.project_medallions.build_divine_elements
+   geometor.press.project_medallions.build_elementarium_elements
+   geometor.press.project_medallions.build_elements_elements
+   geometor.press.project_medallions.build_explorer_elements
+   geometor.press.project_medallions.build_fundamentals_elements
+   geometor.press.project_medallions.build_geometor_elements
+   geometor.press.project_medallions.build_gibert_elements
+   geometor.press.project_medallions.build_heptadecagon_elements
+   geometor.press.project_medallions.build_knott_elements
+   geometor.press.project_medallions.build_levels_elements
+   geometor.press.project_medallions.build_model_elements
+   geometor.press.project_medallions.build_phyllotaxis_elements
+   geometor.press.project_medallions.build_polyhedra_elements
+   geometor.press.project_medallions.build_posamentier_elements
+   geometor.press.project_medallions.build_press_elements
+   geometor.press.project_medallions.build_seer_elements
+   geometor.press.project_medallions.build_seer_navigator_elements
+   geometor.press.project_medallions.build_seer_sessions_elements
+   geometor.press.project_medallions.build_trees_elements
+
+
+Package Contents
+----------------
+
+.. py:function:: build_codes_elements() -> dict[str, list[dict[str, Any]]]
+
+   Build the 4-layer sacred emblem medallion for ``geometor/codes``.
+
+   :returns: Dictionary mapping canonical layers (``scaffold``, ``golden``,
+             ``detail``, ``primary``) to lists of primitive geometry entries.
+
+
+.. py:function:: build_constructions_elements() -> dict[str, list[dict[str, Any]]]
+
+   Build the 4-layer sacred emblem medallion for ``geometor/constructions``.
+
+   :returns: Dictionary mapping canonical layers (``scaffold``, ``golden``,
+             ``detail``, ``primary``) to lists of primitive geometry entries.
+
+
+.. py:function:: build_divine_elements() -> dict[str, list[dict[str, Any]]]
+
+   Build the 4-layer sacred emblem medallion for ``geometor/divine``.
+
+   :returns: Dictionary mapping canonical layers (``scaffold``, ``golden``,
+             ``detail``, ``primary``) to lists of primitive geometry entries.
+
+
+.. py:function:: build_elementarium_elements() -> dict[str, list[dict[str, Any]]]
+
+   Build the 4-layer sacred emblem medallion for ``geometor/elementarium``.
+
+   :returns: Dictionary mapping canonical layers (``scaffold``, ``golden``,
+             ``detail``, ``primary``) to lists of primitive geometry entries.
+
+
+.. py:function:: build_elements_elements() -> dict[str, list[dict[str, Any]]]
+
+   Build the 4-layer sacred emblem medallion for ``geometor/elements``.
+
+   :returns: Dictionary mapping canonical layers (``scaffold``, ``golden``,
+             ``detail``, ``primary``) to lists of primitive geometry entries.
+
+
+.. py:function:: build_explorer_elements() -> dict[str, list[dict[str, Any]]]
+
+   Build the 4-layer sacred emblem medallion for ``geometor/explorer``.
+
+   :returns: Dictionary mapping canonical layers (``scaffold``, ``golden``,
+             ``detail``, ``primary``) to lists of primitive geometry entries.
+
+
+.. py:function:: build_fundamentals_elements() -> dict[str, list[dict[str, Any]]]
+
+   Build the 4-layer sacred emblem medallion for ``geometor/fundamentals``.
+
+   :returns: Dictionary mapping canonical layers (``scaffold``, ``golden``,
+             ``detail``, ``primary``) to lists of primitive geometry entries.
+
+
+.. py:function:: build_geometor_elements() -> dict[str, list[dict[str, Any]]]
+
+   Build the 4-layer sacred emblem medallion for GEOMETOR (geometor.com).
+
+   :returns: Dictionary mapping canonical layers (``scaffold``, ``golden``,
+             ``detail``, ``primary``) to lists of primitive geometry entries.
+
+
+.. py:function:: build_gibert_elements() -> dict[str, list[dict[str, Any]]]
+
+   Build the 4-layer sacred emblem medallion for Bernard Gibert (``CTC``).
+
+   :returns: Dictionary mapping canonical layers (``scaffold``, ``golden``,
+             ``detail``, ``primary``) to lists of primitive geometry entries.
+
+
+.. py:function:: build_heptadecagon_elements() -> dict[str, list[dict[str, Any]]]
+
+   Build the 4-layer sacred emblem medallion for ``geometor/heptadecagon``.
+
+   :returns: Dictionary mapping canonical layers (``scaffold``, ``golden``,
+             ``detail``, ``primary``) to lists of primitive geometry entries.
+
+
+.. py:function:: build_knott_elements() -> dict[str, list[dict[str, Any]]]
+
+   Build the 4-layer sacred emblem medallion for Ron Knott.
+
+   :returns: Dictionary mapping canonical layers (``scaffold``, ``golden``,
+             ``detail``, ``primary``) to lists of primitive geometry entries.
+
+
+.. py:function:: build_levels_elements() -> dict[str, list[dict[str, Any]]]
+
+   Build the 4-layer sacred emblem medallion for ``geometor/levels``.
+
+   :returns: Dictionary mapping canonical layers (``scaffold``, ``golden``,
+             ``detail``, ``primary``) to lists of primitive geometry entries.
+
+
+.. py:function:: build_model_elements() -> dict[str, list[dict[str, Any]]]
+
+   Build the 4-layer sacred emblem medallion for ``geometor/model``.
+
+   :returns: Dictionary mapping canonical layers (``scaffold``, ``golden``,
+             ``detail``, ``primary``) to lists of primitive geometry entries.
+
+
+.. py:function:: build_phyllotaxis_elements() -> dict[str, list[dict[str, Any]]]
+
+   Build the 4-layer sacred emblem medallion for ``geometor/phyllotaxis``.
+
+   :returns: Dictionary mapping canonical layers (``scaffold``, ``golden``,
+             ``detail``, ``primary``) to lists of primitive geometry entries.
+
+
+.. py:function:: build_polyhedra_elements() -> dict[str, list[dict[str, Any]]]
+
+   Build the 4-layer sacred emblem medallion for ``geometor/polyhedra``.
+
+   :returns: Dictionary mapping canonical layers (``scaffold``, ``golden``,
+             ``detail``, ``primary``) to lists of primitive geometry entries.
+
+
+.. py:function:: build_posamentier_elements() -> dict[str, list[dict[str, Any]]]
+
+   Build the 4-layer sacred emblem medallion for Posamentier & Lehmann.
+
+   :returns: Dictionary mapping canonical layers (``scaffold``, ``golden``,
+             ``detail``, ``primary``) to lists of primitive geometry entries.
+
+
+.. py:function:: build_press_elements() -> dict[str, list[dict[str, Any]]]
+
+   Build the 4-layer sacred emblem medallion for ``geometor/press``.
+
+   :returns: Dictionary mapping canonical layers (``scaffold``, ``golden``,
+             ``detail``, ``primary``) to lists of primitive geometry entries.
+
+
+.. py:function:: build_seer_elements() -> dict[str, list[dict[str, Any]]]
+
+   Build the 4-layer sacred emblem medallion for ``geometor/seer``.
+
+   :returns: Dictionary mapping canonical layers (``scaffold``, ``golden``,
+             ``detail``, ``primary``) to lists of primitive geometry entries.
+
+
+.. py:function:: build_seer_navigator_elements() -> dict[str, list[dict[str, Any]]]
+
+   Build the 4-layer sacred emblem medallion for ``geometor/seer_navigator``.
+
+   :returns: Dictionary mapping canonical layers (``scaffold``, ``golden``,
+             ``detail``, ``primary``) to lists of primitive geometry entries.
+
+
+.. py:function:: build_seer_sessions_elements() -> dict[str, list[dict[str, Any]]]
+
+   Build the 4-layer sacred emblem medallion for ``geometor/seer_sessions``.
+
+   :returns: Dictionary mapping canonical layers (``scaffold``, ``golden``,
+             ``detail``, ``primary``) to lists of primitive geometry entries.
+
+
+.. py:function:: build_trees_elements() -> dict[str, list[dict[str, Any]]]
+
+   Build the 4-layer sacred emblem medallion for ``geometor/trees``.
+
+   :returns: Dictionary mapping canonical layers (``scaffold``, ``golden``,
+             ``detail``, ``primary``) to lists of primitive geometry entries.
+
+

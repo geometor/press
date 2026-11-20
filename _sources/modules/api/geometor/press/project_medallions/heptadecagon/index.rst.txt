@@ -1,0 +1,59 @@
+geometor.press.project_medallions.heptadecagon
+==============================================
+
+.. py:module:: geometor.press.project_medallions.heptadecagon
+
+.. autoapi-nested-parse::
+
+   Project Medallion: Heptadecagon (geometor/heptadecagon) — Gauss's 17-Gon (1796).
+
+   Celebrates Carl Friedrich Gauss's breakthrough ruler-and-compass construction
+   of the regular 17-gon inside the unified ``R = 68`` graduated astrolabe seal:
+
+   1. **Exact Regular 17-Gon Inscribed in ``R = 54``**: Seventeen vertices
+      ``P_0..P_16`` anchored at ``P_0 = (R, 0)`` on the horizontal diameter,
+      rendered with crisp perimeter edges in ``primary`` and vertex jewels.
+   2. **Luminous Nested ``{17/5}`` & ``{17/7}`` Star Polygons**: Radiant golden
+      ``{17/5}`` heptadecagram paired with a contrasting fine ``{17/7}`` inner
+      star polygon revealing the 17-fold harmonic rosette.
+   3. **Gauss-Richmond Carlyle Construction Circles on the Diameter**: Exact
+      quarter-point ``J = (0, -R/4)``, quarter-angle ``E`` and ``45 deg``
+      conjugate ``F`` on the horizontal diameter, first Carlyle circle on
+      diameter ``F-P_0`` cutting vertical axis at ``K``, and second circle
+      ``(E, |EK|)`` cutting the horizontal diameter at ``N_3`` and ``N_5`` —
+      whose perpendicular lifts hit exact vertices ``P_3`` and ``P_5`` (verified
+      to ``< 1e-12``).
+
+
+
+Functions
+---------
+
+.. autoapisummary::
+
+   geometor.press.project_medallions.heptadecagon.build_heptadecagon_elements
+   geometor.press.project_medallions.heptadecagon.build_heptadecagon_svg
+   geometor.press.project_medallions.heptadecagon.write_heptadecagon_svgs
+
+
+Module Contents
+---------------
+
+.. py:function:: build_heptadecagon_elements() -> dict[str, list[dict[str, Any]]]
+
+   Build the 4-layer sacred emblem medallion for ``geometor/heptadecagon``.
+
+   :returns: Dictionary mapping canonical layers (``scaffold``, ``golden``,
+             ``detail``, ``primary``) to lists of primitive geometry entries.
+
+
+.. py:function:: build_heptadecagon_svg(theme: str = 'dark') -> str
+
+   Render the ``geometor/heptadecagon`` medallion SVG for ``'dark'`` or ``'light'`` theme.
+
+
+.. py:function:: write_heptadecagon_svgs(out_dir: pathlib.Path | None = None) -> tuple[pathlib.Path, pathlib.Path]
+
+   Write ``heptadecagon_dark.svg`` and ``heptadecagon_light.svg`` to ``out_dir``.
+
+

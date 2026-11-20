@@ -1,0 +1,59 @@
+geometor.press.project_medallions.knott
+=======================================
+
+.. py:module:: geometor.press.project_medallions.knott
+
+.. autoapi-nested-parse::
+
+   Author Medallion: Ron Knott — Fibonacci Numbers & Golden Section.
+
+   Sacred geometric emblem celebrating Ron Knott's *Fibonacci Numbers and the
+   Golden Section*, framed within the unified ``R = 68`` graduated astrolabe seal:
+
+   1. **Full-Medallion Fibonacci Whirling Squares (``1, 1, 2, 3, 5, 8, 13``)**:
+      Exact ``21 x 13`` golden-approximant rectangle (``21 / 13 = 1.61538...``)
+      inscribed symmetrically inside its circumcircle ``R_c = 57.42``, dissected
+      cleanly into all seven Fibonacci squares from ``13 x 13`` down to the twin
+      ``1 x 1`` seed squares.
+   2. **Continuous ``G1``-Smooth Golden Spiral Chain**: Seven consecutive
+      ``90 deg`` circular quarter-arcs sweep seamlessly through every Fibonacci
+      square with exact tangent continuity at each stitch corner (zero Beziers),
+      accented with double-line golden radiance and stitch jewels.
+   3. **Homologous Diagonals & Golden Eye Pole**: The two quasi-orthogonal
+      whirling-rectangle diagonals intersect at the exact limiting Golden Eye Pole
+      ``(441/29, 273/29)`` inside the twin ``1 x 1`` seed chamber, crowned with a
+      radiant golden pole star.
+
+
+
+Functions
+---------
+
+.. autoapisummary::
+
+   geometor.press.project_medallions.knott.build_knott_elements
+   geometor.press.project_medallions.knott.build_knott_svg
+   geometor.press.project_medallions.knott.write_knott_svgs
+
+
+Module Contents
+---------------
+
+.. py:function:: build_knott_elements() -> dict[str, list[dict[str, Any]]]
+
+   Build the 4-layer sacred emblem medallion for Ron Knott.
+
+   :returns: Dictionary mapping canonical layers (``scaffold``, ``golden``,
+             ``detail``, ``primary``) to lists of primitive geometry entries.
+
+
+.. py:function:: build_knott_svg(theme: str = 'dark') -> str
+
+   Render the Ron Knott medallion SVG for ``'dark'`` or ``'light'`` theme.
+
+
+.. py:function:: write_knott_svgs(out_dir: pathlib.Path | None = None) -> tuple[pathlib.Path, pathlib.Path]
+
+   Write ``knott_dark.svg`` and ``knott_light.svg`` to ``out_dir``.
+
+

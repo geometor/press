@@ -1,0 +1,60 @@
+geometor.press.project_medallions.trees
+=======================================
+
+.. py:module:: geometor.press.project_medallions.trees
+
+.. autoapi-nested-parse::
+
+   Project Medallion: Trees — Stern-Brocot & Farey Ford Circles.
+
+   Sacred geometric emblem for ``geometor/trees`` framed within the unified
+   ``R = 68`` graduated astrolabe seal:
+
+   1. **Exact Mirrored Ford Circles (``r = S / (2 q^2)``)**: For every reduced
+      Farey fraction ``p/q`` in ``[0, 1]`` up to order ``F_6`` (plus depth-3
+      Stern-Brocot mediants), exact Ford circles tangent to the central horizontal
+      baseline and mutually tangent for every Farey neighbor pair
+      (``|p1*q2 - p2*q1| = 1``, verified to ``< 1e-11``) are mirrored symmetrically
+      above and below the baseline.
+   2. **Cathedral Boundary Arcs (``0/1`` & ``1/1``)**: The two grand bounding Ford
+      circles ``0/1`` and ``1/1`` (``r = S / 2``) are clipped strictly to the
+      ``R = 68`` astrolabe seal, framing the central Farey chamber in exact
+      tangency with ``1/2, 1/3, 2/3, 1/4, 3/4``.
+   3. **Golden Binary Stern-Brocot Tree**: Luminous golden binary branches link
+      each Stern-Brocot parent center to its two mediant children mirrored above
+      and below the baseline, united by a vertical golden trunk through ``1/2``
+      and crowned with radiant center jewels.
+
+
+
+Functions
+---------
+
+.. autoapisummary::
+
+   geometor.press.project_medallions.trees.build_trees_elements
+   geometor.press.project_medallions.trees.build_trees_svg
+   geometor.press.project_medallions.trees.write_trees_svgs
+
+
+Module Contents
+---------------
+
+.. py:function:: build_trees_elements() -> dict[str, list[dict[str, Any]]]
+
+   Build the 4-layer sacred emblem medallion for ``geometor/trees``.
+
+   :returns: Dictionary mapping canonical layers (``scaffold``, ``golden``,
+             ``detail``, ``primary``) to lists of primitive geometry entries.
+
+
+.. py:function:: build_trees_svg(theme: str = 'dark') -> str
+
+   Render the Trees project medallion SVG for ``'dark'`` or ``'light'`` theme.
+
+
+.. py:function:: write_trees_svgs(out_dir: pathlib.Path | None = None) -> tuple[pathlib.Path, pathlib.Path]
+
+   Write ``trees_dark.svg`` and ``trees_light.svg`` to ``out_dir``.
+
+

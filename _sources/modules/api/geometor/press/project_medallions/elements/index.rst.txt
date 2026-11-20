@@ -1,0 +1,58 @@
+geometor.press.project_medallions.elements
+==========================================
+
+.. py:module:: geometor.press.project_medallions.elements
+
+.. autoapi-nested-parse::
+
+   Project Medallion: Elements (geometor/elements) — Computable Euclid G-Index.
+
+   Unites the opening and climax of Book I of Euclid's *Elements* within the
+   unified ``R = 68`` graduated astrolabe seal:
+
+   1. **Elements I.1 *Vesica Piscis* Frame**: Twin congruent circles centered on
+      hypotenuse endpoints ``A`` and ``B`` with exact radius ``|AB| = 5u = 42``
+      fit completely inside ``R = 68``, intersecting at equilateral apices
+      ``P_top`` and ``P_bot`` to cradle the entire theorem.
+   2. **Elements I.47 Pythagorean ``3-4-5`` Windmill**: Exact right triangle
+      ``ABC`` (legs ``3u, 4u``, hypotenuse ``5u``, verified orthogonal to
+      ``< 1e-12``) bearing its three outward squares subdivided into exact
+      ``9 + 16 = 25`` area unit grids.
+   3. **Euclid's Golden Altitude & Congruent Shearing Chords**: The perpendicular
+      altitude from ``C`` through foot ``H`` down to ``M`` splits the ``5x5``
+      hypotenuse square into exact rectangles of area ``9`` and ``16``, joined by
+      Euclid's golden proof triangles ``(C-D, B-G)`` and ``(C-E, A-L)``.
+
+
+
+Functions
+---------
+
+.. autoapisummary::
+
+   geometor.press.project_medallions.elements.build_elements_elements
+   geometor.press.project_medallions.elements.build_elements_svg
+   geometor.press.project_medallions.elements.write_elements_svgs
+
+
+Module Contents
+---------------
+
+.. py:function:: build_elements_elements() -> dict[str, list[dict[str, Any]]]
+
+   Build the 4-layer sacred emblem medallion for ``geometor/elements``.
+
+   :returns: Dictionary mapping canonical layers (``scaffold``, ``golden``,
+             ``detail``, ``primary``) to lists of primitive geometry entries.
+
+
+.. py:function:: build_elements_svg(theme: str = 'dark') -> str
+
+   Render the ``geometor/elements`` medallion SVG for ``'dark'`` or ``'light'`` theme.
+
+
+.. py:function:: write_elements_svgs(out_dir: pathlib.Path | None = None) -> tuple[pathlib.Path, pathlib.Path]
+
+   Write ``elements_dark.svg`` and ``elements_light.svg`` to ``out_dir``.
+
+

@@ -1,0 +1,60 @@
+geometor.press.project_medallions.phyllotaxis
+=============================================
+
+.. py:module:: geometor.press.project_medallions.phyllotaxis
+
+.. autoapi-nested-parse::
+
+   Project Medallion: Phyllotaxis — Botanical Golden-Angle Growth.
+
+   Sacred geometric emblem for ``geometor/phyllotaxis`` framed within the unified
+   ``R = 68`` graduated astrolabe seal:
+
+   1. **Exact Vogel Sunflower Lattice (``n = 1..55``)**: Every floret sits at
+      exact golden-angle polar coordinates ``theta_n = n * 360 / phi^2``
+      (``137.507764... deg``) and Fermat radius ``r_n = c * sqrt(n)``, scaled to
+      fill the botanical receptacle ``R_rec = 60`` with 55 crisp non-overlapping
+      circular florets.
+   2. **Opposing Fibonacci Parastichy Spirals (``8``-Fold & ``13``-Fold)**:
+      Exact 3-point circular arcs (zero Beziers) thread every consecutive floret
+      pair ``(n, n + 13)`` in crisp ``detail`` clockwise arms and ``(n, n + 8)``
+      in luminous ``golden`` counter-clockwise arms, illuminating the dual
+      Fibonacci phyllotactic lattice.
+   3. **Fibonacci Floret Jewels & Golden-Angle Wedge**: Florets indexed by the
+      Fibonacci sequence ``(1, 2, 3, 5, 8, 13, 21, 34, 55)`` are crowned with
+      radiant golden rings and filled cores, anchored by the central golden-angle
+      divergence wedge ``137.508 deg``.
+
+
+
+Functions
+---------
+
+.. autoapisummary::
+
+   geometor.press.project_medallions.phyllotaxis.build_phyllotaxis_elements
+   geometor.press.project_medallions.phyllotaxis.build_phyllotaxis_svg
+   geometor.press.project_medallions.phyllotaxis.write_phyllotaxis_svgs
+
+
+Module Contents
+---------------
+
+.. py:function:: build_phyllotaxis_elements() -> dict[str, list[dict[str, Any]]]
+
+   Build the 4-layer sacred emblem medallion for ``geometor/phyllotaxis``.
+
+   :returns: Dictionary mapping canonical layers (``scaffold``, ``golden``,
+             ``detail``, ``primary``) to lists of primitive geometry entries.
+
+
+.. py:function:: build_phyllotaxis_svg(theme: str = 'dark') -> str
+
+   Render the Phyllotaxis project medallion SVG for ``'dark'`` or ``'light'`` theme.
+
+
+.. py:function:: write_phyllotaxis_svgs(out_dir: pathlib.Path | None = None) -> tuple[pathlib.Path, pathlib.Path]
+
+   Write ``phyllotaxis_dark.svg`` and ``phyllotaxis_light.svg`` to ``out_dir``.
+
+

@@ -1,0 +1,58 @@
+geometor.press.project_medallions.model
+=======================================
+
+.. py:module:: geometor.press.project_medallions.model
+
+.. autoapi-nested-parse::
+
+   Project Medallion: Model (geometor/model) — Exact Symbolic Geometry Engine.
+
+   Visualizes the exact compass-and-straightedge Constructive DAG of
+   ``geometor.model`` inside the unified ``R = 68`` graduated astrolabe seal:
+
+   1. **Three Mutually Intersecting Circles & Radical Center**: Three primary
+      circles ``C_1, C_2, C_3`` anchored on genesis centers ``O_1, O_2, O_3``
+      generate six exact analytical circle-circle intersection nodes
+      ``A, B, C, D, E, F`` whose three pairwise radical axes concur at the exact
+      Radical Center ``R`` (verified to ``< 1e-12``).
+   2. **Two Secant Lines & Exact Secant Intersections**: Two crisp secant lines
+      sweeping from apex ``A`` through ``C`` and ``E`` pierce ``C_3`` at exact
+      analytical nodes ``G`` and ``H``.
+   3. **Glowing Golden Ancestral Dependency DAG**: Directed golden dependency
+      edges with crisp directional chevrons trace constructive ancestry from
+      genesis centers ``O_1, O_2, O_3`` through radical intersections ``A..F`` to
+      the Radical Center ``R`` and derived secant nodes ``G, H``.
+
+
+
+Functions
+---------
+
+.. autoapisummary::
+
+   geometor.press.project_medallions.model.build_model_elements
+   geometor.press.project_medallions.model.build_model_svg
+   geometor.press.project_medallions.model.write_model_svgs
+
+
+Module Contents
+---------------
+
+.. py:function:: build_model_elements() -> dict[str, list[dict[str, Any]]]
+
+   Build the 4-layer sacred emblem medallion for ``geometor/model``.
+
+   :returns: Dictionary mapping canonical layers (``scaffold``, ``golden``,
+             ``detail``, ``primary``) to lists of primitive geometry entries.
+
+
+.. py:function:: build_model_svg(theme: str = 'dark') -> str
+
+   Render the ``geometor/model`` medallion SVG for ``'dark'`` or ``'light'`` theme.
+
+
+.. py:function:: write_model_svgs(out_dir: pathlib.Path | None = None) -> tuple[pathlib.Path, pathlib.Path]
+
+   Write ``model_dark.svg`` and ``model_light.svg`` to ``out_dir``.
+
+

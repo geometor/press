@@ -1,0 +1,60 @@
+geometor.press.project_medallions.posamentier
+=============================================
+
+.. py:module:: geometor.press.project_medallions.posamentier
+
+.. autoapi-nested-parse::
+
+   Author Medallion: Posamentier & Lehmann — The Glorious Golden Ratio.
+
+   Sacred geometric emblem celebrating Alfred S. Posamentier & Ingmar Lehmann's
+   *The Glorious Golden Ratio*, framed within the unified ``R = 68`` graduated
+   astrolabe seal:
+
+   1. **Regular Decagon (``{10/1}``) & Golden ``{10/3}`` Decagram**: Inscribed in
+      circumcircle ``(O, R = 56)``, the decagon side ``s_10 = R / phi``, radius
+      ``R``, and ``{10/3}`` star chord ``c_{10/3} = R * phi`` form the exact
+      three-term golden progression ``phi^-1 : 1 : phi`` (verified to ``< 1e-12``).
+   2. **Nested Regular Pentagon on the Exact ``R / phi`` Star Ring**: The inner
+      intersections of the ``{10/3}`` golden star polygon lie strictly on the
+      concentric circle of radius ``R * cos(54 deg) / cos(18 deg) = R / phi = s_10``,
+      inscribing a bold nested upright regular pentagon and inner pentagram.
+   3. **Ptolemy's Exact ``R : s_10 = phi`` Compass Construction**: Bisecting
+      horizontal radius ``O-E`` at ``M = (R/2, 0)``, Ptolemy's golden compass arc
+      of radius ``|M V_0| = (sqrt(5)/2) R`` swings from apex ``V_0`` directly onto
+      point ``P = (-R/phi, 0)`` on the inner ``R / phi`` ring, paired with twin
+      chord-transfer arcs proving ``|O P| = |V_0 V_1| = s_10``.
+
+
+
+Functions
+---------
+
+.. autoapisummary::
+
+   geometor.press.project_medallions.posamentier.build_posamentier_elements
+   geometor.press.project_medallions.posamentier.build_posamentier_svg
+   geometor.press.project_medallions.posamentier.write_posamentier_svgs
+
+
+Module Contents
+---------------
+
+.. py:function:: build_posamentier_elements() -> dict[str, list[dict[str, Any]]]
+
+   Build the 4-layer sacred emblem medallion for Posamentier & Lehmann.
+
+   :returns: Dictionary mapping canonical layers (``scaffold``, ``golden``,
+             ``detail``, ``primary``) to lists of primitive geometry entries.
+
+
+.. py:function:: build_posamentier_svg(theme: str = 'dark') -> str
+
+   Render the Posamentier & Lehmann medallion SVG for ``'dark'`` or ``'light'`` theme.
+
+
+.. py:function:: write_posamentier_svgs(out_dir: pathlib.Path | None = None) -> tuple[pathlib.Path, pathlib.Path]
+
+   Write ``posamentier_dark.svg`` and ``posamentier_light.svg`` to ``out_dir``.
+
+
