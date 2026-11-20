@@ -69,6 +69,7 @@ from .portraits import (
     build_empty_medallion_svg,
     clip_arc_to_medallion,
     load_portraits,
+    render_medallion_coin_svg,
     render_medallion_svg,
     tangent_wave_arcs,
 )
@@ -153,6 +154,7 @@ __all__ = [
     "load_census_snapshot",
     "load_portraits",
     "load_shelf",
+    "render_medallion_coin_svg",
     "render_medallion_svg",
     "run_cli",
     "scan_repo",

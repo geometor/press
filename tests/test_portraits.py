@@ -243,3 +243,42 @@ def test_durer_interactive_studio_and_live_poster_present() -> None:
     assert (REPO_ROOT / "demos" / "durer_portrait_studio.html").is_file()
     assert (REPO_ROOT / "demos" / "portraits_gallery.html").is_file()
     assert (REPO_ROOT / "editions" / "posters" / "geometor_portraits_poster.png").is_file()
+
+
+def test_all_twenty_one_project_medallions_bezier_free_and_within_bounds() -> None:
+    """Verify all 21 bespoke non-human/catalog project medallions pass strict geometric invariants."""
+    from geometor.press import project_medallions, render_medallion_coin_svg
+
+    med_cx, med_cy = MEDALLION_SPEC["medallion_center"]
+    limit = float(MEDALLION_SPEC["medallion_radius"]) + 1.0
+
+    names = list(project_medallions.__all__)
+    assert len(names) == 21
+
+    for fn_name in names:
+        builder = getattr(project_medallions, fn_name)
+        layers = builder()
+        assert set(layers.keys()) == {"scaffold", "golden", "primary", "detail"}
+        total = sum(len(items) for items in layers.values())
+        assert total >= 80, f"{fn_name} has unexpectedly few elements ({total})"
+
+        for theme in ("dark", "light", "adaptive"):
+            coin_svg = render_medallion_coin_svg(layers, theme=theme)
+            assert 'viewBox="-100 -108 200 200"' in coin_svg
+            for path_d in re.findall(r'<path d="([^"]+)"', coin_svg):
+                assert not any(cmd in path_d for cmd in "CQSTcqst")
+                assert " A " in path_d
+
+        for layer_name, items in layers.items():
+            for el in items:
+                kind = el["kind"]
+                if kind == "line":
+                    for x_k, y_k in (("x1", "y1"), ("x2", "y2")):
+                        dist = math.hypot(float(el[x_k]) - med_cx, float(el[y_k]) - med_cy)
+                        assert dist <= limit, f"{fn_name}/{layer_name} line exceeds MED_R: {dist:.2f}"
+                elif kind == "arc":
+                    nums = [float(m) for m in re.findall(r"-?\d+(?:\.\d+)?", str(el["d"]))]
+                    for px, py in ((nums[0], nums[1]), (nums[-2], nums[-1])):
+                        dist = math.hypot(px - med_cx, py - med_cy)
+                        assert dist <= limit, f"{fn_name}/{layer_name} arc exceeds MED_R: {dist:.2f}"
+

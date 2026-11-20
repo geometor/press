@@ -221,6 +221,114 @@ def render_medallion_svg(layers: dict[str, list[dict[str, Any]]], theme: str = "
     return "\n".join(out)
 
 
+def render_medallion_coin_svg(
+    layers: dict[str, list[dict[str, Any]]],
+    theme: str = "adaptive",
+) -> str:
+    """Render a square transparent-exterior circular medallion coin SVG.
+
+    Centers the canonical medallion ``(MED_CX=0, MED_CY=-8, RIM_R=95.2)`` inside a
+    ``1:1`` ``viewBox="-100 -108 200 200"`` with transparent exterior corners so it
+    displays cleanly as a site logo, hero emblem, or collection thumbnail.
+    """
+    if theme not in ("dark", "light", "adaptive"):
+        msg = f"Unsupported coin theme {theme!r}; expected 'dark', 'light', or 'adaptive'"
+        raise ValueError(msg)
+
+    if theme == "adaptive":
+        bg = "var(--med-bg, #0d1017)"
+        fg = "var(--med-fg, #eef2f7)"
+        det = "var(--med-det, #8e9db2)"
+        scaf = "var(--med-scaf, #46566c)"
+        gold = "var(--med-gold, #d4af37)"
+        style_block = (
+            "  <style>\n"
+            "    .medallion-coin {\n"
+            "      --med-bg: #0d1017;\n"
+            "      --med-fg: #eef2f7;\n"
+            "      --med-det: #8e9db2;\n"
+            "      --med-scaf: #46566c;\n"
+            "      --med-gold: #d4af37;\n"
+            "    }\n"
+            "    @media (prefers-color-scheme: light) {\n"
+            "      .medallion-coin {\n"
+            "        --med-bg: #f8f5ee;\n"
+            "        --med-fg: #181c24;\n"
+            "        --med-det: #556173;\n"
+            "        --med-scaf: #9da8b8;\n"
+            "        --med-gold: #b07f10;\n"
+            "      }\n"
+            "    }\n"
+            "    body.light-mode .medallion-coin {\n"
+            "      --med-bg: #f8f5ee;\n"
+            "      --med-fg: #181c24;\n"
+            "      --med-det: #556173;\n"
+            "      --med-scaf: #9da8b8;\n"
+            "      --med-gold: #b07f10;\n"
+            "    }\n"
+            "  </style>"
+        )
+    elif theme == "dark":
+        bg, fg, det, scaf, gold = "#0d1017", "#eef2f7", "#8e9db2", "#46566c", "#d4af37"
+        style_block = ""
+    else:
+        bg, fg, det, scaf, gold = "#f8f5ee", "#181c24", "#556173", "#9da8b8", "#b07f10"
+        style_block = ""
+
+    out = [
+        '<svg xmlns="http://www.w3.org/2000/svg" viewBox="-100 -108 200 200" '
+        'width="512" height="512" class="euclid-graphic medallion-coin">',
+    ]
+    if style_block:
+        out.append(style_block)
+    out.append(
+        f'  <circle cx="{MED_CX:.2f}" cy="{MED_CY:.2f}" r="{RIM_R:.2f}" '
+        f'fill="{bg}" class="layer-disc"/>'
+    )
+
+    def emit(items: list[dict[str, Any]], stroke: str, width: float, opacity: float, cls: str) -> None:
+        out.append(
+            f'  <g class="{cls}" stroke="{stroke}" stroke-width="{width}" '
+            f'stroke-linecap="round" fill="none" opacity="{opacity}">'
+        )
+        for el in items:
+            kind = el["kind"]
+            if kind == "circle":
+                fill = stroke if el.get("filled") else "none"
+                out.append(
+                    f'    <circle cx="{el["cx"]:.2f}" cy="{el["cy"]:.2f}" '
+                    f'r="{el["r"]:.2f}" fill="{fill}"/>'
+                )
+            elif kind == "line":
+                out.append(
+                    f'    <line x1="{el["x1"]:.2f}" y1="{el["y1"]:.2f}" '
+                    f'x2="{el["x2"]:.2f}" y2="{el["y2"]:.2f}"/>'
+                )
+            elif kind == "arc":
+                d = str(el["d"])
+                for forbidden in _FORBIDDEN_PATH_COMMANDS:
+                    if forbidden in d:
+                        msg = f"Forbidden Bezier command {forbidden!r} in arc path: {d}"
+                        raise ValueError(msg)
+                out.append(f'    <path d="{d}"/>')
+            else:
+                msg = f"Unsupported portrait primitive kind: {kind!r}"
+                raise ValueError(msg)
+        out.append("  </g>")
+
+    emit(layers.get("scaffold", []), scaf, 0.44, 0.45, "layer-scaffold")
+    emit(layers.get("golden", []), gold, 0.85, 0.92, "layer-golden")
+    emit(layers.get("detail", []), det, 0.62, 0.84, "layer-detail")
+    emit(layers.get("primary", []), fg, 1.15, 1.0, "layer-primary")
+    out.append(
+        f'  <circle cx="{MED_CX:.2f}" cy="{MED_CY:.2f}" r="{RIM_R:.2f}" stroke="{gold}" '
+        'stroke-width="1.05" fill="none" opacity="0.88" class="layer-rim"/>'
+    )
+    out.append("</svg>")
+    return "\n".join(out)
+
+
+
 def arc_through(
     p1: tuple[float, float],
     p2: tuple[float, float],
