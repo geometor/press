@@ -10,7 +10,7 @@ Compass-and-Straightedge Portraits
 
 To give every author gallery, person card, and book title page a unified geometric signature, GEOMETOR Press constructs vector portraits **strictly from straight lines and circular arcs**—with **zero Bézier curves**—calibrated over verified public-domain masterworks.
 
-- **Unified Portrait Gallery (Studies 01–25)**: `Open Fullscreen <../_static/studios/portraits_gallery.html>`__ (or ``demos/portraits_gallery.html``)
+- **Unified Portrait Gallery (Studies 01–48)**: `Open Fullscreen <../_static/studios/portraits_gallery.html>`__ (or ``demos/portraits_gallery.html``)
 - **Live 48-Slot Pantheon Poster**: ``editions/posters/geometor_portraits_poster.png`` (`Open Full-Res Poster <../_static/portraits/geometor_portraits_poster.png>`__)
 
 .. raw:: html
@@ -24,9 +24,9 @@ To give every author gallery, person card, and book title page a unified geometr
 
    <figure style="margin: 0 0 2rem; text-align: center;">
      <a href="../_static/portraits/geometor_portraits_poster.png" target="_blank" rel="noopener">
-       <img src="../_static/portraits/geometor_portraits_poster.png" alt="GEOMETOR Pantheon of Geometers — 48-Slot Live Dark Poster" style="width: 100%; border-radius: 12px; border: 1px solid rgba(212,175,55,0.35);" />
+       <img src="../_static/portraits/geometor_portraits_poster.png" alt="GEOMETOR Pantheon of Geometers — Complete 48-Slot Dark Poster" style="width: 100%; border-radius: 12px; border: 1px solid rgba(212,175,55,0.35);" />
      </a>
-     <figcaption style="font-size: 0.85rem; margin-top: 0.5rem;">GEOMETOR Pantheon of Geometers (<code>25</code> Complete · <code>23</code> Researched · <code>48</code> Chronological Slots)</figcaption>
+     <figcaption style="font-size: 0.85rem; margin-top: 0.5rem;">GEOMETOR Pantheon of Geometers (<code>48</code> Complete · <code>37</code> Portraits + <code>11</code> Sacred Geometric Emblem Seals · <code>0</code> Bézier Curves)</figcaption>
    </figure>
 
 1. Canonical Medallion Specification
@@ -549,10 +549,53 @@ Constructed over the archival circular portrait (Public Domain), uniting Russell
      </figure>
    </div>
 
-27. Completed Portrait Medallion Catalog (25 of 48 Pantheon Slots)
-------------------------------------------------------------------
+27. Batch 4 — Final 12 Portraits (Studies 26–37)
+------------------------------------------------
 
-All 48 Pantheon portrait records (25 complete, 23 researched with verified provenance, locally staged portrait references, and curated golden symbols) are tracked in ``resources/portraits.yaml`` and ``resources/portraits.json``:
+Completing all **37 human portraits** across the 48-person GEOMETOR Pantheon—spanning Hellenistic woodcuts, medieval miniatures, Neoclassical profiles, 19th-century European studio portraits, and contemporary astrophysics—strictly via ``MedallionBuilder`` (zero Bézier curves, clipped within ``MED_R = 92``):
+
+.. raw:: html
+
+   <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 0.9rem; margin: 1.25rem 0;">
+     <figure style="margin: 0; text-align: center;"><img src="../_static/portraits/apollonius_dark.svg" alt="Apollonius of Perga" style="width: 100%; border-radius: 10px; border: 1px solid rgba(160,160,160,0.25);" /><figcaption style="font-size: 0.8rem; margin-top: 0.35rem;">26 · Apollonius of Perga</figcaption></figure>
+     <figure style="margin: 0; text-align: center;"><img src="../_static/portraits/heron_dark.svg" alt="Heron of Alexandria" style="width: 100%; border-radius: 10px; border: 1px solid rgba(160,160,160,0.25);" /><figcaption style="font-size: 0.8rem; margin-top: 0.35rem;">27 · Heron of Alexandria</figcaption></figure>
+     <figure style="margin: 0; text-align: center;"><img src="../_static/portraits/nicomachus_dark.svg" alt="Nicomachus of Gerasa" style="width: 100%; border-radius: 10px; border: 1px solid rgba(160,160,160,0.25);" /><figcaption style="font-size: 0.8rem; margin-top: 0.35rem;">28 · Nicomachus of Gerasa</figcaption></figure>
+     <figure style="margin: 0; text-align: center;"><img src="../_static/portraits/mascheroni_dark.svg" alt="Lorenzo Mascheroni" style="width: 100%; border-radius: 10px; border: 1px solid rgba(160,160,160,0.25);" /><figcaption style="font-size: 0.8rem; margin-top: 0.35rem;">29 · Lorenzo Mascheroni</figcaption></figure>
+     <figure style="margin: 0; text-align: center;"><img src="../_static/portraits/staudt_dark.svg" alt="Karl G. C. von Staudt" style="width: 100%; border-radius: 10px; border: 1px solid rgba(160,160,160,0.25);" /><figcaption style="font-size: 0.8rem; margin-top: 0.35rem;">30 · Karl G. C. von Staudt</figcaption></figure>
+     <figure style="margin: 0; text-align: center;"><img src="../_static/portraits/feuerbach_dark.svg" alt="Karl Wilhelm Feuerbach" style="width: 100%; border-radius: 10px; border: 1px solid rgba(160,160,160,0.25);" /><figcaption style="font-size: 0.8rem; margin-top: 0.35rem;">31 · Karl Wilhelm Feuerbach</figcaption></figure>
+     <figure style="margin: 0; text-align: center;"><img src="../_static/portraits/casey_dark.svg" alt="John Casey" style="width: 100%; border-radius: 10px; border: 1px solid rgba(160,160,160,0.25);" /><figcaption style="font-size: 0.8rem; margin-top: 0.35rem;">32 · John Casey</figcaption></figure>
+     <figure style="margin: 0; text-align: center;"><img src="../_static/portraits/ernst_haeckel_dark.svg" alt="Ernst Haeckel" style="width: 100%; border-radius: 10px; border: 1px solid rgba(160,160,160,0.25);" /><figcaption style="font-size: 0.8rem; margin-top: 0.35rem;">33 · Ernst Haeckel</figcaption></figure>
+     <figure style="margin: 0; text-align: center;"><img src="../_static/portraits/petersen_dark.svg" alt="Julius Petersen" style="width: 100%; border-radius: 10px; border: 1px solid rgba(160,160,160,0.25);" /><figcaption style="font-size: 0.8rem; margin-top: 0.35rem;">34 · Julius Petersen</figcaption></figure>
+     <figure style="margin: 0; text-align: center;"><img src="../_static/portraits/lemoine_dark.svg" alt="Emile Lemoine" style="width: 100%; border-radius: 10px; border: 1px solid rgba(160,160,160,0.25);" /><figcaption style="font-size: 0.8rem; margin-top: 0.35rem;">35 · Émile Lemoine</figcaption></figure>
+     <figure style="margin: 0; text-align: center;"><img src="../_static/portraits/pasch_dark.svg" alt="Moritz Pasch" style="width: 100%; border-radius: 10px; border: 1px solid rgba(160,160,160,0.25);" /><figcaption style="font-size: 0.8rem; margin-top: 0.35rem;">36 · Moritz Pasch</figcaption></figure>
+     <figure style="margin: 0; text-align: center;"><img src="../_static/portraits/livio_dark.svg" alt="Mario Livio" style="width: 100%; border-radius: 10px; border: 1px solid rgba(160,160,160,0.25);" /><figcaption style="font-size: 0.8rem; margin-top: 0.35rem;">37 · Mario Livio</figcaption></figure>
+   </div>
+
+28. Batch 5 — 11 Sacred Geometric Emblem Seals (Studies 38–48)
+--------------------------------------------------------------
+
+For the **11 Pantheon geometers** without verified public-domain portraits (honoring historical provenance and modern copyright strictly), GEOMETOR Press renders **centered astrolabe-seal sacred geometric emblems**—each analytically verified to machine or exact rational precision inside the unified 36-tick graduated bezel and 4 cardinal pins:
+
+.. raw:: html
+
+   <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 0.9rem; margin: 1.25rem 0;">
+     <figure style="margin: 0; text-align: center;"><img src="../_static/portraits/menelaus_dark.svg" alt="Menelaus of Alexandria" style="width: 100%; border-radius: 10px; border: 1px solid rgba(160,160,160,0.25);" /><figcaption style="font-size: 0.8rem; margin-top: 0.35rem;">38 · Menelaus of Alexandria</figcaption></figure>
+     <figure style="margin: 0; text-align: center;"><img src="../_static/portraits/pappus_dark.svg" alt="Pappus of Alexandria" style="width: 100%; border-radius: 10px; border: 1px solid rgba(160,160,160,0.25);" /><figcaption style="font-size: 0.8rem; margin-top: 0.35rem;">39 · Pappus of Alexandria</figcaption></figure>
+     <figure style="margin: 0; text-align: center;"><img src="../_static/portraits/proclus_dark.svg" alt="Proclus Lycius" style="width: 100%; border-radius: 10px; border: 1px solid rgba(160,160,160,0.25);" /><figcaption style="font-size: 0.8rem; margin-top: 0.35rem;">40 · Proclus Lycius</figcaption></figure>
+     <figure style="margin: 0; text-align: center;"><img src="../_static/portraits/ceva_dark.svg" alt="Giovanni Ceva" style="width: 100%; border-radius: 10px; border: 1px solid rgba(160,160,160,0.25);" /><figcaption style="font-size: 0.8rem; margin-top: 0.35rem;">41 · Giovanni Ceva</figcaption></figure>
+     <figure style="margin: 0; text-align: center;"><img src="../_static/portraits/hambidge_dark.svg" alt="Jay Hambidge" style="width: 100%; border-radius: 10px; border: 1px solid rgba(160,160,160,0.25);" /><figcaption style="font-size: 0.8rem; margin-top: 0.35rem;">42 · Jay Hambidge</figcaption></figure>
+     <figure style="margin: 0; text-align: center;"><img src="../_static/portraits/altshiller_court_dark.svg" alt="Nathan Altshiller-Court" style="width: 100%; border-radius: 10px; border: 1px solid rgba(160,160,160,0.25);" /><figcaption style="font-size: 0.8rem; margin-top: 0.35rem;">43 · Nathan Altshiller-Court</figcaption></figure>
+     <figure style="margin: 0; text-align: center;"><img src="../_static/portraits/hans_kayser_dark.svg" alt="Hans Kayser" style="width: 100%; border-radius: 10px; border: 1px solid rgba(160,160,160,0.25);" /><figcaption style="font-size: 0.8rem; margin-top: 0.35rem;">44 · Hans Kayser</figcaption></figure>
+     <figure style="margin: 0; text-align: center;"><img src="../_static/portraits/huntley_dark.svg" alt="H. E. Huntley" style="width: 100%; border-radius: 10px; border: 1px solid rgba(160,160,160,0.25);" /><figcaption style="font-size: 0.8rem; margin-top: 0.35rem;">45 · H. E. Huntley</figcaption></figure>
+     <figure style="margin: 0; text-align: center;"><img src="../_static/portraits/odom_dark.svg" alt="George Odom" style="width: 100%; border-radius: 10px; border: 1px solid rgba(160,160,160,0.25);" /><figcaption style="font-size: 0.8rem; margin-top: 0.35rem;">46 · George Odom</figcaption></figure>
+     <figure style="margin: 0; text-align: center;"><img src="../_static/portraits/kimberling_dark.svg" alt="Clark Kimberling" style="width: 100%; border-radius: 10px; border: 1px solid rgba(160,160,160,0.25);" /><figcaption style="font-size: 0.8rem; margin-top: 0.35rem;">47 · Clark Kimberling</figcaption></figure>
+     <figure style="margin: 0; text-align: center;"><img src="../_static/portraits/wildberger_dark.svg" alt="Norman J. Wildberger" style="width: 100%; border-radius: 10px; border: 1px solid rgba(160,160,160,0.25);" /><figcaption style="font-size: 0.8rem; margin-top: 0.35rem;">48 · Norman J. Wildberger</figcaption></figure>
+   </div>
+
+29. Complete Pantheon Medallion Catalog (48 of 48 Pantheon Slots)
+-----------------------------------------------------------------
+
+All **48 Pantheon medallion records** (37 verified public-domain portraits + 11 sacred geometric emblem seals; 96 exported dark/light SVGs with zero Bézier curves) are tracked in ``resources/portraits.yaml`` and ``resources/portraits.json``:
 
 .. list-table::
    :header-rows: 1
@@ -560,7 +603,7 @@ All 48 Pantheon portrait records (25 complete, 23 researched with verified prove
 
    * - Study
      - Subject
-     - Verified Public-Domain Source
+     - Verified Source / Seal Type
      - Signature Geometric Motif
    * - **Study 01**
      - **Albrecht Dürer** (``durer``)
@@ -662,3 +705,95 @@ All 48 Pantheon portrait records (25 complete, 23 researched with verified prove
      - **Walter Russell** (``walter-russell``)
      - Archival circular portrait (Public Domain — ``Walter_Russell_circular_portrait.jpg``)
      - Concentric Wave-Field Octave Circles & Cubic-Sphere Dual Projection
+   * - **Study 26**
+     - **Apollonius of Perga** (``apollonius``)
+     - 1537 Venice woodcut (Public Domain)
+     - Descartes Apollonian Gasket & Orthogonal Coaxal Circles
+   * - **Study 27**
+     - **Heron of Alexandria** (``heron``)
+     - Classical Hellenic bust engraving (Public Domain)
+     - Heron Incircle (:math:`A = r s`) & *Catoptrica* Reflection Proof
+   * - **Study 28**
+     - **Nicomachus of Gerasa** (``nicomachus``)
+     - 12th-century Cambridge MS illuminated miniature (Public Domain)
+     - Pythagorean Tetractys & Odd Square Gnomon Lattice
+   * - **Study 29**
+     - **Lorenzo Mascheroni** (``mascheroni``)
+     - F. Redenti Neoclassical profile engraving (Public Domain)
+     - Napoleon's Compass-Only Circle Quartering & Seed of Life
+   * - **Study 30**
+     - **Karl G. C. von Staudt** (``staudt``)
+     - 19th-century Erlangen archival portrait (Public Domain)
+     - Complete Quadrangle Harmonic Throw :math:`H(A,B;C,D)` & Polarity Circle
+   * - **Study 31**
+     - **Karl Wilhelm Feuerbach** (``feuerbach``)
+     - Romantic pencil portrait (Public Domain)
+     - Feuerbach Nine-Point / Incircle / Excircle Tangencies (:math:`X(11)`)
+   * - **Study 32**
+     - **John Casey** (``casey``)
+     - 19th-century Irish archival portrait (Public Domain)
+     - Casey's Theorem (4 Circles Tangent to a 5th) & Radical Axis
+   * - **Study 33**
+     - **Ernst Haeckel** (``ernst-haeckel``)
+     - Archival left-profile naturalist portrait (Public Domain)
+     - *Circogonia icosahedra* Radiolarian & *Actinoptychus* Diatom Star
+   * - **Study 34**
+     - **Julius Petersen** (``petersen``)
+     - 19th-century Danish cabinet portrait (Public Domain)
+     - Petersen Graph (10 Vertices, 15 Edges) & Center of Similitude
+   * - **Study 35**
+     - **Émile Lemoine** (``lemoine``)
+     - 19th-century French studio portrait (Public Domain)
+     - First Lemoine Circle & Symmedians (:math:`X(6)`) + *Géométrographie* Compass
+   * - **Study 36**
+     - **Moritz Pasch** (``pasch``)
+     - Giessen G. Backofen cabinet portrait (Public Domain)
+     - Pasch's Axiom Transversal (1882) & Linear Betweenness Triad
+   * - **Study 37**
+     - **Mario Livio** (``livio``)
+     - NASA / STScI portrait (Public Domain)
+     - Inscribed Pentagram & Recursive Penrose Golden Triangle Spiral
+   * - **Study 38**
+     - **Menelaus of Alexandria** (``menelaus``)
+     - Sacred Geometric Astrolabe Seal
+     - *Sphaerica* Great-Circle Triangle & Planar/Spherical Menelaus Transversal
+   * - **Study 39**
+     - **Pappus of Alexandria** (``pappus``)
+     - Sacred Geometric Astrolabe Seal
+     - Pappus Hexagon Theorem (``P–Q–R``) & 9-Circle Inversion Arbelos Chain
+   * - **Study 40**
+     - **Proclus Lycius** (``proclus``)
+     - Sacred Geometric Astrolabe Seal
+     - :math:`1 : \sqrt{3} : 3` Neoplatonic Triad & *Elements* I.1 *Vesica Piscis*
+   * - **Study 41**
+     - **Giovanni Ceva** (``ceva``)
+     - Sacred Geometric Astrolabe Seal
+     - Concurrent Cevians (``3:2:5``), Cevian Triangle & Trilinear Polar
+   * - **Study 42**
+     - **Jay Hambidge** (``hambidge``)
+     - Sacred Geometric Astrolabe Seal
+     - Dynamic Symmetry :math:`1 : \sqrt{5}` Unfolding & 7-Turn Whirling-Square Spiral
+   * - **Study 43**
+     - **Nathan Altshiller-Court** (``altshiller-court``)
+     - Sacred Geometric Astrolabe Seal
+     - Four Congruent Orthocentric Circumcircles & Shared Nine-Point Circle
+   * - **Study 44**
+     - **Hans Kayser** (``hans-kayser``)
+     - Sacred Geometric Astrolabe Seal
+     - ``6 × 6`` Pythagorean–Kayser Lambdoma Lattice & Monochord Wave Arcs
+   * - **Study 45**
+     - **H. E. Huntley** (``huntley``)
+     - Sacred Geometric Astrolabe Seal
+     - ``3–4–5`` Angle-Bisector Golden Section & Golden Gnomon *Spira Mirabilis*
+   * - **Study 46**
+     - **George Odom** (``odom``)
+     - Sacred Geometric Astrolabe Seal
+     - Equilateral Triangle Midpoint-Chord Golden Section (:math:`AB:BC = \phi`)
+   * - **Study 47**
+     - **Clark Kimberling** (``kimberling``)
+     - Sacred Geometric Astrolabe Seal
+     - ETC Quartet :math:`X(1)\text{–}X(4)` Constellation, Euler Line & :math:`X(11)`
+   * - **Study 48**
+     - **Norman J. Wildberger** (``wildberger``)
+     - Sacred Geometric Astrolabe Seal
+     - ``13–14–15`` Quadrance Squares, Vertex Spread Circles & Exact Cross-Law

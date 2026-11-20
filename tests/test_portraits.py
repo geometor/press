@@ -11,6 +11,7 @@ import pytest
 
 from geometor.press import (
     MEDALLION_SPEC,
+    build_altshiller_court_elements,
     build_apollonius_elements,
     build_aquinas_elements,
     build_archimedes_elements,
@@ -18,6 +19,7 @@ from geometor.press import (
     build_bertrand_russell_elements,
     build_byrne_elements,
     build_casey_elements,
+    build_ceva_elements,
     build_cusa_elements,
     build_durer_elements,
     build_empty_medallion_svg,
@@ -26,29 +28,38 @@ from geometor.press import (
     build_euler_elements,
     build_feuerbach_elements,
     build_fibonacci_elements,
+    build_hambidge_elements,
+    build_hans_kayser_elements,
     build_heath_elements,
     build_heron_elements,
     build_hilbert_elements,
     build_hoenen_elements,
+    build_huntley_elements,
     build_kepler_elements,
+    build_kimberling_elements,
     build_klein_elements,
     build_lemoine_elements,
     build_leonardo_elements,
     build_livio_elements,
     build_mascheroni_elements,
+    build_menelaus_elements,
     build_nicomachus_elements,
+    build_odom_elements,
     build_pacioli_elements,
+    build_pappus_elements,
     build_pascal_elements,
     build_pasch_elements,
     build_petersen_elements,
     build_piero_elements,
     build_plato_elements,
     build_poincare_elements,
+    build_proclus_elements,
     build_ptolemy_elements,
     build_staudt_elements,
     build_steiner_elements,
     build_thompson_elements,
     build_walter_russell_elements,
+    build_wildberger_elements,
     load_portraits,
     render_medallion_svg,
 )
@@ -93,6 +104,17 @@ PORTRAIT_BUILDERS: dict[str, Callable[[], dict[str, list[dict[str, object]]]]] =
     "lemoine": build_lemoine_elements,
     "pasch": build_pasch_elements,
     "livio": build_livio_elements,
+    "menelaus": build_menelaus_elements,
+    "pappus": build_pappus_elements,
+    "proclus": build_proclus_elements,
+    "ceva": build_ceva_elements,
+    "hambidge": build_hambidge_elements,
+    "altshiller_court": build_altshiller_court_elements,
+    "hans_kayser": build_hans_kayser_elements,
+    "huntley": build_huntley_elements,
+    "odom": build_odom_elements,
+    "kimberling": build_kimberling_elements,
+    "wildberger": build_wildberger_elements,
 }
 
 MEDALLION_BUILDER_IDS = {
@@ -126,22 +148,33 @@ MEDALLION_BUILDER_IDS = {
     "lemoine",
     "pasch",
     "livio",
+    "menelaus",
+    "pappus",
+    "proclus",
+    "ceva",
+    "hambidge",
+    "altshiller_court",
+    "hans_kayser",
+    "huntley",
+    "odom",
+    "kimberling",
+    "wildberger",
 }
 
 
-def test_portraits_manifest_loads_pantheon_and_thirty_seven_complete() -> None:
-    """Verify resources/portraits.json loads the 48-slot Pantheon with 37 completed studies."""
+def test_portraits_manifest_loads_full_pantheon_all_forty_eight_complete() -> None:
+    """Verify resources/portraits.json loads the complete 48/48 GEOMETOR Pantheon."""
     records = load_portraits()
     assert len(records) == 48
     ids = [rec.id for rec in records]
     assert ids[:7] == ["durer", "euclid", "plato", "aristotle", "pacioli", "kepler", "euler"]
     completed = [rec for rec in records if rec.status == "complete"]
-    assert len(completed) == 37
+    assert len(completed) == 48
     for rec in completed:
         assert "dark_svg" in rec.outputs
         assert "light_svg" in rec.outputs
     researched = [rec for rec in records if rec.status == "researched"]
-    assert len(researched) == 11
+    assert len(researched) == 0
     assert MEDALLION_SPEC["medallion_radius"] == 92.0
 
 

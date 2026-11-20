@@ -528,7 +528,7 @@
       "birth_year": 70,
       "era": "Antiquity",
       "repo": "menelaus",
-      "status": "researched",
+      "status": "complete",
       "queue_order": 18,
       "pose": "Pure geometric emblem medallion (no historical portrait extant)",
       "reference": {
@@ -536,7 +536,10 @@
         "rights": "N/A (original geometric emblem)"
       },
       "signature_motif": "Menelaus Transversal Triangle & Spherical Great-Circle Triangle",
-      "outputs": {},
+      "outputs": {
+        "dark_svg": "docsrc/_static/portraits/menelaus_dark.svg",
+        "light_svg": "docsrc/_static/portraits/menelaus_light.svg"
+      },
       "notes": "No historical likeness survives (avoids mythological King Menelaus of Sparta).",
       "portrait_type": "emblem_only"
     },
@@ -574,7 +577,7 @@
       "birth_year": 290,
       "era": "Antiquity",
       "repo": "pappus",
-      "status": "researched",
+      "status": "complete",
       "queue_order": 20,
       "pose": "Pure geometric emblem medallion (no historical portrait extant)",
       "reference": {
@@ -582,7 +585,10 @@
         "rights": "N/A (original geometric emblem)"
       },
       "signature_motif": "Pappus Hexagon Theorem & Arbelos Tangent Circle Chain",
-      "outputs": {},
+      "outputs": {
+        "dark_svg": "docsrc/_static/portraits/pappus_dark.svg",
+        "light_svg": "docsrc/_static/portraits/pappus_light.svg"
+      },
       "notes": "No authentic portrait survives (1660 frontispiece depicts Archduke Leopold Wilhelm).",
       "portrait_type": "emblem_only"
     },
@@ -593,7 +599,7 @@
       "birth_year": 412,
       "era": "Antiquity",
       "repo": "proclus",
-      "status": "researched",
+      "status": "complete",
       "queue_order": 21,
       "pose": "Pure geometric emblem medallion (no historical portrait extant)",
       "reference": {
@@ -601,7 +607,10 @@
         "rights": "N/A (original geometric emblem)"
       },
       "signature_motif": "Elements I.1 Vesica Piscis & Concentric Neoplatonic Triad Circles",
-      "outputs": {},
+      "outputs": {
+        "dark_svg": "docsrc/_static/portraits/proclus_dark.svg",
+        "light_svg": "docsrc/_static/portraits/proclus_light.svg"
+      },
       "notes": "No authentic portrait survives (Byzantine icons depict Saint Proclus of Constantinople).",
       "portrait_type": "emblem_only"
     },
@@ -720,7 +729,7 @@
       "birth_year": 1647,
       "era": "Early Modern",
       "repo": "ceva",
-      "status": "researched",
+      "status": "complete",
       "queue_order": 26,
       "pose": "Pure geometric emblem medallion (no historical portrait extant)",
       "reference": {
@@ -728,7 +737,10 @@
         "rights": "N/A (original geometric emblem)"
       },
       "signature_motif": "Concurrent Cevians Triangle (Ceva's Theorem, 1678)",
-      "outputs": {},
+      "outputs": {
+        "dark_svg": "docsrc/_static/portraits/ceva_dark.svg",
+        "light_svg": "docsrc/_static/portraits/ceva_light.svg"
+      },
       "notes": "No authentic portrait survives (avoids misidentified Galileo portrait).",
       "portrait_type": "emblem_only"
     },
@@ -1032,7 +1044,7 @@
       "birth_year": 1867,
       "era": "Modern",
       "repo": "hambidge",
-      "status": "researched",
+      "status": "complete",
       "queue_order": 38,
       "pose": "Geometric emblem medallion",
       "reference": {
@@ -1040,7 +1052,10 @@
         "rights": "N/A (original geometric emblem)"
       },
       "signature_motif": "Dynamic Symmetry Root-5 Rectangle & Whirling-Square Golden Arc",
-      "outputs": {},
+      "outputs": {
+        "dark_svg": "docsrc/_static/portraits/hambidge_dark.svg",
+        "light_svg": "docsrc/_static/portraits/hambidge_light.svg"
+      },
       "notes": "Pure compass-and-straightedge Dynamic Symmetry emblem.",
       "portrait_type": "emblem_only"
     },
@@ -1103,7 +1118,7 @@
       "birth_year": 1881,
       "era": "Modern",
       "repo": "altshiller-court",
-      "status": "researched",
+      "status": "complete",
       "queue_order": 41,
       "pose": "Geometric emblem medallion",
       "reference": {
@@ -1111,7 +1126,10 @@
         "rights": "N/A (original geometric emblem)"
       },
       "signature_motif": "Orthocentric System (Altitudes & H) & Feuerbach Nine-Point Circle",
-      "outputs": {},
+      "outputs": {
+        "dark_svg": "docsrc/_static/portraits/altshiller_court_dark.svg",
+        "light_svg": "docsrc/_static/portraits/altshiller_court_light.svg"
+      },
       "notes": "Pure geometric emblem medallion honoring College Geometry (1952).",
       "portrait_type": "emblem_only"
     },
@@ -1122,7 +1140,7 @@
       "birth_year": 1891,
       "era": "Modern",
       "repo": "geometor.com",
-      "status": "researched",
+      "status": "complete",
       "queue_order": 42,
       "pose": "Geometric emblem medallion",
       "reference": {
@@ -1130,7 +1148,10 @@
         "rights": "N/A (original geometric emblem)"
       },
       "signature_motif": "Pythagorean-Kayser Lambdoma Ratio Lattice & Harmonic Arcs",
-      "outputs": {},
+      "outputs": {
+        "dark_svg": "docsrc/_static/portraits/hans_kayser_dark.svg",
+        "light_svg": "docsrc/_static/portraits/hans_kayser_light.svg"
+      },
       "notes": "Pure geometric emblem medallion (avoids homonym painters/physicist).",
       "portrait_type": "emblem_only"
     },
@@ -1141,7 +1162,7 @@
       "birth_year": 1892,
       "era": "Modern",
       "repo": "huntley",
-      "status": "researched",
+      "status": "complete",
       "queue_order": 43,
       "pose": "Geometric emblem medallion",
       "reference": {
@@ -1149,7 +1170,10 @@
         "rights": "N/A (original geometric emblem)"
       },
       "signature_motif": "3-4-5 Angle-Bisector Golden Section & Nested Golden Gnomon Arcs",
-      "outputs": {},
+      "outputs": {
+        "dark_svg": "docsrc/_static/portraits/huntley_dark.svg",
+        "light_svg": "docsrc/_static/portraits/huntley_light.svg"
+      },
       "notes": "Pure geometric emblem honoring The Divine Proportion (1970).",
       "portrait_type": "emblem_only"
     },
@@ -1160,7 +1184,7 @@
       "birth_year": 1941,
       "era": "Contemporary",
       "repo": "divine",
-      "status": "researched",
+      "status": "complete",
       "queue_order": 44,
       "pose": "Geometric emblem medallion",
       "reference": {
@@ -1168,7 +1192,10 @@
         "rights": "N/A (original geometric emblem)"
       },
       "signature_motif": "Odom Equilateral Triangle Midpoint-Chord Golden Section (AB:BC = phi)",
-      "outputs": {},
+      "outputs": {
+        "dark_svg": "docsrc/_static/portraits/odom_dark.svg",
+        "light_svg": "docsrc/_static/portraits/odom_light.svg"
+      },
       "notes": "Pure geometric emblem (avoids homonym jockey/NFL player).",
       "portrait_type": "emblem_only"
     },
@@ -1179,7 +1206,7 @@
       "birth_year": 1942,
       "era": "Contemporary",
       "repo": "etc",
-      "status": "researched",
+      "status": "complete",
       "queue_order": 45,
       "pose": "Geometric emblem medallion",
       "reference": {
@@ -1187,7 +1214,10 @@
         "rights": "N/A (original geometric emblem)"
       },
       "signature_motif": "Triangle Center Quartet X(1)-X(2)-X(3)-X(4) & Euler Line",
-      "outputs": {},
+      "outputs": {
+        "dark_svg": "docsrc/_static/portraits/kimberling_dark.svg",
+        "light_svg": "docsrc/_static/portraits/kimberling_light.svg"
+      },
       "notes": "Pure geometric emblem honoring the Encyclopedia of Triangle Centers.",
       "portrait_type": "emblem_only"
     },
@@ -1225,7 +1255,7 @@
       "birth_year": 1957,
       "era": "Contemporary",
       "repo": "wildberger",
-      "status": "researched",
+      "status": "complete",
       "queue_order": 47,
       "pose": "Geometric emblem medallion",
       "reference": {
@@ -1233,7 +1263,10 @@
         "rights": "N/A (original geometric emblem)"
       },
       "signature_motif": "Rational Trigonometry Quadrance Squares & Spread Cross-Law",
-      "outputs": {},
+      "outputs": {
+        "dark_svg": "docsrc/_static/portraits/wildberger_dark.svg",
+        "light_svg": "docsrc/_static/portraits/wildberger_light.svg"
+      },
       "notes": "Pure geometric emblem honoring Divine Proportions (2005).",
       "portrait_type": "emblem_only"
     }
