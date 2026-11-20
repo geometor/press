@@ -1,13 +1,13 @@
+.. image:: docsrc/_static/logo.png
+   :alt: GEOMETOR • press Medallion
+   :target: https://geometor.github.io/press/
+   :width: 150px
+   :align: right
+
 GEOMETOR • press
 ================
 
 **Visit the Online Archive:** https://geometor.github.io/press/
-
-.. image:: docsrc/_static/logo.png
-   :alt: GEOMETOR • press Medallion
-   :target: https://geometor.github.io/press/
-   :width: 180px
-   :align: center
 
 .. image:: docsrc/_static/lookbook/shelf-5-series-lineup.jpg
    :alt: GEOMETOR • press featured geometric construction
